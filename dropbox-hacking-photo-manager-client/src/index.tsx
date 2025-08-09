@@ -5,6 +5,7 @@ import logRender from "@lib/logRender";
 import BasicCounts from "@pages/next-gen/basic-counts";
 import ClosestTo from "@pages/next-gen/closest-to/index";
 import NGContentHash from "@pages/next-gen/contentHash";
+import NGDayDevices from "@pages/next-gen/day/devices";
 import NGDayFiles from "@pages/next-gen/day/files";
 import ExifExplorer from "@pages/next-gen/exifExplorer";
 import Fsck from "@pages/next-gen/fsck";
@@ -42,6 +43,8 @@ const toRender = ({ routeState }: { routeState: RouteState }) => {
     return <NGDaysNoSamples {...routeState} />;
   if (routeState.route === "route/next-gen/day/files")
     return <NGDayFiles {...routeState} />;
+  if (routeState.route === "route/next-gen/day/devices")
+    return <NGDayDevices {...routeState} />;
   if (routeState.route === "route/next-gen/content-hash")
     return <NGContentHash {...routeState} />;
   if (routeState.route === "route/next-gen/search")

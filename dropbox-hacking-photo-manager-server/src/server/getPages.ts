@@ -107,6 +107,19 @@ export default (app: Application, _context: Context): void => {
     },
   );
 
+  app.get(
+    "/next-gen/day/:date(\\d\\d\\d\\d-\\d\\d-\\d\\d)/devices",
+    (req, res) => {
+      res.contentType("text/html");
+      res.send(
+        pageAsString({
+          route: "route/next-gen/day/devices",
+          date: req.params.date,
+        }),
+      );
+    },
+  );
+
   // RVE-add-route
 
   app.get("/day/:date(\\d\\d\\d\\d-\\d\\d-\\d\\d)", (req, res) => {
