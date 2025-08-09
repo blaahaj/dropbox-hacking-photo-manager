@@ -34,6 +34,10 @@ export type RouteState =
       date: string;
     }
   | {
+      route: "route/next-gen/day/devices";
+      date: string;
+    }
+  | {
       route: "route/next-gen/search";
       filterText?: string;
     }
@@ -68,6 +72,8 @@ export const urlForState = (state: RouteState): string => {
       return `/next-gen/content-hash/${state.contentHash}`;
     case "route/next-gen/day/files":
       return `/next-gen/day/${state.date}/files`;
+    case "route/next-gen/day/devices":
+      return `/next-gen/day/${state.date}/devices`;
     case "route/next-gen/list-of-days/without-samples":
       return `/next-gen/list-of-days/without-samples`;
     // RVE-add-route
