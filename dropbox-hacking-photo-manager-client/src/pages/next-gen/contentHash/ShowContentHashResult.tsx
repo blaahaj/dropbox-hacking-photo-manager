@@ -1,15 +1,30 @@
 import GeoMap from "@components/map/GeoMap";
 import ShowData from "@components/ShowData";
-import { GPSLatLong } from "dropbox-hacking-photo-manager-shared";
+import {
+  GPSLatLong,
+  type GPSLatNLongE,
+} from "dropbox-hacking-photo-manager-shared";
 import type { ContentHashCollection } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
 import * as L from "leaflet";
 import React from "react";
 
+import EditableGPS from "./EditableGPS";
 import EditablePhotoEntry from "./EditablePhotoEntry";
 import ImagePreview from "./imagePreview";
 import SummariseExif from "./SummariseExif";
 import SummariseMediaInfo from "./SummariseMediaInfo";
 import SummariseNamedFiles from "./SummariseNamedFiles";
+
+const gpsOrNone = (title: string, pos: GPSLatNLongE | null) => {
+  if (pos === null) return "-";
+
+  const t = GPSLatLong.fromGPSLatNLongE(pos);
+  return (
+    <a href={t.geoHackUrl({ title })}>
+      {pos.lat},{pos.long}
+    </a>
+  );
+};
 
 export const ShowContentHashResult = ({
   contentHash,
@@ -39,50 +54,54 @@ export const ShowContentHashResult = ({
               contentHash={contentHash}
               photoDbEntry={latestValue.photo ?? {}}
             />
+            <EditableGPS
+              contentHash={contentHash}
+              photoDbEntry={latestValue.photo ?? {}}
+            />
           </div>
 
           <p>Rotation: {latestValue.photo?.rotate ?? 0}°</p>
 
-          {latestValue.gps.effective ? (
-            <>
-              <div style={{ marginBlock: "1em" }}>
-                <GeoMap
-                  positions={
-                    new Map([
-                      [
-                        contentHash,
-                        {
-                          position: new L.LatLng(
-                            latestValue.gps.effective.lat,
-                            latestValue.gps.effective.long,
-                          ),
-                          highlighted: false,
-                        },
-                      ],
-                    ])
-                  }
-                />
-              </div>
-              <p className="gps">
-                <a
-                  href={GPSLatLong.fromGPSLatNLongE(
-                    latestValue.gps.effective,
-                  ).googleMapsUrl({ zoom: 15 })}
-                >
-                  Google Maps
-                </a>
-                {" | "}
-                <a
-                  href={GPSLatLong.fromGPSLatNLongE(
-                    latestValue.gps.effective,
-                  ).geoHackUrl({ title: "no title" })}
-                >
-                  GeoHack
-                </a>
-              </p>
-            </>
-          ) : (
-            <p className="no-gps">[no GPS information]</p>
+          <div>
+            <h2>GPS</h2>
+            <ol>
+              <li>
+                Embedded:{" "}
+                {gpsOrNone(
+                  `${contentHash} from content`,
+                  latestValue.gps.fromContent,
+                )}
+              </li>
+              <li>
+                Override:{" "}
+                {gpsOrNone(
+                  `${contentHash} from override`,
+                  latestValue.gps.fromOverride,
+                )}{" "}
+                <button>edit</button>
+              </li>
+            </ol>
+          </div>
+
+          {latestValue.gps.effective && (
+            <div style={{ marginBlock: "1em" }}>
+              <GeoMap
+                positions={
+                  new Map([
+                    [
+                      contentHash,
+                      {
+                        position: new L.LatLng(
+                          latestValue.gps.effective.lat,
+                          latestValue.gps.effective.long,
+                        ),
+                        highlighted: false,
+                      },
+                    ],
+                  ])
+                }
+              />
+            </div>
           )}
 
           <SummariseNamedFiles namedFiles={latestValue.namedFiles} />

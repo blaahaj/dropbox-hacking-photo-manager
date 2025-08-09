@@ -1,0 +1,533 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Hilperton"
+      },
+      "geometry": {
+        "coordinates": [-2.1885714908601983, 51.33626483196912],
+        "type": "Point"
+      },
+      "id": 0
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Trowbridge"
+      },
+      "geometry": {
+        "coordinates": [-2.2045004611214267, 51.31901329207636],
+        "type": "Point"
+      },
+      "id": 1
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Southampton"
+      },
+      "geometry": {
+        "coordinates": [-1.378474668998848, 50.92445527969002],
+        "type": "Point"
+      },
+      "id": 2
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "BBC W1"
+      },
+      "geometry": {
+        "coordinates": [-0.14331315711453385, 51.517903339088264],
+        "type": "Point"
+      },
+      "id": 3
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "BBC W12"
+      },
+      "geometry": {
+        "coordinates": [-0.22761074396848358, 51.51373307765178],
+        "type": "Point"
+      },
+      "id": 4
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "BBC TVC"
+      },
+      "geometry": {
+        "coordinates": [-0.22616547171827506, 51.50997964051632],
+        "type": "Point"
+      },
+      "id": 5
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Bedford home"
+      },
+      "geometry": {
+        "coordinates": [-0.4715656463708626, 52.148618511661766],
+        "type": "Point"
+      },
+      "id": 6
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Bedford generic"
+      },
+      "geometry": {
+        "coordinates": [-0.46618528943304227, 52.134557287816534],
+        "type": "Point"
+      },
+      "id": 7
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "London generic"
+      },
+      "geometry": {
+        "coordinates": [-0.12007678756773998, 51.50609558630504],
+        "type": "Point"
+      },
+      "id": 8
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "London home"
+      },
+      "geometry": {
+        "coordinates": [-0.28289036160236947, 51.533056459981026],
+        "type": "Point"
+      },
+      "id": 9
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Brighton"
+      },
+      "geometry": {
+        "coordinates": [-0.1367019417820643, 50.81739683071231],
+        "type": "Point"
+      },
+      "id": 10
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "BBC Salford Quays"
+      },
+      "geometry": {
+        "coordinates": [-2.297106063122868, 53.47245518131649],
+        "type": "Point"
+      },
+      "id": 11
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Manchester"
+      },
+      "geometry": {
+        "coordinates": [-2.2371254604741466, 53.48116101339909],
+        "type": "Point"
+      },
+      "id": 12
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Symonds Yat"
+      },
+      "geometry": {
+        "coordinates": [-2.6389529256008757, 51.84033124098943],
+        "type": "Point"
+      },
+      "id": 13
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Snowdonia"
+      },
+      "geometry": {
+        "coordinates": [-4.0343638779475555, 53.0752923864068],
+        "type": "Point"
+      },
+      "id": 14
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Munich"
+      },
+      "geometry": {
+        "coordinates": [11.576350268377553, 48.13868315228592],
+        "type": "Point"
+      },
+      "id": 15
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Geneva"
+      },
+      "geometry": {
+        "coordinates": [6.153218498668821, 46.20721580685051],
+        "type": "Point"
+      },
+      "id": 16
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Esbjerg"
+      },
+      "geometry": {
+        "coordinates": [8.497892268195045, 55.42999188477836],
+        "type": "Point"
+      },
+      "id": 17
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Tønder"
+      },
+      "geometry": {
+        "coordinates": [8.884409967485652, 54.941965793502504],
+        "type": "Point"
+      },
+      "id": 18
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Sønderborg"
+      },
+      "geometry": {
+        "coordinates": [9.782303039434453, 54.9035427926666],
+        "type": "Point"
+      },
+      "id": 19
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Kolding"
+      },
+      "geometry": {
+        "coordinates": [9.47496600893848, 55.49323758189141],
+        "type": "Point"
+      },
+      "id": 20
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Vejle"
+      },
+      "geometry": {
+        "coordinates": [9.568353096518763, 55.7019865720697],
+        "type": "Point"
+      },
+      "id": 21
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Silkeborg"
+      },
+      "geometry": {
+        "coordinates": [9.546223761646587, 56.17296507190227],
+        "type": "Point"
+      },
+      "id": 22
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Skanderborg"
+      },
+      "geometry": {
+        "coordinates": [9.944744148645611, 56.028130357418405],
+        "type": "Point"
+      },
+      "id": 23
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Aarhus"
+      },
+      "geometry": {
+        "coordinates": [10.217141038454571, 56.156182695274566],
+        "type": "Point"
+      },
+      "id": 24
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Aalborg"
+      },
+      "geometry": {
+        "coordinates": [9.935344963078165, 57.0516198532973],
+        "type": "Point"
+      },
+      "id": 25
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Skagen"
+      },
+      "geometry": {
+        "coordinates": [10.61554384740279, 57.723337702815314],
+        "type": "Point"
+      },
+      "id": 26
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Hillerød"
+      },
+      "geometry": {
+        "coordinates": [12.302807246899818, 55.933137685965846],
+        "type": "Point"
+      },
+      "id": 27
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Helsingør"
+      },
+      "geometry": {
+        "coordinates": [12.61947404898001, 56.03409757217605],
+        "type": "Point"
+      },
+      "id": 28
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Copenhagen"
+      },
+      "geometry": {
+        "coordinates": [12.66439642675249, 55.702233043806245],
+        "type": "Point"
+      },
+      "id": 29
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Odense"
+      },
+      "geometry": {
+        "coordinates": [10.455516669816802, 55.455304197320345],
+        "type": "Point"
+      },
+      "id": 30
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Svendborg"
+      },
+      "geometry": {
+        "coordinates": [10.607050252112288, 55.04968550431505],
+        "type": "Point"
+      },
+      "id": 31
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Whitby"
+      },
+      "geometry": {
+        "coordinates": [-0.6194275645586629, 54.49387900032167],
+        "type": "Point"
+      },
+      "id": 32
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Torquay"
+      },
+      "geometry": {
+        "coordinates": [-3.483024959749514, 50.44023912060467],
+        "type": "Point"
+      },
+      "id": 33
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Fishguard"
+      },
+      "geometry": {
+        "coordinates": [-4.974158271476426, 52.006053766603],
+        "type": "Point"
+      },
+      "id": 34
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Shrewsbury"
+      },
+      "geometry": {
+        "coordinates": [-2.76595519156254, 52.71672807943679],
+        "type": "Point"
+      },
+      "id": 35
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Cambridge"
+      },
+      "geometry": {
+        "coordinates": [0.12390911307159058, 52.21236787916564],
+        "type": "Point"
+      },
+      "id": 36
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Powernet"
+      },
+      "geometry": {
+        "coordinates": [-0.7671951671353554, 52.03787997440409],
+        "type": "Point"
+      },
+      "id": 37
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Redrock Jam"
+      },
+      "geometry": {
+        "coordinates": [-0.145759340243643, 51.537540931769655],
+        "type": "Point"
+      },
+      "id": 38
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Teglholmen"
+      },
+      "geometry": {
+        "coordinates": [12.554319005815586, 55.64994265562623],
+        "type": "Point"
+      },
+      "id": 39
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Askeskellet"
+      },
+      "geometry": {
+        "coordinates": [12.497899872169882, 55.67072697556793],
+        "type": "Point"
+      },
+      "id": 40
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Damhussøen"
+      },
+      "geometry": {
+        "coordinates": [12.477989344255974, 55.67487733819857],
+        "type": "Point"
+      },
+      "id": 41
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Frederiksberg Have"
+      },
+      "geometry": {
+        "coordinates": [12.525624437517536, 55.67300788064745],
+        "type": "Point"
+      },
+      "id": 42
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "CPH Airport"
+      },
+      "geometry": {
+        "coordinates": [12.647758477471257, 55.61445568061288],
+        "type": "Point"
+      },
+      "id": 43
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Dyrehaven"
+      },
+      "geometry": {
+        "coordinates": [12.563785168118159, 55.794151051044565],
+        "type": "Point"
+      },
+      "id": 44
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Søerne"
+      },
+      "geometry": {
+        "coordinates": [12.565474331996256, 55.68801819597269],
+        "type": "Point"
+      },
+      "id": 45
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Roskilde"
+      },
+      "geometry": {
+        "coordinates": [12.077209872045046, 55.65444418387645],
+        "type": "Point"
+      },
+      "id": 46
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "Køge"
+      },
+      "geometry": {
+        "coordinates": [12.197324396883374, 55.46007629912074],
+        "type": "Point"
+      },
+      "id": 47
+    }
+  ]
+}

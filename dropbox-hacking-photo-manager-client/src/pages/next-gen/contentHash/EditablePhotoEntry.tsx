@@ -52,7 +52,7 @@ const EditablePhotoEntry = ({
         />
       </div>
 
-      <div>
+      <div style={{ marginBlock: "1em" }}>
         Tags:{" "}
         <EditableTextField
           key={photoDbEntry.tags?.join(" ") ?? ""}

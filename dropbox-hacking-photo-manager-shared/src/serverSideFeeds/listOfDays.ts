@@ -73,7 +73,7 @@ export const provideListOfDaysWithoutSamples = (
           }
         }
 
-        if (file.gps) ++item.counts.hasGPSCount;
+        if (file.gps.effective) ++item.counts.hasGPSCount;
 
         for (const tag of file.photo?.tags ?? []) {
           item.photoTags[tag] = (item.photoTags[tag] ?? 0) + 1;

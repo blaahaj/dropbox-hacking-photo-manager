@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@blaahaj/geometry':
+        specifier: ^1.1.0
+        version: 1.1.0
       '@blaahaj/json':
         specifier: ^1.0.1
         version: 1.0.1
@@ -808,6 +811,9 @@ packages:
 
   '@blaahaj/dropbox-hacking-util@1.2.0':
     resolution: {integrity: sha512-Pmo8/OQkPg1UhVA4m7w/yhZFUSPQGYWjyvt1pRdI+v9AW4smlUsaUeYCVezQ9AAN412jckE9Uv6swktyPKwKXg==}
+
+  '@blaahaj/geometry@1.1.0':
+    resolution: {integrity: sha512-Vh9W0oMA2fRx1hXNj08yBIkoXzMwpHxbwC0/xwX7tvl21gJMhqm94eSZQNEsgT6ZhT3u8kbaqZwkRrYig17lwg==}
 
   '@blaahaj/json@1.0.1':
     resolution: {integrity: sha512-2pViV2D3M9by7gX+OLgEDQKM76zCjnG3Kb2CsRMUUzaFzPcCVpsa5DJsvBwcDtHj6oDrPoj8Wmg7id5DwCsOzQ==}
@@ -4060,6 +4066,8 @@ snapshots:
       - '@types/node-fetch'
       - encoding
       - supports-color
+
+  '@blaahaj/geometry@1.1.0': {}
 
   '@blaahaj/json@1.0.1': {}
 

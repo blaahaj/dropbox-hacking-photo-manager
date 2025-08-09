@@ -5,6 +5,7 @@ import * as L from "leaflet";
 import React, { useDeferredValue, useMemo, useState } from "react";
 
 import FilesTable from "./filesTable";
+import MultiGPSEditor from "./MultiGPSEditor";
 import MultiTagEditor from "./MultiTagEditor";
 
 const ListOfFiles = ({
@@ -70,11 +71,22 @@ const ListOfFiles = ({
       <p>{files.length} files</p>
 
       {selectedContentHashes.size > 0 && (
-        <MultiTagEditor
-          key={[...selectedContentHashes].toSorted().join(" ")}
-          contentHashes={selectedContentHashes}
-          files={files.filter((f) => selectedContentHashes.has(f.contentHash))}
-        />
+        <>
+          <MultiTagEditor
+            key={[...selectedContentHashes].toSorted().join(" ") + "-tags"}
+            contentHashes={selectedContentHashes}
+            files={files.filter((f) =>
+              selectedContentHashes.has(f.contentHash),
+            )}
+          />
+          <MultiGPSEditor
+            key={[...selectedContentHashes].toSorted().join(" ") + "-gps"}
+            contentHashes={selectedContentHashes}
+            files={files.filter((f) =>
+              selectedContentHashes.has(f.contentHash),
+            )}
+          />
+        </>
       )}
 
       <FilesTable
