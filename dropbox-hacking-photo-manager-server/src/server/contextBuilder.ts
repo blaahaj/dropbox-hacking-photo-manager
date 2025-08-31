@@ -12,6 +12,7 @@ import { combineLatest } from "rxjs/internal/observable/combineLatest";
 import { ReplaySubject } from "rxjs/internal/ReplaySubject";
 import { map } from "rxjs/operators";
 
+import { backupToDropbox, backupToLocalTarFile } from "../backup/index.js";
 import { fsCachingThumbnailFetcher } from "./api/websocket/fsCachingThumbnailFetcher.js";
 import {
   batchingThumbnailFetcher,
@@ -43,6 +44,43 @@ export default (args: {
 
   const photoDbDir = process.env.PHOTO_DB_DIR;
   if (photoDbDir === undefined) throw new Error("Need PHOTO_DB_DIR");
+
+  console.log("Building context");
+  void backupToLocalTarFile(
+    {
+      localPaths: {
+        exif: exifDbDir,
+        mediaInfo: mediaInfoDbDir,
+        ls: lsCacheDir,
+        days: dayDbDir,
+        photos: photoDbDir,
+      },
+    },
+    "/tmp/foo.tar.gz",
+  ).then(
+    () => console.log("backup local OK"),
+    (err) => console.error("backup local error", err),
+  );
+
+  void getDropboxClient().then(
+    (dbx) =>
+      void backupToDropbox(
+        {
+          localPaths: {
+            exif: exifDbDir,
+            mediaInfo: mediaInfoDbDir,
+            ls: lsCacheDir,
+            days: dayDbDir,
+            photos: photoDbDir,
+          },
+        },
+        dbx,
+        "/dpm-backup.tar.gz",
+      ).then(
+        () => console.log("backup remote OK"),
+        (err) => console.error("backup remote error", err),
+      ),
+  );
 
   // RX
 
