@@ -46,41 +46,48 @@ export default (args: {
   if (photoDbDir === undefined) throw new Error("Need PHOTO_DB_DIR");
 
   console.log("Building context");
-  void backupToLocalTarFile(
-    {
-      localPaths: {
-        exif: exifDbDir,
-        mediaInfo: mediaInfoDbDir,
-        ls: lsCacheDir,
-        days: dayDbDir,
-        photos: photoDbDir,
-      },
-    },
-    "/tmp/foo.tar.gz",
-  ).then(
-    () => console.log("backup local OK"),
-    (err) => console.error("backup local error", err),
-  );
 
-  void getDropboxClient().then(
-    (dbx) =>
-      void backupToDropbox(
-        {
-          localPaths: {
-            exif: exifDbDir,
-            mediaInfo: mediaInfoDbDir,
-            ls: lsCacheDir,
-            days: dayDbDir,
-            photos: photoDbDir,
-          },
+  if (process.env.LOCAL_BACKUP_PATH) {
+    void backupToLocalTarFile(
+      {
+        localPaths: {
+          exif: exifDbDir,
+          mediaInfo: mediaInfoDbDir,
+          ls: lsCacheDir,
+          days: dayDbDir,
+          photos: photoDbDir,
         },
-        dbx,
-        "/dpm-backup.tar.gz",
-      ).then(
-        () => console.log("backup remote OK"),
-        (err) => console.error("backup remote error", err),
-      ),
-  );
+      },
+      process.env.LOCAL_BACKUP_PATH,
+    ).then(
+      () => console.log("backup local OK"),
+      (err) => console.error("backup local error", err),
+    );
+  }
+
+  if (process.env.REMOTE_BACKUP_PATH) {
+    const remoteBackupPath = process.env.REMOTE_BACKUP_PATH;
+
+    void getDropboxClient().then(
+      (dbx) =>
+        void backupToDropbox(
+          {
+            localPaths: {
+              exif: exifDbDir,
+              mediaInfo: mediaInfoDbDir,
+              ls: lsCacheDir,
+              days: dayDbDir,
+              photos: photoDbDir,
+            },
+          },
+          dbx,
+          remoteBackupPath,
+        ).then(
+          () => console.log("backup remote OK"),
+          (err) => console.error("backup remote error", err),
+        ),
+    );
+  }
 
   // RX
 

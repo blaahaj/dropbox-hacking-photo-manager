@@ -3,7 +3,6 @@ import { finished } from "node:stream/promises";
 
 import type { BackupConfig } from "./index.js";
 import { readableTarGz } from "./readableTar.js";
-// import { writeTarGz } from "./writeTar.js";
 
 const openTmpFile = (
   path: string,
