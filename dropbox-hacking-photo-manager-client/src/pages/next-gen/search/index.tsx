@@ -34,31 +34,17 @@ const NGSearch = ({
     [],
   );
 
+  const [showHelp, setShowHelp] = useState(false);
+  const onShowHelpChange = useMemo<ChangeEventHandler<HTMLInputElement>>(
+    () => (e) => setShowHelp(e.target.checked),
+    [],
+  );
+
   return (
     <>
       <Navigate />
 
       <h1>Search</h1>
-
-      <p>The query is in Reverse Polish.</p>
-
-      <ul>
-        <li>image / video / audio</li>
-        <li>gps</li>
-
-        <li>tag=swan</li>
-        <li>id=id:...</li>
-        <li>rev=...</li>
-        <li>tag~person:</li>
-        <li>text~meet</li>
-        <li>path~originals</li>
-
-        <li>tags&gt;0 / tags&lt;2</li>
-        <li>date&gt;2015 / date&lt;2019</li>
-        <li>duration&gt;300 / duration&lt;10</li>
-
-        <li>&, |, !</li>
-      </ul>
 
       <input
         type="text"
@@ -67,6 +53,35 @@ const NGSearch = ({
         onChange={onFilterSourceChange}
         style={{ width: "50em" }}
       />
+
+      <p>
+        <input type="checkbox" checked={showHelp} onChange={onShowHelpChange} />{" "}
+        Show help
+      </p>
+
+      {showHelp && (
+        <div>
+          <p>The query is in Reverse Polish.</p>
+
+          <ul>
+            <li>image / video / audio</li>
+            <li>gps</li>
+
+            <li>tag=swan</li>
+            <li>id=id:...</li>
+            <li>rev=...</li>
+            <li>tag~person:</li>
+            <li>text~meet</li>
+            <li>path~originals</li>
+
+            <li>tags&gt;0 / tags&lt;2</li>
+            <li>date&gt;2015 / date&lt;2019</li>
+            <li>duration&gt;300 / duration&lt;10</li>
+
+            <li>&, |, !</li>
+          </ul>
+        </div>
+      )}
 
       {filter ? (
         <p>{JSON.stringify(filter, null, 2)}</p>
