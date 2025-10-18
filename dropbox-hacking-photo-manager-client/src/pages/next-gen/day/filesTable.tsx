@@ -1,7 +1,7 @@
 import useVisibilityTracking from "@hooks/useVisibilityTracking";
 import logRender from "@lib/logRender";
 import type { ContentHashCollection } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
-import React, { useMemo, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 
 import FileRow from "./FileRow";
 
@@ -23,45 +23,12 @@ const FilesTable = ({
     listItemDataAttribute: "data-rev",
   });
 
-  console.log([...selectedContentHashes].toSorted().join(" "));
-
-  const countSelected = files.filter((f) =>
-    selectedContentHashes.has(f.namedFiles[0].content_hash),
-  ).length;
-  const countAll = files.length;
-
-  const setAll = (which: "all" | "none", checked: boolean) => {
-    if ((which === "all") === checked) {
-      onSelectedContentHashes(
-        new Set(files.map((f) => f.namedFiles[0].content_hash)),
-      );
-    } else {
-      onSelectedContentHashes(new Set());
-    }
-  };
+  // console.log([...selectedContentHashes].toSorted().join(" "));
 
   const [focusedHash, setFocusedHash] = useState<string>();
 
   return (
     <>
-      <p>
-        <input
-          type="checkbox"
-          disabled={countAll === 0}
-          checked={countSelected === countAll}
-          onChange={useMemo(() => (e) => setAll("all", e.target.checked), [])}
-        />{" "}
-        all
-        <br />
-        <input
-          type="checkbox"
-          disabled={countAll === 0}
-          checked={countSelected === 0}
-          onChange={useMemo(() => (e) => setAll("none", e.target.checked), [])}
-        />{" "}
-        none
-      </p>
-
       <ol
         ref={parentRef}
         className="files"

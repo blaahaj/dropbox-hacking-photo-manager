@@ -39,7 +39,7 @@ const useVisibilityTracking = ({
 
     let timer = window.setTimeout(onScrollStopped, scrollStationaryTimeout);
 
-    const listener = (_event: Event) => {
+    const listener = () => {
       if (timer) window.clearTimeout(timer);
       timer = window.setTimeout(onScrollStopped, scrollStationaryTimeout);
     };
@@ -48,11 +48,21 @@ const useVisibilityTracking = ({
     window.addEventListener("resize", listener);
     parent.addEventListener("resize", listener);
 
+    const obs = new MutationObserver(listener);
+
+    obs.observe(parent, {
+      attributes: false,
+      characterData: false,
+      childList: true,
+      subtree: false,
+    });
+
     return () => {
       window.removeEventListener("scroll", listener);
       window.removeEventListener("resize", listener);
       parent.removeEventListener("resize", listener);
       if (timer) window.clearTimeout(timer);
+      obs.disconnect();
     };
   }, []);
 

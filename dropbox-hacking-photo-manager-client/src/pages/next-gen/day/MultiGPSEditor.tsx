@@ -156,9 +156,6 @@ const MultiGPSEditor = ({
 
   return (
     <div className="multiGpsEditor">
-      <div className="itemCount">
-        editing {files.length === 1 ? "1 item" : `${files.length} items`}
-      </div>
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -169,7 +166,7 @@ const MultiGPSEditor = ({
         <input
           style={{
             backgroundColor: isSpecValid !== "not-valid" ? "#fff" : "#faa",
-            width: "50em",
+            width: "25em",
           }}
           type="text"
           value={text}
