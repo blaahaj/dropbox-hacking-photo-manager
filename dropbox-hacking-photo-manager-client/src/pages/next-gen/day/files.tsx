@@ -86,7 +86,13 @@ const NGDayFiles = ({ date }: { date: string }) => {
         )}
       </div>
 
-      <h1>{date}</h1>
+      <h1>
+        <a
+          href={`https://calendar.google.com/calendar/u/0/r/week/${date.substring(0, 4)}/${date.substring(5, 7)}/${date.substring(8, 10)}`}
+        >
+          {date}
+        </a>
+      </h1>
 
       {latestValue ? (
         <>
