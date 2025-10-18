@@ -92,7 +92,13 @@ const NGSearch = ({
             </p>
           )}
 
-          <ListOfFiles files={latestValue.matches} date={"2000-01-01"} />
+          {filter && (
+            <ListOfFiles
+              files={latestValue.matches}
+              // FIXME, this date
+              date={"2000-01-01"}
+            />
+          )}
         </>
       ) : (
         "loading..."
