@@ -111,10 +111,11 @@ const MultiTagEditor = ({
           type="text"
           value={text}
           onChange={(e) => setText(e.target.value)}
+          disabled={contentHashes.size === 0}
         />{" "}
         <input
           type="submit"
-          disabled={!isSpecValid || !isChanged}
+          disabled={!isSpecValid || !isChanged || contentHashes.size === 0}
           value="Save"
         />
       </form>
