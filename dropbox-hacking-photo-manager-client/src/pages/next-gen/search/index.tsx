@@ -51,7 +51,7 @@ const NGSearch = ({
         value={filterSource}
         placeholder="enter query"
         onChange={onFilterSourceChange}
-        style={{ width: "50em" }}
+        style={{ width: "50em", marginBlockEnd: "1em" }}
       />
 
       <p>
@@ -83,11 +83,7 @@ const NGSearch = ({
         </div>
       )}
 
-      {filter ? (
-        <p>{JSON.stringify(filter, null, 2)}</p>
-      ) : filterSource === "" ? (
-        false
-      ) : (
+      {filterSource.trim() !== "" && !filter && (
         <p
           style={{
             background: "red",
