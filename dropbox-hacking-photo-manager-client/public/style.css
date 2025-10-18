@@ -242,7 +242,8 @@ ol.files > li .icons > * {
   margin-inline: 0.2em;
 }
 
-.tag.tag-nsfw {
+.tag.tag-nsfw,
+.tag.tag-deadname {
   background: red;
   border-color: red;
 }
