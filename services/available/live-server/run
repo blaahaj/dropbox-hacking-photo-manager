@@ -2,7 +2,7 @@
 
 echo starting
 exec 2>&1
-set -eux
+set -eu
 eval "export HOME=~$( id -un )"
 export PATH="$HOME/bin:$PATH"
 
