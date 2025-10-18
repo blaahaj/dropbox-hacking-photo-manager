@@ -63,6 +63,7 @@ const NGSearch = ({
       <input
         type="text"
         value={filterSource}
+        placeholder="enter query"
         onChange={onFilterSourceChange}
         style={{ width: "50em" }}
       />
