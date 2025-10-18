@@ -33,11 +33,19 @@ const proxyResponse = (imageRes: IncomingMessage, res: Response) =>
     // const expiresAt = new Date(new Date().getTime() + expirySeconds * 1000);
 
     res.status(200);
-    if (imageRes.headers["content-type"])
-      res.contentType(imageRes.headers["content-type"]);
-    if (imageRes.headers["content-encoding"])
-      res.setHeader("Content-Encoding", imageRes.headers["content-encoding"]);
-    res.setHeader("Content-Disposition", "inline");
+
+    const cType = imageRes.headers["content-type"];
+    const cLength = imageRes.headers["content-length"];
+    const cEncoding = imageRes.headers["content-encoding"];
+
+    if (cType) res.contentType(cType);
+    if (cLength) res.setHeader("Content-Length", cLength);
+    if (cEncoding) res.setHeader("Content-Encoding", cEncoding);
+
+    res.setHeader(
+      "Content-Disposition",
+      cType?.startsWith("image/") ? "inline" : "attachment",
+    );
 
     const maxAge = 86400;
     const expires = new Date(new Date().getTime() + maxAge * 1000);
