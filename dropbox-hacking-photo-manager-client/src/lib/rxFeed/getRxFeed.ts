@@ -1,5 +1,4 @@
-// import type { JSONValue } from "@blaahaj/json";
-import type { ReadOnlyJSONValue } from "@hooks/useMultiplexer/context";
+import type { JSONValue } from "@blaahaj/json";
 import generateId from "@lib/generateId";
 import type {
   Connectable,
@@ -18,7 +17,7 @@ export const getRxFeed = <
   REQ extends RequestTypeFor<NAME>,
 >(
   request: REQ,
-  io: Connectable<ObservableUpdate<RES, ReadOnlyJSONValue>, REQ>,
+  io: Connectable<ObservableUpdate<RES, JSONValue>, REQ>,
 ): Observable<RES> =>
   new Observable<RES>((subscriber) => {
     const id = generateId(3, `getRxFeed:${request.type}`);

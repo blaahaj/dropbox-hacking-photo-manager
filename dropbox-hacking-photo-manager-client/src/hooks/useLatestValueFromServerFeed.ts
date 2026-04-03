@@ -1,4 +1,5 @@
 // import type { JSONValue } from "@blaahaj/json";
+import type { JSONValue } from "@blaahaj/json";
 import useMultiplexer from "@hooks/useMultiplexer";
 import { getRxFeed } from "@lib/rxFeed/getRxFeed";
 import type {
@@ -11,8 +12,6 @@ import type {
   ResponseTypeFor,
 } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
 import { useEffect, useMemo, useState } from "react";
-
-import type { ReadOnlyJSONValue } from "./useMultiplexer/context";
 
 const trustInputFormat = <
   WantIn extends ActualIn,
@@ -35,7 +34,7 @@ export const useLatestValueFromServerFeed = <
   const mx = useMultiplexer(); // as Connectable<ObservableUpdate<RES>, REQ>;
   const typedMx = mx
     ? (trustInputFormat(mx) as Connectable<
-        ObservableUpdate<RES, ReadOnlyJSONValue>,
+        ObservableUpdate<RES, JSONValue>,
         REQ
       > | null)
     : null;
