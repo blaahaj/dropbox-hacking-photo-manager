@@ -1,4 +1,4 @@
-export type ObservableUpdate<T> =
+export type ObservableUpdate<T, E> =
   | { readonly tag: "next"; readonly value: T }
   | { readonly tag: "complete" }
-  | { readonly tag: "error"; readonly error: unknown };
+  | { readonly tag: "error"; readonly error: E };

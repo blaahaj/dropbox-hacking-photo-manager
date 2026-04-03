@@ -3,35 +3,31 @@ import { it, suite } from "node:test";
 
 import type { JSONValue } from "@blaahaj/json";
 
-import {
-  type Receiver,
-  type Sender,
-  transportAsJson,
-} from "../../src/index.js";
+import { type MessageRouter, transportAsJson } from "../../src/index.js";
 
 const createHarness = () => {
   const stringsSent: (string | undefined)[] = [];
-  const stringSender: Sender<string> = {
-    send: (message) => stringsSent.push(message),
-    close: () => stringsSent.push(undefined),
-    inspect: () => `[test code]`,
+  const stringSender: MessageRouter<string> = {
+    push: (message) => stringsSent.push(message),
+    end: () => stringsSent.push(undefined),
+    id: `[test code]`,
   };
 
   const objectsReceived: (JSONValue | undefined)[] = [];
-  const objectReceiver: Receiver<JSONValue> = {
-    receive: (message) => objectsReceived.push(message),
-    close: () => objectsReceived.push(undefined),
-    inspect: () => `[test code]`,
+  const objectReceiver: MessageRouter<JSONValue> = {
+    push: (message) => objectsReceived.push(message),
+    end: () => objectsReceived.push(undefined),
+    id: `[test code]`,
   };
 
-  let stringReceiver: Receiver<string> =
-    undefined as unknown as Receiver<string>;
+  let stringReceiver: MessageRouter<string> =
+    undefined as unknown as MessageRouter<string>;
   const objectSender = transportAsJson({
     connect: (r) => {
       stringReceiver = r;
       return stringSender;
     },
-    inspect: () => `[test code]`,
+    id: `[test code]`,
   }).connect(objectReceiver);
 
   return {
@@ -45,25 +41,25 @@ const createHarness = () => {
 void suite("jsonTransport", () => {
   void it("encodes before sending", () => {
     const harness = createHarness();
-    harness.objectSender.send([1, "two", { foo: true }, null]);
+    harness.objectSender.push([1, "two", { foo: true }, null]);
     deepStrictEqual(harness.stringsSent, ['[1,"two",{"foo":true},null]']);
   });
 
-  void it("passes on sender-close", () => {
+  void it("passes on sender-end", () => {
     const harness = createHarness();
-    harness.objectSender.close();
+    harness.objectSender.end();
     deepStrictEqual(harness.stringsSent, [undefined]);
   });
 
   void it("decodes after receiving", () => {
     const harness = createHarness();
-    harness.stringReceiver.receive('[1,"two",{"foo":true},null]');
+    harness.stringReceiver.push('[1,"two",{"foo":true},null]');
     deepStrictEqual(harness.objectsReceived, [[1, "two", { foo: true }, null]]);
   });
 
-  void it("passes on receiver-close", () => {
+  void it("passes on receiver-end", () => {
     const harness = createHarness();
-    harness.stringReceiver.close();
+    harness.stringReceiver.end();
     deepStrictEqual(harness.objectsReceived, [undefined]);
   });
 });

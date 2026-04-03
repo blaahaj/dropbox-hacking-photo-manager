@@ -122,7 +122,7 @@ const Video = () => {
 
       {sorted ? (
         // It's faster to make a whole new table every time than it is to diff and update
-        <table key={generateId()} id={tableId}>
+        <table key={generateId(3, "video-table")} id={tableId}>
           <thead>
             <tr>
               <th>date</th>

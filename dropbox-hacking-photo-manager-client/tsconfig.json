@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
+    // "baseUrl": "src",
+    "rootDir": ".",
     "jsx": "react",
     "lib": ["ES2024", "DOM", "DOM.Iterable"],
     "module": "Preserve",
@@ -9,10 +10,10 @@
     "noImplicitThis": true,
     "outDir": "./public/dist/",
     "paths": {
-      "@components/*": ["./components/*"],
-      "@hooks/*": ["./hooks/*"],
-      "@lib/*": ["./lib/*"],
-      "@pages/*": ["./pages/*"]
+      "@components/*": ["./src/components/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@lib/*": ["./src/lib/*"],
+      "@pages/*": ["./src/pages/*"]
     },
     "resolveJsonModule": true,
     "sourceMap": true,

@@ -1,5 +1,5 @@
-import { generateId } from "./id.js";
-import type { IOHandler, Receiver, Sender } from "./types.js";
+import { generateId2 } from "./id.js";
+import type { Connectable, MessageRouter } from "./types.js";
 
 export type IDHolder = {
   readonly id: string;
@@ -10,18 +10,27 @@ export type WrappedPayload<T> =
   | { readonly tag: "message"; readonly message: T }
   | { readonly tag: "close" };
 
+/**
+ * Given a Connectable which is capable of transporting the necessary messages,
+ * connect once, and then provide a Connectable which layers everything over
+ * that one connection.
+ *
+ * @param base
+ * @param listenerCallback
+ * @returns
+ */
 export const multiplexer = <I, O>(
-  base: IOHandler<IDHolder & WrappedPayload<I>, IDHolder & WrappedPayload<O>>,
-  listenerCallback: (handler: IOHandler<I, O>) => void,
-): IOHandler<I, O> => {
-  const multiplexerId = generateId();
-  const receiversById: Map<string, Receiver<I>> = new Map();
-  let mx = { inspect: () => "[placeholder]" } as IOHandler<I, O>;
+  base: Connectable<IDHolder & WrappedPayload<I>, IDHolder & WrappedPayload<O>>,
+  listenerCallback: (handler: Connectable<I, O>) => void,
+): Connectable<I, O> => {
+  const multiplexerId = generateId2("multiplexer2");
+  const receiversById: Map<string, MessageRouter<I>> = new Map();
+  let mx = { id: "[placeholder]" } as Connectable<I, O>;
 
-  const baseReceiverId = generateId();
+  const baseReceiverId = generateId2("multiplexer2:rx");
 
-  const baseReader: Receiver<IDHolder & WrappedPayload<I>> = {
-    receive: (mxControlMessage) => {
+  const baseReader: MessageRouter<IDHolder & WrappedPayload<I>> = {
+    push: (mxControlMessage) => {
       const { id, tag } = mxControlMessage;
 
       if (tag === "open") {
@@ -30,8 +39,8 @@ export const multiplexer = <I, O>(
             `Multiplexer ${multiplexerId} already has conversation ${id}`,
           );
         } else {
-          const listenerId = generateId();
-          const listener: IOHandler<I, O> = {
+          const listenerId = generateId2("multiplexer:listener");
+          const listener: Connectable<I, O> = {
             connect: (incomingReceiver) => {
               if (receiversById.has(id)) {
                 throw new Error(
@@ -41,33 +50,33 @@ export const multiplexer = <I, O>(
 
               receiversById.set(mxControlMessage.id, incomingReceiver);
               // console.debug(
-              //   `mx accept(${listenerId}) -> R=${incomingReceiver.inspect()} S=${id} (count=${receiversById.size})`,
+              //   `mx accept(${listenerId}) -> R=${incomingReceiver.id} S=${id} (count=${receiversById.size})`,
               // );
 
-              const incomingSender: Sender<O> = {
-                send: (message) =>
-                  baseSender.send({
+              const incomingSender: MessageRouter<O> = {
+                push: (message) =>
+                  baseSender.push({
                     tag: "message",
                     id,
                     message,
                   }),
-                close: () => {
+                end: () => {
                   receiversById.delete(id);
-                  baseSender.send({
+                  baseSender.push({
                     tag: "close",
                     id,
                   });
-                  incomingReceiver.close();
+                  incomingReceiver.end();
                   // console.debug(
                   //   `${multiplexerId} ${id} closed (count=${receiversById.size})`,
                   // );
                 },
-                inspect: () => id,
+                id: id,
               };
 
               return incomingSender;
             },
-            inspect: () => listenerId,
+            id: listenerId,
           };
 
           // console.debug(`mx listener ${id} -> ${listenerId}`);
@@ -77,7 +86,7 @@ export const multiplexer = <I, O>(
         const receiver = receiversById.get(mxControlMessage.id);
 
         if (receiver) {
-          receiver.receive(mxControlMessage.message);
+          receiver.push(mxControlMessage.message);
         } else {
           console.error("message for non-open conversation", id);
         }
@@ -86,7 +95,7 @@ export const multiplexer = <I, O>(
 
         if (receiver) {
           receiversById.delete(id);
-          receiver.close();
+          receiver.end();
           // console.debug(
           //   `${multiplexerId} ${id} closed (count=${receiversById.size})`,
           // );
@@ -96,53 +105,53 @@ export const multiplexer = <I, O>(
       }
     },
 
-    close: () => {
+    end: () => {
       for (const [id, receiver] of receiversById.entries()) {
         console.debug(
           `${multiplexerId} mx-close, sending a receive-close for ${id}`,
         );
 
-        receiver.close();
+        receiver.end();
       }
 
       receiversById.clear();
     },
 
-    inspect: () => baseReceiverId,
+    id: baseReceiverId,
   };
 
   const baseSender = base.connect(baseReader);
 
   mx = {
     connect: (outgoingReceiver) => {
-      const id = generateId();
+      const id = generateId2("multiplexer:connect");
       if (receiversById.has(id)) throw new Error(`id conflict`);
 
       receiversById.set(id, outgoingReceiver);
-      baseSender.send({ id, tag: "open" });
+      baseSender.push({ id, tag: "open" });
 
       // console.debug(
-      //   `connect(${id}) -> R=${outgoingReceiver.inspect()} S=${id} (count=${receiversById.size})`,
+      //   `connect(${id}) -> R=${outgoingReceiver.id} S=${id} (count=${receiversById.size})`,
       // );
 
       return {
-        send: (message) => baseSender.send({ id, tag: "message", message }),
-        close: () => {
+        push: (message) => baseSender.push({ id, tag: "message", message }),
+        end: () => {
           receiversById.delete(id);
           console.debug(
             `${multiplexerId} ${id} closed (count=${receiversById.size})`,
           );
-          baseSender.send({ id, tag: "close" });
-          outgoingReceiver.close();
+          baseSender.push({ id, tag: "close" });
+          outgoingReceiver.end();
         },
-        inspect: () => id,
+        id: id,
       };
     },
-    inspect: () => multiplexerId,
+    id: multiplexerId,
   };
 
   console.debug(
-    `multiplexer(${base.inspect()}) -> ${multiplexerId} BR=${baseReceiverId} BS=${baseSender.inspect()}`,
+    `multiplexer(${base.id}) -> ${multiplexerId} BR=${baseReceiverId} BS=${baseSender.id}`,
   );
 
   return mx;

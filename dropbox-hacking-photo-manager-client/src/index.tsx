@@ -1,3 +1,4 @@
+import type { JSONValue } from "@blaahaj/json";
 import { defaultProvider as MultiplexerProvider } from "@hooks/useMultiplexer";
 import { context as routingContext, type Router } from "@hooks/useRouter";
 import { defaultProvider as ThumbnailProvider } from "@hooks/useThumbnail";
@@ -15,7 +16,7 @@ import NGSearch from "@pages/next-gen/search";
 import Tags from "@pages/next-gen/tags";
 import Video from "@pages/next-gen/video";
 import {
-  type IOHandler,
+  type Connectable,
   RouteState,
 } from "dropbox-hacking-photo-manager-shared";
 import * as React from "react";
@@ -75,14 +76,14 @@ const Root = ({
   }, []);
 
   const accepter = useMemo(
-    () => (accept: IOHandler<unknown, unknown>) => {
+    () => (accept: Connectable<JSONValue, JSONValue>) => {
       const w = accept.connect({
-        receive: (m) => {
+        push: (m) => {
           console.log(`The server connected to me and said:`, m);
-          w.send(`Thank you for saying ${m as string}`);
+          w.push(`Thank you for saying ${m as string}`);
         },
-        close: () => {},
-        inspect: () => `[unused code]`,
+        end: () => {},
+        id: `[unused code]`,
       });
     },
     [],

@@ -11,8 +11,11 @@ export default useMultiplexer;
 export const defaultProvider = (
   props: PropsWithChildren<{ accepter: (accept: T) => void }>,
 ): React.ReactElement | null => {
-  const instanceId = useMemo(() => generateId(), []);
-  const key = useMemo(() => generateId(), [props.accepter]);
+  const instanceId = useMemo(() => generateId(3, "mxc:defaultProvider"), []);
+  const key = useMemo(
+    () => generateId(3, "mxc:defaultProvider:key"),
+    [props.accepter],
+  );
   console.log("mxc defaultProvider", instanceId, key);
 
   return <GivenFixedAccepter key={key} {...props} />;

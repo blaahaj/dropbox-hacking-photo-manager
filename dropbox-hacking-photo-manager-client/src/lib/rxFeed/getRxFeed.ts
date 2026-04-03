@@ -1,6 +1,8 @@
+// import type { JSONValue } from "@blaahaj/json";
+import type { ReadOnlyJSONValue } from "@hooks/useMultiplexer/context";
 import generateId from "@lib/generateId";
 import type {
-  IOHandler,
+  Connectable,
   ObservableUpdate,
 } from "dropbox-hacking-photo-manager-shared";
 import type {
@@ -16,26 +18,26 @@ export const getRxFeed = <
   REQ extends RequestTypeFor<NAME>,
 >(
   request: REQ,
-  io: IOHandler<ObservableUpdate<RES>, REQ>,
+  io: Connectable<ObservableUpdate<RES, ReadOnlyJSONValue>, REQ>,
 ): Observable<RES> =>
   new Observable<RES>((subscriber) => {
-    const id = generateId();
-    console.debug(`getRxFeed(${request.type}, ${io.inspect()}) -> ${id}`);
+    const id = generateId(3, `getRxFeed:${request.type}`);
+    console.debug(`getRxFeed(${request.type}, ${io.id}) -> ${id}`);
 
     const sender = io.connect({
-      receive: (m) => {
+      push: (m) => {
         if (m.tag === "next") subscriber.next(m.value);
         if (m.tag === "complete") subscriber.complete();
         if (m.tag === "error") subscriber.error(m.error);
       },
-      close: () => subscriber.unsubscribe(),
-      inspect: () => id,
+      end: () => subscriber.unsubscribe(),
+      id: id,
     });
 
-    sender.send(request);
+    sender.push(request);
 
     return () => {
       console.log(`getRxFeed [${id}] observer close`);
-      sender.close();
+      sender.end();
     };
   });
