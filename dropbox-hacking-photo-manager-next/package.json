@@ -1,0 +1,38 @@
+{
+  "name": "dropbox-hacking-photo-manager-next",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --webpack --port 4001",
+    "build": ": next build --webpack",
+    "build:watch": ":",
+    "fix": ":",
+    "format": ":",
+    "reset": "rm -rf .next",
+    "start": "next start",
+    "test": ":",
+    "test:lint": "eslint",
+    "test:prettier": ":",
+    "test:unit": ":"
+  },
+  "dependencies": {
+    "@blaahaj/json": "^1.0.1",
+    "@fortawesome/fontawesome-svg-core": "^7.2.0",
+    "@fortawesome/free-brands-svg-icons": "^7.2.0",
+    "@fortawesome/free-solid-svg-icons": "^7.2.0",
+    "@fortawesome/react-fontawesome": "^3.3.0",
+    "dropbox-hacking-photo-manager-shared": "link:../dropbox-hacking-photo-manager-shared",
+    "next": "16.1.6",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "rxjs": "^7.8.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "typescript": "^5"
+  }
+}

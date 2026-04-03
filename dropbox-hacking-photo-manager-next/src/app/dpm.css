@@ -1,0 +1,286 @@
+body {
+  font-family: sans-serif;
+  padding: 1em;
+  background: #000;
+  color: #fff;
+}
+
+a[href],
+a[href]:visited {
+  color: orange;
+  text-decoration: none;
+}
+
+a[href]:focus,
+a[href]:active {
+  color: orange;
+  text-decoration: underline;
+}
+
+#react_container:fullscreen {
+  overflow: scroll;
+}
+
+.twelveMonths {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 0.5em;
+}
+
+.oneOfTwelveMonths {
+  border: 1px solid lightblue;
+  padding: 0.5em;
+}
+
+.monthBox {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 0.5em;
+}
+
+.dayInMonthBox {
+  border: 1px solid steelblue;
+  text-align: center;
+}
+
+.dayInMonthBox.col1,
+.dayInMonthBox.col7 {
+  background: #eee;
+}
+
+.dayInMonthBox a {
+  display: block;
+  text-decoration: none;
+}
+
+.dayInMonthBox a:hover {
+  background: #ccc;
+}
+
+/* List of photoItem on a day page */
+.photoList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.photoItem {
+  border: 1px solid lightblue;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  text-decoration: none;
+}
+
+.photoItem:hover {
+  background: #ccc;
+}
+
+.photoItem:hover .clientModified,
+.photoItem:hover .name,
+.photoItem:hover .makeAndModel {
+  color: #444;
+}
+
+.photoItem .clientModified {
+  display: block;
+  font: small sans-serif;
+  color: #cccccc;
+  margin: 1em 0.25em 0.25em;
+}
+
+.photoItem .name {
+  display: block;
+  font: small sans-serif;
+  color: #cccccc;
+  margin: 0.25em;
+}
+
+.photoItem .makeAndModel {
+  display: block;
+  font: small sans-serif;
+  color: #cccccc;
+  margin: 0.25em 0.25em 0.5em;
+}
+
+.listOfDays {
+  list-style: none;
+  margin-block-end: 3em;
+}
+
+.listOfDays li:hover {
+  background: #eed;
+}
+
+.listOfDays a {
+  display: flex;
+}
+
+.listOfDays .date {
+  margin-right: 0.5em;
+}
+
+.dateAndStats .dayName {
+  display: inline-block;
+  width: 2em;
+}
+
+.listOfDays .count {
+  margin-right: 1em;
+  text-align: right;
+  width: 2em;
+}
+.dateAndStats .count {
+  display: inline-block;
+  width: 2.5em;
+}
+
+.listOfDays .countWithGps {
+  margin-right: 1em;
+  text-align: right;
+  width: 2em;
+}
+.dateAndStats .countWithGps {
+  display: inline-block;
+  width: 2.5em;
+}
+
+.samples {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.samples > .sample {
+  height: 128px;
+  width: 128px;
+  margin: 10px;
+}
+
+.description .noData {
+  opacity: 0.3;
+}
+
+.editable.inactive:hover {
+  background-color: #ccf;
+}
+
+.tags {
+  padding-block: 1em;
+}
+
+.tag {
+  font-family: monospace;
+  color: white;
+  background-color: blue;
+  border: 1px outset #777;
+  border-radius: 0.3em;
+  padding: 0.3em;
+  margin-inline-end: 0.5em;
+}
+
+td {
+  padding-inline-end: 1em;
+}
+
+ol.files {
+  display: block;
+  background: #333;
+}
+
+ol.files > li {
+  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 30em;
+
+  border: 1px inset rgba(100, 100, 100, 0.2);
+  padding: 0.2em;
+  margin: 0.3em;
+  background: black;
+  color: #999;
+  font-size: 8pt;
+}
+
+ol.files > li .tags {
+  line-height: 2.7em;
+  text-align: center;
+}
+
+ol.files > li.focused {
+  background: #666;
+  color: #fff;
+}
+
+ol.files > li > * {
+  align-content: center;
+}
+
+ol.files .flags {
+  min-height: 1.5lh;
+}
+
+ol.files div.thumbnail {
+  width: 128px;
+  height: 128px;
+  background: transparent;
+  margin-block-start: 1lh;
+}
+
+ol.files div.thumbnail :has(> img) {
+  display: flex;
+}
+
+ol.files div.thumbnail img {
+  align-self: center;
+  text-align: center;
+  margin: auto;
+}
+
+ol.files > li .icons {
+  text-align: center;
+  height: 3em;
+  display: flex;
+  align-items: center;
+}
+
+ol.files > li .icons > * {
+  margin-inline: 0.2em;
+}
+
+.tag.tag-nsfw,
+.tag.tag-deadname {
+  background: red;
+  border-color: red;
+}
+
+.tag.tag-dox {
+  background: orange;
+  border-color: orange;
+  color: black !important;
+}
+
+.tag[class*="tag-person:"] {
+  background-color: green;
+}
+
+.tag[class*="tag-pet:"] {
+  background-color: brown;
+}
+
+.fileListTools {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  background: rgb(255, 205, 255);
+  color: black;
+  padding: 0.5em;
+  width: fit-content;
+  font-size: smaller;
+}
+
+.multiTagEditor > .itemCount {
+  margin-block: 0.2em;
+}
