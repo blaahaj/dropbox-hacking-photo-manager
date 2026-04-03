@@ -1,8 +1,8 @@
 import type { JSONValue } from "@blaahaj/json";
 import generateId from "@lib/generateId";
 import {
+  type Connectable,
   type IDHolder,
-  type IOHandler,
   multiplexer,
   transportAsJson,
   type WrappedPayload,
@@ -17,7 +17,7 @@ import React, {
 import { Provider } from "./context";
 import { fromBrowserWebSocket } from "./fromBrowserWebSocket";
 
-type T = IOHandler<unknown, unknown>;
+type T = Connectable<JSONValue, JSONValue>;
 
 export const NonRetryingSocketWrapper = (
   props: PropsWithChildren<{
@@ -25,14 +25,17 @@ export const NonRetryingSocketWrapper = (
     onDead: () => void;
   }>,
 ) => {
-  const instanceId = useMemo(() => generateId(), []);
+  const instanceId = useMemo(
+    () => generateId(3, "NonRetryingSocketWrapper"),
+    [],
+  );
   console.log("mxc NonRetryingSocketWrapper", instanceId);
 
   // const [socket, setSocket] = useState<WebSocket>();
   const [t, setT] = useState<T>();
 
   useEffect(() => {
-    const id = generateId();
+    const id = generateId(3, "NonRetryingSocketWrapper:effect");
     console.log(
       "mxc NonRetryingSocketWrapper",
       id,
@@ -50,18 +53,20 @@ export const NonRetryingSocketWrapper = (
         "open",
         s?.readyState,
       );
-      const io = multiplexer(
-        transportAsJson<
-          IDHolder & WrappedPayload<JSONValue>,
-          IDHolder & WrappedPayload<JSONValue>
-        >(fromBrowserWebSocket(s, id)),
-        props.accepter,
-      );
+
+      const stringTransport = fromBrowserWebSocket(s, id);
+
+      const jsonTransport = transportAsJson<
+        IDHolder & WrappedPayload<JSONValue>,
+        IDHolder & WrappedPayload<JSONValue>
+      >(stringTransport);
+
+      const io = multiplexer(jsonTransport, props.accepter);
       console.log("Made io", io);
       setT(() => io);
     };
 
-    const errorListener = (errorEvent: ErrorEvent) => {
+    const errorListener = (errorEvent: Event) => {
       console.error(
         `mxc NonRetryingSocketWrapper`,
         id,

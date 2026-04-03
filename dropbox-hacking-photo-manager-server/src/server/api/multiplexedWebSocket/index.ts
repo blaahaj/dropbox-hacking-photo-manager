@@ -1,8 +1,8 @@
 import type { JSONValue } from "@blaahaj/json";
 import {
-  generateId,
+  type Connectable,
+  generateId2,
   type IDHolder,
-  type IOHandler,
   multiplexer,
   transportAsJson,
   type WrappedPayload,
@@ -31,7 +31,7 @@ export default (app: Application, context: Context): void => {
   const feedMap = buildFeedMap(thumbnailHandlerBuilder(context));
 
   app.ws("/api/ws2", function (ws, req) {
-    const socketId = generateId();
+    const socketId = generateId2("express-websocket");
     console.log(`${getLogPrefix(req) || "?"} -> ${socketId}`);
 
     try {
@@ -67,12 +67,12 @@ export default (app: Application, context: Context): void => {
         usingJSON,
         // FIXME: JSONValue type safety
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        (accept: IOHandler<RequestTypeFor<keyof FeedMap>, any>) => {
+        (accept: Connectable<RequestTypeFor<keyof FeedMap>, any>) => {
           let subscription: Subscription | undefined;
 
-          const receiverId = generateId();
+          const receiverId = generateId2("express-websocket:connect:rx");
           const sender = accept.connect({
-            receive: (request) => {
+            push: (request) => {
               console.log(
                 `${receiverId} got request: ${JSON.stringify(request)}`,
               );
@@ -87,24 +87,24 @@ export default (app: Application, context: Context): void => {
               const observable = provider(context.fullDatabaseFeeds, request);
 
               subscription = observable.subscribe({
-                next: (value) => sender.send({ tag: "next", value }),
+                next: (value) => sender.push({ tag: "next", value }),
                 complete: () => {
-                  sender.send({ tag: "complete" });
-                  sender.close();
+                  sender.push({ tag: "complete" });
+                  sender.end();
                 },
                 error: (error) => {
                   console.error(error);
-                  sender.send({ tag: "error", error });
-                  sender.close();
+                  sender.push({ tag: "error", error });
+                  sender.end();
                 },
               });
             },
-            close: () => subscription?.unsubscribe(),
-            inspect: () => receiverId,
+            end: () => subscription?.unsubscribe(),
+            id: receiverId,
           });
 
           console.debug(
-            `connect(${accept.inspect()}) -> R=${receiverId} S=${sender.inspect()}`,
+            `connect(${accept.id}) -> R=${receiverId} S=${sender.id}`,
           );
         },
       );
@@ -112,7 +112,7 @@ export default (app: Application, context: Context): void => {
       {
         const hup = () =>
           process.nextTick(() =>
-            console.log(`${socketId} dump: ${connect.inspect()}`),
+            console.log(`${socketId} dump: ${connect.id}`),
           );
         process.on("SIGHUP", hup);
         ws.on("close", () => process.off("SIGHUP", hup));

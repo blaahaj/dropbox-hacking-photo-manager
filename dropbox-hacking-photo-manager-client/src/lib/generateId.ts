@@ -1,3 +1,3 @@
 let n = 0;
 
-export default (): string => `${new Date().getTime()}:${++n}`;
+export default (_: 3, label: string): string => `${label}:${++n}`;

@@ -1,30 +1,31 @@
+import type { JSONValue } from "@blaahaj/json";
 import type { ObservableUpdate } from "dropbox-hacking-photo-manager-shared";
-import { generateId, IOHandler } from "dropbox-hacking-photo-manager-shared";
+import { Connectable, generateId2 } from "dropbox-hacking-photo-manager-shared";
 import { Observable } from "rxjs";
 
 export const serveRxFeed = <T>(
   observable: Observable<T>,
-  io: IOHandler<never, ObservableUpdate<T>>,
+  io: Connectable<never, ObservableUpdate<T, JSONValue>>,
 ): void => {
-  const id = generateId();
-  console.debug(`serveRxFeed(${io.inspect()}) -> ${id}`);
+  const id = generateId2("serveRxFeed");
+  console.debug(`serveRxFeed(${io.id}) -> ${id}`);
 
   const sender = io.connect({
-    receive: () => sender.close(),
-    close: () => subscription?.unsubscribe(),
-    inspect: () => id,
+    push: () => sender.end(),
+    end: () => subscription?.unsubscribe(),
+    id: id,
   });
 
   const subscription = observable.subscribe({
-    next: (value) => sender.send({ tag: "next", value }),
+    next: (value) => sender.push({ tag: "next", value }),
     complete: () => {
-      sender.send({ tag: "complete" });
-      sender.close();
+      sender.push({ tag: "complete" });
+      sender.end();
     },
     error: (error) => {
       console.error(error);
-      sender.send({ tag: "error", error });
-      sender.close();
+      sender.push({ tag: "error", error });
+      sender.end();
     },
   });
 };

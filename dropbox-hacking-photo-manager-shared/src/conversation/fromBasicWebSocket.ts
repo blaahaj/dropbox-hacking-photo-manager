@@ -1,6 +1,6 @@
-import { generateId } from "./id.js";
+import { generateId2 } from "./id.js";
 // import { spyOnConnector } from "./spy.js";
-import type { IOHandler } from "./types.js";
+import type { Connectable } from "./types.js";
 
 export interface BasicWebSocket<S, I, O> {
   readonly OPEN: S;
@@ -22,11 +22,11 @@ export interface BasicWebSocket<S, I, O> {
 export const fromBasicWebSocket = <S, I, O>(
   webSocket: BasicWebSocket<S, I, O>,
   socketId: string,
-): IOHandler<I, O> => {
-  const id = generateId();
+): Connectable<I, O> => {
+  const id = generateId2("fromBasicWebSocket");
   console.debug(`fromBasicWebSocket(${socketId}) -> ${id}`);
 
-  const connector: IOHandler<I, O> = {
+  const connector: Connectable<I, O> = {
     connect: (receiver) => {
       if (webSocket.readyState !== webSocket.OPEN)
         throw new Error("Socket is not OPEN");
@@ -34,26 +34,26 @@ export const fromBasicWebSocket = <S, I, O>(
       const closeListener = () => {
         webSocket.removeEventListener("close", closeListener);
         webSocket.removeEventListener("message", messageListener);
-        receiver.close();
+        receiver.end();
       };
 
       const messageListener = (message: { data: I }) => {
-        receiver.receive(message.data);
+        receiver.push(message.data);
       };
 
       webSocket.addEventListener("close", closeListener);
       webSocket.addEventListener("message", messageListener);
 
-      const senderId = generateId();
-      console.debug(`connect(${id}) -> R=${receiver.inspect()} S=${senderId}`);
+      const senderId = generateId2("fromBasicWebSocket:connect:tx");
+      console.debug(`connect(${id}) -> R=${receiver.id} S=${senderId}`);
 
       return {
-        send: (payload) => webSocket.send(payload),
-        close: () => webSocket.close(),
-        inspect: () => senderId,
+        push: (payload) => webSocket.send(payload),
+        end: () => webSocket.close(),
+        id: senderId,
       };
     },
-    inspect: () => id,
+    id: id,
   };
 
   return connector;

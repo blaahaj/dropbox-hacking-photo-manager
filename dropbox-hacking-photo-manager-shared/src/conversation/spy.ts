@@ -1,60 +1,58 @@
-import type { IOHandler, Receiver, Sender } from "./types.js";
+import type { Connectable, MessageRouter } from "./types.js";
 
-export const spyOnReceiver = <R>(base: Receiver<R>): Receiver<R> => {
+/**
+ * Spy on (console.debug) a MessageRouter
+ *
+ * @param base the MessageRouter to spy on
+ * @returns a MessageRouter which performs the spying
+ */
+export const spyOnMessageRouter = <T>(
+  base: MessageRouter<T>,
+): MessageRouter<T> => {
   let messageCount = 0;
 
-  const wrapped: Receiver<R> = {
-    receive: (message) => {
+  const wrapped: MessageRouter<T> = {
+    push: (message) => {
       ++messageCount;
-      console.debug(`${wrapped.inspect()} message (count: ${messageCount})`);
-      base.receive(message);
+      console.debug(`${wrapped.id} message (count: ${messageCount})`);
+      base.push(message);
     },
-    close: () => {
-      console.debug(`${wrapped.inspect()} close`);
-      base.close();
+    end: () => {
+      console.debug(`${wrapped.id} close`);
+      base.end();
     },
-    inspect: () => `<spyOnReceiver ${base.inspect()}>`,
+    id: `<spyOnMessageRouter ${base.id}>`,
   };
 
   return wrapped;
 };
 
-export const spyOnSender = <S>(base: Sender<S>): Sender<S> => {
-  let messageCount = 0;
+/**
+ * Spy on (console.debug) a Connectable.
+ *
+ * Whenever `.connect()` is called, both the sending and the receiving MessageRouters
+ * will by spied on. See `spyOnMessageRouter`.
+ *
+ * @param base the Connectable to spy on
+ * @returns the Connectable which performs the spying
+ */
 
-  const wrapped: Sender<S> = {
-    send: (message) => {
-      ++messageCount;
-      console.debug(`${wrapped.inspect()} message (count: ${messageCount})`);
-      base.send(message);
-    },
-    close: () => {
-      console.debug(`${wrapped.inspect()} close`);
-      base.close();
-    },
-    inspect: () => `<spyOnSender ${base.inspect()}>`,
-  };
-
-  return wrapped;
-};
-
-export const spyOnConnector = <R, S>(
-  base: IOHandler<R, S>,
-): IOHandler<R, S> => {
+export const spyOnConnectable = <I, O>(
+  base: Connectable<I, O>,
+): Connectable<I, O> => {
   let connectionCount = 0;
 
-  const wrapped: IOHandler<R, S> = {
+  const wrapped: Connectable<I, O> = {
     connect: (receiver) => {
       ++connectionCount;
-      const wrappedReceiver = spyOnReceiver(receiver);
-      const sender = base.connect(wrappedReceiver);
-      const wrappedSender = spyOnSender(sender);
+      const wrappedReceiver = spyOnMessageRouter(receiver);
+      const wrappedSender = spyOnMessageRouter(base.connect(wrappedReceiver));
       console.debug(
-        `${wrapped.inspect()} connect [${wrappedReceiver.inspect()}, ${wrappedSender.inspect()}] (count: ${connectionCount})`,
+        `${wrapped.id} connect [${wrappedReceiver.id}, ${wrappedSender.id}] (count: ${connectionCount})`,
       );
       return wrappedSender;
     },
-    inspect: () => `<spyOnConnector ${base.inspect()}>`,
+    id: `<spyOnConnectable ${base.id}>`,
   };
 
   return wrapped;

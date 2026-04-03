@@ -7,7 +7,7 @@ import { NonRetryingSocketWrapper } from "./NonRetryingSocketWrapper";
 export const GivenFixedAccepter = (
   props: PropsWithChildren<{ accepter: (accept: T) => void }>,
 ): React.ReactElement | null => {
-  const instanceId = useMemo(() => generateId(), []);
+  const instanceId = useMemo(() => generateId(3, "GivenFixedAccepter"), []);
 
   const [sleepTimer, setSleepTimer] = useState<number>();
   console.log("mxc GivenFixedAccepter", instanceId, sleepTimer);

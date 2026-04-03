@@ -1,6 +1,7 @@
+import type { JSONValue } from "@blaahaj/json";
 import { getRxFeed } from "@lib/rxFeed/getRxFeed";
 import type {
-  IOHandler,
+  Connectable,
   ObservableUpdate,
 } from "dropbox-hacking-photo-manager-shared";
 import type {
@@ -12,7 +13,10 @@ import type { ThumbnailLoader } from "./types";
 
 export const websocketThumbnailLoader = (
   mx:
-    | IOHandler<ObservableUpdate<ThumbnailResponse>, ThumbnailRequest>
+    | Connectable<
+        ObservableUpdate<ThumbnailResponse, JSONValue>,
+        ThumbnailRequest
+      >
     | undefined,
 ): ThumbnailLoader => ({
   getThumbnail: (rev: string) =>

@@ -262,8 +262,9 @@ ol.files > li .icons > * {
   background-color: brown;
 }
 
-.multiTagEditor {
+.fileListTools {
   position: sticky;
+  z-index: 10;
   top: 0;
   background: rgb(255, 205, 255);
   color: black;

@@ -1,43 +1,41 @@
 import type { JSONValue } from "@blaahaj/json";
 
-import { generateId } from "./id.js";
-import type { IOHandler, Receiver, Sender } from "./types.js";
+import { generateId2 } from "./id.js";
+import type { Connectable, MessageRouter } from "./types.js";
 
 export const transportAsJson = <I extends JSONValue, O extends JSONValue>(
-  stringConnector: IOHandler<string, string>,
-): IOHandler<I, O> => {
-  const connectorId = generateId();
+  stringConnector: Connectable<string, string>,
+): Connectable<I, O> => {
+  const connectorId = generateId2("transportAsJson");
 
-  console.debug(
-    `transportAsJson(${stringConnector.inspect()}) -> ${connectorId}`,
-  );
+  console.debug(`transportAsJson(${stringConnector.id}) -> ${connectorId}`);
 
-  const outerConnector: IOHandler<I, O> = {
+  const outerConnector: Connectable<I, O> = {
     connect: (objectReceiver) => {
-      const stringReceiverId = generateId();
-      const senderId = generateId();
+      const stringReceiverId = generateId2("transportAsJson:connect:rx");
+      const senderId = generateId2("transportAsJson:connect:tx");
 
-      const stringReceiver: Receiver<string> = {
-        receive: (message) => objectReceiver.receive(JSON.parse(message) as I),
-        close: () => objectReceiver.close(),
-        inspect: () => stringReceiverId,
+      const stringReceiver: MessageRouter<string> = {
+        push: (message) => objectReceiver.push(JSON.parse(message) as I),
+        end: () => objectReceiver.end(),
+        id: stringReceiverId,
       };
 
       const stringSender = stringConnector.connect(stringReceiver);
 
-      const objectSender: Sender<O> = {
-        send: (message) => stringSender.send(JSON.stringify(message)),
-        close: () => stringSender.close(),
-        inspect: () => senderId,
+      const objectSender: MessageRouter<O> = {
+        push: (message) => stringSender.push(JSON.stringify(message)),
+        end: () => stringSender.end(),
+        id: senderId,
       };
 
       console.debug(
-        `connect(${connectorId}) OR=${objectReceiver.inspect()} OS=${senderId} SR=${stringReceiverId} SS=${stringSender.inspect()}`,
+        `connect(${connectorId}) OR=${objectReceiver.id} OS=${senderId} SR=${stringReceiverId} SS=${stringSender.id}`,
       );
 
       return objectSender;
     },
-    inspect: () => connectorId,
+    id: connectorId,
   };
 
   return outerConnector;

@@ -96,9 +96,6 @@ const MultiTagEditor = ({
 
   return (
     <div className="multiTagEditor">
-      <div className="itemCount">
-        editing {files.length === 1 ? "1 item" : `${files.length} items`}
-      </div>
       <form
         onSubmit={(e) => {
           e.preventDefault();
