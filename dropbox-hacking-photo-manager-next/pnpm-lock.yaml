@@ -30,8 +30,8 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0(@fortawesome/fontawesome-svg-core@7.2.0)(react@19.2.4)
       dropbox-hacking-photo-manager-shared:
-        specifier: ^1.0.0
-        version: link:../../dpm/dropbox-hacking-photo-manager-shared
+        specifier: link:../dropbox-hacking-photo-manager-shared
+        version: link:../dropbox-hacking-photo-manager-shared
       leaflet:
         specifier: ^1.9.4
         version: 1.9.4
