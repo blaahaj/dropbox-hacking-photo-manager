@@ -30,7 +30,7 @@ importers:
         specifier: ^10.34.0
         version: 10.34.0(@types/node-fetch@2.6.12)
       dropbox-hacking-photo-manager-shared:
-        specifier: link:/Users/rachel/git/github.com/blaahaj/dpm/dropbox-hacking-photo-manager-shared
+        specifier: ^1.0.0
         version: link:../../dpm/dropbox-hacking-photo-manager-shared
       express:
         specifier: ^4.21.2
