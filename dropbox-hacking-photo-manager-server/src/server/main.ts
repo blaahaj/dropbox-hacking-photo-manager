@@ -86,8 +86,6 @@ appWithWs.use((req, res, next) => {
   next();
 });
 
-appWithWs.use(express.static(process.env.PUBLIC_DIR || "/dne"));
-
 appWithWs.use(express.json());
 
 getRoot(appWithWs, context);

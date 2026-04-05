@@ -1,0 +1,80 @@
+.tagList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.tagList li {
+  display: inline;
+  height: 2.5em;
+}
+
+/* .tagList li a {
+  color: white;
+  line-height: 2.5em;
+  text-wrap: nowrap;
+  text-decoration: none;
+}
+
+.tagList li a:hover,
+.tagList li a:active,
+.tagList li a:focus {
+  background: white;
+  color: black;
+} */
+
+.tag {
+  font-family: monospace;
+  color: white !important;
+  background-color: blue;
+  border: 1px outset #777;
+  border-radius: 0.3em;
+  padding: 0.3em;
+  margin-inline-end: 0.75em;
+}
+
+.tag.tag-nsfw,
+.tag.tag-shame,
+.tag.tag-deadname {
+  background: red;
+  border-color: red;
+}
+
+.tag.tag-dox {
+  background: orange;
+  border-color: orange;
+  color: black !important;
+}
+
+.tag.tag-personStar {
+  background-color: green;
+}
+
+.tag.tag-petStar {
+  background-color: brown;
+}
+
+.tag.tag-bandStar {
+  background-color: purple;
+}
+
+/* .tag[class*="tag-nsfw"],
+.tag[class*="tag-shame"],
+.tag[class*="tag-deadname"] {
+  background: red;
+  border-color: red;
+} */
+/*
+.tag[class*="tag-dox"] {
+  background: orange;
+  border-color: orange;
+  color: black !important;
+}
+
+.tag[class*="tag-person:"] {
+  background-color: green;
+}
+
+.tag[class*="tag-pet:"] {
+  background-color: brown;
+} */

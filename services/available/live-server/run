@@ -18,7 +18,6 @@ exec ./with-live \
     MEDIAINFO_DB_DIR=/Users/rachel/git/github.com/blaahaj/dropbox-hacking-mediainfo-db/var/live/mediainfo-using-local \
     DAY_DB_DIR=var/live/day-db \
     PHOTO_DB_DIR=var/live/photo-db \
-    PUBLIC_DIR=$PWD/dropbox-hacking-photo-manager-client/public \
     LOCAL_BACKUP_PATH=var/live/dpm-backup.tar.gz \
     REMOTE_BACKUP_PATH=/dpm-backup.tar.gz \
     ./bin/photo-manager-server

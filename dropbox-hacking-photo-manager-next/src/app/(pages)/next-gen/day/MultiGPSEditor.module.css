@@ -1,0 +1,11 @@
+#presets {
+  font-size: smaller;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2em 1em;
+  max-width: 30em;
+}
+
+#presets li {
+  list-style: none;
+}

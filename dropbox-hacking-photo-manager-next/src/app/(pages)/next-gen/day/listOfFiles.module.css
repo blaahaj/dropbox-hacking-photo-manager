@@ -1,0 +1,22 @@
+.fileListTools {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  background: rgb(255, 205, 255);
+  color: black;
+  padding: 0.5em;
+  width: fit-content;
+  font-size: smaller;
+}
+
+.fileListTools {
+  display: flex;
+  gap: 1em;
+}
+
+.selectedFileCount {
+  min-width: fit-content;
+}
+
+/* .multiTagEditor {
+} */

@@ -1,0 +1,18 @@
+.listOfDays > tbody > tr > td {
+  background-color: rgba(255, 200, 225, 0.2);
+}
+
+.listOfDays > tbody > tr:nth-child(2n) > td {
+  background-color: rgba(255, 225, 200, 0.2);
+}
+
+/* FIXME, not working */
+.listOfDays > thead  {
+  position: sticky;
+  top: 0;
+  background: black;
+}
+
+.listOfDays > tbody > tr > td {
+  padding-inline: 0.5em;
+}

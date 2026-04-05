@@ -1,0 +1,10 @@
+/* #photographicParametersId {
+  display: flex;
+  flex-direction: row;
+  padding-inline-start: 0;
+}
+
+#photographicParametersId > li {
+  list-style: none;
+  margin-right: 1em;
+} */
