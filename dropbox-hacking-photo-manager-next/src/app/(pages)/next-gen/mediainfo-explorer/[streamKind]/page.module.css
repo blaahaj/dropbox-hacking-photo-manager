@@ -1,0 +1,13 @@
+.mediaInfoTable .data {
+  text-align: end;
+  padding-inline: 1em;
+}
+
+.mediaInfoTable > tbody > tr:nth-child(2n) {
+    /* opacity: 0.8; */
+    background-color: #222;
+}
+
+.mediaInfoTable td {
+    padding-block: 0.4em;
+}

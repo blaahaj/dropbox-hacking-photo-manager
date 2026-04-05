@@ -1,0 +1,32 @@
+#tableId {
+  display: grid;
+  grid-auto-flow: column;
+  width: fit-content;
+}
+
+#tableId > div {
+  border-radius: 0.4em;
+  margin: 0.1em;
+  padding: 0.2em;
+  padding-inline: 0.6em;
+  text-align: left;
+  text-wrap: none;
+}
+
+#tableId > div.k1 {
+  grid-column: 1;
+  background: purple;
+  color: white;
+}
+
+#tableId > div.k2 {
+  grid-column: 2;
+  background: green;
+  color: white;
+}
+
+#tableId > div.v {
+  grid-column: 3;
+  background: blue;
+  color: white;
+}

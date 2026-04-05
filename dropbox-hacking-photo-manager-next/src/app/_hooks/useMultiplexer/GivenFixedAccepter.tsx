@@ -1,30 +1,27 @@
-import generateId from "@/app/_lib/generateId";
+import generateId from "@lib/generateId";
 import React, { type PropsWithChildren, useMemo, useState } from "react";
 
-import { Provider, type T } from "./context";
+import { Provider, type Multiplexer } from "./context";
 import { NonRetryingSocketWrapper } from "./NonRetryingSocketWrapper";
 
 export const GivenFixedAccepter = (
-  props: PropsWithChildren<{ accepter: (accept: T) => void }>,
+  props: PropsWithChildren<{ accepter: (accept: Multiplexer) => void }>,
 ): React.ReactElement | null => {
-  const instanceId = useMemo(() => generateId("GivenFixedAccepter"), []);
+  const instanceId = useMemo(() => generateId(3, "GivenFixedAccepter"), []);
 
   const [sleepTimer, setSleepTimer] = useState<number>();
   console.log("mxc GivenFixedAccepter", instanceId, sleepTimer);
 
-  const onDead = useMemo(
-    () => () => {
-      if (!sleepTimer) {
-        console.log(`mxc GivenFixedAccepter ${instanceId} dead!`);
-        setSleepTimer(
-          setTimeout(() => {
-            setSleepTimer(undefined);
-          }, 1000) as unknown as number,
-        );
-      }
-    },
-    [instanceId, sleepTimer],
-  );
+  const onDead = () => {
+    if (!sleepTimer) {
+      console.log(`mxc GivenFixedAccepter ${instanceId} dead!`);
+      setSleepTimer(
+        setTimeout(() => {
+          setSleepTimer(undefined);
+        }, 1000) as unknown as number,
+      );
+    }
+  };
 
   return sleepTimer ?
       <Provider value={undefined}>{props.children}</Provider>

@@ -1,4 +1,5 @@
-import generateId from "@/app/_lib/generateId";
+import type { JSONValue } from "@blaahaj/json";
+import generateId from "@lib/generateId";
 import type {
   Connectable,
   ObservableUpdate,
@@ -8,7 +9,6 @@ import type {
   RequestTypeFor,
   ResponseTypeFor,
 } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
-import type { JSONValue } from "next/dist/server/config-shared";
 import { Observable } from "rxjs";
 
 export const getRxFeed = <
@@ -20,7 +20,7 @@ export const getRxFeed = <
   io: Connectable<ObservableUpdate<RES, JSONValue>, REQ>,
 ): Observable<RES> =>
   new Observable<RES>((subscriber) => {
-    const id = generateId("getRxFeed");
+    const id = generateId(3, `getRxFeed:${request.type}`);
     console.debug(`getRxFeed(${request.type}, ${io.id}) -> ${id}`);
 
     const sender = io.connect({
@@ -30,7 +30,7 @@ export const getRxFeed = <
         if (m.tag === "error") subscriber.error(m.error);
       },
       end: () => subscriber.unsubscribe(),
-      id,
+      id: id,
     });
 
     sender.push(request);

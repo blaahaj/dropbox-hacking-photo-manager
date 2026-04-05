@@ -1,14 +1,8 @@
-import logRender from "@/app/_lib/logRender";
+import logRender from "@lib/logRender";
 import React, { useId, useState } from "react";
 
-const ShowData = ({
-  data,
-  expanded,
-}: {
-  data: unknown;
-  expanded?: boolean;
-}) => {
-  const [expandFull, setExpandFull] = useState(expanded ?? false);
+const ShowData = ({ data }: { data: unknown }) => {
+  const [expandFull, setExpandFull] = useState(false);
   const checkboxId = useId();
 
   return (

@@ -1,0 +1,13 @@
+.exifTable .data {
+  text-align: end;
+  padding-inline: 1em;
+}
+
+.exifTable > tbody > tr:nth-child(2n) {
+    /* opacity: 0.8; */
+    background-color: #222;
+}
+
+.exifTable td {
+    padding-block: 0.4em;
+}

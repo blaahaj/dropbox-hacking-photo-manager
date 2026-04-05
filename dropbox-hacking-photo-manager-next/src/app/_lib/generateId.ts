@@ -1,5 +1,5 @@
 let n = 0;
 
-const generateId = (label: string): string => `${label ?? new Date().getTime()}:${++n}`;
+const generateId3 = (_: 3, label: string): string => `${label}:${++n}`;
 
-export default generateId;
+export default generateId3;

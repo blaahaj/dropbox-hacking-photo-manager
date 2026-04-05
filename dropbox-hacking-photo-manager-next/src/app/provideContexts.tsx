@@ -1,7 +1,8 @@
 "use client";
 
-import { useDefaultProvider as MultiplexerProvider } from "@/app/_hooks/useMultiplexer";
-import type { Connectable } from "dropbox-hacking-photo-manager-shared";
+import { DefaultMultiplexerProvider } from "@/app/_hooks/useMultiplexer";
+import type { Multiplexer } from "@hooks/useMultiplexer/context";
+import { DefaultThumbnailProvider } from "@hooks/useThumbnail";
 import { useMemo } from "react";
 
 export default function ProviderLayout({
@@ -10,7 +11,7 @@ export default function ProviderLayout({
   children: React.ReactNode;
 }>) {
   const accepter = useMemo(
-    () => (accept: Connectable<unknown, unknown>) => {
+    () => (accept: Multiplexer) => {
       const w = accept.connect({
         push: (m) => {
           console.log(`The server connected to me and said:`, m);
@@ -24,6 +25,8 @@ export default function ProviderLayout({
   );
 
   return (
-    <MultiplexerProvider accepter={accepter}>{children}</MultiplexerProvider>
+    <DefaultMultiplexerProvider accepter={accepter}>
+      <DefaultThumbnailProvider>{children}</DefaultThumbnailProvider>
+    </DefaultMultiplexerProvider>
   );
 }

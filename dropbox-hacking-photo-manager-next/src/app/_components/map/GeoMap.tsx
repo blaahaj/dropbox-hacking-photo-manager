@@ -1,7 +1,10 @@
-import { useStyleSheet } from "@hooks/useStyleSheet";
-import logRender from "@/app/_lib/logRender";
+"use client";
+
+import logRender from "@lib/logRender";
 import * as L from "leaflet";
 import React, { useEffect, useMemo, useRef } from "react";
+
+import styles from "./page.module.css";
 
 type P = {
   position: L.LatLng;
@@ -39,6 +42,20 @@ const findInitialZoom = (halfDiagonal: number) => {
   return initialZoom;
 };
 
+const GeoMapWrapper = ({
+  positions,
+  listeners,
+}: {
+  positions: Positions;
+  listeners?: Partial<{
+    onClickMarker: (e: L.LeafletMouseEvent, key: string) => void;
+  }>;
+}) => {
+  if (positions.size === 0) return null;
+
+  return <GeoMap positions={positions} listeners={listeners} />;
+};
+
 const GeoMap = ({
   positions,
   listeners,
@@ -46,25 +63,8 @@ const GeoMap = ({
   positions: Positions;
   listeners?: Partial<{
     onClickMarker: (e: L.LeafletMouseEvent, key: string) => void;
-    onDoubleClickMap: (e: L.LeafletMouseEvent) => void;
   }>;
 }) => {
-  if (positions.size === 0) return;
-
-  const listenersRef = useRef(listeners);
-  listenersRef.current = listeners;
-
-  useStyleSheet({
-    cssText: `
-      .iconA {
-        filter: hue-rotate(20deg);
-      }
-      .iconB {
-        filter: hue-rotate(140deg);
-      }
-    `,
-  });
-
   const { center, halfDiagonal } = findBoundingBox(
     [...positions.values()].map((p) => p.position),
   );
@@ -91,24 +91,25 @@ const GeoMap = ({
   }, []);
 
   useEffect(() => {
-    if (listeners?.onDoubleClickMap) {
-      mapRef.current?.addEventListener("dblclick", listeners?.onDoubleClickMap);
-      return () =>
-        mapRef.current?.removeEventListener(
-          "dblclick",
-          listeners.onDoubleClickMap,
-        );
-    } else {
-      return () => {};
-    }
-  }, [mapRef.current, listeners?.onDoubleClickMap]);
-
-  useEffect(() => {
-    mapRef.current?.setView(center, initialZoom);
+    mapRef.current?.setView({ lat: center.lat, lng: center.lng }, initialZoom);
   }, [center.lat, center.lng, initialZoom]);
 
-  const iconA = useMemo(() => new L.Icon.Default({ className: "iconA" }), []);
-  const iconB = useMemo(() => new L.Icon.Default({ className: "iconB" }), []);
+  const iconA = useMemo(
+    () =>
+      new L.Icon.Default({
+        imagePath: "https://unpkg.com/leaflet@1.9.4/dist/images/",
+        className: styles.iconA,
+      }),
+    [],
+  );
+  const iconB = useMemo(
+    () =>
+      new L.Icon.Default({
+        imagePath: "https://unpkg.com/leaflet@1.9.4/dist/images/",
+        className: styles.iconB,
+      }),
+    [],
+  );
   const markersRef = useRef(new Map<string, P & { marker: L.Marker }>());
 
   useEffect(() => {
@@ -135,7 +136,7 @@ const GeoMap = ({
         marker.addTo(theMap);
 
         marker.addEventListener("click", (e) =>
-          listenersRef.current?.onClickMarker?.(e, id),
+          listeners?.onClickMarker?.(e, id),
         );
 
         markers.set(id, {
@@ -156,11 +157,39 @@ const GeoMap = ({
     }
   });
 
+  useEffect(() => {
+    const link = document.createElement("link");
+    link.setAttribute("rel", "stylesheet");
+    link.setAttribute(
+      "href",
+      "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css",
+    );
+    link.setAttribute(
+      "integrity",
+      "sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=",
+    );
+    link.setAttribute("crossorigin", "");
+
+    document.head.appendChild(link);
+
+    return () => {
+      document.head.removeChild(link);
+    };
+  }, []);
+
   return (
-    <div>
-      <div ref={eleRef} style={{ width: "600px", height: "600px" }} />
+    <div style={{ position: "relative" }}>
+      <div
+        ref={eleRef}
+        style={{
+          width: "600px",
+          height: "600px",
+          // border: "1px solid blue",
+          // boxSizing: "content-box",
+        }}
+      />
     </div>
   );
 };
 
-export default logRender(GeoMap);
+export default logRender(GeoMapWrapper);

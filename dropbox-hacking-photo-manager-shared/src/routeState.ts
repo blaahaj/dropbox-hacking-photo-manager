@@ -59,7 +59,7 @@ export const urlForState = (state: RouteState): string => {
     case "route/next-gen/fsck":
       return `/next-gen/fsck`;
     case "route/next-gen/search":
-      return `/next-gen/search`;
+      return `/next-gen/search${state.filterText ? `?q=${encodeURIComponent(state.filterText)}` : ""}`;
     case "route/next-gen/video":
       return `/next-gen/video`;
     case "route/next-gen/tags":

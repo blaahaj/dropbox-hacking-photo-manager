@@ -1,9 +1,8 @@
 import type { JSONValue } from "@blaahaj/json";
-import generateId from "@/app/_lib/generateId";
+import generateId from "@lib/generateId";
 import {
   type IDHolder,
-  type IOHandler,
-  multiplexer,
+  multiplexer as buildMultiplexer,
   transportAsJson,
   type WrappedPayload,
 } from "dropbox-hacking-photo-manager-shared";
@@ -14,25 +13,28 @@ import React, {
   useState,
 } from "react";
 
-import { Provider } from "./context";
+import { Provider, type Multiplexer } from "./context";
 import { fromBrowserWebSocket } from "./fromBrowserWebSocket";
 
-type T = IOHandler<JSONValue, JSONValue>;
-
-export const NonRetryingSocketWrapper = (
-  props: PropsWithChildren<{
-    accepter: (accept: T) => void;
-    onDead: () => void;
-  }>,
-) => {
-  const instanceId = useMemo(() => generateId("NonRetryingSocketWrapper"), []);
+export const NonRetryingSocketWrapper = ({
+  accepter,
+  onDead,
+  children,
+}: PropsWithChildren<{
+  accepter: (accept: Multiplexer) => void;
+  onDead: () => void;
+}>) => {
+  const instanceId = useMemo(
+    () => generateId(3, "NonRetryingSocketWrapper"),
+    [],
+  );
   console.log("mxc NonRetryingSocketWrapper", instanceId);
 
   // const [socket, setSocket] = useState<WebSocket>();
-  const [t, setT] = useState<T>();
+  const [multiplexer, setMultiplexer] = useState<Multiplexer>();
 
   useEffect(() => {
-    const id = generateId("NonRetryingSocketWrapper:effect");
+    const id = generateId(3, "NonRetryingSocketWrapper:effect");
     console.log(
       "mxc NonRetryingSocketWrapper",
       id,
@@ -50,15 +52,17 @@ export const NonRetryingSocketWrapper = (
         "open",
         s?.readyState,
       );
-      const io = multiplexer(
-        transportAsJson<
-          IDHolder & WrappedPayload<JSONValue>,
-          IDHolder & WrappedPayload<JSONValue>
-        >(fromBrowserWebSocket(s, id)),
-        props.accepter,
-      );
+
+      const stringTransport = fromBrowserWebSocket(s, id);
+
+      const jsonTransport = transportAsJson<
+        IDHolder & WrappedPayload<JSONValue>,
+        IDHolder & WrappedPayload<JSONValue>
+      >(stringTransport);
+
+      const io = buildMultiplexer(jsonTransport, accepter);
       console.log("Made io", io);
-      setT(() => io);
+      setMultiplexer(() => io);
     };
 
     const errorListener = (errorEvent: Event) => {
@@ -81,8 +85,8 @@ export const NonRetryingSocketWrapper = (
         closeEvent,
         s?.readyState,
       );
-      setT(undefined);
-      props.onDead();
+      setMultiplexer(undefined);
+      onDead();
     };
 
     s.addEventListener("open", openListener);
@@ -104,9 +108,14 @@ export const NonRetryingSocketWrapper = (
 
       s?.close();
     };
-  }, []);
+  }, [accepter, instanceId, onDead]);
 
-  console.log("mxc NonRetryingSocketWrapper", instanceId, "providing", t);
+  console.log(
+    "mxc NonRetryingSocketWrapper",
+    instanceId,
+    "providing",
+    multiplexer,
+  );
 
-  return <Provider value={t}>{props.children}</Provider>;
+  return <Provider value={multiplexer}>{children}</Provider>;
 };

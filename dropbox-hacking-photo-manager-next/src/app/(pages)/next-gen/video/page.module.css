@@ -1,0 +1,29 @@
+.videoTable {
+  font-size: 75%;
+  margin: 1em;
+}
+
+.videoTable th {
+  rotate: -72deg;
+  padding-block-end: 3em;
+}
+
+.videoTable tr:nth-child(2n) {
+  background-color: #333;
+}
+
+.videoTable td.frameSize {
+  white-space: pre;
+}
+
+.videoTable .dayDescription,
+.videoTable .photoDescription,
+.videoTable .photoTags {
+  max-width: 10vw;
+  overflow: scroll;
+}
+
+.videoTable td.duration {
+  font-family: monospace;
+  text-align: end;
+}

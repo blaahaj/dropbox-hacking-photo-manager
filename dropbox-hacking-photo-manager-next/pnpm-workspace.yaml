@@ -2,4 +2,4 @@ ignoredBuiltDependencies:
   - sharp
   - unrs-resolver
 overrides:
-  dropbox-hacking-photo-manager-shared: link:../dpm/dropbox-hacking-photo-manager-shared
+  dropbox-hacking-photo-manager-shared: link:../../dpm/dropbox-hacking-photo-manager-shared
