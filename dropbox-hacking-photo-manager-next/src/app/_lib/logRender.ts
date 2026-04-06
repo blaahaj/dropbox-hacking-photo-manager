@@ -1,4 +1,4 @@
-import { FunctionComponent, PropsWithChildren } from "react";
+import { FunctionComponent } from "react";
 
 type F<P> = FunctionComponent<P>;
 
@@ -13,7 +13,7 @@ const doLog = true;
 
 const nameSequence = makeSequence();
 
-const logRender = <P extends PropsWithChildren<object>>(
+const logRender = <P>(
   f: F<P>,
   enable?: boolean,
 ): F<P> => {

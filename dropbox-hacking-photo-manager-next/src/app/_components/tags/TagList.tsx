@@ -1,7 +1,7 @@
 import SamePageLink from "@components/samePageLink";
+import type { PropsWithChildren } from "react";
 
 import styles from "./tags.module.css";
-import type { PropsWithChildren } from "react";
 
 const MaybeLinked = ({
   tag,

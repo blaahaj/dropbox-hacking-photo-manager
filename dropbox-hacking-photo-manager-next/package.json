@@ -4,13 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev --webpack --port 4001",
-    "build": ": next build --webpack",
+    "build": "next build --webpack",
     "build:watch": ":",
     "fix": ":",
     "format": ":",
     "reset": "rm -rf .next",
     "start": "next start",
-    "test": ":",
+    "test": "concurrently --group pnpm:test:*",
     "test:lint": "eslint",
     "test:prettier": ":",
     "test:unit": ":"
@@ -38,6 +38,8 @@
     "@types/react-dom": "^19.2.3",
     "eslint": "^9.39.4",
     "eslint-config-next": "16.1.6",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-unused-imports": "^4.4.1",
     "typescript": "^5.9.3"
   }
 }

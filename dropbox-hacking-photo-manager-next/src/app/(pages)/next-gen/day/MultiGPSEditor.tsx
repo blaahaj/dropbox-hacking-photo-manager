@@ -5,13 +5,12 @@ import * as j from "@blaahaj/json";
 import logRender from "@lib/logRender";
 import { type PhotoDbEntry } from "dropbox-hacking-photo-manager-shared";
 import type { DayFilesResult } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
-// import * as L from "leaflet";
 import React, { useMemo, useState } from "react";
 
-import places from "./places.json" with { format: "json" };
+import { useLeaflet } from "@/app/useLeaflet";
 
 import styles from "./MultiGPSEditor.module.css";
-import { useLeaflet } from "@/app/useLeaflet";
+import places from "./places.json" with { format: "json" };
 
 const isGeoJSONPoint = (t: unknown): t is GeoJSON.Feature<GeoJSON.Point> =>
   typeof t === "object" &&
@@ -105,7 +104,7 @@ const MultiGPSEditor = ({
   // and /can/ have an embedded, and therefore /can/
   // have an effective.
 
-  // So let's start simple. We'll /show/ the embeddeds,
+  // So let's start simple. We'll /show/ the embedded data,
   // but only /edit/ the overrides.
   const contents = useAverageEmbedded(files);
 

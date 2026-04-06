@@ -5,7 +5,7 @@ import ShowData from "@components/ShowData";
 import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFeed";
 import logRender from "@lib/logRender";
 import type { ExifExplorerType } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
-import React, { useEffect, type Usable } from "react";
+import React, {useEffect } from "react";
 
 import styles from "./page.module.css";
 
@@ -16,7 +16,7 @@ type EntrySorter = (a: Entry, b: Entry) => number;
 const MediaInfoExplorer = ({
   params: pathParams,
 }: {
-  params: Usable<{ readonly streamKind?: string }>;
+  params: Promise<{ readonly streamKind?: string }>;
 }) => {
   const { streamKind: rawStreamKind } = React.use(pathParams);
   const effectiveStreamKind =

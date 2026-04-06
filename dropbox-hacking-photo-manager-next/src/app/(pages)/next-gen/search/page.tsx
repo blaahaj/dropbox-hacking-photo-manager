@@ -6,7 +6,6 @@ import logRender from "@lib/logRender";
 import { parseFilterString } from "dropbox-hacking-photo-manager-shared/search";
 import {
   type ChangeEventHandler,
-  type Usable,
   use,
   useEffect,
   useMemo,
@@ -18,7 +17,7 @@ import ListOfFiles from "../day/listOfFiles";
 const NGSearch = ({
   searchParams: searchParamsProxy,
 }: {
-  searchParams: Usable<{ q?: string }>;
+  searchParams: Promise<{ q?: string }>;
 }) => {
   const searchParams = use(searchParamsProxy);
   const [filterSource, setFilterSource] = useState(searchParams.q ?? "");

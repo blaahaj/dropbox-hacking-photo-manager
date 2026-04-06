@@ -2,7 +2,6 @@
 
 import Navigate from "@components/Navigation";
 import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFeed";
-import logRender from "@lib/logRender";
 import React, { useEffect } from "react";
 
 const BasicCounts = () => {
@@ -27,4 +26,4 @@ const BasicCounts = () => {
   );
 };
 
-export default logRender(BasicCounts);
+export default BasicCounts;

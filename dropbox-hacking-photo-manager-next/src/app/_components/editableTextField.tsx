@@ -24,18 +24,18 @@ const EditableTextField = (props: {
 
   useEffect(() => {
     if (isEditing && input.current) input.current.focus();
-  }, [isEditing, input.current]);
+  }, [isEditing]);
 
+  const { onSave } = props;
   const doSave = useMemo(
     () => (event: MouseEvent | KeyboardEvent) => {
       console.log("Saving");
       event.preventDefault();
-      props
-        .onSave(editingValue)
+      onSave(editingValue)
         .then(() => setIsEditing(false))
         .catch((err) => console.error(err));
     },
-    [props.onSave, editingValue],
+    [onSave, editingValue],
   );
 
   const doCancel = useMemo(
@@ -81,13 +81,11 @@ const EditableTextField = (props: {
           props.value ? "editable inactive hasData" : "editable inactive noData"
         }
       >
-        {props.renderInactive ? (
+        {props.renderInactive ?
           <div style={{ display: "inline-block" }}>
             {props.renderInactive({ value: props.value, placeholderText })}
           </div>
-        ) : (
-          props.value || placeholderText
-        )}
+        : props.value || placeholderText}
       </span>
     );
   } else {

@@ -3,12 +3,12 @@
 import Navigate from "@components/Navigation";
 import SamePageLink from "@components/samePageLink";
 import ShowData from "@components/ShowData";
+import TagList from "@components/tags/TagList";
 import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFeed";
 import logRender from "@lib/logRender";
 import React, { useEffect } from "react";
 
 import styles from "./page.module.css";
-import TagList from "@components/tags/TagList";
 
 const XOutOfY = ({ x, y }: { x: number; y: number }) =>
   y === 0 ?

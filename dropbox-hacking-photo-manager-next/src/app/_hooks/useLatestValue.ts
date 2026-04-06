@@ -20,19 +20,18 @@ export const useLatestValue = <T>(
   });
 
   useEffect(() => {
-    if (!obs) {
-      setValue(undefined);
-      return;
+    if (obs) {
+      const subscription = obs.subscribe({
+        next: (v) => setValue(v),
+        complete: () => setValue(undefined),
+        error: () => setValue(undefined),
+      });
+
+      return () => subscription.unsubscribe();
     }
-
-    const subscription = obs.subscribe({
-      next: (v) => setValue(v),
-      complete: () => setValue(undefined),
-      error: (_error) => setValue(undefined),
-    });
-
-    return () => subscription.unsubscribe();
   }, [obs]);
+
+  if (!obs) return undefined;
 
   return value;
 };
