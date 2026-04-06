@@ -1,13 +1,8 @@
 import { Application } from "express";
 
-import { Context } from "./context.js";
-
-export default (app: Application, context: Context): void => {
+export default (app: Application): void => {
   app.get("/", (_, res) => {
-    res.redirect(
-      302,
-      `${context.baseUrlWithoutSlash}/next-gen/list-of-days/without-samples`,
-    );
+    res.redirect(301, "http://localhost:4001/");
     res.end();
   });
 };

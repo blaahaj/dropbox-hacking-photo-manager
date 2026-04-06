@@ -4,7 +4,6 @@ import expressWs from "express-ws";
 
 import api from "./api/index.js";
 import contextBuilder from "./contextBuilder.js";
-import getPages from "./getPages.js";
 import getRoot from "./getRoot.js";
 import image from "./image/index.js";
 
@@ -21,10 +20,7 @@ import image from "./image/index.js";
 const appWithoutWs = express();
 const appWithWs = expressWs(appWithoutWs).app;
 
-const context = contextBuilder({
-  port: 4000,
-  baseUrlWithoutSlash: "http://localhost:4000",
-});
+const context = contextBuilder();
 
 const logPrefixKey: unique symbol = Symbol("logPrefix");
 type LogPrefixKey = typeof logPrefixKey;
@@ -88,14 +84,13 @@ appWithWs.use((req, res, next) => {
 
 appWithWs.use(express.json());
 
-getRoot(appWithWs, context);
-getPages(appWithWs, context);
-
+getRoot(appWithWs);
 api(appWithWs, context);
 image(appWithWs, context);
 
-const server = appWithWs.listen(context.port, () => {
-  console.log(`Listening on port ${context.port}`);
+const PORT = 4000;
+const server = appWithWs.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`);
 });
 
 server.on("close", () => {

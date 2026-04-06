@@ -26,10 +26,7 @@ import { buildForLsCacheMapAllFiles } from "./rx/lsCache.js";
 import { buildForMediaInfoDbMap } from "./rx/mediaInfoDb.js";
 import { buildForPhotoDb, buildForPhotoDbMap } from "./rx/photoDb.js";
 
-export default (args: {
-  port: number;
-  baseUrlWithoutSlash: string;
-}): Context => {
+export default (): Context => {
   const exifDbDir = process.env.EXIF_DB_DIR;
   if (exifDbDir === undefined) throw new Error("Need EXIF_DB_DIR");
 
@@ -147,13 +144,13 @@ export default (args: {
       photosRxMap.observable(),
     ]).pipe(
       map(
-        ([files, exifs, medaInfos, photos]) =>
+        ([files, exifs, mediaInfos, photos]) =>
           new Map(
             files.entries().map(([k, v]) => {
               const out = {
                 namedFiles: v,
                 exif: exifs.get(k) ?? null,
-                mediaInfo: medaInfos.get(k) ?? null,
+                mediaInfo: mediaInfos.get(k) ?? null,
                 photo: photos.get(k) ?? null,
               };
 
@@ -204,8 +201,6 @@ export default (args: {
   };
 
   const context = {
-    port: args.port,
-    baseUrlWithoutSlash: args.baseUrlWithoutSlash,
     get dropboxClient(): Promise<Dropbox> {
       return getDropboxClient();
     },
