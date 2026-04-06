@@ -153,7 +153,9 @@ const WithData = ({
           <div key={key} style={{ gridRow: 1, gridColumn: 1 + index }}>
             {key}
           </div>,
-          key === "" ? false : (
+          key === "" ? (
+            false
+          ) : (
             <div
               key={`${key}:offset`}
               style={{ gridRow: 2, gridColumn: 1 + index }}
@@ -210,13 +212,15 @@ const NGDayDevices = ({ date }: { date: string }) => {
 
       <h1>{date}</h1>
 
-      {latestValue ?
+      {latestValue ? (
         <>
           {dayMetadata?.description && <p>{dayMetadata?.description}</p>}
 
           <WithData result={latestValue} date={date} />
         </>
-      : "loading..."}
+      ) : (
+        "loading..."
+      )}
     </>
   );
 };

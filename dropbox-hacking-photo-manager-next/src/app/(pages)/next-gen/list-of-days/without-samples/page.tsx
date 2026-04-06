@@ -11,16 +11,18 @@ import React, { useEffect } from "react";
 import styles from "./page.module.css";
 
 const XOutOfY = ({ x, y }: { x: number; y: number }) =>
-  y === 0 ?
+  y === 0 ? (
     <td />
-  : <td
+  ) : (
+    <td
       style={{
         backgroundColor: `rgb(${255.0 * (1 - x / y)}, 0, 0)`,
         textAlign: "center",
       }}
     >
       {x} / {y}
-    </td>;
+    </td>
+  );
 
 const NGDaysNoSamples = () => {
   const latestValue = useLatestValueFromServerFeed({
@@ -38,7 +40,7 @@ const NGDaysNoSamples = () => {
 
       <h1>List of days (no samples)</h1>
 
-      {latestValue ?
+      {latestValue ? (
         <table className={styles.listOfDays}>
           <thead>
             <tr>
@@ -90,7 +92,9 @@ const NGDaysNoSamples = () => {
             ))}
           </tbody>
         </table>
-      : "loading ..."}
+      ) : (
+        "loading ..."
+      )}
 
       <ShowData data={latestValue} />
     </>

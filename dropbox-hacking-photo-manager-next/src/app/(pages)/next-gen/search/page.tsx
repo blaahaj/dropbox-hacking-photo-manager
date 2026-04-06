@@ -100,7 +100,7 @@ const NGSearch = ({
         </p>
       )}
 
-      {latestValue ?
+      {latestValue ? (
         <>
           {latestValue.truncated && (
             <p>
@@ -116,7 +116,9 @@ const NGSearch = ({
             />
           )}
         </>
-      : "loading..."}
+      ) : (
+        "loading..."
+      )}
     </>
   );
 };

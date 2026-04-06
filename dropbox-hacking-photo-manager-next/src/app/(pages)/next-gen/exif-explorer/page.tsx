@@ -69,8 +69,8 @@ const ExifExplorer = () => {
         </table>
       )}
 
-      <br/>
-      <br/>
+      <br />
+      <br />
 
       <ShowData data={latestValue} />
     </>

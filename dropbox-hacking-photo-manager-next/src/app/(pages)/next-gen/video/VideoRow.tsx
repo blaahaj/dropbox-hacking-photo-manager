@@ -44,9 +44,9 @@ export const VideoRow = ({ item }: { item: VideoResult[number] }) => {
       <td>{video?.codec ?? "–"}</td>
 
       <td className={styles.frameSize}>
-        {video?.widthAndHeight ?
-          `${video?.widthAndHeight.width} x ${video?.widthAndHeight.height}`
-        : "–"}
+        {video?.widthAndHeight
+          ? `${video?.widthAndHeight.width} x ${video?.widthAndHeight.height}`
+          : "–"}
       </td>
       <td>{video?.aspectRatio.string ?? "–"}</td>
 

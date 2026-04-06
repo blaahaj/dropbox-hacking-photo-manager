@@ -82,7 +82,7 @@ const Video = () => {
         </p>
       </form>
 
-      {sorted ?
+      {sorted ? (
         // It's faster to make a whole new table every time than it is to diff and update
         <table key={generateId(3, "video-table")} className={styles.videoTable}>
           <thead>
@@ -112,7 +112,9 @@ const Video = () => {
             ))}
           </tbody>
         </table>
-      : "loading..."}
+      ) : (
+        "loading..."
+      )}
     </>
   );
 

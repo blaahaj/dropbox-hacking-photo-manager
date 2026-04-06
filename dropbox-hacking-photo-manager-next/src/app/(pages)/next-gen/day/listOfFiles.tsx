@@ -32,29 +32,29 @@ const ListOfFiles = ({
 
   const forMap = useMemo(
     () =>
-      L ?
-        new Map(
-          files.flatMap((t) =>
-            t.gps.effective ?
-              [
-                [
-                  t.namedFiles[0].content_hash,
-                  {
-                    position: new L.LatLng(
-                      t.gps.effective.lat,
-                      t.gps.effective.long,
-                    ),
-
-                    highlighted: selectedContentHashes.has(
+      L
+        ? new Map(
+            files.flatMap((t) =>
+              t.gps.effective
+                ? [
+                    [
                       t.namedFiles[0].content_hash,
-                    ),
-                  },
-                ],
-              ]
-            : [],
-          ),
-        )
-      : new Map(),
+                      {
+                        position: new L.LatLng(
+                          t.gps.effective.lat,
+                          t.gps.effective.long,
+                        ),
+
+                        highlighted: selectedContentHashes.has(
+                          t.namedFiles[0].content_hash,
+                        ),
+                      },
+                    ],
+                  ]
+                : [],
+            ),
+          )
+        : new Map(),
     [L, files, selectedContentHashes],
   );
 

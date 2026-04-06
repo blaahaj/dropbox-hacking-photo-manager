@@ -13,10 +13,7 @@ const doLog = true;
 
 const nameSequence = makeSequence();
 
-const logRender = <P>(
-  f: F<P>,
-  enable?: boolean,
-): F<P> => {
+const logRender = <P>(f: F<P>, enable?: boolean): F<P> => {
   if (!(enable ?? true)) return f;
 
   const functionName = f.displayName || f.name || `anonymous${nameSequence()}`;

@@ -21,7 +21,7 @@ const Page = () => {
 
       <h1>Tags</h1>
 
-      {latestValue ?
+      {latestValue ? (
         <TagList
           data={latestValue.tags.map(([tag, count]) => ({
             tag,
@@ -29,7 +29,9 @@ const Page = () => {
           }))}
           linked={true}
         />
-      : "loading..."}
+      ) : (
+        "loading..."
+      )}
     </>
   );
 };

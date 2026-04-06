@@ -1,7 +1,7 @@
 import generateId from "@lib/generateId";
 import React, { type PropsWithChildren, useMemo, useState } from "react";
 
-import { type Multiplexer,Provider } from "./context";
+import { type Multiplexer, Provider } from "./context";
 import { NonRetryingSocketWrapper } from "./NonRetryingSocketWrapper";
 
 export const GivenFixedAccepter = (
@@ -23,9 +23,11 @@ export const GivenFixedAccepter = (
     }
   };
 
-  return sleepTimer ?
-      <Provider value={undefined}>{props.children}</Provider>
-    : <NonRetryingSocketWrapper accepter={props.accepter} onDead={onDead}>
-        {props.children}
-      </NonRetryingSocketWrapper>;
+  return sleepTimer ? (
+    <Provider value={undefined}>{props.children}</Provider>
+  ) : (
+    <NonRetryingSocketWrapper accepter={props.accepter} onDead={onDead}>
+      {props.children}
+    </NonRetryingSocketWrapper>
+  );
 };

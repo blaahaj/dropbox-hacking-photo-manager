@@ -81,11 +81,13 @@ const EditableTextField = (props: {
           props.value ? "editable inactive hasData" : "editable inactive noData"
         }
       >
-        {props.renderInactive ?
+        {props.renderInactive ? (
           <div style={{ display: "inline-block" }}>
             {props.renderInactive({ value: props.value, placeholderText })}
           </div>
-        : props.value || placeholderText}
+        ) : (
+          props.value || placeholderText
+        )}
       </span>
     );
   } else {

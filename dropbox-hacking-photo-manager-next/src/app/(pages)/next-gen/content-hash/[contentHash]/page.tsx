@@ -3,7 +3,7 @@
 import Navigate from "@components/Navigation";
 import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFeed";
 import logRender from "@lib/logRender";
-import React, {useEffect } from "react";
+import React, { useEffect } from "react";
 
 // import { PrevNextFileNav } from "../PrevNextFileNav";
 import { ShowContentHashResult } from "../ShowContentHashResult";
@@ -36,14 +36,16 @@ const NGContentHash = ({
         />
       )} */}
 
-      {latestValue ?
+      {latestValue ? (
         <>
           <ShowContentHashResult
             contentHash={contentHash}
             latestValue={latestValue}
           />
         </>
-      : "Loading..."}
+      ) : (
+        "Loading..."
+      )}
     </>
   );
 };

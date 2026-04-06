@@ -67,10 +67,9 @@ const ImagePreview = ({
     [namedFile.content_hash, photo, targetDegrees],
   );
 
-  const rotatedWidthAndHeight =
-    previewWidthAndHeight ?
-      (targetDegrees / 90) % 2 ?
-        {
+  const rotatedWidthAndHeight = previewWidthAndHeight
+    ? (targetDegrees / 90) % 2
+      ? {
           width: previewWidthAndHeight.height,
           height: previewWidthAndHeight.width,
         }
@@ -95,9 +94,9 @@ const ImagePreview = ({
           <img
             style={{
               transform:
-                !previewWidthAndHeight || !rotatedWidthAndHeight ?
-                  undefined
-                : `
+                !previewWidthAndHeight || !rotatedWidthAndHeight
+                  ? undefined
+                  : `
                   translate(
                     ${(rotatedWidthAndHeight.width - previewWidthAndHeight.width) / 2}px,
                     ${(rotatedWidthAndHeight.height - previewWidthAndHeight.height) / 2}px

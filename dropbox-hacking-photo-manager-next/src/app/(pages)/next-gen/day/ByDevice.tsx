@@ -27,17 +27,15 @@ const NGDayFiles = ({ date }: { date: string }) => {
     [listOfDays, date],
   );
   const previousDay =
-    listOfDays && indexOfToday !== undefined && indexOfToday > 0 ?
-      listOfDays[indexOfToday - 1]
-    : undefined;
+    listOfDays && indexOfToday !== undefined && indexOfToday > 0
+      ? listOfDays[indexOfToday - 1]
+      : undefined;
   const nextDay =
-    (
-      listOfDays &&
-      indexOfToday !== undefined &&
-      indexOfToday < listOfDays.length - 1
-    ) ?
-      listOfDays[indexOfToday + 1]
-    : undefined;
+    listOfDays &&
+    indexOfToday !== undefined &&
+    indexOfToday < listOfDays.length - 1
+      ? listOfDays[indexOfToday + 1]
+      : undefined;
 
   const dayMetadata = latestValue?.dayMetadata;
 
@@ -90,7 +88,7 @@ const NGDayFiles = ({ date }: { date: string }) => {
 
       <h1>{date}</h1>
 
-      {latestValue ?
+      {latestValue ? (
         <>
           <p>
             <EditableTextField
@@ -104,7 +102,9 @@ const NGDayFiles = ({ date }: { date: string }) => {
 
           <ShowData data={latestValue} />
         </>
-      : "loading..."}
+      ) : (
+        "loading..."
+      )}
     </>
   );
 };

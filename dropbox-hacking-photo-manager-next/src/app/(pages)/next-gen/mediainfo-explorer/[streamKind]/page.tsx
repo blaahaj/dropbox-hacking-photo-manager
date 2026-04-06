@@ -5,7 +5,7 @@ import ShowData from "@components/ShowData";
 import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFeed";
 import logRender from "@lib/logRender";
 import type { ExifExplorerType } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
-import React, {useEffect } from "react";
+import React, { useEffect } from "react";
 
 import styles from "./page.module.css";
 

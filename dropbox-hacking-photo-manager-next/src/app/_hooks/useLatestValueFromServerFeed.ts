@@ -32,9 +32,8 @@ export const useLatestValueFromServerFeed = <
   request: REQ,
 ) => {
   const mx = useMultiplexer(); // as Connectable<ObservableUpdate<RES>, REQ>;
-  const typedMx =
-    mx ?
-      (trustInputFormat(mx) as Connectable<
+  const typedMx = mx
+    ? (trustInputFormat(mx) as Connectable<
         ObservableUpdate<RES, JSONValue>,
         REQ
       > | null)

@@ -13,7 +13,7 @@ import React, {
   useState,
 } from "react";
 
-import { type Multiplexer,Provider } from "./context";
+import { type Multiplexer, Provider } from "./context";
 import { fromBrowserWebSocket } from "./fromBrowserWebSocket";
 
 export const NonRetryingSocketWrapper = ({

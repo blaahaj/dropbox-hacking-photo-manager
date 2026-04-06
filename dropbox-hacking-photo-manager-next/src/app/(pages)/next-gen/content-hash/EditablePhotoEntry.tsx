@@ -58,7 +58,9 @@ const EditablePhotoEntry = ({
           value={photoDbEntry.tags?.join(" ") ?? ""}
           onSave={onSaveTags}
           renderInactive={({ value, placeholderText }) =>
-            value === "" ? placeholderText : (
+            value === "" ? (
+              placeholderText
+            ) : (
               <TagList
                 data={(photoDbEntry?.tags ?? []).map((tag) => ({ tag }))}
               />
