@@ -7,12 +7,12 @@
     "build": "next build --webpack",
     "build:watch": ":",
     "fix": ":",
-    "format": ":",
+    "format": "prettier --write --list-different .",
     "reset": "rm -rf .next",
     "start": "next start",
     "test": "concurrently --group pnpm:test:*",
     "test:lint": "eslint",
-    "test:prettier": ":",
+    "test:prettier": "prettier --check .",
     "test:unit": ":"
   },
   "dependencies": {

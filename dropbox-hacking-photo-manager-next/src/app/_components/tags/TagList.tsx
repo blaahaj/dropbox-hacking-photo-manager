@@ -8,7 +8,7 @@ const MaybeLinked = ({
   linked,
   children,
 }: PropsWithChildren<{ readonly tag: string; readonly linked: boolean }>) =>
-  linked ?
+  linked ? (
     <SamePageLink
       routeState={{
         route: "route/next-gen/search",
@@ -17,7 +17,9 @@ const MaybeLinked = ({
     >
       {children}
     </SamePageLink>
-  : children;
+  ) : (
+    children
+  );
 
 const TagList = ({
   data,

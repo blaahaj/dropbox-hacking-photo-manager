@@ -20,9 +20,11 @@ const Fsck = () => {
 
       <h1>fsck</h1>
 
-      {latestValue ?
+      {latestValue ? (
         <pre>{JSON.stringify(latestValue ?? null, null, 2)}</pre>
-      : "loading..."}
+      ) : (
+        "loading..."
+      )}
     </>
   );
 };

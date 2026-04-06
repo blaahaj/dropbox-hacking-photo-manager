@@ -7,7 +7,7 @@
 }
 
 /* FIXME, not working */
-.listOfDays > thead  {
+.listOfDays > thead {
   position: sticky;
   top: 0;
   background: black;

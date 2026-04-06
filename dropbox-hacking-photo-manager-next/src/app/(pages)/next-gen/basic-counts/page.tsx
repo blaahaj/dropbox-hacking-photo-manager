@@ -19,9 +19,11 @@ const BasicCounts = () => {
 
       <h1>Basic Counts</h1>
 
-      {latestValue ?
+      {latestValue ? (
         <pre>{JSON.stringify(latestValue ?? null, null, 2)}</pre>
-      : "loading..."}
+      ) : (
+        "loading..."
+      )}
     </>
   );
 };

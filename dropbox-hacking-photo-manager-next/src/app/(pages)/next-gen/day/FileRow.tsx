@@ -38,13 +38,15 @@ const FileRow = ({
     file.exif?.exifData.tags?.Model ??
     generalTrack?.Encoded_Hardware_Name ??
     "";
-  const deviceIcon =
-    /EX-Z3|FinePix HS10 HS11|Canon PowerShot SX70 HS/.test(model) ?
-      "/camera-icon.dark.svg"
-    : /iPhone 4S|Pixel|Pixel 2|iPhone 12 mini/.test(model) ? "/mobile-phone.svg"
-    : file.namedFiles[0].name.toLocaleLowerCase().startsWith("dji") ?
-      "/drone.svg"
-    : null;
+  const deviceIcon = /EX-Z3|FinePix HS10 HS11|Canon PowerShot SX70 HS/.test(
+    model,
+  )
+    ? "/camera-icon.dark.svg"
+    : /iPhone 4S|Pixel|Pixel 2|iPhone 12 mini/.test(model)
+      ? "/mobile-phone.svg"
+      : file.namedFiles[0].name.toLocaleLowerCase().startsWith("dji")
+        ? "/drone.svg"
+        : null;
 
   useEffect(() => {
     const sub = observableVisibleItems.subscribe((s) =>
@@ -92,9 +94,9 @@ const FileRow = ({
       <time className={styles.mtime}>{file.timestamp.replace("T", " ")}</time>
       <div className={styles.makeAndModel}>
         {make || "[none]"}{" "}
-        {(model.startsWith(make) ?
-          model.replace(make, "").trimStart()
-        : model) || "[none]"}
+        {(model.startsWith(make)
+          ? model.replace(make, "").trimStart()
+          : model) || "[none]"}
       </div>
       <div className={styles.basename}>
         {file.namedFiles[0].name

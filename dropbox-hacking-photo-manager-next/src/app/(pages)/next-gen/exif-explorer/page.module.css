@@ -4,10 +4,10 @@
 }
 
 .exifTable > tbody > tr:nth-child(2n) {
-    /* opacity: 0.8; */
-    background-color: #222;
+  /* opacity: 0.8; */
+  background-color: #222;
 }
 
 .exifTable td {
-    padding-block: 0.4em;
+  padding-block: 0.4em;
 }

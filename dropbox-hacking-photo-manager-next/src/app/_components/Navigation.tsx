@@ -2,7 +2,7 @@ import SamePageLink from "@components/samePageLink";
 import * as React from "react";
 
 const Navigation = (): React.ReactElement | null => (
-  <p style={{marginBlockEnd: "1em"}}>
+  <p style={{ marginBlockEnd: "1em" }}>
     <SamePageLink
       routeState={{ route: "route/next-gen/list-of-days/without-samples" }}
     >

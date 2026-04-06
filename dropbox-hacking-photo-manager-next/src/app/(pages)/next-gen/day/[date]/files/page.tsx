@@ -5,7 +5,7 @@ import Navigate from "@components/Navigation";
 import ShowData from "@components/ShowData";
 import { useIdentity } from "@hooks/useIdentity";
 import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFeed";
-import React, {useEffect, useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 
 import ListOfFiles from "../../listOfFiles";
 import PrevNextDayLinks from "../../PrevNextDayLinks";
@@ -56,7 +56,7 @@ const NGDayFiles = ({
         </a>
       </h1>
 
-      {latestValue ?
+      {latestValue ? (
         <>
           <p>
             <EditableTextField
@@ -70,7 +70,9 @@ const NGDayFiles = ({
 
           <ShowData data={latestValue} />
         </>
-      : "loading..."}
+      ) : (
+        "loading..."
+      )}
     </>
   );
 };

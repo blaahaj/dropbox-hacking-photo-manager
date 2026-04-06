@@ -71,14 +71,14 @@ const useAverageEmbedded = (files: DayFilesResult["files"]) => {
 
   return useMemo(
     () =>
-      L ?
-        (findBoundingBox(
-          files
-            .map((f) => f.gps.fromContent)
-            .flatMap((t) => (t ? [new L.LatLng(t.lat, t.long)] : [])),
-          L,
-        )?.center ?? null)
-      : null,
+      L
+        ? (findBoundingBox(
+            files
+              .map((f) => f.gps.fromContent)
+              .flatMap((t) => (t ? [new L.LatLng(t.lat, t.long)] : [])),
+            L,
+          )?.center ?? null)
+        : null,
     [L, files],
   );
 };
@@ -110,9 +110,9 @@ const MultiGPSEditor = ({
 
   const overrides = new Set(
     files.map((f) =>
-      f.gps.fromOverride ?
-        `${f.gps.fromOverride.lat},${f.gps.fromOverride.long}`
-      : "none",
+      f.gps.fromOverride
+        ? `${f.gps.fromOverride.lat},${f.gps.fromOverride.long}`
+        : "none",
     ),
   );
 
