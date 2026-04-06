@@ -1,6 +1,8 @@
+import "./globals.css";
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+
 import ProvideContexts from "./provideContexts";
 
 const geistSans = Geist({
@@ -13,14 +15,15 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+
+import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 
 // Import icons individually to reduce bundle size
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 library.add(faCoffee, faTwitter);
 
 export const metadata: Metadata = {
@@ -33,8 +36,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // const windowExists = "window" in globalThis;
+  // const leafletExists = "leaflet" in globalThis;
+  // console.log({ windowExists, leafletExists });
+
   return (
     <html lang="en">
+      <head>
+        {/* <script
+          src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+          crossOrigin=""
+          async
+        ></script> */}
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ProvideContexts>{children}</ProvideContexts>
       </body>

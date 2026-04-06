@@ -1,12 +1,11 @@
+import TagList from "@components/tags/TagList";
 import logRender from "@lib/logRender";
 import type { DayFilesResult } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
 import React, { useEffect, useMemo, useState } from "react";
 import { Observable } from "rxjs";
 
-import MaybeVisibleThumbnail from "./MaybeVisibleThumbnail";
-
 import styles from "./filesTable.module.css";
-import TagList from "@components/tags/TagList";
+import MaybeVisibleThumbnail from "./MaybeVisibleThumbnail";
 
 const FileRow = ({
   file,

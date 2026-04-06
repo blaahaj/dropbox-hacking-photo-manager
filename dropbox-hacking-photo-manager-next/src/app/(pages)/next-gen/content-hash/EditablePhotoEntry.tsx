@@ -1,9 +1,8 @@
 import EditableTextField from "@components/editableTextField";
+import TagList from "@components/tags/TagList";
 import logRender from "@lib/logRender";
 import type { PhotoDbEntry } from "dropbox-hacking-photo-manager-shared";
 import React, { useMemo } from "react";
-
-import TagList from "@components/tags/TagList";
 
 const EditablePhotoEntry = ({
   contentHash,

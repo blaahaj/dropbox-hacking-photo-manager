@@ -1,13 +1,12 @@
 "use client";
 
 import Navigate from "@components/Navigation";
+import ShowData from "@components/ShowData";
 import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFeed";
-import logRender from "@lib/logRender";
 import type { ExifExplorerType } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
 import React, { useEffect } from "react";
 
 import styles from "./page.module.css";
-import ShowData from "@components/ShowData";
 
 type Counts = ExifExplorerType["tagCounts"][number][1];
 type Entry = readonly [string, Counts];
@@ -78,4 +77,4 @@ const ExifExplorer = () => {
   );
 };
 
-export default logRender(ExifExplorer);
+export default ExifExplorer;

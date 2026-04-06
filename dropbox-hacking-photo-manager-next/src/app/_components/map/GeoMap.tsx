@@ -1,11 +1,11 @@
 "use client";
 
 import logRender from "@lib/logRender";
-// import * as L from "leaflet";
 import React, { useEffect, useMemo, useRef } from "react";
 
-import styles from "./page.module.css";
 import { useLeaflet } from "@/app/useLeaflet";
+
+import styles from "./page.module.css";
 
 type P = {
   position: L.LatLng;

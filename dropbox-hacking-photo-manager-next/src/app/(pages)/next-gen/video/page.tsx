@@ -8,7 +8,6 @@ import type { VideoResult } from "dropbox-hacking-photo-manager-shared/serverSid
 import { type ChangeEvent, useEffect, useMemo, useState } from "react";
 
 import styles from "./page.module.css";
-
 import { VideoRow } from "./VideoRow";
 
 type Sorter = (a: VideoResult[number], b: VideoResult[number]) => number;

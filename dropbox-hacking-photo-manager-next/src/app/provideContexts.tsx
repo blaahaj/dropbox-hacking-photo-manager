@@ -1,9 +1,11 @@
 "use client";
 
-import { DefaultMultiplexerProvider } from "@/app/_hooks/useMultiplexer";
 import type { Multiplexer } from "@hooks/useMultiplexer/context";
 import { DefaultThumbnailProvider } from "@hooks/useThumbnail";
 import { useMemo } from "react";
+
+import { DefaultMultiplexerProvider } from "@/app/_hooks/useMultiplexer";
+
 import { DefaultLeafletProvider } from "./useLeaflet";
 
 export default function ProviderLayout({

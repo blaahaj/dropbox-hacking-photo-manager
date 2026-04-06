@@ -7,9 +7,8 @@ import {
 } from "@blaahaj/dropbox-hacking-mediainfo-db/types";
 import logRender from "@lib/logRender";
 
-import SummaryTable from "./SummaryTable";
-
 import styles from "./SummariseMediaInfo.module.css";
+import SummaryTable from "./SummaryTable";
 
 const resolutionName = (videoTrack: VideoTrack) => {
   if (Number(videoTrack.Width) === 1920 && Number(videoTrack.Height) === 1080)

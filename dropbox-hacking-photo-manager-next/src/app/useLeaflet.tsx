@@ -1,9 +1,9 @@
 import {
   createContext,
+  type PropsWithChildren,
   useContext,
   useEffect,
   useState,
-  type PropsWithChildren,
 } from "react";
 
 type L = typeof import("leaflet");

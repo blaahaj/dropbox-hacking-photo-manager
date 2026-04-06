@@ -64,6 +64,8 @@ const useVisibilityTracking = ({
       if (timer) window.clearTimeout(timer);
       obs.disconnect();
     };
+    // FIXME
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return subject;

@@ -3,15 +3,14 @@
 import GeoMap from "@components/map/GeoMap";
 import logRender from "@lib/logRender";
 import type { ContentHashCollection } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
-// import * as L from "leaflet";
 import React, { useDeferredValue, useMemo, useState } from "react";
 
+import { useLeaflet } from "@/app/useLeaflet";
+
 import FilesTable from "./filesTable";
+import styles from "./listOfFiles.module.css";
 import MultiGPSEditor from "./MultiGPSEditor";
 import MultiTagEditor from "./MultiTagEditor";
-
-import styles from "./listOfFiles.module.css";
-import { useLeaflet } from "@/app/useLeaflet";
 
 const ListOfFiles = ({
   files,

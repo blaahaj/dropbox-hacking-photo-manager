@@ -68,6 +68,8 @@ export const useThumbnail = (rev: string) => {
   );
 
   return (isVisible: boolean): R => {
+    // FIXME
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect(() => {
       if (isVisible !== state.visible)
         dispatch({ action: "set_visibility", visible: isVisible });

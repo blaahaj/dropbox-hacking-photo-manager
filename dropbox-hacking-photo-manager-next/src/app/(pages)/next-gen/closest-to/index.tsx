@@ -7,13 +7,7 @@ import MaybeVisibleThumbnail from "../day/MaybeVisibleThumbnail";
 
 // import SamplePhoto from "../../legacy/days/samplePhoto";
 
-export default ({
-  gps,
-  nClosest,
-}: {
-  gps: GPSLatNLongE;
-  nClosest?: number;
-}) => {
+const Page = ({ gps, nClosest }: { gps: GPSLatNLongE; nClosest?: number }) => {
   const data = useLatestValueFromServerFeed({
     type: "rx.ng.closest-to",
     from: gps,
@@ -21,43 +15,46 @@ export default ({
     maxDistanceInMeters: 2000,
   });
 
-  return data ? (
-    <div>
-      <table>
-        <tbody>
-          {data.items.map((item) => {
-            const date = item.photo.namedFile.client_modified.substring(0, 10);
-            return (
-              <tr key={item.photo.namedFile.rev}>
-                <td>{Math.round(item.distanceInMeters)} m</td>
-                <td>
-                  <SamePageLink
-                    routeState={{
-                      route: "route/next-gen/day/files",
-                      date,
-                    }}
-                  >
-                    {date}
-                  </SamePageLink>
-                </td>
-                <td>
-                  <MaybeVisibleThumbnail
-                    namedFile={item.photo.namedFile}
-                    photo={item.photoDbEntry ?? {}}
-                    visible={true}
-                    routeState={{
-                      route: "route/next-gen/content-hash",
-                      contentHash: item.photo.namedFile.content_hash,
-                    }}
-                  />
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-    </div>
-  ) : (
-    "loading..."
-  );
+  return data ?
+      <div>
+        <table>
+          <tbody>
+            {data.items.map((item) => {
+              const date = item.photo.namedFile.client_modified.substring(
+                0,
+                10,
+              );
+              return (
+                <tr key={item.photo.namedFile.rev}>
+                  <td>{Math.round(item.distanceInMeters)} m</td>
+                  <td>
+                    <SamePageLink
+                      routeState={{
+                        route: "route/next-gen/day/files",
+                        date,
+                      }}
+                    >
+                      {date}
+                    </SamePageLink>
+                  </td>
+                  <td>
+                    <MaybeVisibleThumbnail
+                      namedFile={item.photo.namedFile}
+                      photo={item.photoDbEntry ?? {}}
+                      visible={true}
+                      routeState={{
+                        route: "route/next-gen/content-hash",
+                        contentHash: item.photo.namedFile.content_hash,
+                      }}
+                    />
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    : "loading...";
 };
+
+export default Page;

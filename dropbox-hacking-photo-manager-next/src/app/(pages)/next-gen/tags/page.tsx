@@ -1,11 +1,10 @@
 "use client";
 
 import Navigate from "@components/Navigation";
+import TagList from "@components/tags/TagList";
 import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFeed";
 import logRender from "@lib/logRender";
 import { useEffect } from "react";
-
-import TagList from "@components/tags/TagList";
 
 const Page = () => {
   const latestValue = useLatestValueFromServerFeed({

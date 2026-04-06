@@ -5,8 +5,7 @@ import Navigate from "@components/Navigation";
 import ShowData from "@components/ShowData";
 import { useIdentity } from "@hooks/useIdentity";
 import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFeed";
-import logRender from "@lib/logRender";
-import React, { useEffect, useMemo, type Usable } from "react";
+import React, {useEffect, useMemo } from "react";
 
 import ListOfFiles from "../../listOfFiles";
 import PrevNextDayLinks from "../../PrevNextDayLinks";
@@ -14,7 +13,7 @@ import PrevNextDayLinks from "../../PrevNextDayLinks";
 const NGDayFiles = ({
   params: pathParams,
 }: {
-  params: Usable<{ readonly date: string }>;
+  params: Promise<{ readonly date: string }>;
 }) => {
   const { date } = React.use(pathParams);
   console.log("NGDayFiles", useIdentity());

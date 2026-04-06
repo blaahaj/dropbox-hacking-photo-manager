@@ -4,7 +4,6 @@ import type { ContentHashCollection } from "dropbox-hacking-photo-manager-shared
 import React, { useRef, useState } from "react";
 
 import FileRow from "./FileRow";
-
 import styles from "./filesTable.module.css";
 
 const FilesTable = ({

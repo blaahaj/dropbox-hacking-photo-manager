@@ -58,9 +58,8 @@ const Calendar = () => {
 
       <h1>Calendar</h1>
 
-      {[...years.keys()]
-        .sort()
-        .map((key) => years.get(key))
+      {[...years.values()]
+        .toSorted((a, b) => a.yearNumber - b.yearNumber)
         .map((year: Year) => (
           <div key={year.yearString}>
             <h2>{year.yearString}</h2>
