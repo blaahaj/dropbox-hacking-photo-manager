@@ -4,6 +4,7 @@ import { DefaultMultiplexerProvider } from "@/app/_hooks/useMultiplexer";
 import type { Multiplexer } from "@hooks/useMultiplexer/context";
 import { DefaultThumbnailProvider } from "@hooks/useThumbnail";
 import { useMemo } from "react";
+import { DefaultLeafletProvider } from "./useLeaflet";
 
 export default function ProviderLayout({
   children,
@@ -25,8 +26,10 @@ export default function ProviderLayout({
   );
 
   return (
-    <DefaultMultiplexerProvider accepter={accepter}>
-      <DefaultThumbnailProvider>{children}</DefaultThumbnailProvider>
-    </DefaultMultiplexerProvider>
+    <DefaultLeafletProvider>
+      <DefaultMultiplexerProvider accepter={accepter}>
+        <DefaultThumbnailProvider>{children}</DefaultThumbnailProvider>
+      </DefaultMultiplexerProvider>
+    </DefaultLeafletProvider>
   );
 }
