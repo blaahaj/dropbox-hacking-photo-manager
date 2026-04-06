@@ -7,9 +7,8 @@ import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFee
 import logRender from "@lib/logRender";
 import React, { useEffect } from "react";
 
-import TagsWithCounts from "../../day/TagsWithCounts";
-
 import styles from "./page.module.css";
+import TagList from "@components/tags/TagList";
 
 const XOutOfY = ({ x, y }: { x: number; y: number }) =>
   y === 0 ?
@@ -78,9 +77,13 @@ const NGDaysNoSamples = () => {
                 />
                 <td>{row.dayMetadata?.description ?? ""}</td>
                 <td>
-                  <TagsWithCounts
-                    tags={row.photoTags}
-                    style={{ paddingBlock: "1em" }}
+                  <TagList
+                    data={Object.entries(row.photoTags)
+                      .map(([tag, count]) => ({ tag, count }))
+                      .toSorted(
+                        (a, b) =>
+                          b.count - a.count || a.tag.localeCompare(b.tag),
+                      )}
                   />
                 </td>
               </tr>

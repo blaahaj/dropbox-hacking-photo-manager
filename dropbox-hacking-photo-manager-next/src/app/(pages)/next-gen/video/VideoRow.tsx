@@ -2,9 +2,9 @@ import SamePageLink from "@components/samePageLink";
 import type { VideoResult } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
 
 // import MaybeVisibleThumbnail from "../day/MaybeVisibleThumbnail";
-import Tags from "../day/Tags";
 
 import styles from "./page.module.css";
+import TagList from "@components/tags/TagList";
 
 export const VideoRow = ({ item }: { item: VideoResult[number] }) => {
   const { general, video, audio } = item.mediaInfoSummary;
@@ -18,7 +18,9 @@ export const VideoRow = ({ item }: { item: VideoResult[number] }) => {
         {item.photoDbEntry?.description ?? ""}
       </td>
       <td className="photoTags">
-        <Tags tags={item.photoDbEntry?.tags ?? []} />
+        <TagList
+          data={(item.photoDbEntry?.tags ?? []).map((tag) => ({ tag }))}
+        />
       </td>
 
       <td>{general?.gps ? "GPS" : "–"}</td>
