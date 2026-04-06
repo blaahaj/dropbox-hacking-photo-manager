@@ -3,7 +3,7 @@ import logRender from "@lib/logRender";
 import type { PhotoDbEntry } from "dropbox-hacking-photo-manager-shared";
 import React, { useMemo } from "react";
 
-import Tags from "../day/Tags";
+import TagList from "@components/tags/TagList";
 
 const EditablePhotoEntry = ({
   contentHash,
@@ -59,10 +59,10 @@ const EditablePhotoEntry = ({
           value={photoDbEntry.tags?.join(" ") ?? ""}
           onSave={onSaveTags}
           renderInactive={({ value, placeholderText }) =>
-            value === "" ? (
-              placeholderText
-            ) : (
-              <Tags tags={photoDbEntry.tags ?? []} />
+            value === "" ? placeholderText : (
+              <TagList
+                data={(photoDbEntry?.tags ?? []).map((tag) => ({ tag }))}
+              />
             )
           }
         />

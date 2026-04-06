@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
 import MaybeVisibleThumbnail from "./MaybeVisibleThumbnail";
 
 import styles from "./filesTable.module.css";
-import tagStyles from "../tags/page.module.css";
+import TagList from "@components/tags/TagList";
 
 const FileRow = ({
   file,
@@ -122,14 +122,7 @@ const FileRow = ({
       </div>
       <div className={styles.description}>{file.photo?.description ?? ""}</div>
       <div className={styles.tags}>
-        {(file.photo?.tags ?? []).map((tag, index) => (
-          <span
-            key={index}
-            className={`${tagStyles.tag} ${tagStyles[`tag-${tag.replace(/:.*/, "Star")}`]}`}
-          >
-            {tag}
-          </span>
-        ))}
+        <TagList data={(file.photo?.tags ?? []).map((tag) => ({ tag }))} />
       </div>
     </li>
   );
