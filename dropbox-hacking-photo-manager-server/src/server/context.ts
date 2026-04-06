@@ -14,8 +14,6 @@ export type SubscribableData<T> = EventEmitter & {
 };
 
 export type Context = {
-  readonly port: number;
-  readonly baseUrlWithoutSlash: string;
   get dropboxClient(): Promise<Dropbox>;
   readonly dayDb: DayDb;
   readonly close: () => Promise<void>;
