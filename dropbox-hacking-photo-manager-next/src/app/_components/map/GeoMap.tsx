@@ -1,10 +1,11 @@
 "use client";
 
 import logRender from "@lib/logRender";
-import * as L from "leaflet";
+// import * as L from "leaflet";
 import React, { useEffect, useMemo, useRef } from "react";
 
 import styles from "./page.module.css";
+import { useLeaflet } from "@/app/useLeaflet";
 
 type P = {
   position: L.LatLng;
@@ -15,6 +16,7 @@ export type Positions = ReadonlyMap<string, P>;
 
 const findBoundingBox = (
   positions: readonly L.LatLng[],
+  L: typeof import("leaflet"),
 ): { center: L.LatLng; halfDiagonal: number } => {
   let minLat = +Infinity;
   let maxLat = -Infinity;
@@ -51,22 +53,27 @@ const GeoMapWrapper = ({
     onClickMarker: (e: L.LeafletMouseEvent, key: string) => void;
   }>;
 }) => {
-  if (positions.size === 0) return null;
+  const L = useLeaflet();
 
-  return <GeoMap positions={positions} listeners={listeners} />;
+  if (positions.size === 0 || !L) return null;
+
+  return <GeoMap positions={positions} listeners={listeners} L={L} />;
 };
 
 const GeoMap = ({
   positions,
   listeners,
+  L,
 }: {
   positions: Positions;
   listeners?: Partial<{
     onClickMarker: (e: L.LeafletMouseEvent, key: string) => void;
   }>;
+  L: typeof import("leaflet");
 }) => {
   const { center, halfDiagonal } = findBoundingBox(
     [...positions.values()].map((p) => p.position),
+    L,
   );
 
   const initialZoom = findInitialZoom(halfDiagonal);
@@ -88,7 +95,7 @@ const GeoMap = ({
     mapRef.current = theMap;
 
     return () => void theMap.remove();
-  }, []);
+  }, [L]);
 
   useEffect(() => {
     mapRef.current?.setView({ lat: center.lat, lng: center.lng }, initialZoom);
@@ -100,7 +107,7 @@ const GeoMap = ({
         imagePath: "https://unpkg.com/leaflet@1.9.4/dist/images/",
         className: styles.iconA,
       }),
-    [],
+    [L],
   );
   const iconB = useMemo(
     () =>
@@ -108,7 +115,7 @@ const GeoMap = ({
         imagePath: "https://unpkg.com/leaflet@1.9.4/dist/images/",
         className: styles.iconB,
       }),
-    [],
+    [L],
   );
   const markersRef = useRef(new Map<string, P & { marker: L.Marker }>());
 

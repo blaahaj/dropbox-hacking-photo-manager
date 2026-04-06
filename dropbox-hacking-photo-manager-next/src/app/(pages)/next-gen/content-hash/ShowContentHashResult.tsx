@@ -7,7 +7,7 @@ import {
   type GPSLatNLongE,
 } from "dropbox-hacking-photo-manager-shared";
 import type { ContentHashCollection } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
-import * as L from "leaflet";
+// import * as L from "leaflet";
 
 import EditableGPS from "./EditableGPS";
 import EditablePhotoEntry from "./EditablePhotoEntry";
@@ -15,6 +15,7 @@ import ImagePreview from "./imagePreview";
 import SummariseExif from "./SummariseExif";
 import SummariseMediaInfo from "./SummariseMediaInfo";
 import SummariseNamedFiles from "./SummariseNamedFiles";
+import { useLeaflet } from "@/app/useLeaflet";
 
 const gpsOrNone = (title: string, pos: GPSLatNLongE | null) => {
   if (pos === null) return "-";
@@ -34,6 +35,8 @@ export const ShowContentHashResult = ({
   contentHash: string;
   latestValue: ContentHashCollection;
 }) => {
+  const L = useLeaflet();
+
   return (
     <>
       <ShowData data={latestValue} />
@@ -84,7 +87,7 @@ export const ShowContentHashResult = ({
             </ol>
           </div>
 
-          {latestValue.gps.effective && (
+          {latestValue.gps.effective && L && (
             <div style={{ marginBlock: "1em" }}>
               <GeoMap
                 positions={

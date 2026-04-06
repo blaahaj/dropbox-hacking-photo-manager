@@ -3,7 +3,7 @@
 import GeoMap from "@components/map/GeoMap";
 import logRender from "@lib/logRender";
 import type { ContentHashCollection } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
-import * as L from "leaflet";
+// import * as L from "leaflet";
 import React, { useDeferredValue, useMemo, useState } from "react";
 
 import FilesTable from "./filesTable";
@@ -11,6 +11,7 @@ import MultiGPSEditor from "./MultiGPSEditor";
 import MultiTagEditor from "./MultiTagEditor";
 
 import styles from "./listOfFiles.module.css";
+import { useLeaflet } from "@/app/useLeaflet";
 
 const ListOfFiles = ({
   files,
@@ -24,6 +25,7 @@ const ListOfFiles = ({
   >(() => new Set());
 
   const prev = useDeferredValue(selectedContentHashes);
+  const L = useLeaflet();
 
   console.log(
     `GeoMap curr=${selectedContentHashes.size} prev=${prev.size} is=${Object.is(selectedContentHashes, prev)}`,
@@ -31,28 +33,30 @@ const ListOfFiles = ({
 
   const forMap = useMemo(
     () =>
-      new Map(
-        files.flatMap((t) =>
-          t.gps.effective ?
-            [
+      L ?
+        new Map(
+          files.flatMap((t) =>
+            t.gps.effective ?
               [
-                t.namedFiles[0].content_hash,
-                {
-                  position: new L.LatLng(
-                    t.gps.effective.lat,
-                    t.gps.effective.long,
-                  ),
+                [
+                  t.namedFiles[0].content_hash,
+                  {
+                    position: new L.LatLng(
+                      t.gps.effective.lat,
+                      t.gps.effective.long,
+                    ),
 
-                  highlighted: selectedContentHashes.has(
-                    t.namedFiles[0].content_hash,
-                  ),
-                },
-              ],
-            ]
-          : [],
-        ),
-      ),
-    [files, selectedContentHashes],
+                    highlighted: selectedContentHashes.has(
+                      t.namedFiles[0].content_hash,
+                    ),
+                  },
+                ],
+              ]
+            : [],
+          ),
+        )
+      : new Map(),
+    [L, files, selectedContentHashes],
   );
 
   const mapListeners = useMemo<Parameters<typeof GeoMap>[0]["listeners"]>(

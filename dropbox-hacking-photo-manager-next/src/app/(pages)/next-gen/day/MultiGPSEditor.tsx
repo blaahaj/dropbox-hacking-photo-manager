@@ -5,12 +5,13 @@ import * as j from "@blaahaj/json";
 import logRender from "@lib/logRender";
 import { type PhotoDbEntry } from "dropbox-hacking-photo-manager-shared";
 import type { DayFilesResult } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
-import * as L from "leaflet";
+// import * as L from "leaflet";
 import React, { useMemo, useState } from "react";
 
 import places from "./places.json" with { format: "json" };
 
 import styles from "./MultiGPSEditor.module.css";
+import { useLeaflet } from "@/app/useLeaflet";
 
 const isGeoJSONPoint = (t: unknown): t is GeoJSON.Feature<GeoJSON.Point> =>
   typeof t === "object" &&
@@ -43,6 +44,7 @@ const parse = (t: string): PhotoDbEntry["gps"] => {
 
 const findBoundingBox = (
   positions: readonly L.LatLng[],
+  L: typeof import("leaflet"),
 ): { center: L.LatLng; halfDiagonal: number } | null => {
   if (positions.length === 0) return null;
 
@@ -65,16 +67,22 @@ const findBoundingBox = (
   return { center, halfDiagonal };
 };
 
-const useAverageEmbedded = (files: DayFilesResult["files"]) =>
-  useMemo(
+const useAverageEmbedded = (files: DayFilesResult["files"]) => {
+  const L = useLeaflet();
+
+  return useMemo(
     () =>
-      findBoundingBox(
-        files
-          .map((f) => f.gps.fromContent)
-          .flatMap((t) => (t ? [new L.LatLng(t.lat, t.long)] : [])),
-      )?.center ?? null,
-    [files],
+      L ?
+        (findBoundingBox(
+          files
+            .map((f) => f.gps.fromContent)
+            .flatMap((t) => (t ? [new L.LatLng(t.lat, t.long)] : [])),
+          L,
+        )?.center ?? null)
+      : null,
+    [L, files],
   );
+};
 
 const parseSpec = (spec: string, original: string) => {
   spec = spec.trim();
