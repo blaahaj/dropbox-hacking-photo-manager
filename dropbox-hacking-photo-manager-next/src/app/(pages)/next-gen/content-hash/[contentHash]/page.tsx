@@ -5,8 +5,7 @@ import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFee
 import logRender from "@lib/logRender";
 import React, { useEffect } from "react";
 
-// import { PrevNextFileNav } from "../PrevNextFileNav";
-import { ShowContentHashResult } from "../ShowContentHashResult";
+import { ShowContentHashResult } from "./ShowContentHashResult";
 
 const NGContentHash = ({
   params: pathParams,

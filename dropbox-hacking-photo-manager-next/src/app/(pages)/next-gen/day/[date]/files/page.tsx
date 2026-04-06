@@ -7,8 +7,8 @@ import { useIdentity } from "@hooks/useIdentity";
 import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFeed";
 import React, { useEffect, useMemo } from "react";
 
-import ListOfFiles from "../../listOfFiles";
-import PrevNextDayLinks from "../../PrevNextDayLinks";
+import ListOfFiles from "./listOfFiles";
+import PrevNextDayLinks from "./PrevNextDayLinks";
 
 const NGDayFiles = ({
   params: pathParams,

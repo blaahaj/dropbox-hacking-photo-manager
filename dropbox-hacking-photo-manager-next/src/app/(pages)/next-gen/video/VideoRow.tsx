@@ -2,7 +2,6 @@ import SamePageLink from "@components/samePageLink";
 import TagList from "@components/tags/TagList";
 import type { VideoResult } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
 
-// import MaybeVisibleThumbnail from "../day/MaybeVisibleThumbnail";
 import styles from "./page.module.css";
 
 export const VideoRow = ({ item }: { item: VideoResult[number] }) => {

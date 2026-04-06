@@ -41,62 +41,64 @@ const NGDaysNoSamples = () => {
       <h1>List of days (no samples)</h1>
 
       {latestValue ? (
-        <table className={styles.listOfDays}>
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>EXIF</th>
-              <th>MediaInfo</th>
-              <th>GPS</th>
-              <th>Description</th>
-              <th>Tags</th>
-            </tr>
-          </thead>
-          <tbody>
-            {latestValue.map((row) => (
-              <tr key={row.date}>
-                <td>
-                  <SamePageLink
-                    routeState={{
-                      route: "route/next-gen/day/files",
-                      date: row.date,
-                    }}
-                  >
-                    {row.date}
-                  </SamePageLink>
-                </td>
-                <XOutOfY
-                  x={row.counts.hasExifCount}
-                  y={row.counts.exifableCount}
-                />
-                <XOutOfY
-                  x={row.counts.hasMediaInfoCount}
-                  y={row.counts.mediaInfoableCount}
-                />
-                <XOutOfY
-                  x={row.counts.hasGPSCount}
-                  y={row.counts.previewableCount}
-                />
-                <td>{row.dayMetadata?.description ?? ""}</td>
-                <td>
-                  <TagList
-                    data={Object.entries(row.photoTags)
-                      .map(([tag, count]) => ({ tag, count }))
-                      .toSorted(
-                        (a, b) =>
-                          b.count - a.count || a.tag.localeCompare(b.tag),
-                      )}
-                  />
-                </td>
+        <div>
+          <table className={styles.listOfDays}>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>EXIF</th>
+                <th>MediaInfo</th>
+                <th>GPS</th>
+                <th>Description</th>
+                <th>Tags</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {latestValue.map((row) => (
+                <tr key={row.date}>
+                  <td>
+                    <SamePageLink
+                      routeState={{
+                        route: "route/next-gen/day/files",
+                        date: row.date,
+                      }}
+                    >
+                      {row.date}
+                    </SamePageLink>
+                  </td>
+                  <XOutOfY
+                    x={row.counts.hasExifCount}
+                    y={row.counts.exifableCount}
+                  />
+                  <XOutOfY
+                    x={row.counts.hasMediaInfoCount}
+                    y={row.counts.mediaInfoableCount}
+                  />
+                  <XOutOfY
+                    x={row.counts.hasGPSCount}
+                    y={row.counts.previewableCount}
+                  />
+                  <td>{row.dayMetadata?.description ?? ""}</td>
+                  <td>
+                    <TagList
+                      data={Object.entries(row.photoTags)
+                        .map(([tag, count]) => ({ tag, count }))
+                        .toSorted(
+                          (a, b) =>
+                            b.count - a.count || a.tag.localeCompare(b.tag),
+                        )}
+                    />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+
+          <ShowData data={latestValue} />
+        </div>
       ) : (
         "loading ..."
       )}
-
-      <ShowData data={latestValue} />
     </>
   );
 };
