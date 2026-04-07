@@ -12,7 +12,7 @@ import {
   useState,
 } from "react";
 
-import ListOfFiles from "../day/listOfFiles";
+import ListOfFiles from "../day/[date]/files/listOfFiles";
 
 const NGSearch = ({
   searchParams: searchParamsProxy,
@@ -109,6 +109,7 @@ const NGSearch = ({
           )}
 
           {filter && (
+            // TODO use shareable component
             <ListOfFiles
               files={latestValue.matches}
               // FIXME, this date

@@ -1,0 +1,5 @@
+.nonZeroDay:hover,
+.nonZeroDay:focus {
+  background-color: orange;
+  color: black;
+}

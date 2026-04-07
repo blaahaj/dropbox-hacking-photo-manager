@@ -7,7 +7,7 @@ const ShowData = ({ data }: { data: unknown }) => {
 
   return (
     <>
-      <p>
+      <p style={{ marginBlock: "1em" }}>
         <input
           id={checkboxId}
           type="checkbox"

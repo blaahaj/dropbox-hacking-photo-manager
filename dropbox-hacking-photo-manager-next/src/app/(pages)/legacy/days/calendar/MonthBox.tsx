@@ -1,10 +1,12 @@
 import logRender from "@lib/logRender";
 import * as React from "react";
 
+import styles from "./MonthBox.module.css";
+
 const MonthBox = (props: {
   year: number;
   month: number;
-  renderDay: (y: number, m: number, d: number) => React.ReactNode;
+  renderDay: (d: number) => React.ReactNode;
 }) => {
   const { year, month, renderDay } = props;
 
@@ -20,20 +22,20 @@ const MonthBox = (props: {
     const column = date.getDay();
 
     fragments.push(
-      <div
+      <li
         key={date.getTime()}
-        className={`dayInMonthBox row${row + 1} col${column + 1}`}
+        // className={`${styles.dayInMonthBox} row${row + 1} col${column + 1}`}
         style={{ gridRow: row + 1, gridColumn: column + 1 }}
       >
-        {renderDay(year, month, day)}
-      </div>,
+        {renderDay(day)}
+      </li>,
     );
 
     if (column === 6) ++row;
     ++day;
   }
 
-  return <div className="monthBox">{fragments}</div>;
+  return <ol className={styles.monthBox}>{fragments}</ol>;
 };
 
 export default logRender(MonthBox);

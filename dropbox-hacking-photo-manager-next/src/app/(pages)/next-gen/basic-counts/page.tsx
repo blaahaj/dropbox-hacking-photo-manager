@@ -2,7 +2,7 @@
 
 import Navigate from "@components/Navigation";
 import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFeed";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 const BasicCounts = () => {
   const latestValue = useLatestValueFromServerFeed({

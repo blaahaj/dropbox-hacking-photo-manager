@@ -36,43 +36,51 @@ const ExifExplorer = () => {
 
       <h1>EXIF Explorer</h1>
 
-      {sortedTagCounts && (
-        <table className={styles.exifTable}>
-          <thead>
-            <tr>
-              <th>Tag</th>
-              <th className={styles.data}>present</th>
-              <th className={styles.data}>non-blank</th>
-              <th className={styles.data}>present % of all</th>
-              <th className={styles.data}>non-blank % of all</th>
-              <th className={styles.data}>non-blank % of present</th>
-            </tr>
-          </thead>
-          <tbody>
-            {sortedTagCounts.map(([tag, counts]) => (
-              <tr key={tag}>
-                <td>{tag}</td>
-                <td className={styles.data}>{counts.present}</td>
-                <td className={styles.data}>{counts.nonBlank}</td>
-                <td className={styles.data}>
-                  {((counts.present / latestValue.entries) * 100.0).toFixed(2)}
-                </td>
-                <td className={styles.data}>
-                  {((counts.nonBlank / latestValue.entries) * 100.0).toFixed(2)}
-                </td>
-                <td className={styles.data}>
-                  {((counts.nonBlank / counts.present) * 100.0).toFixed(2)}
-                </td>
+      {sortedTagCounts ? (
+        <div>
+          <table className={styles.exifTable}>
+            <thead>
+              <tr>
+                <th>Tag</th>
+                <th className={styles.data}>present</th>
+                <th className={styles.data}>non-blank</th>
+                <th className={styles.data}>present % of all</th>
+                <th className={styles.data}>non-blank % of all</th>
+                <th className={styles.data}>non-blank % of present</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {sortedTagCounts.map(([tag, counts]) => (
+                <tr key={tag}>
+                  <td>{tag}</td>
+                  <td className={styles.data}>{counts.present}</td>
+                  <td className={styles.data}>{counts.nonBlank}</td>
+                  <td className={styles.data}>
+                    {((counts.present / latestValue.entries) * 100.0).toFixed(
+                      2,
+                    )}
+                  </td>
+                  <td className={styles.data}>
+                    {((counts.nonBlank / latestValue.entries) * 100.0).toFixed(
+                      2,
+                    )}
+                  </td>
+                  <td className={styles.data}>
+                    {((counts.nonBlank / counts.present) * 100.0).toFixed(2)}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+
+          <br />
+          <br />
+
+          <ShowData data={latestValue} />
+        </div>
+      ) : (
+        "loading..."
       )}
-
-      <br />
-      <br />
-
-      <ShowData data={latestValue} />
     </>
   );
 };

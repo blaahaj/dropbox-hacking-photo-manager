@@ -24,6 +24,7 @@ config.autoAddCss = false;
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import { Suspense } from "react";
 library.add(faCoffee, faTwitter);
 
 export const metadata: Metadata = {
@@ -51,7 +52,28 @@ export default function RootLayout({
         ></script> */}
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <ProvideContexts>{children}</ProvideContexts>
+        <Suspense
+          fallback={
+            <div
+              style={{
+                position: "absolute",
+                display: "block",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                margin: "auto",
+                fontSize: "80vh",
+                textAlign: "center",
+                opacity: 0.4,
+              }}
+            >
+              🤔
+            </div>
+          }
+        >
+          <ProvideContexts>{children}</ProvideContexts>
+        </Suspense>
       </body>
     </html>
   );

@@ -1,0 +1,7 @@
+.ListOfYears {
+  list-style: none;
+}
+
+.ListOfYears > li:not(:first-child) {
+  margin-block-start: 2em;
+}

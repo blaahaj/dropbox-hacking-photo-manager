@@ -21,89 +21,6 @@ a[href]:active {
   overflow: scroll;
 }
 
-.twelveMonths {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  padding: 0.5em;
-}
-
-.oneOfTwelveMonths {
-  border: 1px solid lightblue;
-  padding: 0.5em;
-}
-
-.monthBox {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  padding: 0.5em;
-}
-
-.dayInMonthBox {
-  border: 1px solid steelblue;
-  text-align: center;
-}
-
-.dayInMonthBox.col1,
-.dayInMonthBox.col7 {
-  background: #eee;
-}
-
-.dayInMonthBox a {
-  display: block;
-  text-decoration: none;
-}
-
-.dayInMonthBox a:hover {
-  background: #ccc;
-}
-
-/* List of photoItem on a day page */
-/* .photoList {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.photoItem {
-  border: 1px solid lightblue;
-  padding: 0.5em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  text-decoration: none;
-}
-
-.photoItem:hover {
-  background: #ccc;
-}
-
-.photoItem:hover .clientModified,
-.photoItem:hover .name,
-.photoItem:hover .makeAndModel {
-  color: #444;
-}
-
-.photoItem .clientModified {
-  display: block;
-  font: small sans-serif;
-  color: #cccccc;
-  margin: 1em 0.25em 0.25em;
-}
-
-.photoItem .name {
-  display: block;
-  font: small sans-serif;
-  color: #cccccc;
-  margin: 0.25em;
-}
-
-.photoItem .makeAndModel {
-  display: block;
-  font: small sans-serif;
-  color: #cccccc;
-  margin: 0.25em 0.25em 0.5em;
-} */
-
 .listOfDays {
   list-style: none;
   margin-block-end: 3em;
@@ -146,18 +63,6 @@ a[href]:active {
   width: 2.5em;
 } */
 
-.samples {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.samples > .sample {
-  height: 128px;
-  width: 128px;
-  margin: 10px;
-}
-
 .description .noData {
   opacity: 0.3;
 }
@@ -166,20 +71,6 @@ a[href]:active {
   background-color: #ccf;
 }
 
-.tag {
-  font-family: monospace;
-  color: white;
-  background-color: blue;
-  border: 1px outset #777;
-  border-radius: 0.3em;
-  padding: 0.3em;
-  margin-inline-end: 0.5em;
-}
-
 td {
   padding-inline-end: 1em;
-}
-
-.multiTagEditor > .itemCount {
-  margin-block: 0.2em;
 }
