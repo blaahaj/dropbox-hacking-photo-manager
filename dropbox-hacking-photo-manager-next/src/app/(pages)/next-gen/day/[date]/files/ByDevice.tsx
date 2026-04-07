@@ -9,6 +9,8 @@ import React, { useEffect, useMemo } from "react";
 
 import ListOfFiles from "./listOfFiles";
 
+// FIXME: this is unreachable
+
 const NGDayFiles = ({ date }: { date: string }) => {
   console.log("NGDayFiles", useIdentity());
 

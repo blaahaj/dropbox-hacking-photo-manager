@@ -1,0 +1,8 @@
+.TwelveMonths {
+  display: grid;
+  grid-auto-flow: column;
+  list-style: none;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: 1 2 3;
+  padding: 0.5em;
+}

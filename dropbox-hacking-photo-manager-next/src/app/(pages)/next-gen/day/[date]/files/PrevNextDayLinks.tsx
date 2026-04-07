@@ -38,7 +38,7 @@ const PrevNextDayLinks = ({ date }: { date: string }) => {
         </SamePageLink>
       )}
 
-      {" ~ "}
+      {previousDay && nextDay && " ~ "}
 
       {nextDay && (
         <SamePageLink

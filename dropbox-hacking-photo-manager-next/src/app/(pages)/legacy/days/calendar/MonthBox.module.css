@@ -1,0 +1,13 @@
+.monthBox {
+  display: grid;
+  list-style: none;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.monthBox > li {
+  margin: 0.2em;
+  min-width: 2.3em;
+  text-align: end;
+  border-block-start: 1px dotted #444;
+  border-inline-start: 1px dotted #444;
+}

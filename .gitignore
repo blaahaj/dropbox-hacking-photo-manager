@@ -1,5 +1,11 @@
 /build.d.ts
 /build.js
+/build.js.map
+/graph.d.ts
+/graph.js
+/graph.js.map
+/graph.dot
+/graph.png
 dist/
 node_modules/
 tsconfig.tsbuildinfo

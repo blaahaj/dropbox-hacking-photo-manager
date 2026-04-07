@@ -2,6 +2,8 @@ import logRender from "@lib/logRender";
 import type { DayFilesResult } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
 import React, { useMemo, useState } from "react";
 
+import styles from "./MultiTagEditor.module.css";
+
 const MultiTagEditor = ({
   contentHashes,
   files,
@@ -95,7 +97,7 @@ const MultiTagEditor = ({
   };
 
   return (
-    <div className="multiTagEditor">
+    <div className={styles.multiTagEditor}>
       <form
         onSubmit={(e) => {
           e.preventDefault();

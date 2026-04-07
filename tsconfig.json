@@ -1,6 +1,7 @@
 {
+  "compilerOptions": { "types": ["node"] },
   "extends": "./tsconfig.base.json",
   "exclude": ["**/node_modules"],
-  "files": ["build.ts"],
+  "files": ["build.ts", "graph.ts"],
   "include": []
 }
