@@ -1,7 +1,9 @@
 "use client";
 
 import GeoMap from "@components/map/GeoMap";
+import SamePageLink from "@components/samePageLink";
 import ShowData from "@components/ShowData";
+import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFeed";
 import {
   GPSLatLong,
   type GPSLatNLongE,
@@ -37,6 +39,11 @@ export const ShowContentHashResult = ({
 }) => {
   const L = useLeaflet();
 
+  const dayData = useLatestValueFromServerFeed({
+    type: "rx.ng.day.files",
+    date: latestValue.date,
+  });
+
   return (
     <>
       <ShowData data={latestValue} />
@@ -54,6 +61,50 @@ export const ShowContentHashResult = ({
           )}
 
           <div style={{ marginBlock: "1em" }}>
+            {dayData ? (
+              dayData.files.length === 1 ? (
+                <p>
+                  The only file from{" "}
+                  <SamePageLink
+                    routeState={{
+                      route: "route/next-gen/day/files",
+                      date: latestValue.date,
+                    }}
+                  >
+                    {latestValue.date}
+                  </SamePageLink>
+                </p>
+              ) : (
+                <p>
+                  #
+                  {1 +
+                    (dayData.files
+                      .toSorted((a, b) =>
+                        a.timestamp.localeCompare(b.timestamp),
+                      )
+                      .findIndex(
+                        (c) => c.contentHash === latestValue.contentHash,
+                      ) ?? "-2")}{" "}
+                  of {dayData.files.length} files from{" "}
+                  <SamePageLink
+                    routeState={{
+                      route: "route/next-gen/day/files",
+                      date: latestValue.date,
+                    }}
+                  >
+                    {latestValue.date}
+                  </SamePageLink>
+                </p>
+              )
+            ) : (
+              "loading..."
+            )}
+            {/* TODO, indicate >1 day */}
+            {/* TODO, make editable */}
+            <p style={{ marginBlock: "1em" }}>
+              Day ({latestValue.date}) description:{" "}
+              {dayData ? dayData.dayMetadata?.description || "-" : "loading..."}
+            </p>
             <EditablePhotoEntry
               contentHash={contentHash}
               photoDbEntry={latestValue.photo ?? {}}
