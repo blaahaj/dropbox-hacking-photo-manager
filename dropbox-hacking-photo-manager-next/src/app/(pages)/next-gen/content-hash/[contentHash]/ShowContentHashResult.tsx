@@ -47,7 +47,7 @@ export const ShowContentHashResult = ({
   return (
     <>
       <div style={{ display: "flex", flexDirection: "row" }}>
-        <div>
+        <div style={{ marginInline: "1em" }}>
           <ImagePreview
             namedFile={latestValue.namedFiles[0]}
             photo={latestValue.photo ?? {}}

@@ -21,6 +21,9 @@ const ImagePreview = ({
   }>();
 
   const theImage = useRef<HTMLImageElement>(null);
+  const [transitionDuration, setTransitionDuration] = useState("0s");
+
+  const shouldBlur = photo.tags?.some((t) => t === "nsfw");
 
   useEffect(() => {
     const img = theImage.current;
@@ -67,9 +70,10 @@ const ImagePreview = ({
     [namedFile.content_hash, photo, targetDegrees],
   );
 
-  const rotatedWidthAndHeight = previewWidthAndHeight
-    ? (targetDegrees / 90) % 2
-      ? {
+  const rotatedWidthAndHeight =
+    previewWidthAndHeight ?
+      (targetDegrees / 90) % 2 ?
+        {
           width: previewWidthAndHeight.height,
           height: previewWidthAndHeight.width,
         }
@@ -77,59 +81,58 @@ const ImagePreview = ({
     : undefined;
 
   return (
-    <div>
-      <div
-        style={{
-          width: `${rotatedWidthAndHeight?.width ?? 640}px`,
-          height: `${rotatedWidthAndHeight?.height ?? 640}px`,
-          marginInlineEnd: "2em",
-          marginBlockEnd: "2em",
-          position: "relative",
-          transitionProperty: "width,height",
-          transitionDuration: "0.3s",
-        }}
+    <div
+      style={{
+        width: "640px",
+        height: "640px",
+        position: "relative",
+      }}
+    >
+      <a
+        style={{ display: "block" }}
+        href={`http://localhost:4000/image/rev/${namedFile.rev}`}
       >
-        <a href={`http://localhost:4000/image/rev/${namedFile.rev}`}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            style={{
-              transform:
-                !previewWidthAndHeight || !rotatedWidthAndHeight
-                  ? undefined
-                  : `
-                  translate(
-                    ${(rotatedWidthAndHeight.width - previewWidthAndHeight.width) / 2}px,
-                    ${(rotatedWidthAndHeight.height - previewWidthAndHeight.height) / 2}px
-                    )
-                  rotate(${targetDegrees}deg)
-              `,
-              // disabled because of 270-degree spin problem
-              // (instead of 90 in the opposite direction)
-              // transitionProperty: "transform",
-              // transitionDuration: "0.3s",
-              transformOrigin: "center",
-            }}
-            ref={theImage}
-            src={`http://localhost:4000/image/rev/${namedFile.rev}/w640h480/bestfit/jpeg`}
-            alt={"preview"}
-          />
-        </a>
-
-        <button
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            background: "transparent",
-            border: "none",
-            fontSize: "20pt",
-            transform: "rotate(-90deg)",
+            display: "block",
+            position: "relative",
+            top: "320px",
+            left: "320px",
+            transform:
+              !previewWidthAndHeight || !rotatedWidthAndHeight ?
+                undefined
+              : `
+              translate(-${previewWidthAndHeight.width / 2}px, -${previewWidthAndHeight.height / 2}px)
+              rotate(${targetDegrees}deg)
+              `,
+            transitionProperty: "transform filter",
+            transitionDuration,
+            filter: shouldBlur ? "blur(20px)" : undefined,
           }}
-          onClick={(e) => void applyRotation(e.altKey ? -90 : +90)}
-        >
-          ⤵️
-        </button>
-      </div>
+          ref={theImage}
+          src={`http://localhost:4000/image/rev/${namedFile.rev}/w640h480/bestfit/jpeg`}
+          alt={"preview"}
+          onLoad={() =>
+            setTimeout(() => setTransitionDuration("0.3s"), 1000 /* HACK! */)
+          }
+        />
+      </a>
+
+      <button
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          background: "transparent",
+          border: "none",
+          fontSize: "20pt",
+          transform: "rotate(-90deg)",
+        }}
+        onClick={(e) => void applyRotation(e.altKey ? -90 : +90)}
+      >
+        ⤵️
+      </button>
     </div>
   );
 };
