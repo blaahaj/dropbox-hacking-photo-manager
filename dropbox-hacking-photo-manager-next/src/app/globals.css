@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -43,12 +43,12 @@ a {
 
 /* /// */
 
-body {
+/* body {
   font-family: sans-serif;
   padding: 1em;
   background: #000;
   color: #fff;
-}
+} */
 
 /* a[href],
 a[href]:visited {
@@ -63,10 +63,10 @@ a[href]:focus {
 }
 */
 
-body {
+/*body {
   margin: 1.5em 3em 5em;
 }
 
 h1 {
   margin-block-end: 0.7em;
-}
+} */

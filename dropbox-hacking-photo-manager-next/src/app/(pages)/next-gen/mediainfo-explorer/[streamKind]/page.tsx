@@ -47,69 +47,78 @@ const MediaInfoExplorer = ({
     <>
       <Navigate />
 
-      <h1>MediaInfo Explorer</h1>
+      <main style={{ margin: "2em" }}>
+        <h1>MediaInfo Explorer</h1>
 
-      <h2>StreamKind: {effectiveStreamKind ?? "all"}</h2>
+        <p>
+          StreamKind:
+          <ul
+            style={{
+              display: "inline-flex",
+              flexDirection: "row",
+              marginBlock: "0.7em",
+            }}
+          >
+            {[null, "General", "Video", "Menu", "Image", "Audio", "Other"].map(
+              (kind) => (
+                <li
+                  key={kind ?? "null"}
+                  style={{
+                    listStyle: "none",
+                    marginInlineEnd: "1em",
+                    fontWeight:
+                      kind === effectiveStreamKind ? "bold" : "normal",
+                  }}
+                >
+                  <a href={`./${kind ?? "null"}`}>{kind ?? "all"}</a>
+                </li>
+              ),
+            )}
+          </ul>
+        </p>
 
-      <ul style={{ display: "flex", flexDirection: "row", marginBlock: "1em" }}>
-        {[null, "General", "Video", "Menu", "Image", "Audio", "Other"].map(
-          (kind) => (
-            <li
-              key={kind ?? "null"}
-              style={{
-                listStyle: "none",
-                marginInlineEnd: "1em",
-                fontWeight: kind === effectiveStreamKind ? "bold" : "normal",
-              }}
-            >
-              <a href={`./${kind ?? "null"}`}>{kind ?? "all"}</a>
-            </li>
-          ),
-        )}
-      </ul>
-
-      {sortedTagCounts ? (
-        <div>
-          <table className={styles.mediaInfoTable}>
-            <thead>
-              <tr>
-                <th>Tag</th>
-                <th className={styles.data}>present</th>
-                <th className={styles.data}>non-blank</th>
-                <th className={styles.data}>present % of all</th>
-                <th className={styles.data}>non-blank % of all</th>
-                <th className={styles.data}>non-blank % of present</th>
-              </tr>
-            </thead>
-            <tbody>
-              {sortedTagCounts.map(([tag, counts]) => (
-                <tr key={tag}>
-                  <td>{tag}</td>
-                  <td className={styles.data}>{counts.present}</td>
-                  <td className={styles.data}>{counts.nonBlank}</td>
-                  <td className={styles.data}>
-                    {((counts.present / latestValue.entries) * 100.0).toFixed(
-                      1,
-                    )}
-                  </td>
-                  <td className={styles.data}>
-                    {((counts.nonBlank / latestValue.entries) * 100.0).toFixed(
-                      1,
-                    )}
-                  </td>
-                  <td className={styles.data}>
-                    {((counts.nonBlank / counts.present) * 100.0).toFixed(1)}
-                  </td>
+        {sortedTagCounts ?
+          <div>
+            <table className={styles.mediaInfoTable}>
+              <thead>
+                <tr>
+                  <th>Tag</th>
+                  <th className={styles.data}>present</th>
+                  <th className={styles.data}>non-blank</th>
+                  <th className={styles.data}>present % of all</th>
+                  <th className={styles.data}>non-blank % of all</th>
+                  <th className={styles.data}>non-blank % of present</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {sortedTagCounts.map(([tag, counts]) => (
+                  <tr key={tag}>
+                    <td>{tag}</td>
+                    <td className={styles.data}>{counts.present}</td>
+                    <td className={styles.data}>{counts.nonBlank}</td>
+                    <td className={styles.data}>
+                      {((counts.present / latestValue.entries) * 100.0).toFixed(
+                        1,
+                      )}
+                    </td>
+                    <td className={styles.data}>
+                      {(
+                        (counts.nonBlank / latestValue.entries) *
+                        100.0
+                      ).toFixed(1)}
+                    </td>
+                    <td className={styles.data}>
+                      {((counts.nonBlank / counts.present) * 100.0).toFixed(1)}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
 
-          <ShowData data={latestValue} />
-        </div>
-      ) : (
-        "loading..."
-      )}
+            <ShowData data={latestValue} />
+          </div>
+        : "loading..."}
+      </main>
     </>
   );
 };

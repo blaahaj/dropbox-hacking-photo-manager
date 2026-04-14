@@ -19,19 +19,19 @@ const Page = () => {
     <>
       <Navigate />
 
-      <h1>Tags</h1>
+      <main style={{ margin: "2em" }}>
+        <h1>Tags</h1>
 
-      {latestValue ? (
-        <TagList
-          data={latestValue.tags.map(([tag, count]) => ({
-            tag,
-            count,
-          }))}
-          linked={true}
-        />
-      ) : (
-        "loading..."
-      )}
+        {latestValue ?
+          <TagList
+            data={latestValue.tags.map(([tag, count]) => ({
+              tag,
+              count,
+            }))}
+            linked={true}
+          />
+        : "loading..."}
+      </main>
     </>
   );
 };

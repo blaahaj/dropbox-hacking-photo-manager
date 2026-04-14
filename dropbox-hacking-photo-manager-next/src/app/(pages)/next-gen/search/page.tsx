@@ -48,78 +48,82 @@ const NGSearch = ({
     <>
       <Navigate />
 
-      <h1>Search</h1>
+      <main style={{ margin: "2em" }}>
+        <h1>Search</h1>
 
-      <input
-        type="text"
-        value={filterSource}
-        placeholder="enter query"
-        onChange={onFilterSourceChange}
-        style={{ width: "50em", marginBlockEnd: "1em" }}
-      />
+        <input
+          type="text"
+          value={filterSource}
+          placeholder="enter query"
+          onChange={onFilterSourceChange}
+          style={{ width: "50em", marginBlockEnd: "1em" }}
+        />
 
-      <p>
-        <input type="checkbox" checked={showHelp} onChange={onShowHelpChange} />{" "}
-        Show help
-      </p>
-
-      {showHelp && (
-        <div>
-          <p>The query is in Reverse Polish.</p>
-
-          <ul>
-            <li>image / video / audio</li>
-            <li>gps</li>
-
-            <li>tag=swan</li>
-            <li>id=id:...</li>
-            <li>rev=...</li>
-            <li>tag~person:</li>
-            <li>text~meet</li>
-            <li>path~originals</li>
-
-            <li>tags&gt;0 / tags&lt;2</li>
-            <li>date&gt;2015 / date&lt;2019</li>
-            <li>duration&gt;300 / duration&lt;10</li>
-
-            <li>&, |, !</li>
-          </ul>
-        </div>
-      )}
-
-      {filterSource.trim() !== "" && !filter && (
-        <p
-          style={{
-            background: "red",
-            color: "white",
-            padding: "0.3em",
-            width: "auto",
-          }}
-        >
-          Not a valid filter
+        <p>
+          <input
+            type="checkbox"
+            checked={showHelp}
+            onChange={onShowHelpChange}
+          />{" "}
+          Show help
         </p>
-      )}
 
-      {latestValue ? (
-        <>
-          {latestValue.truncated && (
-            <p>
-              Results are truncated: {latestValue.totalCount} matches in total
-            </p>
-          )}
+        {showHelp && (
+          <div>
+            <p>The query is in Reverse Polish.</p>
 
-          {filter && (
-            // TODO use shareable component
-            <ListOfFiles
-              files={latestValue.matches}
-              // FIXME, this date
-              date={"2000-01-01"}
-            />
-          )}
-        </>
-      ) : (
-        "loading..."
-      )}
+            <ul>
+              <li>image / video / audio</li>
+              <li>gps</li>
+
+              <li>tag=swan</li>
+              <li>id=id:...</li>
+              <li>rev=...</li>
+              <li>tag~person:</li>
+              <li>text~meet</li>
+              <li>path~originals</li>
+
+              <li>tags&gt;0 / tags&lt;2</li>
+              <li>date&gt;2015 / date&lt;2019</li>
+              <li>duration&gt;300 / duration&lt;10</li>
+
+              <li>&, |, !</li>
+            </ul>
+          </div>
+        )}
+
+        {filterSource.trim() !== "" && !filter && (
+          <p
+            style={{
+              background: "red",
+              color: "white",
+              padding: "0.3em",
+              width: "auto",
+            }}
+          >
+            Not a valid filter
+          </p>
+        )}
+
+        {latestValue ?
+          <>
+            {latestValue.truncated && (
+              <p>
+                Results are truncated: {latestValue.totalCount} matches in total
+              </p>
+            )}
+
+            {filter && (
+              // TODO use shareable component
+              <ListOfFiles
+                files={latestValue.matches}
+                // FIXME, this date
+                date={"2000-01-01"}
+              />
+            )}
+          </>
+        : "loading..."}
+      </main>
     </>
   );
 };

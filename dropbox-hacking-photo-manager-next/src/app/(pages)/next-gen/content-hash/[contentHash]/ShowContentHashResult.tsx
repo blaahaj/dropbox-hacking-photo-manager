@@ -46,13 +46,36 @@ export const ShowContentHashResult = ({
 
   return (
     <>
-      <ShowData data={latestValue} />
-
       <div style={{ display: "flex", flexDirection: "row" }}>
-        <ImagePreview
-          namedFile={latestValue.namedFiles[0]}
-          photo={latestValue.photo ?? {}}
-        />
+        <div>
+          <ImagePreview
+            namedFile={latestValue.namedFiles[0]}
+            photo={latestValue.photo ?? {}}
+          />
+
+          {latestValue.gps.effective && L && (
+            <div style={{ marginBlock: "1em" }}>
+              <GeoMap
+                positions={
+                  new Map([
+                    [
+                      contentHash,
+                      {
+                        position: new L.LatLng(
+                          latestValue.gps.effective.lat,
+                          latestValue.gps.effective.long,
+                        ),
+                        highlighted: false,
+                      },
+                    ],
+                  ])
+                }
+              />
+            </div>
+          )}
+
+          <ShowData data={latestValue} />
+        </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
           {latestValue.exif && <SummariseExif exif={latestValue.exif} />}
@@ -61,8 +84,8 @@ export const ShowContentHashResult = ({
           )}
 
           <div style={{ marginBlock: "1em" }}>
-            {dayData ? (
-              dayData.files.length === 1 ? (
+            {dayData ?
+              dayData.files.length === 1 ?
                 <p>
                   The only file from{" "}
                   <SamePageLink
@@ -74,8 +97,7 @@ export const ShowContentHashResult = ({
                     {latestValue.date}
                   </SamePageLink>
                 </p>
-              ) : (
-                <p>
+              : <p>
                   #
                   {1 +
                     (dayData.files
@@ -95,10 +117,8 @@ export const ShowContentHashResult = ({
                     {latestValue.date}
                   </SamePageLink>
                 </p>
-              )
-            ) : (
-              "loading..."
-            )}
+
+            : "loading..."}
             {/* TODO, indicate >1 day */}
             {/* TODO, make editable */}
             <p style={{ marginBlock: "1em" }}>
@@ -137,27 +157,6 @@ export const ShowContentHashResult = ({
               </li>
             </ol>
           </div>
-
-          {latestValue.gps.effective && L && (
-            <div style={{ marginBlock: "1em" }}>
-              <GeoMap
-                positions={
-                  new Map([
-                    [
-                      contentHash,
-                      {
-                        position: new L.LatLng(
-                          latestValue.gps.effective.lat,
-                          latestValue.gps.effective.long,
-                        ),
-                        highlighted: false,
-                      },
-                    ],
-                  ])
-                }
-              />
-            </div>
-          )}
 
           <SummariseNamedFiles namedFiles={latestValue.namedFiles} />
         </div>

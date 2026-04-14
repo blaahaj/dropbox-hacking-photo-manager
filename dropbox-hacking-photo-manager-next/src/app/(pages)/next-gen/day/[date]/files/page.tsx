@@ -46,33 +46,33 @@ const NGDayFiles = ({
     <>
       <Navigate />
 
-      <PrevNextDayLinks date={date} />
+      <main style={{ margin: "2em" }}>
+        <PrevNextDayLinks date={date} />
 
-      <h1>
-        <a
-          href={`https://calendar.google.com/calendar/u/0/r/week/${date.substring(0, 4)}/${date.substring(5, 7)}/${date.substring(8, 10)}`}
-        >
-          {date}
-        </a>
-      </h1>
+        <h1>
+          <a
+            href={`https://calendar.google.com/calendar/u/0/r/week/${date.substring(0, 4)}/${date.substring(5, 7)}/${date.substring(8, 10)}`}
+          >
+            {date}
+          </a>
+        </h1>
 
-      {latestValue ? (
-        <>
-          <p>
-            <EditableTextField
-              key={dayMetadata?.description ?? ""}
-              value={dayMetadata?.description ?? ""}
-              onSave={onSaveDescription}
-            />
-          </p>
+        {latestValue ?
+          <>
+            <p>
+              <EditableTextField
+                key={dayMetadata?.description ?? ""}
+                value={dayMetadata?.description ?? ""}
+                onSave={onSaveDescription}
+              />
+            </p>
 
-          <ListOfFiles files={latestValue.files} date={date} />
+            <ListOfFiles files={latestValue.files} date={date} />
 
-          <ShowData data={latestValue} />
-        </>
-      ) : (
-        "loading..."
-      )}
+            <ShowData data={latestValue} />
+          </>
+        : "loading..."}
+      </main>
     </>
   );
 };

@@ -11,18 +11,17 @@ import React, { useEffect } from "react";
 import styles from "./page.module.css";
 
 const XOutOfY = ({ x, y }: { x: number; y: number }) =>
-  y === 0 ? (
+  y === 0 ?
     <td />
-  ) : (
-    <td
+  : <td
       style={{
-        backgroundColor: `rgb(${255.0 * (1 - x / y)}, 0, 0)`,
+        // backgroundColor: `rgb(${255.0 * (1 - x / y)}, 0, 0)`,
         textAlign: "center",
+        textWrap: "nowrap",
       }}
     >
       {x} / {y}
-    </td>
-  );
+    </td>;
 
 const NGDaysNoSamples = () => {
   const latestValue = useLatestValueFromServerFeed({
@@ -38,67 +37,67 @@ const NGDaysNoSamples = () => {
     <>
       <Navigate />
 
-      <h1>List of days (no samples)</h1>
+      <main style={{ margin: "2em" }}>
+        <h1>List of days (no samples)</h1>
 
-      {latestValue ? (
-        <div>
-          <table className={styles.listOfDays}>
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>EXIF</th>
-                <th>MediaInfo</th>
-                <th>GPS</th>
-                <th>Description</th>
-                <th>Tags</th>
-              </tr>
-            </thead>
-            <tbody>
-              {latestValue.map((row) => (
-                <tr key={row.date}>
-                  <td>
-                    <SamePageLink
-                      routeState={{
-                        route: "route/next-gen/day/files",
-                        date: row.date,
-                      }}
-                    >
-                      {row.date}
-                    </SamePageLink>
-                  </td>
-                  <XOutOfY
-                    x={row.counts.hasExifCount}
-                    y={row.counts.exifableCount}
-                  />
-                  <XOutOfY
-                    x={row.counts.hasMediaInfoCount}
-                    y={row.counts.mediaInfoableCount}
-                  />
-                  <XOutOfY
-                    x={row.counts.hasGPSCount}
-                    y={row.counts.previewableCount}
-                  />
-                  <td>{row.dayMetadata?.description ?? ""}</td>
-                  <td>
-                    <TagList
-                      data={Object.entries(row.photoTags)
-                        .map(([tag, count]) => ({ tag, count }))
-                        .toSorted(
-                          (a, b) =>
-                            b.count - a.count || a.tag.localeCompare(b.tag),
-                        )}
-                    />
-                  </td>
+        {latestValue ?
+          <div>
+            <table className={styles.listOfDays}>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>EXIF</th>
+                  <th>MediaInfo</th>
+                  <th>GPS</th>
+                  <th>Description</th>
+                  <th>Tags</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {latestValue.map((row) => (
+                  <tr key={row.date}>
+                    <td>
+                      <SamePageLink
+                        routeState={{
+                          route: "route/next-gen/day/files",
+                          date: row.date,
+                        }}
+                      >
+                        {row.date}
+                      </SamePageLink>
+                    </td>
+                    <XOutOfY
+                      x={row.counts.hasExifCount}
+                      y={row.counts.exifableCount}
+                    />
+                    <XOutOfY
+                      x={row.counts.hasMediaInfoCount}
+                      y={row.counts.mediaInfoableCount}
+                    />
+                    <XOutOfY
+                      x={row.counts.hasGPSCount}
+                      y={row.counts.previewableCount}
+                    />
+                    <td>{row.dayMetadata?.description ?? ""}</td>
+                    <td>
+                      <TagList
+                        data={Object.entries(row.photoTags)
+                          .map(([tag, count]) => ({ tag, count }))
+                          .toSorted(
+                            (a, b) =>
+                              b.count - a.count || a.tag.localeCompare(b.tag),
+                          )}
+                      />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
 
-          <ShowData data={latestValue} />
-        </div>
-      ) : (
-        "loading ..."
-      )}
+            <ShowData data={latestValue} />
+          </div>
+        : "loading ..."}
+      </main>
     </>
   );
 };

@@ -17,13 +17,13 @@ const BasicCounts = () => {
     <>
       <Navigate />
 
-      <h1>Basic Counts</h1>
+      <main style={{ margin: "2em" }}>
+        <h1>Basic Counts</h1>
 
-      {latestValue ? (
-        <pre>{JSON.stringify(latestValue ?? null, null, 2)}</pre>
-      ) : (
-        "loading..."
-      )}
+        {latestValue ?
+          <pre>{JSON.stringify(latestValue ?? null, null, 2)}</pre>
+        : "loading..."}
+      </main>
     </>
   );
 };

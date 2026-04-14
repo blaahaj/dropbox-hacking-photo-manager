@@ -28,23 +28,24 @@ const NGContentHash = ({
   return (
     <>
       <Navigate />
-      {/* {context && (
+
+      <main style={{ margin: "2em" }}>
+        {/* {context && (
         <PrevNextFileNav
           key={`${context.date} ${context.contentHash}`}
           context={context}
         />
       )} */}
 
-      {latestValue ? (
-        <>
-          <ShowContentHashResult
-            contentHash={contentHash}
-            latestValue={latestValue}
-          />
-        </>
-      ) : (
-        "Loading..."
-      )}
+        {latestValue ?
+          <>
+            <ShowContentHashResult
+              contentHash={contentHash}
+              latestValue={latestValue}
+            />
+          </>
+        : "Loading..."}
+      </main>
     </>
   );
 };
