@@ -37,6 +37,7 @@ type Leaf_Timestamp = {
 
 type Leaf_Text = {
   readonly type: "text";
+  readonly which: "day" | "photo" | "both";
   readonly text: string;
 };
 

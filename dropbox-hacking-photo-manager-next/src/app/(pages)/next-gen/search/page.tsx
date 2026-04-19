@@ -77,13 +77,15 @@ const NGSearch = ({
 
             <ul>
               <li>image / video / audio</li>
-              <li>gps</li>
+              <li>has-gps</li>
 
               <li>tag=swan</li>
               <li>id=id:...</li>
               <li>rev=...</li>
               <li>tag~person:</li>
               <li>text~meet</li>
+              <li>day-text~meet</li>
+              <li>photo-text~meet</li>
               <li>path~originals</li>
 
               <li>tags&gt;0 / tags&lt;2</li>
