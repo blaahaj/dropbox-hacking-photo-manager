@@ -1,6 +1,5 @@
 import type { Observable, ObservedValueOf } from "rxjs";
 
-import { provideBasicCounts } from "./basicCounts.js";
 import { provideClosestTo } from "./closestTo.js";
 import { provideContentHash } from "./contentHash.js";
 import { provideDayFiles } from "./dayFiles.js";
@@ -53,7 +52,6 @@ export const buildFeedMap = (
   thumbnailHandler: (req: ThumbnailRequest) => Promise<ThumbnailResponse>,
 ) =>
   Builder.init()
-    .addFeed("rx.ng.basic-counts", provideBasicCounts)
     .addFeed("rx.ng.closest-to", provideClosestTo)
     .addFeed("rx.ng.content_hash", provideContentHash)
     .addFeed("rx.ng.day.files", provideDayFiles)

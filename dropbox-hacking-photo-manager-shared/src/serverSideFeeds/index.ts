@@ -8,7 +8,6 @@ import { type Observable } from "rxjs";
 
 // RVE-add-feed
 
-export * from "./basicCounts.js";
 export * from "./closestTo.js";
 export * from "./contentHash.js";
 export * from "./dayFiles.js";

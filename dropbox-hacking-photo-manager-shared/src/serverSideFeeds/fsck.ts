@@ -6,6 +6,7 @@ import {
   imageFilenamePattern,
   videoFilenamePattern,
 } from "./index.js";
+import { unambiguousPrefixLength } from "./unambiguousPrefixLength.js";
 
 const areUnique = (things: Iterable<string>): boolean => {
   const seen = {} as Record<string, true>;
@@ -42,12 +43,22 @@ export const provideFsck = (feeds: FullDatabaseFeeds, _req: FsckRequest) =>
         .filter((f) => videoFilenamePattern.test(f.path_lower))
         .toArray();
 
+      const exifableFileCount = files
+        .values()
+        .filter((f) => isExifableFilename(f.path_lower))
+        .toArray().length;
+
       const filesLackingExif = files
         .values()
         .filter(
           (f) => isExifableFilename(f.path_lower) && !exifs.has(f.content_hash),
         )
         .toArray();
+
+      const mediainfoableFileCount = files
+        .values()
+        .filter((f) => isMediainfoableFilename(f.path_lower))
+        .toArray().length;
 
       const filesLackingMediaInfo = files
         .values()
@@ -65,53 +76,75 @@ export const provideFsck = (feeds: FullDatabaseFeeds, _req: FsckRequest) =>
           count: files.size,
           fileIdsAreUnique: areUnique(files.values().map((f) => f.id)),
           fileRevsAreUnique: areUnique(files.values().map((f) => f.rev)),
+          unambiguousPrefixLengths: {
+            rev: unambiguousPrefixLength(
+              new Set([...files.values()].map((f) => f.rev)),
+            ),
+            fileContentHash: unambiguousPrefixLength(
+              new Set([...files.values()].map((f) => f.content_hash)),
+            ),
+          },
+          imageFiles: {
+            count: imageFiles.length,
+            countWithExif: imageFiles.filter((f) => exifs.has(f.content_hash))
+              .length,
+            // imageFilesWithoutExif,
+          },
+          videoFiles: {
+            count: videoFiles.length,
+            countWithMediaInfo: videoFiles.filter((f) =>
+              mediaInfos.has(f.content_hash),
+            ).length,
+            countWithGeneralTrack: videoFiles.filter((f) =>
+              mediaInfos
+                .get(f.content_hash)
+                ?.mediainfoData.media?.track.some(
+                  (t) => t["@type"] === "General",
+                ),
+            ).length,
+            countWithVideoTrack: videoFiles.filter((f) =>
+              mediaInfos
+                .get(f.content_hash)
+                ?.mediainfoData.media?.track.some(
+                  (t) => t["@type"] === "Video",
+                ),
+            ).length,
+            countWithAudioTrack: videoFiles.filter((f) =>
+              mediaInfos
+                .get(f.content_hash)
+                ?.mediainfoData.media?.track.some(
+                  (t) => t["@type"] === "Audio",
+                ),
+            ).length,
+          },
         },
-        exifs: {
-          filesLackingExif: {
+        photos: {
+          count: photos.size,
+        },
+        days: {
+          count: days.size,
+        },
+        exif: {
+          eligibleFiles: exifableFileCount,
+          eligibleFilesWithNoItem: {
             count: filesLackingExif.length,
           },
-          orphaned: exifs
+          items: exifs.size,
+          orphanedItems: exifs
             .keys()
             .filter((hash) => !seenFileHashes.has(hash))
             .toArray().length,
         },
         mediaInfo: {
-          filesLackingMediaInfo: {
+          eligibleFiles: mediainfoableFileCount,
+          eligibleFilesWithNoItem: {
             count: filesLackingMediaInfo.length,
           },
-          orphaned: mediaInfos
+          items: mediaInfos.size,
+          orphanedItems: mediaInfos
             .keys()
             .filter((hash) => !seenFileHashes.has(hash))
             .toArray().length,
-        },
-        imageFiles: {
-          count: imageFiles.length,
-          countWithExif: imageFiles.filter((f) => exifs.has(f.content_hash))
-            .length,
-          // imageFilesWithoutExif,
-        },
-        videoFiles: {
-          count: videoFiles.length,
-          countWithMediaInfo: videoFiles.filter((f) =>
-            mediaInfos.has(f.content_hash),
-          ).length,
-          countWithGeneralTrack: videoFiles.filter((f) =>
-            mediaInfos
-              .get(f.content_hash)
-              ?.mediainfoData.media?.track.some(
-                (t) => t["@type"] === "General",
-              ),
-          ).length,
-          countWithVideoTrack: videoFiles.filter((f) =>
-            mediaInfos
-              .get(f.content_hash)
-              ?.mediainfoData.media?.track.some((t) => t["@type"] === "Video"),
-          ).length,
-          countWithAudioTrack: videoFiles.filter((f) =>
-            mediaInfos
-              .get(f.content_hash)
-              ?.mediainfoData.media?.track.some((t) => t["@type"] === "Audio"),
-          ).length,
         },
       };
     }),

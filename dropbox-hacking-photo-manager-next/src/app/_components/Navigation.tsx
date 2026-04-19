@@ -115,24 +115,13 @@ const Navigation = (): React.ReactElement | null => (
       <Typography
         variant="overline"
         component="a"
-        href="/next-gen/basic-counts"
+        href="/next-gen/stats"
         sx={{
           color: "inherit",
           mr: 2,
         }}
       >
-        Basic counts
-      </Typography>
-      <Typography
-        variant="overline"
-        component="a"
-        href="/next-gen/check"
-        sx={{
-          color: "inherit",
-          mr: 2,
-        }}
-      >
-        Check
+        Stats
       </Typography>
       <Typography
         variant="overline"
