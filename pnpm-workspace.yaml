@@ -1,0 +1,5 @@
+---
+packages:
+  - dropbox-hacking-photo-manager-server
+  - dropbox-hacking-photo-manager-shared
+  - dropbox-hacking-photo-manager-next

@@ -4,7 +4,7 @@ import { Application } from "express";
 import { Context } from "../context.js";
 
 export default (app: Application, context: Context): void => {
-  app.patch("/api/day/:date(\\d\\d\\d\\d-\\d\\d-\\d\\d)", (req, res) => {
+  app.patch("/api/day/:date", (req, res) => {
     const body = req.body as unknown as { description: unknown };
 
     if (typeof body["description"] === "string") {
