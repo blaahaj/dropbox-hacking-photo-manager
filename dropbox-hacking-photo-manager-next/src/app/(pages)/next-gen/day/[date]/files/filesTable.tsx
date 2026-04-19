@@ -1,6 +1,6 @@
 import useVisibilityTracking from "@hooks/useVisibilityTracking";
 import logRender from "@lib/logRender";
-import type { ContentHashCollection } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
+import type { ContentHashCollectionWithDay } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
 import React, { useRef, useState } from "react";
 
 import FileRow from "./FileRow";
@@ -12,7 +12,7 @@ const FilesTable = ({
   onSelectedContentHashes,
   date,
 }: {
-  files: readonly ContentHashCollection[];
+  files: readonly ContentHashCollectionWithDay[];
   selectedContentHashes: ReadonlySet<string>;
   onSelectedContentHashes: (selectedContentHashes: ReadonlySet<string>) => void;
   date: string;
@@ -59,7 +59,8 @@ const FilesTable = ({
             const idx = files.findIndex(
               (item) => item.contentHash === focusedHash,
             );
-            const focusedFile: ContentHashCollection | undefined = files[idx];
+            const focusedFile: ContentHashCollectionWithDay | undefined =
+              files[idx];
 
             if (
               focusedFile &&
@@ -99,6 +100,7 @@ const FilesTable = ({
                 setFocusedHash(f.contentHash);
               }}
               date={date}
+              day={f.day}
             />
           ))}
       </ol>

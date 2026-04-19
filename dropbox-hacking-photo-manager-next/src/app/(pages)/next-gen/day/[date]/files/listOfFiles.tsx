@@ -2,8 +2,8 @@
 
 import GeoMap from "@components/map/GeoMap";
 import logRender from "@lib/logRender";
-import type { ContentHashCollection } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
-import React, { useDeferredValue, useMemo, useState } from "react";
+import type { ContentHashCollectionWithDay } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
+import { useDeferredValue, useMemo, useState } from "react";
 
 import { useLeaflet } from "@/app/useLeaflet";
 
@@ -16,7 +16,7 @@ const ListOfFiles = ({
   files,
   date,
 }: {
-  files: readonly ContentHashCollection[];
+  files: readonly ContentHashCollectionWithDay[];
   date: string;
 }) => {
   const [selectedContentHashes, setSelectedContentHashes] = useState<

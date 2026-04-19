@@ -25,9 +25,12 @@ ol.files > li .tags {
   text-align: center;
 }
 
+ol.files > li.selected {
+  background: wheat;
+}
+
 ol.files > li.focused {
-  /* background: #666; */
-  color: #fff;
+  color: black;
 }
 
 ol.files > li > * {
