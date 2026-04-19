@@ -37,14 +37,16 @@ const NGContentHash = ({
         />
       )} */}
 
-        {latestValue ?
+        {latestValue ? (
           <>
             <ShowContentHashResult
               contentHash={contentHash}
               latestValue={latestValue}
             />
           </>
-        : "Loading..."}
+        ) : (
+          "Loading..."
+        )}
       </main>
     </>
   );

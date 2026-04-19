@@ -3,10 +3,16 @@
 import Navigate from "@components/Navigation";
 import ShowData from "@components/ShowData";
 import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFeed";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
 import type { ExifExplorerType } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
 import React, { useEffect } from "react";
 
-import styles from "./page.module.css";
+// import styles from "./page.module.css";
 
 type Counts = ExifExplorerType["tagCounts"][number][1];
 type Entry = readonly [string, Counts];
@@ -37,50 +43,52 @@ const ExifExplorer = () => {
       <main style={{ margin: "2em" }}>
         <h1>EXIF Explorer</h1>
 
-        {sortedTagCounts ?
+        {sortedTagCounts ? (
           <div>
-            <table className={styles.exifTable}>
-              <thead>
-                <tr>
-                  <th>Tag</th>
-                  <th className={styles.data}>present</th>
-                  <th className={styles.data}>non-blank</th>
-                  <th className={styles.data}>present % of all</th>
-                  <th className={styles.data}>non-blank % of all</th>
-                  <th className={styles.data}>non-blank % of present</th>
-                </tr>
-              </thead>
-              <tbody>
-                {sortedTagCounts.map(([tag, counts]) => (
-                  <tr key={tag}>
-                    <td>{tag}</td>
-                    <td className={styles.data}>{counts.present}</td>
-                    <td className={styles.data}>{counts.nonBlank}</td>
-                    <td className={styles.data}>
-                      {((counts.present / latestValue.entries) * 100.0).toFixed(
-                        2,
-                      )}
-                    </td>
-                    <td className={styles.data}>
-                      {(
-                        (counts.nonBlank / latestValue.entries) *
-                        100.0
-                      ).toFixed(2)}
-                    </td>
-                    <td className={styles.data}>
-                      {((counts.nonBlank / counts.present) * 100.0).toFixed(2)}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            <TableContainer style={{ width: "50em", margin: "auto" }}>
+              <Table aria-label="simple table">
+                <TableHead>
+                  <TableRow>
+                    <TableCell>Tag</TableCell>
+                    <TableCell align="right">Present</TableCell>
+                    <TableCell align="right">Non-blank</TableCell>
+                    <TableCell align="right">Non-blank as % of all</TableCell>
+                    <TableCell align="right">
+                      Non-blank as % of present
+                    </TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {sortedTagCounts.map(([tag, counts]) => (
+                    <TableRow
+                      key={tag}
+                      // sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                    >
+                      <TableCell component="th" scope="row">
+                        {tag}
+                      </TableCell>
+                      <TableCell align="right">{counts.present}</TableCell>
+                      <TableCell align="right">{counts.nonBlank}</TableCell>
+                      <TableCell align="right">
+                        {counts.nonBlankPercentOfAll.toFixed(2)}
+                      </TableCell>
+                      <TableCell align="right">
+                        {counts.nonBlankPercentOfPresent.toFixed(2)}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
 
             <br />
             <br />
 
             <ShowData data={latestValue} />
           </div>
-        : "loading..."}
+        ) : (
+          "loading..."
+        )}
       </main>
     </>
   );

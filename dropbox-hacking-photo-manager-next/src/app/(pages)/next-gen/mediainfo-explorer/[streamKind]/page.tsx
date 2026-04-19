@@ -4,10 +4,17 @@ import Navigate from "@components/Navigation";
 import ShowData from "@components/ShowData";
 import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFeed";
 import logRender from "@lib/logRender";
+import Box from "@mui/material/Box";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import ToggleButton from "@mui/material/ToggleButton";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import type { ExifExplorerType } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
 import React, { useEffect } from "react";
-
-import styles from "./page.module.css";
 
 type Counts = ExifExplorerType["tagCounts"][number][1];
 type Entry = readonly [string, Counts];
@@ -40,6 +47,13 @@ const MediaInfoExplorer = ({
   const sortedTagCounts =
     latestValue && latestValue.tagCounts?.toSorted(byNonBlank);
 
+  // function handleStreamKind(
+  //   event: MouseEvent<HTMLElement, MouseEvent>,
+  //   value: any,
+  // ): void {
+  //   throw new Error("Function not implemented.");
+  // }
+
   // FIXME: what stream kinds are there? Would be nice to provide a list.
   // const uniqueStreamKinds = latestValue ? latestValue.
 
@@ -50,7 +64,8 @@ const MediaInfoExplorer = ({
       <main style={{ margin: "2em" }}>
         <h1>MediaInfo Explorer</h1>
 
-        <p>
+        {/*
+        <div>
           StreamKind:
           <ul
             style={{
@@ -75,49 +90,78 @@ const MediaInfoExplorer = ({
               ),
             )}
           </ul>
-        </p>
+        </div> */}
 
-        {sortedTagCounts ?
-          <div>
-            <table className={styles.mediaInfoTable}>
-              <thead>
-                <tr>
-                  <th>Tag</th>
-                  <th className={styles.data}>present</th>
-                  <th className={styles.data}>non-blank</th>
-                  <th className={styles.data}>present % of all</th>
-                  <th className={styles.data}>non-blank % of all</th>
-                  <th className={styles.data}>non-blank % of present</th>
-                </tr>
-              </thead>
-              <tbody>
-                {sortedTagCounts.map(([tag, counts]) => (
-                  <tr key={tag}>
-                    <td>{tag}</td>
-                    <td className={styles.data}>{counts.present}</td>
-                    <td className={styles.data}>{counts.nonBlank}</td>
-                    <td className={styles.data}>
-                      {((counts.present / latestValue.entries) * 100.0).toFixed(
-                        1,
-                      )}
-                    </td>
-                    <td className={styles.data}>
-                      {(
-                        (counts.nonBlank / latestValue.entries) *
-                        100.0
-                      ).toFixed(1)}
-                    </td>
-                    <td className={styles.data}>
-                      {((counts.nonBlank / counts.present) * 100.0).toFixed(1)}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+        <Box>
+          <ToggleButtonGroup
+            size="small"
+            aria-label="Basic button group"
+            value={effectiveStreamKind ?? "null"}
+          >
+            {[null, "General", "Video", "Menu", "Image", "Audio", "Other"].map(
+              (kind) => (
+                <ToggleButton
+                  href={`./${kind ?? "null"}`}
+                  value={kind ?? "null"}
+                  key={kind ?? "null"}
+                >
+                  {kind ?? "all"}
+                </ToggleButton>
+              ),
+            )}
+          </ToggleButtonGroup>
 
-            <ShowData data={latestValue} />
-          </div>
-        : "loading..."}
+          {sortedTagCounts ? (
+            <div>
+              <TableContainer>
+                <Table aria-label="simple table">
+                  <TableHead>
+                    <TableRow>
+                      <TableCell>Tag</TableCell>
+                      <TableCell align="right">Present</TableCell>
+                      <TableCell align="right">Non-blank</TableCell>
+                      <TableCell align="right">Present as % of all</TableCell>
+                      <TableCell align="right">Non-blank as % of all</TableCell>
+                      <TableCell align="right">
+                        Non-blank as % of present
+                      </TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {sortedTagCounts.map(([tag, counts]) => (
+                      <TableRow
+                        key={tag}
+                        // sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                      >
+                        <TableCell component="th" scope="row">
+                          {tag}
+                        </TableCell>
+                        <TableCell align="right">{counts.present}</TableCell>
+                        <TableCell align="right">{counts.nonBlank}</TableCell>
+                        <TableCell align="right">
+                          {(
+                            (100 * counts.present) /
+                            latestValue.entries
+                          ).toFixed(2)}
+                        </TableCell>
+                        <TableCell align="right">
+                          {counts.nonBlankPercentOfAll.toFixed(2)}
+                        </TableCell>
+                        <TableCell align="right">
+                          {counts.nonBlankPercentOfPresent.toFixed(2)}
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </TableContainer>
+
+              <ShowData data={latestValue} />
+            </div>
+          ) : (
+            <div>loading...</div>
+          )}
+        </Box>
       </main>
     </>
   );

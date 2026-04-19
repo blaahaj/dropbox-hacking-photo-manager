@@ -63,9 +63,9 @@ const MaybeVisibleThumbnail = ({
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={
-                thumbnail ?
-                  `data:image/jpeg;base64,${thumbnail}`
-                : `/placeholder.png`
+                thumbnail
+                  ? `data:image/jpeg;base64,${thumbnail}`
+                  : `/placeholder.png`
               }
               alt={"thumbnail"}
               style={{

@@ -57,7 +57,7 @@ const NGDayFiles = ({
           </a>
         </h1>
 
-        {latestValue ?
+        {latestValue ? (
           <>
             <p>
               <EditableTextField
@@ -71,7 +71,9 @@ const NGDayFiles = ({
 
             <ShowData data={latestValue} />
           </>
-        : "loading..."}
+        ) : (
+          "loading..."
+        )}
       </main>
     </>
   );

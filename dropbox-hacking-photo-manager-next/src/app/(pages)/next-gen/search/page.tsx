@@ -3,6 +3,7 @@
 import Navigate from "@components/Navigation";
 import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFeed";
 import logRender from "@lib/logRender";
+import TextField from "@mui/material/TextField";
 import { parseFilterString } from "dropbox-hacking-photo-manager-shared/search";
 import {
   type ChangeEventHandler,
@@ -51,12 +52,14 @@ const NGSearch = ({
       <main style={{ margin: "2em" }}>
         <h1>Search</h1>
 
-        <input
-          type="text"
-          value={filterSource}
+        <TextField
           placeholder="enter query"
+          autoFocus
+          label="Search"
+          variant="standard"
+          value={filterSource}
           onChange={onFilterSourceChange}
-          style={{ width: "50em", marginBlockEnd: "1em" }}
+          sx={{ width: "50em", marginBlockEnd: "1em" }}
         />
 
         <p>
@@ -105,7 +108,7 @@ const NGSearch = ({
           </p>
         )}
 
-        {latestValue ?
+        {latestValue ? (
           <>
             {latestValue.truncated && (
               <p>
@@ -122,7 +125,9 @@ const NGSearch = ({
               />
             )}
           </>
-        : "loading..."}
+        ) : (
+          "loading..."
+        )}
       </main>
     </>
   );

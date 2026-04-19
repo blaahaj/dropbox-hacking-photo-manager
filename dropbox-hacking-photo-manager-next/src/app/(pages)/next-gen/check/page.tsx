@@ -21,9 +21,11 @@ const Check = () => {
       <main style={{ margin: "2em" }}>
         <h1>Check</h1>
 
-        {latestValue ?
+        {latestValue ? (
           <pre>{JSON.stringify(latestValue ?? null, null, 2)}</pre>
-        : "loading..."}
+        ) : (
+          "loading..."
+        )}
       </main>
     </>
   );

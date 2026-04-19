@@ -84,8 +84,8 @@ export const ShowContentHashResult = ({
           )}
 
           <div style={{ marginBlock: "1em" }}>
-            {dayData ?
-              dayData.files.length === 1 ?
+            {dayData ? (
+              dayData.files.length === 1 ? (
                 <p>
                   The only file from{" "}
                   <SamePageLink
@@ -97,7 +97,8 @@ export const ShowContentHashResult = ({
                     {latestValue.date}
                   </SamePageLink>
                 </p>
-              : <p>
+              ) : (
+                <p>
                   #
                   {1 +
                     (dayData.files
@@ -117,8 +118,10 @@ export const ShowContentHashResult = ({
                     {latestValue.date}
                   </SamePageLink>
                 </p>
-
-            : "loading..."}
+              )
+            ) : (
+              "loading..."
+            )}
             {/* TODO, indicate >1 day */}
             {/* TODO, make editable */}
             <p style={{ marginBlock: "1em" }}>
