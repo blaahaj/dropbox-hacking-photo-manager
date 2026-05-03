@@ -3,7 +3,7 @@ import * as fs from "node:fs";
 
 const main = async () => {
   const dirs = (await fs.promises.readdir(".")).filter((name) =>
-    name.startsWith("dropbox-hacking-")
+    name.startsWith("dropbox-hacking-"),
   );
 
   const namesWithLinks = await Promise.all(
@@ -13,15 +13,15 @@ const main = async () => {
         .then((text) => JSON.parse(text))
         .then((packageJson) =>
           Object.entries(packageJson.dependencies ?? {}).flatMap(
-            ([name, spec]) => (spec.startsWith("link:") ? [name] : [])
-          )
+            ([name, spec]) => (spec.startsWith("link:") ? [name] : []),
+          ),
         )
         .then((dependsOn) => ({
           module: dir,
           dependsOn,
           promiseWithResolvers: Promise.withResolvers(),
-        }))
-    )
+        })),
+    ),
   );
 
   const promisesMap = {};
@@ -35,10 +35,10 @@ const main = async () => {
       .then(() => {
         if (item.dependsOn.length > 0) {
           console.log(
-            `${item.module} waiting for ${item.dependsOn.join(", ")}`
+            `${item.module} waiting for ${item.dependsOn.join(", ")}`,
           );
           return Promise.all(
-            item.dependsOn.map((dep) => promisesMap[dep])
+            item.dependsOn.map((dep) => promisesMap[dep]),
           ).then(() => console.log(`${item.module} dependencies are ready`));
         }
       })
@@ -69,14 +69,14 @@ const main = async () => {
             .toString("utf-8")
             .trimEnd()
             .split("\n")
-            .forEach((line) => console.log(`${item.module} out: ${line}`))
+            .forEach((line) => console.log(`${item.module} out: ${line}`)),
         );
         child.stderr.on("data", (content) =>
           Buffer.from(content)
             .toString("utf-8")
             .trimEnd()
             .split("\n")
-            .forEach((line) => console.log(`${item.module} err: ${line}`))
+            .forEach((line) => console.log(`${item.module} err: ${line}`)),
         );
       })
       .then(
@@ -84,12 +84,12 @@ const main = async () => {
         (error) => {
           console.error(`${item.module} failed:`, error);
           throw error;
-        }
+        },
       );
   }
 
   const outcomes = await Promise.allSettled(
-    namesWithLinks.map((item) => item.promiseWithResolvers.promise)
+    namesWithLinks.map((item) => item.promiseWithResolvers.promise),
   );
 
   if (outcomes.some((st) => st.status === "rejected"))

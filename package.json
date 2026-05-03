@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "node buildAll.mjs",
     "build:watch": "pnpm --recursive run build:watch",
@@ -10,7 +11,8 @@
     "format": "pnpm --recursive run format",
     "test": "concurrently --group pnpm:test:*",
     "test:children": "pnpm --recursive run test",
-    "test:lint": "eslint"
+    "test:lint": "eslint",
+    "test:prettier": "prettier --check ."
   },
   "keywords": [],
   "author": "",
