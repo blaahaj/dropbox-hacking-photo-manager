@@ -7,8 +7,7 @@
   "scripts": {
     "build": "node buildAll.mjs",
     "build:watch": "pnpm --recursive run build:watch",
-    "fix": "pnpm --recursive run fix",
-    "format": "pnpm --recursive run format",
+    "format": "prettier --write --list-different .",
     "test": "concurrently --group pnpm:test:*",
     "test:children": "pnpm --recursive run test",
     "test:lint": "eslint",

@@ -6,8 +6,6 @@
     "dev": "next dev --turbopack --port 4001",
     "build": "next build --turbopack",
     "build:watch": ":",
-    "fix": ":",
-    "format": "prettier --write --list-different .",
     "reset": "rm -rf .next",
     "start": "next start",
     "test": "concurrently --group pnpm:test:*",
