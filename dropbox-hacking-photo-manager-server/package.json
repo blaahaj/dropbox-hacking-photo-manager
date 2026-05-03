@@ -10,7 +10,6 @@
     "fix": "eslint --fix",
     "format": "prettier --write --list-different .",
     "test": "concurrently --group pnpm:test:*",
-    "test:prettier": "prettier --check .",
     "test:unit": "c8 node --enable-source-maps --experimental-test-coverage --test './dist/spec/**/*.js'"
   },
   "keywords": [],
