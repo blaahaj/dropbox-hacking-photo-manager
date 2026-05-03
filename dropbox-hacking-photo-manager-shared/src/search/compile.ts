@@ -4,14 +4,14 @@ import {
 } from "@blaahaj/dropbox-hacking-mediainfo-db/types";
 
 import { ensureNever } from "../ensureNever.js";
-import type { ContentHashCollection } from "../serverSideFeeds/index.js";
+import type { ContentHashCollectionWithDay } from "../serverSideFeeds/index.js";
 import type { FilterNode } from "./filterNode.js";
 
 type Predicate<T> = (candidate: T) => boolean;
 
 export const compile = (
   filter: FilterNode,
-): Predicate<ContentHashCollection> => {
+): Predicate<ContentHashCollectionWithDay> => {
   if (filter.type === "and") {
     const predicateLeft = compile(filter.left);
     const predicateRight = compile(filter.right);
@@ -67,9 +67,21 @@ export const compile = (
   if (filter.type === "tag-loose")
     return (c) => !!c.photo?.tags?.some((t) => t.includes(filter.q));
 
-  // FIXME: also search day-description
-  if (filter.type === "text")
-    return (c) => !!c.photo?.description?.includes(filter.text);
+  if (filter.type === "text") {
+    const q = filter.text.toLocaleLowerCase();
+
+    const matchesDay: Predicate<ContentHashCollectionWithDay> = (c) =>
+      !!c.day.description && c.day.description.toLocaleLowerCase().includes(q);
+    const matchesPhoto: Predicate<ContentHashCollectionWithDay> = (c) =>
+      !!c.photo?.description &&
+      c.photo.description.toLocaleLowerCase().includes(q);
+
+    return filter.which === "day"
+      ? matchesDay
+      : filter.which === "photo"
+        ? matchesPhoto
+        : (c) => matchesDay(c) || matchesPhoto(c);
+  }
 
   if (filter.type === "timestamp") {
     const { operand, timestamp } = filter;

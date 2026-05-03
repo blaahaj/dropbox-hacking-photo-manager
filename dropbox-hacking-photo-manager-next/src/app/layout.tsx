@@ -1,4 +1,10 @@
+// "use client";
+
 import "./globals.css";
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
 
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -24,7 +30,9 @@ config.autoAddCss = false;
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faCoffee } from "@fortawesome/free-solid-svg-icons";
-import { Suspense } from "react";
+import CssBaseline from "@mui/material/CssBaseline";
+
+import ClientThemeProvider from "./clientThemeProvider";
 library.add(faCoffee, faTwitter);
 
 export const metadata: Metadata = {
@@ -50,30 +58,15 @@ export default function RootLayout({
           crossOrigin=""
           async
         ></script> */}
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Suspense
-          fallback={
-            <div
-              style={{
-                position: "absolute",
-                display: "block",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-                margin: "auto",
-                fontSize: "80vh",
-                textAlign: "center",
-                opacity: 0.4,
-              }}
-            >
-              🤔
-            </div>
-          }
-        >
-          <ProvideContexts>{children}</ProvideContexts>
-        </Suspense>
+        <ProvideContexts>
+          <ClientThemeProvider>
+            <CssBaseline />
+            {children}
+          </ClientThemeProvider>
+        </ProvideContexts>
       </body>
     </html>
   );

@@ -23,6 +23,8 @@ const MaybeVisibleThumbnail = ({
   const isThumbnailable = isPreviewable(namedFile.path_lower);
   const thumbnail = useThumbnail(namedFile.rev)(isThumbnailable && visible);
 
+  const shouldBlur = photo.tags?.some((t) => t === "nsfw");
+
   // console.log([namedFile.name, ext, isThumbnailable, visible, !!thumbnail]);
 
   const degrees = photo.rotate ?? 0;
@@ -69,6 +71,9 @@ const MaybeVisibleThumbnail = ({
               style={{
                 width: thumbnail ? undefined : "128px",
                 height: thumbnail ? undefined : "128px",
+                transitionProperty: "filter",
+                transitionDuration: "0.3s",
+                filter: shouldBlur ? "blur(8px)" : undefined,
               }}
             />
           </div>

@@ -40,7 +40,15 @@ export const parseFilterString = (query: string): FilterNode | null => {
 
     // TODO: no way yet to generate "text" nodes containing spaces
     if (part.startsWith("text~")) {
-      stack.push({ type: "text", text: part.substring(5) });
+      stack.push({ type: "text", which: "both", text: part.substring(5) });
+      continue;
+    }
+    if (part.startsWith("photo-text~")) {
+      stack.push({ type: "text", which: "photo", text: part.substring(11) });
+      continue;
+    }
+    if (part.startsWith("day-text~")) {
+      stack.push({ type: "text", which: "day", text: part.substring(9) });
       continue;
     }
 
@@ -96,7 +104,7 @@ export const parseFilterString = (query: string): FilterNode | null => {
       continue;
     }
 
-    if (part === "gps") {
+    if (part === "has-gps") {
       stack.push({
         type: "has_gps",
       });

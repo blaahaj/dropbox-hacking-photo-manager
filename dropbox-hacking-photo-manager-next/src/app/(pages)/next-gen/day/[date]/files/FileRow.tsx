@@ -1,7 +1,8 @@
 import TagList from "@components/tags/TagList";
 import logRender from "@lib/logRender";
+import type { DayMetadata } from "dropbox-hacking-photo-manager-shared";
 import type { DayFilesResult } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
-import React, { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Observable } from "rxjs";
 
 import styles from "./filesTable.module.css";
@@ -14,6 +15,7 @@ const FileRow = ({
   selected,
   onSelected,
   date,
+  day,
 }: {
   file: DayFilesResult["files"][number];
   focused: boolean;
@@ -21,6 +23,7 @@ const FileRow = ({
   selected: boolean;
   onSelected: (selected: boolean) => void;
   date: string;
+  day?: DayMetadata | null;
 }) => {
   const [visible, setVisible] = useState(false);
 
@@ -121,6 +124,9 @@ const FileRow = ({
           )}
         />
       </div>
+      {day?.description && (
+        <div className={styles.dayDescription}>{day?.description ?? ""}</div>
+      )}
       <div className={styles.description}>{file.photo?.description ?? ""}</div>
       <div className={styles.tags}>
         <TagList data={(file.photo?.tags ?? []).map((tag) => ({ tag }))} />

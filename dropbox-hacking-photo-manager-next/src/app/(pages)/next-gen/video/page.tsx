@@ -58,63 +58,68 @@ const Video = () => {
     <>
       <Navigate />
 
-      <h1>Video</h1>
+      <main style={{ margin: "2em" }}>
+        <h1>Video</h1>
 
-      <form>
-        <p>
-          <input
-            type="radio"
-            name="sort"
-            value="time"
-            checked={sortBy === "time"}
-            onChange={onChange}
-          />{" "}
-          Time
-          {" / "}
-          <input
-            type="radio"
-            name="sort"
-            value="duration"
-            checked={sortBy === "duration"}
-            onChange={onChange}
-          />{" "}
-          Duration
-        </p>
-      </form>
+        <form>
+          <p>
+            <input
+              type="radio"
+              name="sort"
+              value="time"
+              checked={sortBy === "time"}
+              onChange={onChange}
+            />{" "}
+            Time
+            {" / "}
+            <input
+              type="radio"
+              name="sort"
+              value="duration"
+              checked={sortBy === "duration"}
+              onChange={onChange}
+            />{" "}
+            Duration
+          </p>
+        </form>
 
-      {sorted ? (
-        // It's faster to make a whole new table every time than it is to diff and update
-        <table key={generateId(3, "video-table")} className={styles.videoTable}>
-          <thead>
-            <tr>
-              <th>date</th>
-              <th>day text</th>
-              <th>photo text</th>
-              <th>photo tags</th>
-              <th>GPS</th>
-              <th>link</th>
-              <th>container duration (seconds)</th>
-              <th>container format</th>
-              <th>container codec</th>
-              <th>video format</th>
-              <th>video codec</th>
-              <th>video frame size</th>
-              <th>video aspect ratio</th>
-              <th>audio format</th>
-              <th>audio codec</th>
-              <th>audio channels</th>
-              <th>audio sampling frequency</th>
-            </tr>
-          </thead>
-          <tbody>
-            {sorted.map((item) => (
-              <VideoRow key={item.namedFile.rev} item={item} />
-            ))}
-          </tbody>
-        </table>
-      ) : (
-        "loading..."
-      )}
+        {sorted ? (
+          // It's faster to make a whole new table every time than it is to diff and update
+          <table
+            key={generateId(3, "video-table")}
+            className={styles.videoTable}
+          >
+            <thead>
+              <tr>
+                <th>date</th>
+                <th>day text</th>
+                <th>photo text</th>
+                <th>photo tags</th>
+                <th>GPS</th>
+                <th>link</th>
+                <th>container duration (seconds)</th>
+                <th>container format</th>
+                <th>container codec</th>
+                <th>video format</th>
+                <th>video codec</th>
+                <th>video frame size</th>
+                <th>video aspect ratio</th>
+                <th>audio format</th>
+                <th>audio codec</th>
+                <th>audio channels</th>
+                <th>audio sampling frequency</th>
+              </tr>
+            </thead>
+            <tbody>
+              {sorted.map((item) => (
+                <VideoRow key={item.namedFile.rev} item={item} />
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          "loading..."
+        )}
+      </main>
     </>
   );
 

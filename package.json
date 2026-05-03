@@ -4,16 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postinstall": "./in-each-module install",
     "build": "node buildAll.mjs",
-    "build:watch": "./in-each-module build:watch",
-    "reset": "./in-each-module reset && rm -rf */dist node_modules",
-    "fix": "./in-each-module fix",
-    "format": "./in-each-module format",
-    "test": "./in-each-module test",
-    "test:lint": "./in-each-module test:lint",
-    "test:prettier": "./in-each-module test:prettier",
-    "test:unit": "./in-each-module test:unit"
+    "build:watch": "pnpm --recursive run build:watch",
+    "fix": "pnpm --recursive run fix",
+    "format": "pnpm --recursive run format",
+    "test": "pnpm --recursive run test",
+    "test:lint": "pnpm --recursive run test:lint",
+    "test:prettier": "pnpm --recursive run test:prettier",
+    "test:unit": "pnpm --recursive run test:unit"
   },
   "keywords": [],
   "author": "",

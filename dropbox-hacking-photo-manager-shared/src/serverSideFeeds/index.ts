@@ -8,7 +8,6 @@ import { type Observable } from "rxjs";
 
 // RVE-add-feed
 
-export * from "./basicCounts.js";
 export * from "./closestTo.js";
 export * from "./contentHash.js";
 export * from "./dayFiles.js";
@@ -38,6 +37,10 @@ export type ContentHashCollection = {
   readonly duration: number | null;
   readonly timestamp: string;
   readonly date: string;
+};
+
+export type ContentHashCollectionWithDay = ContentHashCollection & {
+  readonly day: DayMetadata;
 };
 
 export interface FullDatabaseFeeds {

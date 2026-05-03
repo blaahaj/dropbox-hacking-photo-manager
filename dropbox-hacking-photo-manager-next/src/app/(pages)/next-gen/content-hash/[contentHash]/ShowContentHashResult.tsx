@@ -46,13 +46,36 @@ export const ShowContentHashResult = ({
 
   return (
     <>
-      <ShowData data={latestValue} />
-
       <div style={{ display: "flex", flexDirection: "row" }}>
-        <ImagePreview
-          namedFile={latestValue.namedFiles[0]}
-          photo={latestValue.photo ?? {}}
-        />
+        <div style={{ marginInline: "1em" }}>
+          <ImagePreview
+            namedFile={latestValue.namedFiles[0]}
+            photo={latestValue.photo ?? {}}
+          />
+
+          {latestValue.gps.effective && L && (
+            <div style={{ marginBlock: "1em" }}>
+              <GeoMap
+                positions={
+                  new Map([
+                    [
+                      contentHash,
+                      {
+                        position: new L.LatLng(
+                          latestValue.gps.effective.lat,
+                          latestValue.gps.effective.long,
+                        ),
+                        highlighted: false,
+                      },
+                    ],
+                  ])
+                }
+              />
+            </div>
+          )}
+
+          <ShowData data={latestValue} />
+        </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
           {latestValue.exif && <SummariseExif exif={latestValue.exif} />}
@@ -137,27 +160,6 @@ export const ShowContentHashResult = ({
               </li>
             </ol>
           </div>
-
-          {latestValue.gps.effective && L && (
-            <div style={{ marginBlock: "1em" }}>
-              <GeoMap
-                positions={
-                  new Map([
-                    [
-                      contentHash,
-                      {
-                        position: new L.LatLng(
-                          latestValue.gps.effective.lat,
-                          latestValue.gps.effective.long,
-                        ),
-                        highlighted: false,
-                      },
-                    ],
-                  ])
-                }
-              />
-            </div>
-          )}
 
           <SummariseNamedFiles namedFiles={latestValue.namedFiles} />
         </div>

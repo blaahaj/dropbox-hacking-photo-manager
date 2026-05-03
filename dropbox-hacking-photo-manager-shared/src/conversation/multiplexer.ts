@@ -88,7 +88,7 @@ export const multiplexer = <I, O>(
         if (receiver) {
           receiver.push(mxControlMessage.message);
         } else {
-          console.error("message for non-open conversation", id);
+          console.info("message for non-open conversation", id);
         }
       } else if (tag === "close") {
         const receiver = receiversById.get(id);
@@ -100,7 +100,7 @@ export const multiplexer = <I, O>(
           //   `${multiplexerId} ${id} closed (count=${receiversById.size})`,
           // );
         } else {
-          console.error("close of non-open conversation", id);
+          console.info("close of non-open conversation", id);
         }
       }
     },
