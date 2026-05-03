@@ -4,7 +4,12 @@ import {
   isVideoTrack,
   type MediainfoFromHash,
 } from "@blaahaj/dropbox-hacking-mediainfo-db/types";
-import { combineLatest, map, type ObservedValueOf } from "rxjs";
+import {
+  combineLatest,
+  map,
+  type Observable,
+  type ObservedValueOf,
+} from "rxjs";
 
 import type { DayMetadata } from "../types.js";
 import type { NamedFile, PhotoDbEntry } from "../ws.js";
@@ -93,7 +98,10 @@ export const summariseMediaInfo = (
   };
 };
 
-export const provideVideo = (feeds: FullDatabaseFeeds, _req: VideoRequest) =>
+export const provideVideo = (
+  feeds: FullDatabaseFeeds,
+  _req: VideoRequest,
+): Observable<VideoResult> =>
   combineLatest([
     feeds.allFilesByRev,
     feeds.mediaInfoByContentHash,

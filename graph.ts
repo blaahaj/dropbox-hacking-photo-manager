@@ -1,6 +1,7 @@
 import assert from "node:assert";
 import { lstat, readdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
+
 import { Digraph, toDot } from "ts-graphviz";
 
 const processFile = async (dir: string, name: string) => {
@@ -94,7 +95,7 @@ const main = async () => {
         .join("/"),
     }));
 
-  const layoutFiles = files.filter((t) => t.endsWith("/layout.tsx"));
+  // const layoutFiles = files.filter((t) => t.endsWith("/layout.tsx"));
 
   const imports = (
     await Promise.all(files.map((file) => findImports(file)))
@@ -106,7 +107,7 @@ const main = async () => {
 
   const importPathsPrepared = Object.entries(importPaths).map(
     ([from, toList]) => {
-      let to = toList[0] as string;
+      let to = toList[0];
       assert(from.endsWith("/*"));
       assert(to.endsWith("/*"));
       from = from.substring(0, from.length - 1);
@@ -127,6 +128,7 @@ const main = async () => {
   );
 
   const G = new Digraph();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   G.attributes.graph.set("scale" as any, "5");
 
   const resolvedNextDir = resolve("dropbox-hacking-photo-manager-next");

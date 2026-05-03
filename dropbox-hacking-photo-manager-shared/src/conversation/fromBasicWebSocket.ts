@@ -53,7 +53,7 @@ export const fromBasicWebSocket = <S, I, O>(
         id: senderId,
       };
     },
-    id: id,
+    id,
   };
 
   return connector;

@@ -71,7 +71,7 @@ export const multiplexer = <I, O>(
                   //   `${multiplexerId} ${id} closed (count=${receiversById.size})`,
                   // );
                 },
-                id: id,
+                id,
               };
 
               return incomingSender;
@@ -144,7 +144,7 @@ export const multiplexer = <I, O>(
           baseSender.push({ id, tag: "close" });
           outgoingReceiver.end();
         },
-        id: id,
+        id,
       };
     },
     id: multiplexerId,

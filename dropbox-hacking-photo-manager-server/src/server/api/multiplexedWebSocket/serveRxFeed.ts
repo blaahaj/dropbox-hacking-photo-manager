@@ -13,7 +13,7 @@ export const serveRxFeed = <T>(
   const sender = io.connect({
     push: () => sender.end(),
     end: () => subscription?.unsubscribe(),
-    id: id,
+    id,
   });
 
   const subscription = observable.subscribe({

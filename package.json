@@ -8,10 +8,9 @@
     "build:watch": "pnpm --recursive run build:watch",
     "fix": "pnpm --recursive run fix",
     "format": "pnpm --recursive run format",
-    "test": "pnpm --recursive run test",
-    "test:lint": "pnpm --recursive run test:lint",
-    "test:prettier": "pnpm --recursive run test:prettier",
-    "test:unit": "pnpm --recursive run test:unit"
+    "test": "concurrently --group pnpm:test:*",
+    "test:children": "pnpm --recursive run test",
+    "test:lint": "eslint"
   },
   "keywords": [],
   "author": "",

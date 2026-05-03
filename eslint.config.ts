@@ -1,13 +1,14 @@
-import tseslint from "typescript-eslint";
-import simpleImportSort, { rules } from "eslint-plugin-simple-import-sort";
-import tsParser from "@typescript-eslint/parser";
 import js from "@eslint/js";
+import eslintNextPlugin from "@next/eslint-plugin-next";
+import tsParser from "@typescript-eslint/parser";
 import { defineConfig, globalIgnores } from "eslint/config";
-import globals from "globals";
-import unusedImports from "eslint-plugin-unused-imports";
 import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTs from "eslint-config-next/typescript";
-import eslintNextPlugin from "@next/eslint-plugin-next";
+import simpleImportSort from "eslint-plugin-simple-import-sort";
+import unusedImports from "eslint-plugin-unused-imports";
+import globals from "globals";
+import { dirname, resolve } from "path";
+import tseslint from "typescript-eslint";
 
 export default defineConfig(
   {
@@ -17,6 +18,8 @@ export default defineConfig(
       "**/tsconfig.tsbuildinfo",
       ".github/**/*",
       "var/**/*",
+      "*.d.ts",
+      "*.js",
     ],
   },
 
@@ -25,10 +28,45 @@ export default defineConfig(
   // },
 
   {
+    files: ["**/*"],
+    ignores: ["dropbox-hacking-photo-manager-*/**/*"],
     languageOptions: {
       parserOptions: {
         projectService: true,
-        tsconfigRootDir: import.meta.dirname,
+        tsconfigRootDir: resolve(dirname(import.meta.url)),
+      },
+    },
+  },
+  {
+    files: ["dropbox-hacking-photo-manager-server/**/*"],
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: resolve(
+          dirname(import.meta.url) + "/dropbox-hacking-photo-manager-server",
+        ),
+      },
+    },
+  },
+  {
+    files: ["dropbox-hacking-photo-manager-next/**/*"],
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: resolve(
+          dirname(import.meta.url) + "/dropbox-hacking-photo-manager-next",
+        ),
+      },
+    },
+  },
+  {
+    files: ["dropbox-hacking-photo-manager-shared/**/*"],
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: resolve(
+          dirname(import.meta.url) + "/dropbox-hacking-photo-manager-shared",
+        ),
       },
     },
   },
@@ -36,6 +74,13 @@ export default defineConfig(
   js.configs.recommended,
   tseslint.configs.recommendedTypeChecked,
 
+  {
+    files: ["eslint.config.mts"],
+    languageOptions: {
+      globals: globals.node,
+      sourceType: "module",
+    },
+  },
   {
     files: ["build.js"],
     languageOptions: {
@@ -84,9 +129,10 @@ export default defineConfig(
       "no-constant-condition": "off",
       "no-shadow": "error",
       "@typescript-eslint/ban-ts-ignore": "off",
-      "@typescript-eslint/consistent-type-definitions": ["error", "type"],
-      "@typescript-eslint/explicit-module-boundary-types": ["error"],
+      "@typescript-eslint/consistent-type-definitions": "off",
+      "@typescript-eslint/explicit-module-boundary-types": "off",
       "@typescript-eslint/no-empty-function": "off",
+      "@typescript-eslint/require-await": "off",
       "object-shorthand": "error",
       "no-unused-vars": "off",
 
@@ -152,6 +198,7 @@ export default defineConfig(
             "error",
             "dropbox-hacking-photo-manager-next/pages", // which doesn't exist
           ],
+          "@typescript-eslint/explicit-module-boundary-types": "off",
         },
       },
     ],

@@ -2,6 +2,6 @@
   "compilerOptions": { "types": ["node"] },
   "extends": "./tsconfig.base.json",
   "exclude": ["**/node_modules"],
-  "files": ["build.ts", "graph.ts"],
+  "files": ["build.ts", "graph.ts", "buildAll.mjs", "eslint.config.ts"],
   "include": []
 }

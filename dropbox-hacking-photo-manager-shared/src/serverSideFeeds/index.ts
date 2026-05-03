@@ -43,7 +43,7 @@ export type ContentHashCollectionWithDay = ContentHashCollection & {
   readonly day: DayMetadata;
 };
 
-export interface FullDatabaseFeeds {
+export type FullDatabaseFeeds = {
   exifsByContentHash: Observable<Map<exifDb.ContentHash, exifDb.ExifFromHash>>;
   mediaInfoByContentHash: Observable<
     Map<mediaInfoDb.ContentHash, mediaInfoDb.MediainfoFromHash>
@@ -52,4 +52,4 @@ export interface FullDatabaseFeeds {
   allFilesByRev: Observable<Map<string, NamedFile>>;
   photosByContentHash: Observable<Map<string, PhotoDbEntry>>;
   byContentHash: Observable<ReadonlyMap<string, ContentHashCollection>>;
-}
+};
