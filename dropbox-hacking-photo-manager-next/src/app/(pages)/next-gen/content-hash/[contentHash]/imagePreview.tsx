@@ -82,9 +82,11 @@ const ImagePreview = ({
   return (
     <div
       style={{
-        width: "640px",
-        height: "640px",
+        width: "670px",
+        height: "670px",
         position: "relative",
+        background: "black",
+        padding: "10px",
       }}
     >
       <a
@@ -98,6 +100,8 @@ const ImagePreview = ({
             position: "relative",
             top: "320px",
             left: "320px",
+            boxSizing: "content-box",
+            border: "5px solid white",
             transform:
               !previewWidthAndHeight || !rotatedWidthAndHeight
                 ? undefined
