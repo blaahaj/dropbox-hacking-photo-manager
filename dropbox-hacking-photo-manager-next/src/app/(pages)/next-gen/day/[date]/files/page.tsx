@@ -5,6 +5,8 @@ import Navigate from "@components/Navigation";
 import ShowData from "@components/ShowData";
 import { useIdentity } from "@hooks/useIdentity";
 import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFeed";
+import type { DayMetadata } from "dropbox-hacking-photo-manager-shared";
+import type { ContentHashCollectionWithDay } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
 import React, { useEffect, useMemo } from "react";
 
 import ListOfFiles from "./listOfFiles";
@@ -22,6 +24,17 @@ const NGDayFiles = ({
     type: "rx.ng.day.files",
     date,
   });
+
+  const defaultDayMetadata: DayMetadata = {
+    date,
+    description: "",
+  };
+
+  const files: readonly ContentHashCollectionWithDay[] | undefined =
+    latestValue?.files.map((c) => ({
+      ...c,
+      day: latestValue.dayMetadata ?? defaultDayMetadata,
+    }));
 
   const dayMetadata = latestValue?.dayMetadata;
 
@@ -57,7 +70,7 @@ const NGDayFiles = ({
           </a>
         </h1>
 
-        {latestValue ? (
+        {latestValue && files ? (
           <>
             <p>
               <EditableTextField
@@ -67,7 +80,7 @@ const NGDayFiles = ({
               />
             </p>
 
-            <ListOfFiles files={latestValue.files} date={date} />
+            <ListOfFiles files={files} date={date} />
 
             <ShowData data={latestValue} />
           </>
