@@ -189,8 +189,8 @@ const GeoMap = ({
       <div
         ref={eleRef}
         style={{
-          width: "600px",
-          height: "600px",
+          width: "670px",
+          height: "670px",
           // border: "1px solid blue",
           // boxSizing: "content-box",
         }}
