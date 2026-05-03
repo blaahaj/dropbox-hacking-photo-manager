@@ -5,5 +5,4 @@ export type BackupConfig = {
   readonly localPaths: Record<string, string>;
 };
 
-export const backupConfig = (backupConfig: BackupConfig): BackupConfig =>
-  backupConfig;
+export const backupConfig = (config: BackupConfig): BackupConfig => config;

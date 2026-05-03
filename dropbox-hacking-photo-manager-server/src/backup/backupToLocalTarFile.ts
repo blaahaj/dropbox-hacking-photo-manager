@@ -16,7 +16,7 @@ const openTmpFile = (
 export const backupToLocalTarFile = async (
   backupConfig: BackupConfig,
   localArchive: string,
-) => {
+): Promise<void> => {
   await using tmpFile = openTmpFile(`${localArchive}.tmp`);
   await using fh = await open(tmpFile.path, "w");
 

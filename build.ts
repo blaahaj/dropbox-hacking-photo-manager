@@ -92,7 +92,7 @@ const buildWorkspace = async (
     new Promise((resolve, reject) => {
       const shell = packageJson.scripts[key];
       if (typeof shell !== "string")
-        throw `No yarn script for ${w.name} ${key}`;
+        throw new Error(`No yarn script for ${w.name} ${key}`);
 
       const cp = child_process.spawn("sh", ["-c", shell], {
         cwd: w.name,
@@ -121,7 +121,7 @@ const buildWorkspace = async (
           return resolve(undefined);
         }
 
-        reject(`${w.name} ${key} failed: ${code} / ${signal}`);
+        reject(new Error(`${w.name} ${key} failed: ${code} / ${signal}`));
       });
     });
 
@@ -166,4 +166,4 @@ const main = async (): Promise<void> => {
   await Promise.all([...decorated.values()].map((e) => e.waiter.promise));
 };
 
-main();
+void main();

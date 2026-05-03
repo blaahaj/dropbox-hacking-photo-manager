@@ -9,7 +9,7 @@ export const backupToDropbox = async (
   backupConfig: BackupConfig,
   dbx: Dropbox,
   remotePath: string,
-) => {
+): Promise<void> => {
   const url = (
     await dbx.filesGetTemporaryUploadLink({
       commit_info: {

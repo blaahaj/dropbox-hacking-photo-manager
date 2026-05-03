@@ -30,7 +30,7 @@ export const getRxFeed = <
         if (m.tag === "error") subscriber.error(m.error);
       },
       end: () => subscriber.unsubscribe(),
-      id: id,
+      id,
     });
 
     sender.push(request);
