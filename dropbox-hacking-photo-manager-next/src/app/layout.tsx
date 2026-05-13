@@ -45,19 +45,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // const windowExists = "window" in globalThis;
-  // const leafletExists = "leaflet" in globalThis;
-  // console.log({ windowExists, leafletExists });
-
   return (
     <html lang="en">
       <head>
-        {/* <script
-          src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-          crossOrigin=""
-          async
-        ></script> */}
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
