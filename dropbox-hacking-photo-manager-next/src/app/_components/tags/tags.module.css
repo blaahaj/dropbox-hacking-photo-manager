@@ -10,6 +10,7 @@
 }
 
 .tag {
+  font-size: 10pt;
   display: inline-block;
   border: 1px outset #777;
   border-radius: 0.3em;

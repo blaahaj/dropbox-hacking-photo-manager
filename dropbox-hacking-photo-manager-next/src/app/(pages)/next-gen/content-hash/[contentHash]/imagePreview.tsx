@@ -126,7 +126,7 @@ const ImagePreview = ({
         style={{
           position: "absolute",
           top: 0,
-          left: 0,
+          left: "4px",
           background: "transparent",
           border: "none",
           fontSize: "20pt",
