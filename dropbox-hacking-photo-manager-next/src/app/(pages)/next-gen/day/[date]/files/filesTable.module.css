@@ -33,6 +33,10 @@ ol.files > li.focused {
   color: black;
 }
 
+ol.files li.raw {
+  opacity: 0.4;
+}
+
 ol.files > li > * {
   align-content: center;
 }

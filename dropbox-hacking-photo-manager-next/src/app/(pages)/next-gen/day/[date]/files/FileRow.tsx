@@ -50,6 +50,12 @@ const FileRow = ({
       : file.namedFiles[0].name.toLocaleLowerCase().startsWith("dji")
         ? "/drone.svg"
         : null;
+  const isVideo =
+    file.mediaInfo &&
+    file.mediaInfo.mediainfoData.media?.track.some(
+      (t) => t.StreamKind === "Video",
+    );
+  const isRaw = file.namedFiles[0].path_lower.endsWith(".cr3");
 
   useEffect(() => {
     const sub = observableVisibleItems.subscribe((s) =>
@@ -58,11 +64,20 @@ const FileRow = ({
     return () => sub.unsubscribe();
   }, [observableVisibleItems, file]);
 
+  const classNames = [
+    selected ? styles.selected : null,
+    focused ? styles.focused : null,
+    isVideo ? styles.video : null,
+    isRaw ? styles.raw : null,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
     <li
       key={file.contentHash}
       data-rev={file.contentHash}
-      className={`${selected ? styles.selected : ""} ${focused ? styles.focused : ""}`}
+      className={classNames || undefined}
     >
       <input
         type="checkbox"
@@ -89,6 +104,16 @@ const FileRow = ({
             style={{ width: "2em", height: "2em" }}
             alt={deviceIcon}
           />
+        )}
+
+        {isVideo && <span style={{ fontSize: "2em" }}>🎞️</span>}
+
+        {isRaw && (
+          <>
+            <span style={{ fontSize: "2em" }} title="raw">
+              𝓡
+            </span>
+          </>
         )}
 
         {file.exif && <span>exif</span>}
