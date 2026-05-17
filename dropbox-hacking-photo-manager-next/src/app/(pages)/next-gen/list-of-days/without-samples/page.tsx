@@ -6,7 +6,7 @@ import ShowData from "@components/ShowData";
 import TagList from "@components/tags/TagList";
 import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFeed";
 import logRender from "@lib/logRender";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 import styles from "./page.module.css";
 

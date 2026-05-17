@@ -1,5 +1,5 @@
 import logRender from "@lib/logRender";
-import React, { useId, useState } from "react";
+import { useId, useState } from "react";
 
 const ShowData = ({ data }: { data: unknown }) => {
   const [expandFull, setExpandFull] = useState(false);

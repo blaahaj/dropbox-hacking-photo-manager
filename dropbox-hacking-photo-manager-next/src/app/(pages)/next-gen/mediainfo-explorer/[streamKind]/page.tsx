@@ -14,7 +14,7 @@ import TableRow from "@mui/material/TableRow";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import type { ExifExplorerType } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
-import React, { useEffect } from "react";
+import { use, useEffect } from "react";
 
 type Counts = ExifExplorerType["tagCounts"][number][1];
 type Entry = readonly [string, Counts];
@@ -25,7 +25,7 @@ const MediaInfoExplorer = ({
 }: {
   params: Promise<{ readonly streamKind?: string }>;
 }) => {
-  const { streamKind: rawStreamKind } = React.use(pathParams);
+  const { streamKind: rawStreamKind } = use(pathParams);
   const effectiveStreamKind =
     rawStreamKind === "null" ? null : (rawStreamKind ?? null);
 

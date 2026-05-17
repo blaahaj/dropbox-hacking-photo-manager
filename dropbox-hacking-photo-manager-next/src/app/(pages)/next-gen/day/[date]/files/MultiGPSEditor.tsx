@@ -5,7 +5,7 @@ import * as j from "@blaahaj/json";
 import logRender from "@lib/logRender";
 import { type PhotoDbEntry } from "dropbox-hacking-photo-manager-shared";
 import type { DayFilesResult } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
 import { useLeaflet } from "@/app/useLeaflet";
 

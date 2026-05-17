@@ -1,5 +1,5 @@
 import generateId from "@lib/generateId";
-import React, { type PropsWithChildren, useMemo, useState } from "react";
+import { type PropsWithChildren, useMemo, useState } from "react";
 
 import { type Multiplexer, Provider } from "./context";
 import { NonRetryingSocketWrapper } from "./NonRetryingSocketWrapper";
