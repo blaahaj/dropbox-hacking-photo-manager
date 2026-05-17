@@ -14,3 +14,4 @@ tsconfig.tsbuildinfo
 /services/scan/
 /services/available/**/supervise/
 /services/available/*/log/main/
+*.css.d.ts

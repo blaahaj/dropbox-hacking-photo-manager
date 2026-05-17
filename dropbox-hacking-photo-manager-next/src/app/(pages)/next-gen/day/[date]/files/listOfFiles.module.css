@@ -17,3 +17,7 @@
 .selectedFileCount {
   min-width: fit-content;
 }
+
+.matchingItemsCount {
+  opacity: 1;
+}
