@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from "react";
+import { type ActionDispatch, useEffect, useReducer } from "react";
 
 import { useThumbnailLoader } from ".";
 
@@ -17,8 +17,13 @@ type A =
 
 export const useThumbnail = (rev: string) => {
   const loader = useThumbnailLoader();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let state: T = undefined as any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let dispatch: ActionDispatch<[A]> = undefined as any;
 
-  const [state, dispatch] = useReducer(
+  // eslint-disable-next-line react-hooks/immutability
+  [state, dispatch] = useReducer(
     (s: T, a: A): T => {
       if (s.state === "idle") {
         if (a.action === "set_visibility" && a.visible) {

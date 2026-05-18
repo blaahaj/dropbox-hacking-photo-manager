@@ -170,7 +170,8 @@ export default defineConfig(
 
   {
     plugins: {
-      "@next/nextjs": eslintNextPlugin,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      "@next/nextjs": eslintNextPlugin as any,
     },
     settings: {
       next: {
