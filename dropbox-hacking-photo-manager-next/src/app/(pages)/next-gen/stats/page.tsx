@@ -14,7 +14,7 @@ import {
   imageFilenamePattern,
   videoFilenamePattern,
 } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 const ExifOrMediaInfo = ({
   data,

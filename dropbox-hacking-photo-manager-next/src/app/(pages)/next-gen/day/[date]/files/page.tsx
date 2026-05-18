@@ -7,7 +7,7 @@ import { useIdentity } from "@hooks/useIdentity";
 import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFeed";
 import type { DayMetadata } from "dropbox-hacking-photo-manager-shared";
 import type { ContentHashCollectionWithDay } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
-import React, { useEffect, useMemo } from "react";
+import { use, useEffect, useMemo } from "react";
 
 import ListOfFiles from "./listOfFiles";
 import PrevNextDayLinks from "./PrevNextDayLinks";
@@ -17,7 +17,7 @@ const NGDayFiles = ({
 }: {
   params: Promise<{ readonly date: string }>;
 }) => {
-  const { date } = React.use(pathParams);
+  const { date } = use(pathParams);
   console.log("NGDayFiles", useIdentity());
 
   const latestValue = useLatestValueFromServerFeed({

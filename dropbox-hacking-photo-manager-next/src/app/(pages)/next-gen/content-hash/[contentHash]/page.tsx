@@ -3,7 +3,7 @@
 import Navigate from "@components/Navigation";
 import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFeed";
 import logRender from "@lib/logRender";
-import React, { useEffect } from "react";
+import { use, useEffect } from "react";
 
 import { ShowContentHashResult } from "./ShowContentHashResult";
 
@@ -12,7 +12,7 @@ const NGContentHash = ({
 }: {
   params: Promise<{ readonly contentHash: string }>;
 }) => {
-  const { contentHash } = React.use(pathParams);
+  const { contentHash } = use(pathParams);
   //  context?: { date: string; contentHash: string };
   // const context: { date: string; contentHash: string } | undefined = undefined;
 

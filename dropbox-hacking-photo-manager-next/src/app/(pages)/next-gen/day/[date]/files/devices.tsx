@@ -8,7 +8,7 @@ import type {
   ContentHashCollection,
   DayFilesResult,
 } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
-import React, {
+import {
   type CSSProperties,
   useEffect,
   useId,

@@ -5,7 +5,7 @@
 // import { useIdentity } from "@hooks/useIdentity";
 // import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFeed";
 // import logRender from "@lib/logRender";
-// import React, { useEffect, useMemo } from "react";
+// import { useEffect, useMemo } from "react";
 
 // import ListOfFiles from "./listOfFiles";
 

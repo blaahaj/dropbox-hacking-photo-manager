@@ -1,7 +1,7 @@
 import useVisibilityTracking from "@hooks/useVisibilityTracking";
 import logRender from "@lib/logRender";
 import type { ContentHashCollectionWithDay } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 import FileRow from "./FileRow";
 import styles from "./filesTable.module.css";

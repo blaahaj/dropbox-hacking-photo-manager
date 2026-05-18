@@ -13,6 +13,7 @@ import tseslint from "typescript-eslint";
 export default defineConfig(
   {
     ignores: [
+      "buildAll.mjs",
       "**/.next/**/*",
       "**/dist/**/*",
       "**/tsconfig.tsbuildinfo",
@@ -120,7 +121,7 @@ export default defineConfig(
       "unused-imports": unusedImports,
     },
     rules: {
-      "unused-imports/no-unused-imports": "warn",
+      "unused-imports/no-unused-imports": "error",
     },
   },
 
@@ -169,7 +170,8 @@ export default defineConfig(
 
   {
     plugins: {
-      "@next/nextjs": eslintNextPlugin,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      "@next/nextjs": eslintNextPlugin as any,
     },
     settings: {
       next: {

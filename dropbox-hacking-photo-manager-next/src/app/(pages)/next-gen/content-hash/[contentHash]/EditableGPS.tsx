@@ -4,7 +4,7 @@ import {
   GPSLatLong,
   type PhotoDbEntry,
 } from "dropbox-hacking-photo-manager-shared";
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 
 const parse = (t: string): PhotoDbEntry["gps"] => {
   t = t.trim();

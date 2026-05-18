@@ -5,7 +5,7 @@ import type { DayFilesResult } from "dropbox-hacking-photo-manager-shared/server
 import { useEffect, useMemo, useState } from "react";
 import { Observable } from "rxjs";
 
-import styles from "./filesTable.module.css";
+import styles from "./FileRow.module.css";
 import MaybeVisibleThumbnail from "./MaybeVisibleThumbnail";
 
 const FileRow = ({

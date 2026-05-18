@@ -7,7 +7,7 @@ import type {
   RouteState,
 } from "dropbox-hacking-photo-manager-shared";
 import { isPreviewable } from "dropbox-hacking-photo-manager-shared/fileTypes";
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 
 const MaybeVisibleThumbnail = ({
   namedFile,

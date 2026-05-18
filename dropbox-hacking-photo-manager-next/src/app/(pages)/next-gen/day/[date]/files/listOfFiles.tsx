@@ -100,7 +100,7 @@ const ListOfFiles = ({
           </div>
 
           <div
-            className={`selectedFileCount ${selectedContentHashes.size === 0 ? "noneSelected" : "someSelected"}`}
+            className={`${styles.selectedFileCount} ${selectedContentHashes.size === 0 ? "noneSelected" : "someSelected"}`}
           >
             {selectedContentHashes.size === 1 && "1 item selected"}
             {selectedContentHashes.size !== 1 &&

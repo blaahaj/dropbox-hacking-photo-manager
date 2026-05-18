@@ -3,7 +3,7 @@ import type {
   NamedFile,
   PhotoDbEntry,
 } from "dropbox-hacking-photo-manager-shared";
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 // Normalise to [0, 360)
 const mod360 = (n: number) => (n + 360 * Math.ceil(Math.abs(n) / 360)) % 360;

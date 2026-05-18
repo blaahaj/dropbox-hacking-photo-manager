@@ -1,7 +1,7 @@
 "use client";
 
 import logRender from "@lib/logRender";
-import React, { useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 
 import { useLeaflet } from "@/app/useLeaflet";
 
