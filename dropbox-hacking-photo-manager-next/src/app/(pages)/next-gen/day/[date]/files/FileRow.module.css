@@ -1,0 +1,62 @@
+li.thing {
+  align-content: center;
+  transform: rotateY("40deg");
+}
+
+li.selected {
+  background: wheat;
+}
+
+li.focused {
+  color: black;
+}
+
+li.video,
+.mtime,
+.makeAndModel,
+.basename,
+.dayDescription,
+.description {
+  opacity: 1;
+}
+
+li.raw {
+  opacity: 0.4;
+}
+
+.tags {
+  line-height: 2.7em;
+  text-align: center;
+}
+
+li .icons {
+  text-align: center;
+  height: 3em;
+  display: flex;
+  align-items: center;
+}
+
+li .icons > * {
+  margin-inline: 0.2em;
+}
+
+.tags {
+  font-size: 18pt;
+}
+
+div.thumbnail {
+  width: 128px;
+  height: 128px;
+  background: transparent;
+  margin-block-start: 1lh;
+}
+
+div.thumbnail :has(> img) {
+  display: flex;
+}
+
+div.thumbnail img {
+  align-self: center;
+  text-align: center;
+  margin: auto;
+}

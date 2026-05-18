@@ -7,9 +7,6 @@
   padding: 0.5em;
   width: fit-content;
   font-size: smaller;
-}
-
-.fileListTools {
   display: flex;
   gap: 1em;
 }
