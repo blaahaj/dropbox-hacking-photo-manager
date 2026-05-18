@@ -121,7 +121,7 @@ export default defineConfig(
       "unused-imports": unusedImports,
     },
     rules: {
-      "unused-imports/no-unused-imports": "warn",
+      "unused-imports/no-unused-imports": "error",
     },
   },
 
