@@ -13,6 +13,7 @@ import tseslint from "typescript-eslint";
 export default defineConfig(
   {
     ignores: [
+      "buildAll.mjs",
       "**/.next/**/*",
       "**/dist/**/*",
       "**/tsconfig.tsbuildinfo",
