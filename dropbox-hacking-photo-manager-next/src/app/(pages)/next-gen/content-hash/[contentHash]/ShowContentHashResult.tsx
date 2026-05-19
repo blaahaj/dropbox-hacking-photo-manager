@@ -131,78 +131,82 @@ export const ShowContentHashResult = ({
           {/* TODO, indicate >1 day */}
           {/* TODO, make editable */}
 
-          <Accordion defaultExpanded>
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <h3>Description & Tags</h3>
-            </AccordionSummary>
-            <AccordionDetails>
-              <EditablePhotoEntry
-                contentHash={contentHash}
-                photoDbEntry={latestValue.photo ?? {}}
-              />
-            </AccordionDetails>
-          </Accordion>
-
-          <Accordion>
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <h3>GPS</h3>
-            </AccordionSummary>
-            <AccordionDetails>
-              <ol>
-                <li>
-                  Embedded:{" "}
-                  {gpsOrNone(
-                    `${contentHash} from content`,
-                    latestValue.gps.fromContent,
-                  )}
-                </li>
-                <li>
-                  Override:{" "}
-                  {gpsOrNone(
-                    `${contentHash} from override`,
-                    latestValue.gps.fromOverride,
-                  )}{" "}
-                  <button>edit</button>
-                </li>
-              </ol>
-
-              <EditableGPS
-                contentHash={contentHash}
-                photoDbEntry={latestValue.photo ?? {}}
-              />
-            </AccordionDetails>
-          </Accordion>
-
-          {latestValue.exif && (
-            <Accordion>
+          <Stack
+            sx={{ backgroundColor: "rgba(246,246,246,0.5)", padding: "1em" }}
+          >
+            <Accordion defaultExpanded>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <h3>Exif</h3>
+                <h3>Description & Tags</h3>
               </AccordionSummary>
               <AccordionDetails>
-                <SummariseExif exif={latestValue.exif} />
+                <EditablePhotoEntry
+                  contentHash={contentHash}
+                  photoDbEntry={latestValue.photo ?? {}}
+                />
               </AccordionDetails>
             </Accordion>
-          )}
 
-          {latestValue.mediaInfo && (
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <h3>MediaInfo</h3>
+                <h3>GPS</h3>
               </AccordionSummary>
               <AccordionDetails>
-                <SummariseMediaInfo mediaInfo={latestValue.mediaInfo} />
+                <ol>
+                  <li>
+                    Embedded:{" "}
+                    {gpsOrNone(
+                      `${contentHash} from content`,
+                      latestValue.gps.fromContent,
+                    )}
+                  </li>
+                  <li>
+                    Override:{" "}
+                    {gpsOrNone(
+                      `${contentHash} from override`,
+                      latestValue.gps.fromOverride,
+                    )}{" "}
+                    <button>edit</button>
+                  </li>
+                </ol>
+
+                <EditableGPS
+                  contentHash={contentHash}
+                  photoDbEntry={latestValue.photo ?? {}}
+                />
               </AccordionDetails>
             </Accordion>
-          )}
 
-          <Accordion>
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <h3>Files</h3>
-            </AccordionSummary>
-            <AccordionDetails>
-              <SummariseNamedFiles namedFiles={latestValue.namedFiles} />
-            </AccordionDetails>
-          </Accordion>
+            {latestValue.exif && (
+              <Accordion>
+                <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                  <h3>Exif</h3>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <SummariseExif exif={latestValue.exif} />
+                </AccordionDetails>
+              </Accordion>
+            )}
+
+            {latestValue.mediaInfo && (
+              <Accordion>
+                <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                  <h3>MediaInfo</h3>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <SummariseMediaInfo mediaInfo={latestValue.mediaInfo} />
+                </AccordionDetails>
+              </Accordion>
+            )}
+
+            <Accordion>
+              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                <h3>Files</h3>
+              </AccordionSummary>
+              <AccordionDetails>
+                <SummariseNamedFiles namedFiles={latestValue.namedFiles} />
+              </AccordionDetails>
+            </Accordion>
+          </Stack>
         </Stack>
       </Stack>
     </>
