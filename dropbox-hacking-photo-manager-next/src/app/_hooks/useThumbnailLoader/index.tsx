@@ -6,7 +6,6 @@ import { createContext, PropsWithChildren, useContext, useMemo } from "react";
 import { discardingThumbnailLoader } from "./discardingThumbnailLoader";
 import { nullLoader } from "./nullThumbnailLoader";
 import type { ThumbnailLoader } from "./types";
-import { useThumbnail } from "./useThumbnail";
 import { websocketThumbnailLoader } from "./websocketThumbnailLoader";
 
 export const context = createContext<ThumbnailLoader>(nullLoader);
@@ -49,5 +48,3 @@ export const DefaultThumbnailProvider = (
 
   return <context.Provider value={loader}>{props.children}</context.Provider>;
 };
-
-export default useThumbnail;
