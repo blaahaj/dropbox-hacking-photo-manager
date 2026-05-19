@@ -1,7 +1,7 @@
 "use client";
 
 import type { Multiplexer } from "@hooks/useMultiplexer/context";
-import { DefaultThumbnailProvider } from "@hooks/useThumbnail";
+import { DefaultThumbnailProvider } from "@hooks/useThumbnailLoader";
 import { useMemo } from "react";
 
 import { DefaultMultiplexerProvider } from "@/app/_hooks/useMultiplexer";

@@ -21,7 +21,7 @@ const MaybeVisibleThumbnail = ({
   routeState: RouteState;
 }) => {
   const isThumbnailable = isPreviewable(namedFile.path_lower);
-  const thumbnail = useThumbnail(namedFile.rev)(isThumbnailable && visible);
+  const thumbnail = useThumbnail(namedFile.rev, isThumbnailable && visible);
 
   const shouldBlur = photo.tags?.some((t) => t === "nsfw");
 
