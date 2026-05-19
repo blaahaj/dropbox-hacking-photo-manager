@@ -10,20 +10,9 @@ import { useEffect } from "react";
 
 import styles from "./page.module.css";
 
-const XOutOfY = ({ x, y }: { x: number; y: number }) =>
-  y === 0 ? (
-    <td />
-  ) : (
-    <td
-      style={{
-        // backgroundColor: `rgb(${255.0 * (1 - x / y)}, 0, 0)`,
-        textAlign: "center",
-        textWrap: "nowrap",
-      }}
-    >
-      {x} / {y}
-    </td>
-  );
+const XOutOfY = ({ x, y }: { x: number; y: number }) => (
+  <td style={{ textAlign: "end", paddingInlineEnd: "1em" }}>{y - x || ""}</td>
+);
 
 const NGDaysNoSamples = () => {
   const latestValue = useLatestValueFromServerFeed({
@@ -54,9 +43,9 @@ const NGDaysNoSamples = () => {
               >
                 <tr>
                   <th>Date</th>
-                  <th>EXIF</th>
-                  <th>MediaInfo</th>
-                  <th>GPS</th>
+                  <th>Missing EXIF</th>
+                  <th>Missing MediaInfo</th>
+                  <th>Missing GPS</th>
                   <th>Description</th>
                   <th>Tags</th>
                 </tr>
