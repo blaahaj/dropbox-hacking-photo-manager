@@ -5,6 +5,7 @@
   background: rgb(255, 205, 255);
   color: black;
   padding: 0.5em;
+  margin-block: 1em;
   width: fit-content;
   font-size: smaller;
   display: flex;

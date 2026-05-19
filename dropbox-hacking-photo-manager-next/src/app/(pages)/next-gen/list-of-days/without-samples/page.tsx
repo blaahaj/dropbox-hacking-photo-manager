@@ -45,7 +45,13 @@ const NGDaysNoSamples = () => {
         {latestValue ? (
           <div>
             <table className={styles.listOfDays}>
-              <thead>
+              <thead
+                style={{
+                  position: "sticky",
+                  top: "0",
+                  background: "rgba(255, 255, 255, 0.6)",
+                }}
+              >
                 <tr>
                   <th>Date</th>
                   <th>EXIF</th>

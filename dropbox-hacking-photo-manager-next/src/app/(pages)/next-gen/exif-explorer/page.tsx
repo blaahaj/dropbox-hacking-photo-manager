@@ -45,9 +45,17 @@ const ExifExplorer = () => {
 
         {sortedTagCounts ? (
           <div>
-            <TableContainer style={{ width: "50em", margin: "auto" }}>
+            <TableContainer
+              style={{ width: "50em", margin: "auto", overflow: "initial" }}
+            >
               <Table aria-label="simple table">
-                <TableHead>
+                <TableHead
+                  sx={{
+                    position: "sticky",
+                    top: 0,
+                    background: "rgba(255, 255, 255, 0.6)",
+                  }}
+                >
                   <TableRow>
                     <TableCell>Tag</TableCell>
                     <TableCell align="right">Present</TableCell>
