@@ -2,6 +2,8 @@ import SamePageLink from "@components/samePageLink";
 import logRender from "@lib/logRender";
 import type { NamedFile } from "dropbox-hacking-photo-manager-shared";
 
+import styles from "./SummariseNamedFiles.module.css";
+
 const SummariseNamedFiles = ({
   namedFiles,
 }: {
@@ -29,6 +31,7 @@ const SummariseNamedFiles = ({
               <tr key={namedFile.id}>
                 <td>
                   <SamePageLink
+                    className={styles.dayLink}
                     routeState={{ route: "route/next-gen/day/files", date }}
                   >
                     {date}
@@ -36,12 +39,16 @@ const SummariseNamedFiles = ({
                   {time}
                 </td>
                 <td>
-                  <a href={`https://www.dropbox.com/home${encodeURI(dirname)}`}>
+                  <a
+                    className={styles.dropboxLink}
+                    href={`https://www.dropbox.com/home${encodeURI(dirname)}`}
+                  >
                     {dirname}
                   </a>
                 </td>
                 <td>
                   <a
+                    className={styles.dropboxLink}
                     href={`https://www.dropbox.com/preview${encodeURI(namedFile.path_display)}?context=browse&role=personal`}
                   >
                     {basename.replaceAll(namedFile.content_hash, "#")}

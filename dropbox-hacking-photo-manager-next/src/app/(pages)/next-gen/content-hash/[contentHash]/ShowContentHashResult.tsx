@@ -20,6 +20,7 @@ import { useLeaflet } from "@/app/useLeaflet";
 import EditableGPS from "./EditableGPS";
 import EditablePhotoEntry from "./EditablePhotoEntry";
 import ImagePreview from "./imagePreview";
+import styles from "./ShowContentHashResult.module.css";
 import SummariseExif from "./SummariseExif";
 import SummariseMediaInfo from "./SummariseMediaInfo";
 import SummariseNamedFiles from "./SummariseNamedFiles";
@@ -29,7 +30,7 @@ const gpsOrNone = (title: string, pos: GPSLatNLongE | null) => {
 
   const t = GPSLatLong.fromGPSLatNLongE(pos);
   return (
-    <a href={t.geoHackUrl({ title })}>
+    <a className={styles.geohackLink} href={t.geoHackUrl({ title })}>
       {pos.lat},{pos.long}
     </a>
   );
@@ -87,6 +88,7 @@ export const ShowContentHashResult = ({
                 <p>
                   The only file from{" "}
                   <SamePageLink
+                    className={styles.dayLink}
                     routeState={{
                       route: "route/next-gen/day/files",
                       date: latestValue.date,
@@ -97,7 +99,6 @@ export const ShowContentHashResult = ({
                 </p>
               ) : (
                 <p>
-                  #
                   {1 +
                     (dayData.files
                       .toSorted((a, b) =>
@@ -105,9 +106,10 @@ export const ShowContentHashResult = ({
                       )
                       .findIndex(
                         (c) => c.contentHash === latestValue.contentHash,
-                      ) ?? "-2")}{" "}
-                  of {dayData.files.length} files from{" "}
+                      ) ?? "-2")}
+                  /{dayData.files.length} from{" "}
                   <SamePageLink
+                    className={styles.dayLink}
                     routeState={{
                       route: "route/next-gen/day/files",
                       date: latestValue.date,
@@ -115,6 +117,10 @@ export const ShowContentHashResult = ({
                   >
                     {latestValue.date}
                   </SamePageLink>
+                  :{" "}
+                  {dayData
+                    ? dayData.dayMetadata?.description || "-"
+                    : "loading..."}
                 </p>
               )}
             </div>
@@ -122,86 +128,85 @@ export const ShowContentHashResult = ({
             "loading..."
           )}
 
-          <p style={{ marginBlock: "1em" }}>
-            Description:{" "}
-            {dayData ? dayData.dayMetadata?.description || "-" : "loading..."}
-          </p>
-
           {/* TODO, indicate >1 day */}
           {/* TODO, make editable */}
 
-          <Accordion defaultExpanded>
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <h3>Description & Tags</h3>
-            </AccordionSummary>
-            <AccordionDetails>
-              <EditablePhotoEntry
-                contentHash={contentHash}
-                photoDbEntry={latestValue.photo ?? {}}
-              />
-            </AccordionDetails>
-          </Accordion>
-
-          <Accordion>
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <h3>GPS</h3>
-            </AccordionSummary>
-            <AccordionDetails>
-              <ol>
-                <li>
-                  Embedded:{" "}
-                  {gpsOrNone(
-                    `${contentHash} from content`,
-                    latestValue.gps.fromContent,
-                  )}
-                </li>
-                <li>
-                  Override:{" "}
-                  {gpsOrNone(
-                    `${contentHash} from override`,
-                    latestValue.gps.fromOverride,
-                  )}{" "}
-                  <button>edit</button>
-                </li>
-              </ol>
-
-              <EditableGPS
-                contentHash={contentHash}
-                photoDbEntry={latestValue.photo ?? {}}
-              />
-            </AccordionDetails>
-          </Accordion>
-
-          {latestValue.exif && (
-            <Accordion>
+          <Stack
+            sx={{ backgroundColor: "rgba(246,246,246,0.5)", padding: "1em" }}
+          >
+            <Accordion defaultExpanded>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <h3>Exif</h3>
+                <h3>Description & Tags</h3>
               </AccordionSummary>
               <AccordionDetails>
-                <SummariseExif exif={latestValue.exif} />
+                <EditablePhotoEntry
+                  contentHash={contentHash}
+                  photoDbEntry={latestValue.photo ?? {}}
+                />
               </AccordionDetails>
             </Accordion>
-          )}
 
-          {latestValue.mediaInfo && (
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <h3>MediaInfo</h3>
+                <h3>GPS</h3>
               </AccordionSummary>
               <AccordionDetails>
-                <SummariseMediaInfo mediaInfo={latestValue.mediaInfo} />
+                <ol>
+                  <li>
+                    Embedded:{" "}
+                    {gpsOrNone(
+                      `${contentHash} from content`,
+                      latestValue.gps.fromContent,
+                    )}
+                  </li>
+                  <li>
+                    Override:{" "}
+                    {gpsOrNone(
+                      `${contentHash} from override`,
+                      latestValue.gps.fromOverride,
+                    )}{" "}
+                    <button>edit</button>
+                  </li>
+                </ol>
+
+                <EditableGPS
+                  contentHash={contentHash}
+                  photoDbEntry={latestValue.photo ?? {}}
+                />
               </AccordionDetails>
             </Accordion>
-          )}
 
-          <Accordion>
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <h3>Files</h3>
-            </AccordionSummary>
-            <AccordionDetails>
-              <SummariseNamedFiles namedFiles={latestValue.namedFiles} />
-            </AccordionDetails>
-          </Accordion>
+            {latestValue.exif && (
+              <Accordion>
+                <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                  <h3>Exif</h3>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <SummariseExif exif={latestValue.exif} />
+                </AccordionDetails>
+              </Accordion>
+            )}
+
+            {latestValue.mediaInfo && (
+              <Accordion>
+                <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                  <h3>MediaInfo</h3>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <SummariseMediaInfo mediaInfo={latestValue.mediaInfo} />
+                </AccordionDetails>
+              </Accordion>
+            )}
+
+            <Accordion>
+              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                <h3>Files</h3>
+              </AccordionSummary>
+              <AccordionDetails>
+                <SummariseNamedFiles namedFiles={latestValue.namedFiles} />
+              </AccordionDetails>
+            </Accordion>
+          </Stack>
         </Stack>
       </Stack>
     </>

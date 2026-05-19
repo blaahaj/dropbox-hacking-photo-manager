@@ -25,6 +25,7 @@ export const VideoRow = ({ item }: { item: VideoResult[number] }) => {
 
       <td title={item.namedFile.name.replace(item.namedFile.content_hash, "#")}>
         <SamePageLink
+          className={styles.contentLink}
           routeState={{
             route: "route/next-gen/content-hash",
             contentHash: item.namedFile.content_hash,

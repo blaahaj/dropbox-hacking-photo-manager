@@ -32,6 +32,7 @@ export const PrevNextFileNav = ({
     <div>
       {previousFile && (
         <SamePageLink
+          // TODO style me
           routeState={{
             route: "route/next-gen/content-hash",
             contentHash: previousFile.contentHash,
@@ -50,6 +51,7 @@ export const PrevNextFileNav = ({
       )}
       {" ~ "}
       <SamePageLink
+        // TODO style me
         routeState={{
           route: "route/next-gen/day/files",
           date: context.date,
@@ -60,6 +62,7 @@ export const PrevNextFileNav = ({
       {" ~ "}
       {nextFile && (
         <SamePageLink
+          // TODO style me
           routeState={{
             route: "route/next-gen/content-hash",
             contentHash: nextFile.contentHash,
