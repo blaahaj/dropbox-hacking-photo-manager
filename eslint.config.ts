@@ -201,6 +201,7 @@ export default defineConfig(
             "dropbox-hacking-photo-manager-next/pages", // which doesn't exist
           ],
           "@typescript-eslint/explicit-module-boundary-types": "off",
+          "react/no-unescaped-entities": "off",
         },
       },
     ],

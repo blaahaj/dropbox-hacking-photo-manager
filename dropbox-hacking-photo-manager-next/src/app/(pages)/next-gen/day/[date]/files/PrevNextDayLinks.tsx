@@ -1,8 +1,9 @@
 import SamePageLink from "@components/samePageLink";
 import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFeed";
 import logRender from "@lib/logRender";
-import React from "react";
 import { useMemo } from "react";
+
+import styles from "./PrevNextDayLinks.module.css";
 
 const PrevNextDayLinks = ({ date }: { date: string }) => {
   const listOfDays = useLatestValueFromServerFeed({
@@ -29,6 +30,7 @@ const PrevNextDayLinks = ({ date }: { date: string }) => {
     <div>
       {previousDay && (
         <SamePageLink
+          className={styles.dayLink}
           routeState={{
             route: "route/next-gen/day/files",
             date: previousDay.date,
@@ -42,6 +44,7 @@ const PrevNextDayLinks = ({ date }: { date: string }) => {
 
       {nextDay && (
         <SamePageLink
+          className={styles.dayLink}
           routeState={{
             route: "route/next-gen/day/files",
             date: nextDay.date,

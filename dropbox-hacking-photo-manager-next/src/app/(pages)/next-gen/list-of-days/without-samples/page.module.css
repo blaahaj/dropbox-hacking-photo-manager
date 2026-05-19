@@ -16,3 +16,7 @@
 .listOfDays > tbody > tr > td {
   padding-inline: 0.5em;
 }
+
+.dayLink {
+  text-decoration: dotted black underline 1px;
+}

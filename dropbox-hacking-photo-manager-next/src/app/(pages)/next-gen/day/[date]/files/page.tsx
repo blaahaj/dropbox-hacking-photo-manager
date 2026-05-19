@@ -10,6 +10,7 @@ import type { ContentHashCollectionWithDay } from "dropbox-hacking-photo-manager
 import { use, useEffect, useMemo } from "react";
 
 import ListOfFiles from "./listOfFiles";
+import styles from "./page.module.css";
 import PrevNextDayLinks from "./PrevNextDayLinks";
 
 const NGDayFiles = ({
@@ -64,6 +65,7 @@ const NGDayFiles = ({
 
         <h1>
           <a
+            className={styles.calendarLink}
             href={`https://calendar.google.com/calendar/u/0/r/week/${date.substring(0, 4)}/${date.substring(5, 7)}/${date.substring(8, 10)}`}
           >
             {date}

@@ -60,6 +60,7 @@ const NGDaysNoSamples = () => {
                   <tr key={row.date}>
                     <td>
                       <SamePageLink
+                        className={styles.dayLink}
                         routeState={{
                           route: "route/next-gen/day/files",
                           date: row.date,

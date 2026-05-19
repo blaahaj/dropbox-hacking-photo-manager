@@ -20,6 +20,7 @@ import { useLeaflet } from "@/app/useLeaflet";
 import EditableGPS from "./EditableGPS";
 import EditablePhotoEntry from "./EditablePhotoEntry";
 import ImagePreview from "./imagePreview";
+import styles from "./ShowContentHashResult.module.css";
 import SummariseExif from "./SummariseExif";
 import SummariseMediaInfo from "./SummariseMediaInfo";
 import SummariseNamedFiles from "./SummariseNamedFiles";
@@ -29,7 +30,7 @@ const gpsOrNone = (title: string, pos: GPSLatNLongE | null) => {
 
   const t = GPSLatLong.fromGPSLatNLongE(pos);
   return (
-    <a href={t.geoHackUrl({ title })}>
+    <a className={styles.geohackLink} href={t.geoHackUrl({ title })}>
       {pos.lat},{pos.long}
     </a>
   );
@@ -87,6 +88,7 @@ export const ShowContentHashResult = ({
                 <p>
                   The only file from{" "}
                   <SamePageLink
+                    className={styles.dayLink}
                     routeState={{
                       route: "route/next-gen/day/files",
                       date: latestValue.date,
@@ -97,7 +99,6 @@ export const ShowContentHashResult = ({
                 </p>
               ) : (
                 <p>
-                  #
                   {1 +
                     (dayData.files
                       .toSorted((a, b) =>
@@ -105,9 +106,10 @@ export const ShowContentHashResult = ({
                       )
                       .findIndex(
                         (c) => c.contentHash === latestValue.contentHash,
-                      ) ?? "-2")}{" "}
-                  of {dayData.files.length} files from{" "}
+                      ) ?? "-2")}
+                  /{dayData.files.length} from{" "}
                   <SamePageLink
+                    className={styles.dayLink}
                     routeState={{
                       route: "route/next-gen/day/files",
                       date: latestValue.date,
@@ -115,17 +117,16 @@ export const ShowContentHashResult = ({
                   >
                     {latestValue.date}
                   </SamePageLink>
+                  :{" "}
+                  {dayData
+                    ? dayData.dayMetadata?.description || "-"
+                    : "loading..."}
                 </p>
               )}
             </div>
           ) : (
             "loading..."
           )}
-
-          <p style={{ marginBlock: "1em" }}>
-            Description:{" "}
-            {dayData ? dayData.dayMetadata?.description || "-" : "loading..."}
-          </p>
 
           {/* TODO, indicate >1 day */}
           {/* TODO, make editable */}

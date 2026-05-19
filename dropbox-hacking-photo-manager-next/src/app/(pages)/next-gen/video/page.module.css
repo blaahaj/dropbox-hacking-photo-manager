@@ -27,3 +27,7 @@
   font-family: monospace;
   text-align: end;
 }
+
+.contentLink {
+  text-decoration: dotted black underline 1px;
+}
