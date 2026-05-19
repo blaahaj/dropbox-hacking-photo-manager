@@ -89,7 +89,13 @@ const Video = () => {
             key={generateId(3, "video-table")}
             className={styles.videoTable}
           >
-            <thead>
+            <thead
+              style={{
+                position: "sticky",
+                top: "0",
+                background: "rgba(255, 255, 255, 0.6)",
+              }}
+            >
               <tr>
                 <th>date</th>
                 <th>day text</th>

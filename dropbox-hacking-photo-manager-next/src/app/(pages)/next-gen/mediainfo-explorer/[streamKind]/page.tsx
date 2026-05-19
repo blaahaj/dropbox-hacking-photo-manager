@@ -113,9 +113,15 @@ const MediaInfoExplorer = ({
 
           {sortedTagCounts ? (
             <div>
-              <TableContainer>
+              <TableContainer sx={{ overflow: "initial" }}>
                 <Table aria-label="simple table">
-                  <TableHead>
+                  <TableHead
+                    sx={{
+                      position: "sticky",
+                      top: 0,
+                      background: "rgba(255, 255, 255, 0.6)",
+                    }}
+                  >
                     <TableRow>
                       <TableCell>Tag</TableCell>
                       <TableCell align="right">Present</TableCell>
