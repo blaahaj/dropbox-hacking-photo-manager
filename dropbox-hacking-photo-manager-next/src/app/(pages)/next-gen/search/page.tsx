@@ -1,5 +1,6 @@
 "use client";
 
+import ListOfContent from "@components/ListOfContent";
 import Navigate from "@components/Navigation";
 import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFeed";
 import logRender from "@lib/logRender";
@@ -12,8 +13,6 @@ import {
   useMemo,
   useState,
 } from "react";
-
-import ListOfFiles from "../day/[date]/files/listOfFiles";
 
 const NGSearch = ({
   searchParams: searchParamsProxy,
@@ -120,7 +119,7 @@ const NGSearch = ({
 
             {filter && (
               // TODO use shareable component
-              <ListOfFiles
+              <ListOfContent
                 files={latestValue.matches}
                 // FIXME, this date
                 date={"2000-01-01"}

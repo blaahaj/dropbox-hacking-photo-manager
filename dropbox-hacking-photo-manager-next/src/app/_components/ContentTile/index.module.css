@@ -1,0 +1,80 @@
+.tile {
+  align-content: center;
+  transform: rotateZ("40deg");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 10pt;
+  min-width: 192px;
+  max-width: 15em;
+  border: 5px solid transparent;
+  height: 100%;
+}
+
+.selected {
+  background: wheat;
+}
+
+.focused {
+  border: 5px solid purple;
+}
+
+.video,
+.mtime,
+.makeAndModel,
+.basename,
+.dayDescription,
+.description {
+  opacity: 1;
+}
+
+.raw {
+  opacity: 0.4;
+}
+
+.tile .icons {
+  text-align: center;
+  height: 3em;
+  display: flex;
+  align-items: center;
+}
+
+.tile .icons > * {
+  margin-inline: 0.2em;
+}
+
+.dayDescription,
+.description {
+  text-align: center;
+}
+
+.tags {
+  line-height: 1em;
+  text-align: center;
+  margin-block-start: 0.5em;
+  font-size: 18pt;
+}
+
+.thumbnail {
+  width: 128px;
+  height: 128px;
+  background: transparent;
+  margin-block: 1lh;
+}
+
+.thumbnail :has(> img) {
+  display: flex;
+}
+
+.thumbnail img {
+  align-self: center;
+  text-align: center;
+  margin: auto;
+  transition-property: scale;
+  transition-duration: 0.3s;
+  scale: 1;
+}
+
+.thumbnail img:hover {
+  scale: 1.5;
+}

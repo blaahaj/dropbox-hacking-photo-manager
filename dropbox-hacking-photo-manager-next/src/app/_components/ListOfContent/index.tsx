@@ -7,12 +7,10 @@ import { useDeferredValue, useMemo, useState } from "react";
 
 import { useLeaflet } from "@/app/useLeaflet";
 
-import FilesTable from "./filesTable";
-import styles from "./listOfFiles.module.css";
-import MultiGPSEditor from "./MultiGPSEditor";
-import MultiTagEditor from "./MultiTagEditor";
+import ListOfTiles from "./ListOfTiles";
+import Tools from "./Tools";
 
-const ListOfFiles = ({
+const ListOfContent = ({
   files,
   date,
 }: {
@@ -92,60 +90,16 @@ const ListOfFiles = ({
   );
 
   return (
-    <>
-      <div className={styles.fileListTools}>
-        <div>
-          <div className={styles.matchingItemsCount}>
-            {files.length} {files.length === 1 ? "item" : "items"}
-          </div>
+    <div>
+      <Tools
+        countSelected={countSelected}
+        countAll={countAll}
+        setAll={setAll}
+        files={files}
+        selectedContentHashes={selectedContentHashes}
+      />
 
-          <div
-            className={`${styles.selectedFileCount} ${selectedContentHashes.size === 0 ? "noneSelected" : "someSelected"}`}
-          >
-            {selectedContentHashes.size === 1 && "1 item selected"}
-            {selectedContentHashes.size !== 1 &&
-              `${selectedContentHashes.size} items selected`}
-          </div>
-
-          <div className="allSelected">
-            <input
-              type="checkbox"
-              disabled={countAll === 0}
-              checked={countSelected === countAll}
-              onChange={useMemo(
-                () => (e) => setAll("all", e.target.checked),
-                [setAll],
-              )}
-            />{" "}
-            all
-          </div>
-          <div className="noneSelected">
-            <input
-              type="checkbox"
-              disabled={countAll === 0}
-              checked={countSelected === 0}
-              onChange={useMemo(
-                () => (e) => setAll("none", e.target.checked),
-                [setAll],
-              )}
-            />{" "}
-            none
-          </div>
-        </div>
-
-        <MultiTagEditor
-          key={[...selectedContentHashes].toSorted().join(" ") + "-tags"}
-          contentHashes={selectedContentHashes}
-          files={files.filter((f) => selectedContentHashes.has(f.contentHash))}
-        />
-        <MultiGPSEditor
-          key={[...selectedContentHashes].toSorted().join(" ") + "-gps"}
-          contentHashes={selectedContentHashes}
-          files={files.filter((f) => selectedContentHashes.has(f.contentHash))}
-        />
-      </div>
-
-      <FilesTable
+      <ListOfTiles
         files={files}
         selectedContentHashes={selectedContentHashes}
         onSelectedContentHashes={(t) => setSelectedContentHashes(t)}
@@ -157,8 +111,8 @@ const ListOfFiles = ({
       <p>
         With GPS: {forMap.size} {"//"} Without GPS: {files.length - forMap.size}
       </p>
-    </>
+    </div>
   );
 };
 
-export default logRender(ListOfFiles);
+export default logRender(ListOfContent);

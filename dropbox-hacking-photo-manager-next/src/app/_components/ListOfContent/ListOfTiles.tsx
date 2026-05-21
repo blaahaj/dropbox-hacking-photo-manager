@@ -1,12 +1,12 @@
+import ContentTile from "@components/ContentTile";
 import useVisibilityTracking from "@hooks/useVisibilityTracking";
 import logRender from "@lib/logRender";
 import type { ContentHashCollectionWithDay } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
 import { useRef, useState } from "react";
 
-import FileRow from "./FileRow";
-import styles from "./filesTable.module.css";
+import styles from "./ListOfTiles.module.css";
 
-const FilesTable = ({
+const ListOfTiles = ({
   files,
   selectedContentHashes,
   onSelectedContentHashes,
@@ -85,27 +85,28 @@ const FilesTable = ({
       >
         {observableVisibleItems &&
           files.map((f) => (
-            <FileRow
-              key={f.contentHash}
-              file={f}
-              focused={f.contentHash === focusedHash}
-              observableVisibleItems={observableVisibleItems}
-              selected={selectedContentHashes.has(f.contentHash)}
-              onSelected={(selected) => {
-                const t = new Set(selectedContentHashes);
-                if (selected) t.add(f.contentHash);
-                else t.delete(f.contentHash);
+            <li key={f.contentHash} data-rev={f.contentHash}>
+              <ContentTile
+                file={f}
+                focused={f.contentHash === focusedHash}
+                observableVisibleItems={observableVisibleItems}
+                selected={selectedContentHashes.has(f.contentHash)}
+                onSelected={(selected) => {
+                  const t = new Set(selectedContentHashes);
+                  if (selected) t.add(f.contentHash);
+                  else t.delete(f.contentHash);
 
-                onSelectedContentHashes(t);
-                setFocusedHash(f.contentHash);
-              }}
-              date={date}
-              day={f.day}
-            />
+                  onSelectedContentHashes(t);
+                  setFocusedHash(f.contentHash);
+                }}
+                date={date}
+                day={f.day}
+              />
+            </li>
           ))}
       </ol>
     </>
   );
 };
 
-export default logRender(FilesTable);
+export default logRender(ListOfTiles);
