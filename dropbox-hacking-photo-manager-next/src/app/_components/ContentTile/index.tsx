@@ -5,7 +5,7 @@ import type { DayFilesResult } from "dropbox-hacking-photo-manager-shared/server
 import { useEffect, useMemo, useState } from "react";
 import { Observable } from "rxjs";
 
-import styles from "./FileRow.module.css";
+import styles from "./index.module.css";
 import MaybeVisibleThumbnail from "./MaybeVisibleThumbnail";
 
 const FileRow = ({
@@ -65,6 +65,7 @@ const FileRow = ({
   }, [observableVisibleItems, file]);
 
   const classNames = [
+    styles.tile,
     selected ? styles.selected : null,
     focused ? styles.focused : null,
     isVideo ? styles.video : null,
@@ -74,12 +75,9 @@ const FileRow = ({
     .join(" ");
 
   return (
-    <li
-      key={file.contentHash}
-      data-rev={file.contentHash}
-      className={classNames || undefined}
-    >
+    <div className={classNames || undefined}>
       <input
+        style={{ margin: "0.5em" }}
         type="checkbox"
         checked={selected}
         onChange={useMemo(
@@ -154,9 +152,12 @@ const FileRow = ({
       )}
       <div className={styles.description}>{file.photo?.description ?? ""}</div>
       <div className={styles.tags}>
-        <TagList data={(file.photo?.tags ?? []).map((tag) => ({ tag }))} />
+        <TagList
+          data={(file.photo?.tags ?? []).map((tag) => ({ tag }))}
+          style={{ justifyContent: "center" }}
+        />
       </div>
-    </li>
+    </div>
   );
 };
 

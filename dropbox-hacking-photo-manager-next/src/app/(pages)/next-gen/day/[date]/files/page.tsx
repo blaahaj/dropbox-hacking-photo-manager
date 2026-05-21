@@ -1,6 +1,7 @@
 "use client";
 
 import EditableTextField from "@components/editableTextField";
+import ListOfContent from "@components/ListOfContent";
 import Navigate from "@components/Navigation";
 import ShowData from "@components/ShowData";
 import { useIdentity } from "@hooks/useIdentity";
@@ -9,7 +10,6 @@ import type { DayMetadata } from "dropbox-hacking-photo-manager-shared";
 import type { ContentHashCollectionWithDay } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
 import { use, useEffect, useMemo } from "react";
 
-import ListOfFiles from "./listOfFiles";
 import styles from "./page.module.css";
 import PrevNextDayLinks from "./PrevNextDayLinks";
 
@@ -82,7 +82,7 @@ const NGDayFiles = ({
               />
             </p>
 
-            <ListOfFiles files={files} date={date} />
+            <ListOfContent files={files} date={date} />
 
             <ShowData data={latestValue} />
           </>

@@ -1,7 +1,7 @@
 import SamePageLink from "@components/samePageLink";
-import type { PropsWithChildren } from "react";
+import type { CSSProperties, PropsWithChildren } from "react";
 
-import stylesRaw from "./tags.module.css";
+import stylesRaw from "./TagList.module.css";
 
 const styles = stylesRaw as typeof stylesRaw &
   Record<`tag-${string}`, string | undefined>;
@@ -27,11 +27,13 @@ const MaybeLinked = ({
 const TagList = ({
   data,
   linked,
+  style,
 }: {
   data: readonly { readonly tag: string; readonly count?: number }[];
   linked?: boolean;
+  style?: CSSProperties;
 }) => (
-  <ol className={styles.tagList}>
+  <ol className={styles.tagList} style={style}>
     {data.map(({ tag, count }, index) => (
       <li
         key={index}

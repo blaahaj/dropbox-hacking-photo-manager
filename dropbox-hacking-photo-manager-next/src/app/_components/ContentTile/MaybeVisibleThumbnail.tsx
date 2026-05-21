@@ -9,6 +9,8 @@ import type {
 import { isPreviewable } from "dropbox-hacking-photo-manager-shared/fileTypes";
 import { useMemo } from "react";
 
+import styles from "./MaybeVisibleThumbnail.module.css";
+
 const MaybeVisibleThumbnail = ({
   namedFile,
   photo,
@@ -50,7 +52,7 @@ const MaybeVisibleThumbnail = ({
 
   return (
     <>
-      <div style={{ position: "relative" }}>
+      <div className={styles.thumbnail} style={{ position: "relative" }}>
         <SamePageLink routeState={routeState}>
           <div
             style={{
@@ -71,8 +73,6 @@ const MaybeVisibleThumbnail = ({
               style={{
                 width: thumbnail ? undefined : "128px",
                 height: thumbnail ? undefined : "128px",
-                transitionProperty: "filter",
-                transitionDuration: "0.3s",
                 filter: shouldBlur ? "blur(8px)" : undefined,
               }}
             />

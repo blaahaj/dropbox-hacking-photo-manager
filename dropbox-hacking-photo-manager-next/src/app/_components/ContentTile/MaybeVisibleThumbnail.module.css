@@ -1,0 +1,19 @@
+.thumbnail img {
+  transition-property: filter scale;
+  transition-duration: 0.3s;
+  scale: 1;
+}
+
+.thumbnail:hover img {
+  scale: 1.5;
+}
+
+.thumbnail button {
+  transition-property: opacity;
+  transition-duration: 0.3s;
+  opacity: 1;
+}
+
+.thumbnail:hover button {
+  opacity: 0;
+}

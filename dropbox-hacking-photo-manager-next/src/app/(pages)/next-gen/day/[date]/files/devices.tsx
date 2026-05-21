@@ -1,3 +1,4 @@
+import MaybeVisibleThumbnail from "@components/ContentTile/MaybeVisibleThumbnail";
 import Navigate from "@components/Navigation";
 import { useIdentity } from "@hooks/useIdentity";
 import { useLatestValue } from "@hooks/useLatestValue";
@@ -17,8 +18,6 @@ import {
   useState,
 } from "react";
 import { map, type Observable } from "rxjs";
-
-import MaybeVisibleThumbnail from "./MaybeVisibleThumbnail";
 
 const FileCell = ({
   file,

@@ -1,0 +1,11 @@
+ol.files {
+  display: flex;
+  flex-flow: wrap;
+  padding-inline-start: 0;
+  list-style: none;
+  gap: 1em;
+}
+
+ol.files li {
+  border: 1px solid #999;
+}
