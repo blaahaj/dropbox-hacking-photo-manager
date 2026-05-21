@@ -46,6 +46,7 @@ const NGDaysNoSamples = () => {
                   <th>Missing EXIF</th>
                   <th>Missing MediaInfo</th>
                   <th>Missing GPS</th>
+                  <th>Files</th>
                   <th>Description</th>
                   <th>Tags</th>
                 </tr>
@@ -76,6 +77,9 @@ const NGDaysNoSamples = () => {
                       x={row.counts.hasGPSCount}
                       y={row.counts.previewableCount}
                     />
+                    <td style={{ textAlign: "end" }}>
+                      {row.counts.exifableCount + row.counts.mediaInfoableCount}
+                    </td>
                     <td>{row.dayMetadata?.description ?? ""}</td>
                     <td>
                       <TagList
