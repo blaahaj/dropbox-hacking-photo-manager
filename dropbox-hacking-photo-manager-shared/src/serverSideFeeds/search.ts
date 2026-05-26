@@ -7,15 +7,21 @@ import {
   type FullDatabaseFeeds,
 } from "./index.js";
 
+const DEFAULT_RESULTS_PER_PAGE = 1000;
+
 export type SearchRequest = {
   readonly type: "rx.ng.search";
   readonly filter: FilterNode;
+  readonly pageFrom0?: number;
+  readonly resultsPerPage?: number;
 };
 
 export type SearchResult = {
   readonly truncated: boolean;
   readonly totalCount: number;
   readonly matches: readonly ContentHashCollectionWithDay[];
+  readonly pageFrom0: number;
+  readonly resultsPerPage: number;
 };
 
 export const provideSearch = (
@@ -23,6 +29,8 @@ export const provideSearch = (
   req: SearchRequest,
 ): Observable<SearchResult> => {
   const predicate = compile(req.filter);
+  const pageFrom0 = req.pageFrom0 ?? 0;
+  const resultsPerPage = req.resultsPerPage ?? DEFAULT_RESULTS_PER_PAGE;
 
   return combineLatest([feeds.byContentHash, feeds.daysByDate])
     .pipe(
@@ -52,12 +60,14 @@ export const provideSearch = (
           );
 
         return {
-          truncated: matches.length > 1000,
+          truncated: matches.length > (pageFrom0 + 1) * resultsPerPage,
           totalCount: matches.length,
-          matches:
-            matches.length > 1000
-              ? matches.slice(matches.length - 1000)
-              : matches,
+          matches: matches.slice(
+            pageFrom0 * resultsPerPage,
+            (pageFrom0 + 1) * resultsPerPage,
+          ),
+          pageFrom0,
+          resultsPerPage,
         };
       }),
     );
