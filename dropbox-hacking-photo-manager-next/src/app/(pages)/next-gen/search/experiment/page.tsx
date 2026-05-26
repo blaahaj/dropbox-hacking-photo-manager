@@ -2,6 +2,8 @@
 
 import Navigate from "@components/Navigation";
 import logRender from "@lib/logRender";
+import Button from "@mui/material/Button";
+import ButtonGroup from "@mui/material/ButtonGroup";
 import TextField from "@mui/material/TextField";
 import { parseFilterString } from "dropbox-hacking-photo-manager-shared/search";
 import {
@@ -14,6 +16,9 @@ import {
 
 import FilterResults from "./FilterResults";
 
+export const RESULTS_STYLES = ["classic", "compact", "minimal"] as const;
+export type ResultsStyle = (typeof RESULTS_STYLES)[number];
+
 const NGSearch = ({
   searchParams: searchParamsProxy,
 }: {
@@ -23,6 +28,10 @@ const NGSearch = ({
   const [filterSource, setFilterSource] = useState(searchParams.q ?? "");
 
   const filter = useMemo(() => parseFilterString(filterSource), [filterSource]);
+
+  const [resultsStyle, setResultsStyle] = useState<ResultsStyle>(
+    RESULTS_STYLES[0],
+  );
 
   useEffect(() => {
     document.title = "DPMNG - search";
@@ -104,7 +113,21 @@ const NGSearch = ({
           </p>
         )}
 
-        {filter && <FilterResults filterNode={filter} />}
+        <ButtonGroup sx={{ marginBlock: "1em" }}>
+          {RESULTS_STYLES.map((s) => (
+            <Button
+              key={s}
+              variant={s === resultsStyle ? "contained" : "outlined"}
+              onClick={() => setResultsStyle(s)}
+            >
+              {s}
+            </Button>
+          ))}
+        </ButtonGroup>
+
+        {filter && (
+          <FilterResults filterNode={filter} resultsStyle={resultsStyle} />
+        )}
       </main>
     </>
   );

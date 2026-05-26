@@ -2,10 +2,22 @@ import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFee
 import type { FilterNode } from "dropbox-hacking-photo-manager-shared";
 import { useEffect, useRef, useState } from "react";
 
-import Result from "./Result";
+import ClassicResult from "./ClassicResult";
+import CompactResult from "./CompactResult";
+import MinimalResult from "./MinimalResult";
+import type { ResultsStyle } from "./page";
+import styles from "./VisibleResultsPage.module.css";
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const resultsComponents: Record<ResultsStyle, any> = {
+  classic: ClassicResult,
+  compact: CompactResult,
+  minimal: MinimalResult,
+} as const;
 
 function VisibleResultsPage({
   filterNode,
+  resultsStyle,
   pageFrom0,
   resultsPerPage,
   reportTotalCount,
@@ -13,6 +25,7 @@ function VisibleResultsPage({
   reportWidthAndHeight,
 }: {
   filterNode: FilterNode;
+  resultsStyle: ResultsStyle;
   pageFrom0: number;
   resultsPerPage: number;
   reportWidthAndHeight?: (widthAndHeight: [number, number]) => void;
@@ -55,18 +68,16 @@ function VisibleResultsPage({
     }
   }, [results, reportWidthAndHeight, reportItemsPerRow]);
 
+  const Result = resultsComponents[resultsStyle];
+
   return (
-    <div
-      ref={ref}
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        flexWrap: "wrap",
-        gap: "1em",
-      }}
-    >
+    <div ref={ref} className={`${styles.page} ${styles[resultsStyle]}`}>
       {results?.matches.map((result, k) => (
-        <div key={k} data-index={k} style={{ width: "192px", height: "250px" }}>
+        <div
+          key={k}
+          data-index={k}
+          className={`${styles.result} ${styles[resultsStyle]}`}
+        >
           <Result c={result} />
         </div>
       ))}

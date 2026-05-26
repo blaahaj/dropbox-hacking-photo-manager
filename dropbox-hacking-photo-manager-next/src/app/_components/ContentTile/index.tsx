@@ -19,13 +19,13 @@ const FileRow = ({
 }: {
   file: DayFilesResult["files"][number];
   focused: boolean;
-  observableVisibleItems: Observable<ReadonlySet<string>>;
+  observableVisibleItems?: Observable<ReadonlySet<string>>;
   selected: boolean;
   onSelected: (selected: boolean) => void;
   date: string;
   day?: DayMetadata | null;
 }) => {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(!observableVisibleItems);
 
   const gps = file.gps;
 
@@ -58,10 +58,12 @@ const FileRow = ({
   const isRaw = file.namedFiles[0].path_lower.endsWith(".cr3");
 
   useEffect(() => {
-    const sub = observableVisibleItems.subscribe((s) =>
-      setVisible(s.has(file.contentHash)),
-    );
-    return () => sub.unsubscribe();
+    if (observableVisibleItems) {
+      const sub = observableVisibleItems.subscribe((s) =>
+        setVisible(s.has(file.contentHash)),
+      );
+      return () => sub.unsubscribe();
+    }
   }, [observableVisibleItems, file]);
 
   const classNames = [

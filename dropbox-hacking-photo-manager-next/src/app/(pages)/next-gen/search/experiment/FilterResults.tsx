@@ -3,12 +3,15 @@
 import type { FilterNode } from "dropbox-hacking-photo-manager-shared";
 import { useEffect, useRef, useState } from "react";
 
+import type { ResultsStyle } from "./page";
 import VisibleResultsPage from "./VisibleResultsPage";
 
 export default function FilterResults({
   filterNode,
+  resultsStyle,
 }: {
   filterNode: FilterNode;
+  resultsStyle: ResultsStyle;
 }) {
   const [totalCount, setTotalCount] = useState<number>(0);
   const [itemsPerRow, setItemsPerRow] = useState<number>(5);
@@ -60,6 +63,7 @@ export default function FilterResults({
 
       <VisibleResultsPage
         filterNode={filterNode}
+        resultsStyle={resultsStyle}
         pageFrom0={0}
         resultsPerPage={resultsPerPage}
         reportTotalCount={setTotalCount}
@@ -82,6 +86,7 @@ export default function FilterResults({
                 {visiblePages[pageFrom0] ? (
                   <VisibleResultsPage
                     filterNode={filterNode}
+                    resultsStyle={resultsStyle}
                     pageFrom0={pageFrom0}
                     resultsPerPage={resultsPerPage}
                   />

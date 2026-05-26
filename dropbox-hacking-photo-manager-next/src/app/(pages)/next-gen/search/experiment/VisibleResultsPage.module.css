@@ -1,0 +1,35 @@
+.page.classic {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.page.compact {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.page.minimal {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.2em;
+}
+
+.result.classic {
+  width: 192px;
+  height: 350px;
+}
+
+.result.compact {
+  width: 192px;
+  height: 250px;
+}
+
+.result.minimal {
+  width: 128px;
+  height: 128px;
+}
