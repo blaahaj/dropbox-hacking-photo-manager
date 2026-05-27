@@ -107,10 +107,21 @@ const Navigation = (): React.ReactElement | null => (
         href="/next-gen/search"
         sx={{
           color: "inherit",
-          mr: 6,
+          mr: 2,
         }}
       >
         Search
+      </Typography>
+      <Typography
+        variant="overline"
+        component="a"
+        href="/next-gen/search/experiment"
+        sx={{
+          color: "inherit",
+          mr: 6,
+        }}
+      >
+        Experimental
       </Typography>
       <Typography
         variant="overline"

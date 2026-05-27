@@ -5,6 +5,7 @@ export default function Result({ c }: { c: ContentHashCollectionWithDay }) {
   return (
     <ContentTile
       file={c}
+      day={c.day}
       focused={false}
       selected={false}
       onSelected={() => null}

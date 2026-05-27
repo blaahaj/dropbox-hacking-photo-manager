@@ -53,7 +53,7 @@ const NGSearch = ({
       <Navigate />
 
       <main style={{ margin: "2em" }}>
-        <h1>Search</h1>
+        <h1>Experimental Search</h1>
 
         <TextField
           placeholder="enter query"

@@ -4,7 +4,7 @@ import type { ContentHashCollectionWithDay } from "dropbox-hacking-photo-manager
 
 export default function Result({ c }: { c: ContentHashCollectionWithDay }) {
   return (
-    <div style={{ fontSize: "8pt", textAlign: "center" }}>
+    <div style={{ fontSize: "8pt", textAlign: "center", alignItems: "center" }}>
       <div>{c.timestamp.replace("T", " ")}</div>
       <MaybeVisibleThumbnail
         namedFile={c.namedFiles[0]}
@@ -18,7 +18,10 @@ export default function Result({ c }: { c: ContentHashCollectionWithDay }) {
 
       <div>{c.day.description}</div>
       <div>{c.photo?.description}</div>
-      <TagList data={(c.photo?.tags ?? []).map((tag) => ({ tag }))} />
+      <TagList
+        style={{ justifyContent: "center" }}
+        data={(c.photo?.tags ?? []).map((tag) => ({ tag }))}
+      />
     </div>
   );
 }
