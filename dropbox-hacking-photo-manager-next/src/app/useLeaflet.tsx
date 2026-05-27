@@ -16,8 +16,8 @@ export const DefaultLeafletProvider = ({ children }: PropsWithChildren) => {
   // const [loaded, setLoaded] = useState<unknown>();
   // const scriptRef = useRef<HTMLScriptElement>(null);
 
-  const loadListener = (e: Event) => {
-    console.dir({ loadListener: e });
+  const loadListener = (_e: Event) => {
+    // console.dir({ loadListener: e });
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     setLeaflet((window as any).leaflet);
   };
@@ -61,30 +61,9 @@ export const DefaultLeafletProvider = ({ children }: PropsWithChildren) => {
     };
   }, []);
 
-  console.dir({ leaflet });
+  // console.dir({ leaflet });
 
-  return (
-    <>
-      {/* <script
-        ref={scriptRef}
-        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-        crossOrigin=""
-        async
-        onLoad={(loadEvent) => {
-          console.dir({
-            loadEvent,
-          });
-        }}
-        onError={(errorEvent) => {
-          console.dir({
-            errorEvent,
-          });
-        }}
-      ></script> */}
-      <context.Provider value={leaflet}>{children}</context.Provider>
-    </>
-  );
+  return <context.Provider value={leaflet}>{children}</context.Provider>;
 };
 
 export const useLeaflet = () => useContext(context);
