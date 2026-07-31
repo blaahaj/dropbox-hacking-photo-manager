@@ -86,6 +86,8 @@ const NGSearch = ({
               <li>day-text~meet</li>
               <li>photo-text~meet</li>
               <li>path~originals</li>
+              <li>device~...</li>
+              <li>device=...</li>
 
               <li>tags&gt;0 / tags&lt;2</li>
               <li>date&gt;2015 / date&lt;2019</li>

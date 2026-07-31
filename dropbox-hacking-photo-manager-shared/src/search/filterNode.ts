@@ -8,6 +8,7 @@ export type Leaf =
   | Leaf_Text
   | Leaf_MediaType
   | Leaf_Duration
+  | Leaf_Device
   | Leaf_HasGPS
   | Leaf_Path
   | Leaf_FileId
@@ -50,6 +51,12 @@ type Leaf_Duration = {
   readonly type: "duration";
   readonly durationSeconds: number;
   readonly operand: ">" | "<";
+};
+
+type Leaf_Device = {
+  readonly type: "device";
+  readonly operator: "~" | "=";
+  readonly operand: string;
 };
 
 type Leaf_HasGPS = {

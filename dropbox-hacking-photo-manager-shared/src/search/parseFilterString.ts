@@ -104,6 +104,15 @@ export const parseFilterString = (query: string): FilterNode | null => {
       continue;
     }
 
+    if ((match = part.match(/^device([~=])(.*?)$/))) {
+      stack.push({
+        type: "device",
+        operator: match[1] as never,
+        operand: match[2],
+      });
+      continue;
+    }
+
     if (part === "has-gps") {
       stack.push({
         type: "has_gps",

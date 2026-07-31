@@ -51,6 +51,30 @@ export const compile = (
     throw new Error();
   }
 
+  if (filter.type === "device") {
+    if (filter.operator === "=")
+      return (c) =>
+        [
+          c.exif?.exifData.tags?.Make,
+          c.exif?.exifData.tags?.Model,
+          c.exif?.exifData.tags?.Model2,
+        ]
+          .filter(Boolean)
+          .join(" ") === filter.operand;
+    if (filter.operator === "~")
+      return (c) =>
+        [
+          c.exif?.exifData.tags?.Make,
+          c.exif?.exifData.tags?.Model,
+          c.exif?.exifData.tags?.Model2,
+        ]
+          .filter(Boolean)
+          .join(" ")
+          .includes(filter.operand);
+    ensureNever(filter.operator);
+    throw new Error();
+  }
+
   if (filter.type === "tag_count") {
     const { operand, tagCount } = filter;
     if (operand === "<") return (c) => (c.photo?.tags?.length ?? 0) < tagCount;
