@@ -1,5 +1,6 @@
 import SamePageLink from "@components/samePageLink";
 import useThumbnail from "@hooks/useThumbnail";
+import type { ThumbnailLoaderRequest } from "@hooks/useThumbnailLoader/types";
 import logRender from "@lib/logRender";
 import type {
   NamedFile,
@@ -16,14 +17,24 @@ const MaybeVisibleThumbnail = ({
   photo,
   visible,
   routeState,
+  thumbnailOpts,
 }: {
   namedFile: NamedFile;
   photo: PhotoDbEntry;
   visible: boolean;
   routeState: RouteState;
+  thumbnailOpts?: Partial<Omit<ThumbnailLoaderRequest, "rev">>;
 }) => {
+  const req: ThumbnailLoaderRequest = {
+    rev: namedFile.rev,
+    thumbnailSize: "w128h128",
+    mode: "strict",
+    format: "jpeg",
+    ...thumbnailOpts,
+  };
+
   const isThumbnailable = isPreviewable(namedFile.path_lower);
-  const thumbnail = useThumbnail(namedFile.rev, isThumbnailable && visible);
+  const thumbnail = useThumbnail(req, isThumbnailable && visible);
 
   const shouldBlur = photo.tags?.some((t) => t === "nsfw");
 

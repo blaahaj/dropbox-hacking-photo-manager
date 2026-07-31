@@ -50,6 +50,7 @@ const FileCell = ({
       <div className="thumbnail">
         <MaybeVisibleThumbnail
           namedFile={file.namedFiles[0]}
+          thumbnailOpts={{ thumbnailSize: "w128h128" }}
           visible={visible}
           photo={file.photo ?? {}}
           routeState={useMemo(

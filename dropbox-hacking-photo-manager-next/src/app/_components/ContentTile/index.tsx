@@ -8,7 +8,7 @@ import { Observable } from "rxjs";
 import styles from "./index.module.css";
 import MaybeVisibleThumbnail from "./MaybeVisibleThumbnail";
 
-const FileRow = ({
+const ContentTile = ({
   file,
   focused,
   observableVisibleItems,
@@ -136,6 +136,7 @@ const FileRow = ({
       <div className={styles.thumbnail}>
         <MaybeVisibleThumbnail
           namedFile={file.namedFiles[0]}
+          thumbnailOpts={{ thumbnailSize: "w128h128" }}
           visible={visible}
           photo={file.photo ?? {}}
           routeState={useMemo(
@@ -165,4 +166,4 @@ const FileRow = ({
   );
 };
 
-export default logRender(FileRow);
+export default logRender(ContentTile);

@@ -9,7 +9,7 @@ import type {
   ThumbnailResponse,
 } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
 
-import type { ThumbnailLoader } from "./types";
+import type { ThumbnailLoader, ThumbnailLoaderRequest } from "./types";
 
 export const websocketThumbnailLoader = (
   mx:
@@ -19,17 +19,17 @@ export const websocketThumbnailLoader = (
       >
     | undefined,
 ): ThumbnailLoader => ({
-  getThumbnail: (rev: string) =>
+  getThumbnail: (req: ThumbnailLoaderRequest) =>
     new Promise<string | null>((resolve, reject) => {
       if (!mx) return resolve(null);
 
       const subscription = getRxFeed(
         {
           type: "rx.ng.thumbnail2",
-          rev,
-          size: "w128h128",
-          mode: "strict",
-          format: "jpeg",
+          rev: req.rev,
+          size: req.thumbnailSize,
+          mode: req.mode,
+          format: req.format,
         },
         mx,
       ).subscribe({

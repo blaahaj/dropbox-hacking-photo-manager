@@ -1,6 +1,7 @@
 import { useDeferredValue, useEffect, useMemo, useState } from "react";
 
 import { useThumbnailLoader } from "./useThumbnailLoader";
+import type { ThumbnailLoaderRequest } from "./useThumbnailLoader/types";
 
 type R = string | null;
 
@@ -17,17 +18,17 @@ const EXPIRY_TIME = 10 * 1000;
 
 const setImmediate = (fn: () => unknown) => setTimeout(fn, 1);
 
-const useThumbnail = (rev: string, visible: boolean) => {
+const useThumbnail = (req: ThumbnailLoaderRequest, visible: boolean) => {
   const loader = useThumbnailLoader();
   const [state, setState] = useState<S>({ tag: "invisible-idle" });
   const tag = state.tag;
 
   const startLoad = useMemo(
     () => () => {
-      const revBeingLoaded = rev;
-      loader.getThumbnail(revBeingLoaded).then(
+      const reqBeingLoaded = req;
+      loader.getThumbnail(req).then(
         (result) => {
-          if (rev === revBeingLoaded) {
+          if (req === reqBeingLoaded) {
             setState({
               tag: "visible-loaded",
               result,
@@ -37,7 +38,7 @@ const useThumbnail = (rev: string, visible: boolean) => {
         (error) => console.error(error),
       );
     },
-    [rev, loader],
+    [req, loader],
   );
 
   // The visibility state transitions
@@ -75,9 +76,15 @@ const useThumbnail = (rev: string, visible: boolean) => {
   }, [tag, visible, startLoad]);
 
   // Reset to idle if the rev changes
-  const oldRev = useDeferredValue(rev);
+  // FIXME doesn't seem to work (or at least, it doesn't then cause startLoad, as was the plan)
+  const oldReq = useDeferredValue(req);
   useEffect(() => {
-    if (rev !== oldRev) {
+    if (
+      req.rev !== oldReq.rev ||
+      req.thumbnailSize !== oldReq.thumbnailSize ||
+      req.mode !== oldReq.mode ||
+      req.format !== oldReq.format
+    ) {
       setImmediate(() => setState({ tag: "invisible-idle" }));
     }
   });
