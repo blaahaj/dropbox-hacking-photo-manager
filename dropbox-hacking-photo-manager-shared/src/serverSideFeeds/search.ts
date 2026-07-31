@@ -56,6 +56,7 @@ export const provideSearch = (
           .sort(
             (a, b) =>
               a.timestamp.localeCompare(b.timestamp) ||
+              a.namedFiles[0].name.localeCompare(b.namedFiles[0].name) ||
               a.contentHash.localeCompare(b.contentHash),
           );
 
