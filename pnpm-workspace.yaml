@@ -3,3 +3,8 @@ packages:
   - dropbox-hacking-photo-manager-server
   - dropbox-hacking-photo-manager-shared
   - dropbox-hacking-photo-manager-next
+overrides:
+  yargs: ">=17.7.3"
+allowBuilds:
+  sharp: true
+  unrs-resolver: true
