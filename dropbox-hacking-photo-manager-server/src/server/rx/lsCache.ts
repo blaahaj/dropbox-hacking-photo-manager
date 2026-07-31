@@ -1,11 +1,10 @@
 import { State, StateDir } from "@blaahaj/dropbox-hacking-ls-cache";
 import { files } from "dropbox";
 import type { NamedFile } from "dropbox-hacking-photo-manager-shared";
+import { imageFilenamePattern } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
 import { filter, map, ReplaySubject } from "rxjs";
 
 import { jsonFileObservableViaLoader } from "./util.js";
-
-const imageFilenamePattern = /\.(jpg|jpeg|png)$/;
 
 // export type ObservedType<T extends Observable<unknown>> =
 //   T extends Observable<infer X> ? X : never;
