@@ -7,30 +7,32 @@ import MultiTagEditor from "./MultiTagEditor";
 
 function Tools({
   countAll,
-  countSelected,
   setAll,
-  files,
-  selectedContentHashes,
+  selectedFiles,
 }: {
   countAll: number;
-  countSelected: number;
   setAll: (which: "all" | "none", checked: boolean) => void;
-  files: readonly ContentHashCollectionWithDay[];
-  selectedContentHashes: ReadonlySet<string>;
+  selectedFiles: readonly ContentHashCollectionWithDay[];
 }): ReactNode {
+  const countSelected = selectedFiles.length;
+  const selectedContentHashes = useMemo(
+    () =>
+      new Set(selectedFiles.map((t) => t.contentHash)) as ReadonlySet<string>,
+    [selectedFiles],
+  );
+
   return (
     <div className={styles.fileListTools}>
       <div>
         <div className={styles.matchingItemsCount}>
-          {files.length} {files.length === 1 ? "item" : "items"}
+          {countAll} {countAll === 1 ? "item" : "items"}
         </div>
 
         <div
-          className={`${styles.selectedFileCount} ${selectedContentHashes.size === 0 ? "noneSelected" : "someSelected"}`}
+          className={`${styles.selectedFileCount} ${countSelected === 0 ? "noneSelected" : "someSelected"}`}
         >
-          {selectedContentHashes.size === 1 && "1 item selected"}
-          {selectedContentHashes.size !== 1 &&
-            `${selectedContentHashes.size} items selected`}
+          {countSelected === 1 && "1 item selected"}
+          {countSelected !== 1 && `${countSelected} items selected`}
         </div>
 
         <div className="allSelected">
@@ -62,12 +64,12 @@ function Tools({
       <MultiTagEditor
         key={[...selectedContentHashes].toSorted().join(" ") + "-tags"}
         contentHashes={selectedContentHashes}
-        files={files.filter((f) => selectedContentHashes.has(f.contentHash))}
+        files={selectedFiles}
       />
       <MultiGPSEditor
         key={[...selectedContentHashes].toSorted().join(" ") + "-gps"}
         contentHashes={selectedContentHashes}
-        files={files.filter((f) => selectedContentHashes.has(f.contentHash))}
+        files={selectedFiles}
       />
     </div>
   );

@@ -71,10 +71,11 @@ const ListOfContent = ({
     [],
   );
 
-  const countSelected = files.filter((f) =>
-    selectedContentHashes.has(f.namedFiles[0].content_hash),
-  ).length;
   const countAll = files.length;
+
+  const selectedFiles: readonly ContentHashCollectionWithDay[] = files.filter(
+    (f) => selectedContentHashes.has(f.contentHash),
+  );
 
   const setAll = useMemo(
     () => (which: "all" | "none", checked: boolean) => {
@@ -92,11 +93,9 @@ const ListOfContent = ({
   return (
     <div>
       <Tools
-        countSelected={countSelected}
         countAll={countAll}
         setAll={setAll}
-        files={files}
-        selectedContentHashes={selectedContentHashes}
+        selectedFiles={selectedFiles}
       />
 
       <ListOfTiles
