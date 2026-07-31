@@ -11,18 +11,7 @@ export const buildForMediaInfoDbMap = (dbDir: string) => {
   const observable = jsonFileObservableViaLoader(
     dbDir,
     () =>
-      new MediainfoDB(dbDir)
-        .readAll()
-        .then(
-          (all) =>
-            new Map(
-              all
-                .entries()
-                .filter(
-                  ([_, v]) => (v.mediainfoData.media?.track.length ?? 0) > 1,
-                ),
-            ),
-        ),
+      new MediainfoDB(dbDir).readAll().then((all) => new Map(all.entries())),
     100,
   );
 
