@@ -33,12 +33,13 @@ const ExifOrMediaInfo = ({
           (data.eligibleFilesWithNoItem.count / data.eligibleFiles) *
           100
         ).toFixed(2)}
-        %)
+        %) {data.eligibleFilesWithNoItem.count === 0 ? "✅" : "❌"}
       </p>
       <p>
         Cache contains {data.items} entries, of which {data.orphanedItems} (
         {((data.orphanedItems / data.items) * 100).toFixed(2)}
-        %) are orphans
+        %) are orphans{" "}
+        {(data.orphanedItems / data.items) * 100 < 5 ? "✅" : "❌"}
       </p>
       <p style={{ fontSize: "8pt" }}>
         Eligible files are: {fileExtensions.join(", ")}
@@ -94,7 +95,12 @@ const Check = () => {
                   <p>
                     Without EXIF:{" "}
                     {latestValue.files.imageFiles.count -
-                      latestValue.files.imageFiles.countWithExif}
+                      latestValue.files.imageFiles.countWithExif}{" "}
+                    {latestValue.files.imageFiles.count -
+                      latestValue.files.imageFiles.countWithExif ===
+                    0
+                      ? "✅"
+                      : "❌"}
                   </p>
                 </div>
                 <div style={{ flexGrow: 1 }}>
