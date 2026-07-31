@@ -1,36 +1,33 @@
 import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFeed";
 import type { FilterNode } from "dropbox-hacking-photo-manager-shared";
+import type { ContentHashCollectionWithDay } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
 import { useEffect, useRef, useState } from "react";
 
-import ClassicResult from "./ClassicResult";
-import CompactResult from "./CompactResult";
-import MinimalResult from "./MinimalResult";
 import type { ResultsStyle } from "./page";
-import styles from "./VisibleResultsPage.module.css";
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const resultsComponents: Record<ResultsStyle, any> = {
-  classic: ClassicResult,
-  compact: CompactResult,
-  minimal: MinimalResult,
-} as const;
+import { Results } from "./result";
 
 function VisibleResultsPage({
   filterNode,
   resultsStyle,
   pageFrom0,
   resultsPerPage,
+  onSelected,
   reportTotalCount,
   reportItemsPerRow,
   reportWidthAndHeight,
+  selectedContentHashes,
+  focusedContentHash,
 }: {
   filterNode: FilterNode;
   resultsStyle: ResultsStyle;
   pageFrom0: number;
   resultsPerPage: number;
+  onSelected: (c: ContentHashCollectionWithDay, selected: boolean) => void;
   reportWidthAndHeight?: (widthAndHeight: [number, number]) => void;
   reportTotalCount?: (totalCount: number) => void;
   reportItemsPerRow?: (itemsPerRow: number) => void;
+  selectedContentHashes: ReadonlySet<string>;
+  focusedContentHash: string | undefined;
 }) {
   const results = useLatestValueFromServerFeed({
     type: "rx.ng.search",
@@ -54,13 +51,13 @@ function VisibleResultsPage({
 
         const c = [...div.children].filter(
           (n): n is HTMLDivElement =>
-            n.nodeType === Node.ELEMENT_NODE && n.nodeName === "DIV",
+            n.nodeType === Node.ELEMENT_NODE &&
+            n.nodeName === "DIV" &&
+            n.hasAttribute("data-content-hash"),
         );
+
         const itemsPerRow = c.findIndex((e) => e.offsetTop > c[0].offsetTop);
-        if (itemsPerRow > 0) {
-          // console.log(`reportItemsPerRow:${itemsPerRow}`);
-          if (reportItemsPerRow) reportItemsPerRow(itemsPerRow);
-        }
+        if (itemsPerRow > 0) reportItemsPerRow(itemsPerRow);
       });
 
       l.observe(div);
@@ -68,20 +65,19 @@ function VisibleResultsPage({
     }
   }, [results, reportWidthAndHeight, reportItemsPerRow]);
 
-  const Result = resultsComponents[resultsStyle];
+  console.debug(
+    `VisibleResultsPage pageFrom0=${pageFrom0} rpp=${resultsPerPage} r.l=${results?.matches.length ?? "-"}`,
+  );
 
   return (
-    <div ref={ref} className={`${styles.page} ${styles[resultsStyle]}`}>
-      {results?.matches.map((result, k) => (
-        <div
-          key={k}
-          data-index={k}
-          className={`${styles.result} ${styles[resultsStyle]}`}
-        >
-          <Result c={result} />
-        </div>
-      ))}
-    </div>
+    <Results
+      ref={ref}
+      results={results?.matches ?? []}
+      onSelected={onSelected}
+      resultsStyle={resultsStyle}
+      selectedContentHashes={selectedContentHashes}
+      focusedContentHash={focusedContentHash}
+    />
   );
 }
 

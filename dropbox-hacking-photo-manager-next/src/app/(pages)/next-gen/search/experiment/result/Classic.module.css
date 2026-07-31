@@ -1,0 +1,21 @@
+.page {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.result {
+  width: calc(192px + 0px);
+  height: (400px + 0px);
+  /* border: 3px solid transparent; */
+}
+
+.result.selected {
+  background: wheat;
+}
+
+.focused,
+.selected {
+  --placeholder: true;
+}
