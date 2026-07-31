@@ -4,8 +4,9 @@ import type { ContentHashCollectionWithDay } from "dropbox-hacking-photo-manager
 export { default as styles } from "./Minimal.module.css";
 
 import styles from "./Minimal.module.css";
+import type { Formatter } from "./types";
 
-export default function Minimal({
+function Result({
   c,
   selected,
   focused: _focused,
@@ -73,3 +74,5 @@ export default function Minimal({
     </div>
   );
 }
+
+export default { styles, Result } satisfies Formatter;

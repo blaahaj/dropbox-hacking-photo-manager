@@ -2,9 +2,10 @@ import MaybeVisibleThumbnail from "@components/ContentTile/MaybeVisibleThumbnail
 import TagList from "@components/tags/TagList";
 import type { ContentHashCollectionWithDay } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
 
-export { default as styles } from "./Compact.module.css";
+import styles from "./Compact.module.css";
+import type { Formatter } from "./types";
 
-export default function Compact({
+function Result({
   c,
   // selected,
 }: {
@@ -34,3 +35,5 @@ export default function Compact({
     </>
   );
 }
+
+export default { styles, Result } satisfies Formatter;

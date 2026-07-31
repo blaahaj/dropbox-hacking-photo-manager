@@ -2,17 +2,12 @@ import type { ContentHashCollectionWithDay } from "dropbox-hacking-photo-manager
 import type { RefObject } from "react";
 
 import type { ResultsStyle } from "../page";
-import * as classic from "./Classic";
-import * as compact from "./Compact";
-import * as minimal from "./Minimal";
+import type { Formatter } from "./types";
 
-const formatters: Record<
-  ResultsStyle,
-  typeof classic | typeof compact | typeof minimal
-> = {
-  classic,
-  compact,
-  minimal,
+const formatters: Record<ResultsStyle, Formatter> = {
+  classic: (await import("./Classic")).default,
+  compact: (await import("./Compact")).default,
+  minimal: (await import("./Minimal")).default,
 } as const;
 
 export function Results({
@@ -30,11 +25,10 @@ export function Results({
   selectedContentHashes: ReadonlySet<string>;
   focusedContentHash: string | undefined;
 }) {
-  const S = formatters[resultsStyle].styles;
-  const R = formatters[resultsStyle].default;
+  const { styles, Result } = formatters[resultsStyle];
 
   return (
-    <div ref={ref} className={S.page}>
+    <div ref={ref} className={styles.page}>
       {results[0] && (
         <div
           style={{
@@ -59,7 +53,7 @@ export function Results({
           <div
             key={result.contentHash}
             data-content-hash={result}
-            className={`${S.result} ${isSelected ? S.selected : ""} ${isFocused ? S.focused : ""}`}
+            className={`${styles.result} ${isSelected ? styles.selected : ""} ${isFocused ? styles.focused : ""}`}
             onClick={(e) => {
               if (e.altKey && !e.ctrlKey && !e.metaKey) {
                 onSelected(
@@ -69,7 +63,7 @@ export function Results({
               }
             }}
           >
-            <R
+            <Result
               c={result}
               onSelected={(s: boolean) => onSelected(result, s)}
               selected={isSelected}

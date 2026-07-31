@@ -1,3 +1,5 @@
+"use client";
+
 import type { ContentHashCollectionWithDay } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
 import { type ReactNode, useMemo } from "react";
 

@@ -1,3 +1,5 @@
+"use client";
+
 import logRender from "@lib/logRender";
 import type { DayFilesResult } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
 import { useMemo, useState } from "react";

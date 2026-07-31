@@ -1,3 +1,5 @@
+"use client";
+
 import ContentTile from "@components/ContentTile";
 import useVisibilityTracking from "@hooks/useVisibilityTracking";
 import logRender from "@lib/logRender";

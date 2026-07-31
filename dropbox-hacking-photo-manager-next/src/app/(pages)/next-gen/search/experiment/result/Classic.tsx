@@ -1,9 +1,10 @@
 import ContentTile from "@components/ContentTile";
 import type { ContentHashCollectionWithDay } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
 
-export { default as styles } from "./Classic.module.css";
+import styles from "./Classic.module.css";
+import type { Formatter } from "./types";
 
-export default function Classic({
+function Result({
   c,
   onSelected,
   selected,
@@ -25,3 +26,5 @@ export default function Classic({
     />
   );
 }
+
+export default { styles, Result } satisfies Formatter;
