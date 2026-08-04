@@ -1,5 +1,4 @@
 import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFeed";
-import type { FilterNode } from "dropbox-hacking-photo-manager-shared";
 import type { ContentHashCollectionWithDay } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
 import { useEffect, useRef, useState } from "react";
 
@@ -18,7 +17,7 @@ function VisibleResultsPage({
   selectedContentHashes,
   focusedContentHash,
 }: {
-  filterNode: FilterNode;
+  filterNode: string;
   resultsStyle: ResultsStyle;
   pageFrom0: number;
   resultsPerPage: number;

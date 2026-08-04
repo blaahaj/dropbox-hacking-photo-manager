@@ -1,7 +1,6 @@
 "use client";
 
 import Tools from "@components/ListOfContent/Tools";
-import type { FilterNode } from "dropbox-hacking-photo-manager-shared";
 import type { ContentHashCollectionWithDay } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
@@ -12,7 +11,7 @@ export default function FilterResults({
   filterNode,
   resultsStyle,
 }: {
-  filterNode: FilterNode;
+  filterNode: string;
   resultsStyle: ResultsStyle;
 }) {
   const [totalCount, setTotalCount] = useState<number>(0);

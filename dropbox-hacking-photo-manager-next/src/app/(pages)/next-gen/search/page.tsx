@@ -5,7 +5,7 @@ import Navigate from "@components/Navigation";
 import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFeed";
 import logRender from "@lib/logRender";
 import TextField from "@mui/material/TextField";
-import { parseFilterString } from "dropbox-hacking-photo-manager-shared/search";
+import { v2CompileQueryFromThings } from "dropbox-hacking-photo-manager-shared/search";
 import {
   type ChangeEventHandler,
   use,
@@ -22,11 +22,11 @@ const NGSearch = ({
   const searchParams = use(searchParamsProxy);
   const [filterSource, setFilterSource] = useState(searchParams.q ?? "");
 
-  const filter = useMemo(() => parseFilterString(filterSource), [filterSource]);
+  const filter = useMemo(() => v2CompileQueryFromThings(filterSource), [filterSource]);
 
   const latestValue = useLatestValueFromServerFeed({
     type: "rx.ng.search",
-    filter: filter ?? { type: "tag", tag: "" },
+    filter: (filter instanceof Error) ? "image" : filterSource,
   });
 
   useEffect(() => {

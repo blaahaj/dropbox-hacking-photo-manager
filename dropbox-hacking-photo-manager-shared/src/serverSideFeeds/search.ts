@@ -1,7 +1,6 @@
 import { combineLatest, map, type Observable } from "rxjs";
 
-import { compile } from "../search/compile.js";
-import type { FilterNode } from "../search/filterNode.js";
+import { v2CompileQueryFromThings } from "../search/index.js";
 import {
   type ContentHashCollectionWithDay,
   type FullDatabaseFeeds,
@@ -11,7 +10,7 @@ const DEFAULT_RESULTS_PER_PAGE = 1000;
 
 export type SearchRequest = {
   readonly type: "rx.ng.search";
-  readonly filter: FilterNode;
+  readonly filter: string;
   readonly pageFrom0?: number;
   readonly resultsPerPage?: number;
 };
@@ -28,7 +27,9 @@ export const provideSearch = (
   feeds: FullDatabaseFeeds,
   req: SearchRequest,
 ): Observable<SearchResult> => {
-  const predicate = compile(req.filter);
+  const predicate = v2CompileQueryFromThings(req.filter);
+  if (predicate instanceof Error) throw predicate;
+
   const pageFrom0 = req.pageFrom0 ?? 0;
   const resultsPerPage = req.resultsPerPage ?? DEFAULT_RESULTS_PER_PAGE;
 

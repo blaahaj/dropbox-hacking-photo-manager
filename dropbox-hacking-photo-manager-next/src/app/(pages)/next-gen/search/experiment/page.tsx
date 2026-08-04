@@ -5,7 +5,10 @@ import logRender from "@lib/logRender";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import TextField from "@mui/material/TextField";
-import { parseFilterString } from "dropbox-hacking-photo-manager-shared/search";
+import {
+  v2CompileQueryFromThings,
+  v2Things,
+} from "dropbox-hacking-photo-manager-shared/search";
 import {
   type ChangeEventHandler,
   use,
@@ -27,7 +30,10 @@ const NGSearch = ({
   const searchParams = use(searchParamsProxy);
   const [filterSource, setFilterSource] = useState(searchParams.q ?? "image");
 
-  const filter = useMemo(() => parseFilterString(filterSource), [filterSource]);
+  const filter = useMemo(
+    () => v2CompileQueryFromThings(filterSource),
+    [filterSource],
+  );
 
   const [resultsStyle, setResultsStyle] = useState<ResultsStyle>(
     RESULTS_STYLES[0],
@@ -142,30 +148,14 @@ const NGSearch = ({
             <p>The query is in Reverse Polish.</p>
 
             <ul>
-              <li>image / video / audio</li>
-              <li>has-gps</li>
-
-              <li>tag=swan</li>
-              <li>id=id:...</li>
-              <li>rev=...</li>
-              <li>tag~person:</li>
-              <li>text~meet</li>
-              <li>day-text~meet</li>
-              <li>photo-text~meet</li>
-              <li>path~originals</li>
-              <li>device~...</li>
-              <li>device=...</li>
-
-              <li>tags&gt;0 / tags&lt;2</li>
-              <li>date&gt;2015 / date&lt;2019</li>
-              <li>duration&gt;300 / duration&lt;10</li>
-
-              <li>&, |, !</li>
+              {v2Things.map((thing, i) => (
+                <li key={i}>{thing.examples.join(" ; ")}</li>
+              ))}
             </ul>
           </div>
         )}
 
-        {filterSource.trim() !== "" && !filter && (
+        {filterSource.trim() !== "" && filter instanceof Error && (
           <p
             style={{
               background: "red",
@@ -175,6 +165,7 @@ const NGSearch = ({
             }}
           >
             Not a valid filter
+            {filter instanceof Error && <>: {filter.message}</>}
           </p>
         )}
 
@@ -190,8 +181,11 @@ const NGSearch = ({
           ))}
         </ButtonGroup>
 
-        {filter && (
-          <FilterResults filterNode={filter} resultsStyle={resultsStyle} />
+        {!(filter instanceof Error) && (
+          <FilterResults
+            filterNode={filterSource}
+            resultsStyle={resultsStyle}
+          />
         )}
       </main>
     </>

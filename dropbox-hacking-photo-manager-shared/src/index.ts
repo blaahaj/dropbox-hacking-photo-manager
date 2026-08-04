@@ -4,7 +4,7 @@ export * from "./deltaFeed/index.js";
 export * from "./gpsLatLong.js";
 export * from "./routeState.js";
 export * from "./rxFeedTypes.js";
-export * from "./search/filterNode.js";
+export * from "./search/index.js";
 export * from "./selectGPS.js";
 export * from "./types.js";
 export * from "./ws.js";
