@@ -1,0 +1,23 @@
+/* .thumbnail img {
+  transition-property: all;
+  transition-duration: 0.3s;
+  scale: 1;
+  border: 0px solid white;
+}
+
+.thumbnail:hover img {
+  scale: 1.5;
+  z-index: 10;
+  position: relative;
+  border: 7px solid white;
+}
+
+.thumbnail button {
+  transition-property: all;
+  transition-duration: 0.3s;
+  opacity: 1;
+}
+
+.thumbnail:hover button {
+  opacity: 0;
+} */

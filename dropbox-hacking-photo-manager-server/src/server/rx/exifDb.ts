@@ -16,13 +16,7 @@ export const buildForExifDbMap = (dbDir: string) => {
         .then(
           (all) =>
             new Map(
-              all
-                .entries()
-                .filter(
-                  ([_, v]) =>
-                    v.exifData.tags !== undefined &&
-                    Object.keys(v.exifData.tags).length > 0,
-                ),
+              all.entries().filter(([_, v]) => v.exifData.tags !== undefined),
             ),
         ),
     100,

@@ -1,9 +1,6 @@
 import js from "@eslint/js";
-import eslintNextPlugin from "@next/eslint-plugin-next";
 import tsParser from "@typescript-eslint/parser";
-import { defineConfig, globalIgnores } from "eslint/config";
-import nextVitals from "eslint-config-next/core-web-vitals";
-import nextTs from "eslint-config-next/typescript";
+import { defineConfig } from "eslint/config";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
 import unusedImports from "eslint-plugin-unused-imports";
 import globals from "globals";
@@ -14,8 +11,9 @@ export default defineConfig(
   {
     ignores: [
       "buildAll.mjs",
-      "**/.next/**/*",
+      "**/.react-router/**/*",
       "**/dist/**/*",
+      "**/build/**/*",
       "**/tsconfig.tsbuildinfo",
       ".github/**/*",
       "var/**/*",
@@ -50,12 +48,12 @@ export default defineConfig(
     },
   },
   {
-    files: ["dropbox-hacking-photo-manager-next/**/*"],
+    files: ["dropbox-hacking-photo-manager-ui/**/*"],
     languageOptions: {
       parserOptions: {
         projectService: true,
         tsconfigRootDir: resolve(
-          dirname(import.meta.url) + "/dropbox-hacking-photo-manager-next",
+          dirname(import.meta.url) + "/dropbox-hacking-photo-manager-ui",
         ),
       },
     },
@@ -169,37 +167,10 @@ export default defineConfig(
   },
 
   {
-    plugins: {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      "@next/nextjs": eslintNextPlugin as any,
-    },
-    settings: {
-      next: {
-        rootDir: "dropbox-hacking-photo-manager-next",
-      },
-    },
-  },
-
-  {
-    files: ["dropbox-hacking-photo-manager-next/**/*"],
+    files: ["dropbox-hacking-photo-manager-ui/**/*"],
     extends: [
-      ...nextVitals,
-      ...nextTs,
-      // Override default ignores of eslint-config-next.
-      globalIgnores([
-        // Default ignores of eslint-config-next:
-        ".next/**",
-        "out/**",
-        "build/**",
-        "next-env.d.ts",
-      ]),
-
       {
         rules: {
-          "@next/nextjs/no-html-link-for-pages": [
-            "error",
-            "dropbox-hacking-photo-manager-next/pages", // which doesn't exist
-          ],
           "@typescript-eslint/explicit-module-boundary-types": "off",
           "react/no-unescaped-entities": "off",
         },
