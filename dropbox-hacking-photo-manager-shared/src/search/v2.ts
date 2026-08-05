@@ -122,9 +122,9 @@ export const v2Things: readonly V2Thing[] = [
           new Function(
             "c",
             {
-              "=": `(c) => ${texts}.some(t => ${lowerT} === ${arg})`,
-              "~": `(c) => ${texts}.some(t => ${lowerT}.includes(${arg}))`,
-              "^": `(c) => ${texts}.some(t => ${lowerT}.startsWith(${arg}))`,
+              "=": `return ${texts}.some(t => ${lowerT} === ${arg})`,
+              "~": `return ${texts}.some(t => ${lowerT}.includes(${arg}))`,
+              "^": `return ${texts}.some(t => ${lowerT}.startsWith(${arg}))`,
             }[op]!,
           ) as V2CompiledNode,
         ),

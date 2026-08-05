@@ -146,7 +146,7 @@ const NGSearch = () => {
           </div>
         )}
 
-        {filterSource.trim() !== "" && filter instanceof Error && (
+        {filterSource.trim() !== "" && filter.isError() && (
           <p
             style={{
               background: "red",
@@ -156,7 +156,7 @@ const NGSearch = () => {
             }}
           >
             Not a valid filter
-            {filter instanceof Error && <>: {filter.message}</>}
+            {filter.isError() && <>: {filter.error.message}</>}
           </p>
         )}
 
