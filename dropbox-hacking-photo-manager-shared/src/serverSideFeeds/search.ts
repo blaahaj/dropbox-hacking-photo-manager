@@ -28,7 +28,7 @@ export const provideSearch = (
   req: SearchRequest,
 ): Observable<SearchResult> => {
   const predicate = v2CompileQueryFromThings(req.filter);
-  if (predicate instanceof Error) throw predicate;
+  if (predicate.isError()) throw predicate.error;
 
   const pageFrom0 = req.pageFrom0 ?? 0;
   const resultsPerPage = req.resultsPerPage ?? DEFAULT_RESULTS_PER_PAGE;
@@ -53,7 +53,7 @@ export const provideSearch = (
     .pipe(
       map((candidates) => {
         const matches = candidates
-          .filter(predicate)
+          .filter(predicate.value)
           .sort(
             (a, b) =>
               a.timestamp.localeCompare(b.timestamp) ||

@@ -2,16 +2,20 @@ import {
   EARTH_RADIUS_METRES,
   greatCircleDistance,
 } from "@blaahaj/geometry/latlong";
+import { isNone, none, type Option, some } from "@blaahaj/gotcha/Option";
+import { error, ok, type Result } from "@blaahaj/gotcha/Result";
+import { tryToResult } from "@blaahaj/gotcha/Throw";
 
 import { parseLatLong2 } from "../gps/index.js";
 import type { GPSInformation } from "../selectGPS";
 import type { ContentHashCollectionWithDay } from "../serverSideFeeds";
 
 export type V2CompiledNode = (c: ContentHashCollectionWithDay) => boolean;
+export type V2CompileResult = Option<Result<V2CompiledNode>>;
 export type V2Compiler = (
   q: string,
   stack: V2CompiledNode[],
-) => V2CompiledNode | Error | undefined;
+) => V2CompileResult;
 
 export type V2Thing = {
   readonly name: string;
@@ -24,39 +28,39 @@ export const v2Things: readonly V2Thing[] = [
   {
     name: "or",
     examples: ["|"],
-    compiler: (q, stack) => {
-      if (q !== "|") return;
+    compiler: (q, stack): V2CompileResult => {
+      if (q !== "|") return none();
 
       const x = stack.pop();
       const y = stack.pop();
-      if (!x || !y) return new Error("Stack underrun in `|`");
+      if (!x || !y) return some(error(new Error("Stack underrun in `|`")));
 
-      return (c) => x(c) || y(c);
+      return some(ok((c) => x(c) || y(c)));
     },
   },
   {
     name: "and",
     examples: ["&"],
-    compiler: (q, stack) => {
-      if (q !== "&") return;
+    compiler: (q, stack): V2CompileResult => {
+      if (q !== "&") return none();
 
       const x = stack.pop();
       const y = stack.pop();
-      if (!x || !y) return new Error("Stack underrun in `&`");
+      if (!x || !y) return some(error(new Error("Stack underrun in `&`")));
 
-      return (c) => x(c) && y(c);
+      return some(ok((c) => x(c) && y(c)));
     },
   },
   {
     name: "not",
     examples: ["!"],
-    compiler: (q, stack) => {
-      if (q !== "!") return;
+    compiler: (q, stack): V2CompileResult => {
+      if (q !== "!") return none();
 
       const x = stack.pop();
-      if (!x) return new Error("Stack underrun in `!`");
+      if (!x) return some(error(new Error("Stack underrun in `!`")));
 
-      return (c) => !x(c);
+      return some(ok((c) => !x(c)));
     },
   },
 
@@ -66,12 +70,20 @@ export const v2Things: readonly V2Thing[] = [
     examples: ["tags=0", "tags>5"],
     compiler: (q) => {
       const m = q.match(/^tags(?<op>[=<>])(?<n>\d+)$/);
-      if (!m?.groups) return;
+      if (!m?.groups) return none();
 
       const { op, n } = m.groups;
       const opStr = op === "=" ? "===" : op;
 
-      return eval(`(c) => (c.photo?.tags?.length ?? 0) ${opStr} ${n}`);
+      return some(
+        ok(
+          // eslint-disable-next-line @typescript-eslint/no-implied-eval
+          new Function(
+            "c",
+            `return (c.photo?.tags?.length ?? 0) ${opStr} ${n}`,
+          ) as V2CompiledNode,
+        ),
+      );
     },
   },
 
@@ -88,7 +100,7 @@ export const v2Things: readonly V2Thing[] = [
       const m = q.match(
         /^(?<prop>tag|text|text:day|text:photo|device)(?<op>[=~^])(?<arg>.*)$/,
       );
-      if (!m?.groups) return;
+      if (!m?.groups) return none();
 
       const { prop, op } = m.groups;
       const arg = JSON.stringify(m.groups.arg.toLocaleLowerCase());
@@ -104,12 +116,18 @@ export const v2Things: readonly V2Thing[] = [
 
       const lowerT = "(t ?? '').toLocaleLowerCase()";
 
-      return eval(
-        {
-          "=": `(c) => ${texts}.some(t => ${lowerT} === ${arg})`,
-          "~": `(c) => ${texts}.some(t => ${lowerT}.includes(${arg}))`,
-          "^": `(c) => ${texts}.some(t => ${lowerT}.startsWith(${arg}))`,
-        }[op]!,
+      return some(
+        ok(
+          // eslint-disable-next-line @typescript-eslint/no-implied-eval
+          new Function(
+            "c",
+            {
+              "=": `(c) => ${texts}.some(t => ${lowerT} === ${arg})`,
+              "~": `(c) => ${texts}.some(t => ${lowerT}.includes(${arg}))`,
+              "^": `(c) => ${texts}.some(t => ${lowerT}.startsWith(${arg}))`,
+            }[op]!,
+          ) as V2CompiledNode,
+        ),
       );
     },
   },
@@ -119,30 +137,38 @@ export const v2Things: readonly V2Thing[] = [
     name: "image",
     examples: ["image"],
     compiler: (q) => {
-      if (q !== "image") return;
-      return (c) => !!c.exif;
+      if (q !== "image") return none();
+      return some(ok((c) => !!c.exif));
     },
   },
   {
     name: "video",
     examples: ["video"],
     compiler: (q) => {
-      if (q !== "video") return;
-      return (c) =>
-        !!c.mediaInfo?.mediainfoData.media?.track.some(
-          (t) => t.StreamKind === "Video",
-        );
+      if (q !== "video") return none();
+      return some(
+        ok(
+          (c) =>
+            !!c.mediaInfo?.mediainfoData.media?.track.some(
+              (t) => t.StreamKind === "Video",
+            ),
+        ),
+      );
     },
   },
   {
     name: "audio",
     examples: ["audio"],
     compiler: (q) => {
-      if (q !== "audio") return;
-      return (c) =>
-        !!c.mediaInfo?.mediainfoData.media?.track.some(
-          (t) => t.StreamKind === "Audio",
-        );
+      if (q !== "audio") return none();
+      return some(
+        ok(
+          (c) =>
+            !!c.mediaInfo?.mediainfoData.media?.track.some(
+              (t) => t.StreamKind === "Audio",
+            ),
+        ),
+      );
     },
   },
 
@@ -154,39 +180,41 @@ export const v2Things: readonly V2Thing[] = [
       const m = q.match(
         /^gps(?::(?<type>effective|fromOverride|fromContent))?(?:(?<op>[<>])(?<distance>[0-9.]+)@(?<position>.*))?$/,
       );
-      if (!m?.groups) return;
+      if (!m?.groups) return none();
 
       const { type, op, distance, position } = m.groups;
 
       if (!op || !distance || !position)
-        return (c) =>
-          c.gps[(type as keyof GPSInformation) ?? "effective"] !== null;
+        return some(
+          ok(
+            (c) =>
+              c.gps[(type as keyof GPSInformation) ?? "effective"] !== null,
+          ),
+        );
 
-      const distanceThreshold = (() => {
-        try {
-          return Number(distance);
-        } catch (err) {
-          return err as Error;
-        }
-      })();
-      if (distanceThreshold instanceof Error) return distanceThreshold;
+      const distanceThreshold = tryToResult(() => Number(distance));
+      if (distanceThreshold.isError()) return some(distanceThreshold);
+
+      const threshold = distanceThreshold.value;
 
       const pos = parseLatLong2(position);
-      if (!pos) return new Error();
+      if (!pos) return some(error(new Error()));
 
-      return (c) => {
-        const gps = c.gps[(type as keyof GPSInformation) ?? "effective"];
-        if (!gps) return false;
+      return some(
+        ok((c) => {
+          const gps = c.gps[(type as keyof GPSInformation) ?? "effective"];
+          if (!gps) return false;
 
-        const actualDistance = greatCircleDistance(
-          gps,
-          pos,
-          EARTH_RADIUS_METRES,
-        );
-        if (op === "<") return actualDistance < distanceThreshold;
-        if (op === ">") return actualDistance > distanceThreshold;
-        return false;
-      };
+          const actualDistance = greatCircleDistance(
+            gps,
+            pos,
+            EARTH_RADIUS_METRES,
+          );
+          if (op === "<") return actualDistance < threshold;
+          if (op === ">") return actualDistance > threshold;
+          return false;
+        }),
+      );
     },
   },
 
@@ -196,11 +224,17 @@ export const v2Things: readonly V2Thing[] = [
     examples: ["duration>30", "duration<5.5"],
     compiler: (q) => {
       const m = q.match(/^duration(?<op>[<>])(?<n>\d+(?:\.\d+))$/);
-      if (!m?.groups) return;
+      if (!m?.groups) return none();
 
       const { op, n } = m.groups;
-      return eval(
-        `(c) => c.duration !== null && c.duration ${op} ${Number(n)}`,
+      return some(
+        ok(
+          // eslint-disable-next-line @typescript-eslint/no-implied-eval
+          new Function(
+            "c",
+            `return c.duration !== null && c.duration ${op} ${Number(n)}`,
+          ) as V2CompiledNode,
+        ),
       );
     },
   },
@@ -209,12 +243,13 @@ export const v2Things: readonly V2Thing[] = [
   {
     name: "date",
     examples: ["date>2020", "date<2020-02"],
-    compiler: (q) => {
+    compiler: (q): V2CompileResult => {
       const m = q.match(/^date([><])(\d\d\d\d.*)$/);
-      if (!m) return;
+      if (!m) return none();
 
-      if (m[1] === ">") return (c) => c.timestamp > m[2];
-      if (m[1] === "<") return (c) => c.timestamp < m[2];
+      if (m[1] === ">") return some(ok((c) => c.timestamp > m[2]));
+      if (m[1] === "<") return some(ok((c) => c.timestamp < m[2]));
+      return some(error(new Error("unreachable")));
     },
   },
 
@@ -235,7 +270,7 @@ export const v2Things: readonly V2Thing[] = [
   //     c.namedFiles.some((namedFile) => namedFile.rev === filter.rev);
 ];
 
-export const v2CompileQueryFromThings = (q: string): V2CompiledNode | Error => {
+export const v2CompileQueryFromThings = (q: string): Result<V2CompiledNode> => {
   const stack: V2CompiledNode[] = [];
 
   for (const part of q.trim().split(" ")) {
@@ -243,20 +278,26 @@ export const v2CompileQueryFromThings = (q: string): V2CompiledNode | Error => {
 
     for (const thing of v2Things) {
       const c = thing.compiler(part, stack);
-      if (c === undefined) continue;
-      if (c instanceof Error) return c;
+      if (!c) {
+        throw new Error(
+          `Result of compiling '${part}' was ${c === undefined ? "undefined" : JSON.stringify(c)}`,
+        );
+      }
 
-      compiledNode = c;
+      if (isNone(c)) continue;
+      if (c.value.isError()) return c.value;
+
+      compiledNode = c.value.value;
       break;
     }
 
-    if (!compiledNode) return new Error(`Unrecognised term ${part}`);
+    if (!compiledNode) return error(new Error(`Unrecognised term ${part}`));
 
     stack.push(compiledNode);
   }
 
-  if (stack.length < 1) return new Error(`Stack underrun`);
-  if (stack.length > 1) return new Error(`Stack overrun`);
+  if (stack.length < 1) return error(new Error(`Stack underrun`));
+  if (stack.length > 1) return error(new Error(`Stack overrun`));
 
-  return stack[0];
+  return ok(stack[0]);
 };

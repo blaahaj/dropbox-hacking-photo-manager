@@ -2,7 +2,7 @@
 packages:
   - dropbox-hacking-photo-manager-server
   - dropbox-hacking-photo-manager-shared
-  - dropbox-hacking-photo-manager-next
+  - dropbox-hacking-photo-manager-ui
 overrides:
   yargs: ">=17.7.3"
 allowBuilds:

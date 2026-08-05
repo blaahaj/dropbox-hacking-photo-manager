@@ -1,0 +1,66 @@
+import logRender from "@lib/logRender";
+import type { NamedFile } from "dropbox-hacking-photo-manager-shared";
+import { Link } from "react-router";
+
+import styles from "./SummariseNamedFiles.module.css";
+
+const SummariseNamedFiles = ({
+  namedFiles,
+}: {
+  namedFiles: readonly NamedFile[];
+}) => {
+  return (
+    <>
+      <table>
+        <thead>
+          <tr>
+            <th>mtime</th>
+            <th>dirname</th>
+            <th>basename</th>
+          </tr>
+        </thead>
+        <tbody>
+          {namedFiles.map((namedFile) => {
+            const [date, time] = namedFile.client_modified.split("T");
+
+            const lastSlash = namedFile.path_display.lastIndexOf("/");
+            const dirname = namedFile.path_display.substring(0, lastSlash);
+            const basename = namedFile.path_display.substring(lastSlash + 1);
+
+            return (
+              <tr key={namedFile.id}>
+                <td>
+                  <Link
+                    className={styles.dayLink}
+                    to={`/days/${encodeURIComponent(date)}`}
+                  >
+                    {date}
+                  </Link>{" "}
+                  {time}
+                </td>
+                <td>
+                  <a
+                    className={styles.dropboxLink}
+                    href={`https://www.dropbox.com/home${encodeURI(dirname)}`}
+                  >
+                    {dirname}
+                  </a>
+                </td>
+                <td>
+                  <a
+                    className={styles.dropboxLink}
+                    href={`https://www.dropbox.com/preview${encodeURI(namedFile.path_display)}?context=browse&role=personal`}
+                  >
+                    {basename.replaceAll(namedFile.content_hash, "#")}
+                  </a>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </>
+  );
+};
+
+export default logRender(SummariseNamedFiles);
