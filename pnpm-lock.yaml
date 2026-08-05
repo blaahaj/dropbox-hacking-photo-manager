@@ -166,8 +166,8 @@ importers:
         specifier: 1.1.0
         version: 1.1.0
       '@blaahaj/gotcha':
-        specifier: link:../../gotcha
-        version: link:../../gotcha
+        specifier: ^2.0.0
+        version: 2.0.0
       '@blaahaj/json':
         specifier: ^1.0.1
         version: 1.0.1
@@ -227,8 +227,8 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0
       '@blaahaj/gotcha':
-        specifier: link:../../gotcha
-        version: link:../../gotcha
+        specifier: ^2.0.0
+        version: 2.0.0
       '@blaahaj/json':
         specifier: ^1.0.1
         version: 1.0.1
@@ -500,6 +500,9 @@ packages:
 
   '@blaahaj/geometry@1.1.0':
     resolution: {integrity: sha512-Vh9W0oMA2fRx1hXNj08yBIkoXzMwpHxbwC0/xwX7tvl21gJMhqm94eSZQNEsgT6ZhT3u8kbaqZwkRrYig17lwg==}
+
+  '@blaahaj/gotcha@2.0.0':
+    resolution: {integrity: sha512-cJvC0qSG/Nw5D2EbhMVByf5R56yUAffirsNXK5agaGhsUEhbsjClCtKdPONKOmxEtGTE7ntTH0Ag5O/osjZjUw==}
 
   '@blaahaj/json@1.0.1':
     resolution: {integrity: sha512-2pViV2D3M9by7gX+OLgEDQKM76zCjnG3Kb2CsRMUUzaFzPcCVpsa5DJsvBwcDtHj6oDrPoj8Wmg7id5DwCsOzQ==}
@@ -3570,6 +3573,8 @@ snapshots:
       - supports-color
 
   '@blaahaj/geometry@1.1.0': {}
+
+  '@blaahaj/gotcha@2.0.0': {}
 
   '@blaahaj/json@1.0.1': {}
 

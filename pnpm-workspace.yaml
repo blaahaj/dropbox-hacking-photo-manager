@@ -8,3 +8,5 @@ overrides:
 allowBuilds:
   sharp: true
   unrs-resolver: true
+minimumReleaseAgeExclude:
+  - "@blaahaj/gotcha@2.0.0"

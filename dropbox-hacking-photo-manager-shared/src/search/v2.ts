@@ -3,8 +3,7 @@ import {
   greatCircleDistance,
 } from "@blaahaj/geometry/latlong";
 import { isNone, none, type Option, some } from "@blaahaj/gotcha/Option";
-import { error, ok, type Result } from "@blaahaj/gotcha/Result";
-import { tryToResult } from "@blaahaj/gotcha/Throw";
+import { error, ok, type Result, tryToResult } from "@blaahaj/gotcha/Result";
 
 import { parseLatLong2 } from "../gps/index.js";
 import type { GPSInformation } from "../selectGPS";

@@ -6,13 +6,14 @@
     "build": "react-router build",
     "dev": "react-router dev --port 4001",
     "start": "react-router-serve ./build/server/index.js --port 4001",
+    "test": "react-router typegen && tsc",
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
     "@blaahaj/dropbox-hacking-exif-db": "^1.1.0",
     "@blaahaj/dropbox-hacking-mediainfo-db": "^1.3.0",
     "@blaahaj/geometry": "^1.1.0",
-    "@blaahaj/gotcha": "link:../../gotcha",
+    "@blaahaj/gotcha": "^2.0.0",
     "@blaahaj/json": "^1.0.1",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
