@@ -124,15 +124,14 @@ const ImagePreview = ({
       <button
         style={{
           position: "absolute",
-          top: "6px",
-          left: "2px",
+          top: 0,
+          right: "0.2em",
           background: "transparent",
           border: "none",
           fontSize: "20pt",
-          writingMode: "sideways-lr",
           cursor: "pointer",
         }}
-        onClick={(e) => void applyRotation(e.altKey ? -90 : +90)}
+        onClick={(e) => applyRotation(e.altKey ? -90 : +90)}
       >
         ⤵️
       </button>

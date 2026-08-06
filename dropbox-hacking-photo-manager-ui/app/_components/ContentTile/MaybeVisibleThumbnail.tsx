@@ -11,6 +11,9 @@ import { Link } from "react-router";
 
 import styles from "./MaybeVisibleThumbnail.module.css";
 
+// Normalise to [0, 360)
+const mod360 = (n: number) => (n + 360 * Math.ceil(Math.abs(n) / 360)) % 360;
+
 const MaybeVisibleThumbnail = ({
   namedFile,
   photo,
@@ -39,11 +42,11 @@ const MaybeVisibleThumbnail = ({
 
   // console.log([namedFile.name, ext, isThumbnailable, visible, !!thumbnail]);
 
-  const degrees = photo.rotate ?? 0;
+  const targetDegrees = photo.rotate ?? 0;
 
-  const setRotation = useMemo(
-    () => (newDegrees: number) =>
-      fetch(
+  const applyRotation = useMemo(
+    () => (add: number) =>
+      void fetch(
         `http://localhost:4000/api/photo/content_hash/${namedFile.content_hash}`,
         {
           method: "PATCH",
@@ -53,59 +56,56 @@ const MaybeVisibleThumbnail = ({
           },
           body: JSON.stringify({
             ...photo,
-            rotate: newDegrees || undefined,
+            rotate: mod360(targetDegrees + add) || undefined,
           }),
         },
-      ).then(() => {}),
+      ),
     [namedFile.content_hash, photo],
   );
 
   return (
-    <>
-      <div className={styles.thumbnail} style={{ position: "relative" }}>
-        <Link to={linkTo}>
-          <div
-            style={{
-              minHeight: "128px",
-              transform: degrees === 0 ? undefined : `rotate(${degrees}deg)`,
-              transitionProperty: "transform",
-              transitionDuration: "1s",
-            }}
-          >
-            <img
-              src={
-                thumbnail
-                  ? `data:image/jpeg;base64,${thumbnail}`
-                  : `/placeholder.png`
-              }
-              alt={"thumbnail"}
-              style={{
-                width: thumbnail ? undefined : "128px",
-                height: thumbnail ? undefined : "128px",
-                filter: shouldBlur ? "blur(8px)" : undefined,
-              }}
-            />
-          </div>
-        </Link>
-
-        <button
+    <div className={styles.thumbnail} style={{ position: "relative" }}>
+      <Link to={linkTo}>
+        <div
           style={{
-            position: "absolute",
-            top: 0,
-            right: 0,
-            background: "transparent",
-            border: "none",
-            fontSize: "10pt",
-          }}
-          onClick={(e) => {
-            e.preventDefault();
-            void setRotation((degrees + (e.altKey ? 270 : 90)) % 360);
+            minHeight: "128px",
+            transform:
+              targetDegrees === 0 ? undefined : `rotate(${targetDegrees}deg)`,
+            transitionProperty: "transform",
+            transitionDuration: "0.3s",
           }}
         >
-          ⤵️
-        </button>
-      </div>
-    </>
+          <img
+            style={{
+              width: thumbnail ? undefined : "128px",
+              height: thumbnail ? undefined : "128px",
+              filter: shouldBlur ? "blur(8px)" : undefined,
+            }}
+            src={
+              thumbnail
+                ? `data:image/jpeg;base64,${thumbnail}`
+                : `/placeholder.png`
+            }
+            alt={"thumbnail"}
+          />
+        </div>
+      </Link>
+
+      <button
+        style={{
+          position: "absolute",
+          top: 0,
+          right: "0.2em",
+          background: "transparent",
+          border: "none",
+          fontSize: "10pt",
+          cursor: "pointer",
+        }}
+        onClick={(e) => applyRotation(e.altKey ? -90 : +90)}
+      >
+        ⤵️
+      </button>
+    </div>
   );
 };
 
