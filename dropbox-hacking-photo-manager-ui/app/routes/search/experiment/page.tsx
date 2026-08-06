@@ -25,7 +25,7 @@ const NGSearch = () => {
   );
 
   const [resultsStyle, setResultsStyle] = useState<ResultsStyle>(
-    RESULTS_STYLES[0],
+    RESULTS_STYLES.at(-1)!,
   );
 
   useEffect(() => {
