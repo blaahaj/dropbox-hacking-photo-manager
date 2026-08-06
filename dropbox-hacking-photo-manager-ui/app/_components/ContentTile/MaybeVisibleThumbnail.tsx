@@ -6,7 +6,7 @@ import type {
   PhotoDbEntry,
 } from "dropbox-hacking-photo-manager-shared";
 import { isPreviewable } from "dropbox-hacking-photo-manager-shared/fileTypes";
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router";
 
 import styles from "./MaybeVisibleThumbnail.module.css";
@@ -44,6 +44,18 @@ const MaybeVisibleThumbnail = ({
 
   const targetDegrees = photo.rotate ?? 0;
 
+  const [transformRotationDegrees, setTransformRotationDegrees] = useState(
+    photo.rotate ?? 0,
+  );
+  useEffect(() => {
+    let rotationRequired = mod360(targetDegrees - transformRotationDegrees);
+    if (rotationRequired > 180) rotationRequired -= 360;
+
+    if (rotationRequired !== 0) {
+      setTransformRotationDegrees((old) => old + rotationRequired);
+    }
+  }, [targetDegrees, transformRotationDegrees]);
+
   const applyRotation = useMemo(
     () => (add: number) =>
       void fetch(
@@ -69,8 +81,7 @@ const MaybeVisibleThumbnail = ({
         <div
           style={{
             minHeight: "128px",
-            transform:
-              targetDegrees === 0 ? undefined : `rotate(${targetDegrees}deg)`,
+            transform: `rotate(${transformRotationDegrees}deg)`,
             transitionProperty: "transform",
             transitionDuration: "0.3s",
           }}

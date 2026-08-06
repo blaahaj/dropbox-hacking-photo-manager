@@ -51,6 +51,18 @@ const ImagePreview = ({
 
   const targetDegrees = photo.rotate ?? 0;
 
+  const [transformRotationDegrees, setTransformRotationDegrees] = useState(
+    photo.rotate ?? 0,
+  );
+  useEffect(() => {
+    let rotationRequired = mod360(targetDegrees - transformRotationDegrees);
+    if (rotationRequired > 180) rotationRequired -= 360;
+
+    if (rotationRequired !== 0) {
+      setTransformRotationDegrees((old) => old + rotationRequired);
+    }
+  }, [targetDegrees, transformRotationDegrees]);
+
   const applyRotation = useMemo(
     () => (add: number) =>
       void fetch(
@@ -106,7 +118,7 @@ const ImagePreview = ({
                 ? undefined
                 : `
               translate(-${previewWidthAndHeight.width / 2}px, -${previewWidthAndHeight.height / 2}px)
-              rotate(${targetDegrees}deg)
+              rotate(${transformRotationDegrees}deg)
               `,
             transitionProperty: "transform filter",
             transitionDuration,
