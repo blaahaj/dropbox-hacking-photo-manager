@@ -52,7 +52,7 @@ export function Results({
         return (
           <div
             key={result.contentHash}
-            data-content-hash={result}
+            data-content-hash={result.contentHash}
             className={`${styles.result} ${isSelected ? styles.selected : ""} ${isFocused ? styles.focused : ""}`}
             onClick={(e) => {
               if (e.altKey && !e.ctrlKey && !e.metaKey) {

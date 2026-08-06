@@ -14,6 +14,7 @@ function VisibleResultsPage({
   reportTotalCount,
   reportItemsPerRow,
   reportWidthAndHeight,
+  reportResults,
   selectedContentHashes,
   focusedContentHash,
 }: {
@@ -25,6 +26,10 @@ function VisibleResultsPage({
   reportWidthAndHeight?: (widthAndHeight: [number, number]) => void;
   reportTotalCount?: (totalCount: number) => void;
   reportItemsPerRow?: (itemsPerRow: number) => void;
+  reportResults?: (
+    pageFrom0: number,
+    results: readonly ContentHashCollectionWithDay[],
+  ) => void;
   selectedContentHashes: ReadonlySet<string>;
   focusedContentHash: string | undefined;
 }) {
@@ -37,6 +42,7 @@ function VisibleResultsPage({
 
   useEffect(() => {
     if (results && reportTotalCount) reportTotalCount(results.totalCount);
+    if (results && reportResults) reportResults(pageFrom0, results.matches);
   }, [reportTotalCount, results]);
 
   const ref = useRef<HTMLDivElement>(null);

@@ -1,3 +1,4 @@
+import { none, type Option, some } from "@blaahaj/gotcha/Option";
 import Tools from "@components/ListOfContent/Tools";
 import type { ContentHashCollectionWithDay } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
@@ -24,6 +25,38 @@ export default function FilterResults({
   console.log(
     `FilterResults tc=${totalCount} ipr=${itemsPerRow} rpp=${resultsPerPage} tp=${totalPages}`,
   );
+
+  const resultsByPageRef = useRef(
+    new Map<number, readonly ContentHashCollectionWithDay[]>(),
+  );
+  const findResultByContentHash = (
+    contentHash: string,
+  ): Option<{
+    pageFrom0: number;
+    positionWithinPageFrom0: number;
+    result: ContentHashCollectionWithDay;
+  }> => {
+    for (const [pageFrom0, results] of resultsByPageRef.current.entries()) {
+      const positionWithinPageFrom0 = results.findIndex(
+        (item) => item.contentHash === contentHash,
+      );
+      if (positionWithinPageFrom0 >= 0) {
+        return some({
+          pageFrom0,
+          positionWithinPageFrom0,
+          result: results[positionWithinPageFrom0],
+        });
+      }
+    }
+    return none();
+  };
+
+  const reportResults = (
+    pageFrom0: number,
+    results: readonly ContentHashCollectionWithDay[],
+  ) => {
+    resultsByPageRef.current.set(pageFrom0, results);
+  };
 
   const draggableSpaceRef = useRef<HTMLDivElement>(null);
   const pagesRef = useRef<HTMLDivElement>(null);
@@ -82,6 +115,10 @@ export default function FilterResults({
                 ...old,
                 [page]: e.isIntersecting,
               }));
+
+              if (!e.isIntersecting) {
+                resultsByPageRef.current.delete(page);
+              }
             }
           }
         },
@@ -109,6 +146,12 @@ export default function FilterResults({
     string | undefined
   >();
 
+  // So we can read focusedContentHash in an event handler without having
+  // to re-render the handler every time focusedContentHash changes
+  const focusedContentHashRef = useRef(focusedContentHash);
+  focusedContentHashRef.current = focusedContentHash;
+
+  // Select or unselect a given result
   const onSelected = (
     result: ContentHashCollectionWithDay,
     selected: boolean,
@@ -128,6 +171,15 @@ export default function FilterResults({
     });
 
     setFocusedContentHash(result.contentHash);
+
+    const node = document.evaluate(
+      `//*[@data-content-hash='${result.contentHash}']//a[@href]`,
+      document,
+      null,
+      XPathResult.ANY_UNORDERED_NODE_TYPE,
+    ).singleNodeValue;
+
+    if (node instanceof HTMLElement) node.focus();
   };
 
   // const resultsRef = useRef<HTMLDivElement | null>(null);
@@ -175,7 +227,7 @@ export default function FilterResults({
     // draggableSpace.draggable = true;
 
     const mouseListener = (e: MouseEvent) => {
-      console.debug(e);
+      // console.debug(e);
 
       if (e.type === "mousedown") {
         startDrag([e.offsetX, e.offsetY]);
@@ -200,7 +252,7 @@ export default function FilterResults({
       // e.preventDefault();
     };
     const keyListener = (e: KeyboardEvent) => {
-      console.debug(e);
+      // console.debug(e);
       if (e.key === "Escape") cancelDrag();
     };
 
@@ -230,6 +282,77 @@ export default function FilterResults({
     };
   }, [cancelDrag, endDrag, startDrag, updateDrag]);
 
+  useEffect(() => {
+    const d = draggableSpaceRef.current;
+    if (!d) return;
+
+    const keyDownListener = (e: KeyboardEvent) => {
+      if (!focusedContentHashRef.current) return;
+
+      const moveFocus = (by: 1 | -1) => {
+        const contentHashNodes = document.evaluate(
+          "//*[@data-content-hash]",
+          d,
+          null,
+          XPathResult.ORDERED_NODE_ITERATOR_TYPE,
+        );
+
+        const renderedContentHashes: string[] = [];
+
+        for (;;) {
+          const n = contentHashNodes.iterateNext();
+          if (!n) break;
+
+          renderedContentHashes.push(
+            (n as HTMLElement).getAttribute("data-content-hash")!,
+          );
+        }
+
+        const currentIndex = renderedContentHashes.indexOf(
+          focusedContentHashRef.current ?? "",
+        );
+        if (currentIndex >= 0) {
+          const offset = by + renderedContentHashes.length;
+          const newIndex =
+            (currentIndex + offset) % renderedContentHashes.length;
+          const newContentHash = renderedContentHashes[newIndex];
+          setFocusedContentHash(newContentHash);
+        }
+      };
+
+      if (
+        ["KeyY", "KeyN"].includes(e.code) &&
+        // !e.shiftKey &&
+        !e.altKey &&
+        !e.ctrlKey &&
+        !e.metaKey
+      ) {
+        const t = findResultByContentHash(focusedContentHashRef.current);
+        if (t.isSome()) onSelected(t.value.result, e.code === "KeyY");
+        if (e.shiftKey) moveFocus(+1);
+      }
+
+      // TODO 't' to focus on the tags input
+      // TODO 'g' to focus on the GPS input
+      // TODO 'q' to unselect all
+
+      // TODO escape from tags / GPS to return focus to the results
+
+      if (
+        ["ArrowLeft", "ArrowRight"].includes(e.code) &&
+        !e.shiftKey &&
+        !e.altKey &&
+        !e.ctrlKey &&
+        !e.metaKey
+      ) {
+        moveFocus(e.code === "ArrowRight" ? (+1 as const) : (-1 as const));
+      }
+    };
+
+    d.addEventListener("keydown", keyDownListener);
+    return () => d.removeEventListener("keydown", keyDownListener);
+  });
+
   const show = showDragBox.current;
 
   return (
@@ -246,6 +369,7 @@ export default function FilterResults({
           }
         }}
         selectedFiles={[...selectedItems.values()]}
+        // TODO: add an 'onCancel' callback
       />
 
       <div>
@@ -299,6 +423,7 @@ export default function FilterResults({
           reportTotalCount={setTotalCount}
           reportWidthAndHeight={setPageDimensions}
           reportItemsPerRow={setItemsPerRow}
+          reportResults={reportResults}
           selectedContentHashes={selectedContentHashes}
           focusedContentHash={focusedContentHash}
           onSelected={onSelected}
@@ -324,6 +449,7 @@ export default function FilterResults({
                       resultsStyle={resultsStyle}
                       pageFrom0={pageFrom0}
                       resultsPerPage={resultsPerPage}
+                      reportResults={reportResults}
                       selectedContentHashes={selectedContentHashes}
                       focusedContentHash={focusedContentHash}
                       onSelected={onSelected}
