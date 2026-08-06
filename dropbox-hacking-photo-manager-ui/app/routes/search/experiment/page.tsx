@@ -1,5 +1,3 @@
-"use client";
-
 import Navigate from "@components/Navigation";
 import logRender from "@lib/logRender";
 import Button from "@mui/material/Button";

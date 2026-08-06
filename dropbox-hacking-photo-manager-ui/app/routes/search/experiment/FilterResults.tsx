@@ -1,5 +1,3 @@
-"use client";
-
 import Tools from "@components/ListOfContent/Tools";
 import type { ContentHashCollectionWithDay } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
