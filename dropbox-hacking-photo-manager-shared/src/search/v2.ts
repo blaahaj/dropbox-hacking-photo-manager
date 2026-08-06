@@ -94,10 +94,11 @@ export const v2Things: readonly V2Thing[] = [
       "text:day^Hol",
       "text:photo=foo",
       "device~iphone",
+      "date>2024",
     ],
     compiler: (q) => {
       const m = q.match(
-        /^(?<prop>tag|text|text:day|text:photo|device)(?<op>[=~^])(?<arg>.*)$/,
+        /^(?<prop>tag|text|text:day|text:photo|device|date)(?<op>[<>=~^])(?<arg>.*)$/,
       );
       if (!m?.groups) return none();
 
@@ -111,6 +112,7 @@ export const v2Things: readonly V2Thing[] = [
         "text:photo": "[c.photo?.description ?? '']",
         device:
           "[c.exif?.exifData.tags?.Make, c.exif?.exifData.tags?.Model, c.exif?.exifData.tags?.Model2]",
+        date: "[c.timestamp]",
       }[prop]!;
 
       const lowerT = "(t ?? '').toLocaleLowerCase()";
@@ -121,6 +123,8 @@ export const v2Things: readonly V2Thing[] = [
           new Function(
             "c",
             {
+              "<": `return ${texts}.some(t => ${lowerT} < ${arg})`,
+              ">": `return ${texts}.some(t => ${lowerT} > ${arg})`,
               "=": `return ${texts}.some(t => ${lowerT} === ${arg})`,
               "~": `return ${texts}.some(t => ${lowerT}.includes(${arg}))`,
               "^": `return ${texts}.some(t => ${lowerT}.startsWith(${arg}))`,
@@ -235,20 +239,6 @@ export const v2Things: readonly V2Thing[] = [
           ) as V2CompiledNode,
         ),
       );
-    },
-  },
-
-  // Date
-  {
-    name: "date",
-    examples: ["date>2020", "date<2020-02"],
-    compiler: (q): V2CompileResult => {
-      const m = q.match(/^date([><])(\d\d\d\d.*)$/);
-      if (!m) return none();
-
-      if (m[1] === ">") return some(ok((c) => c.timestamp > m[2]));
-      if (m[1] === "<") return some(ok((c) => c.timestamp < m[2]));
-      return some(error(new Error("unreachable")));
     },
   },
 
