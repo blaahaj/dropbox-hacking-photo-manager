@@ -1,7 +1,7 @@
 import { none, type Option, some } from "@blaahaj/gotcha/Option";
 import Tools from "@components/ListOfContent/Tools";
 import type { ContentHashCollectionWithDay } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import type { ResultsStyle } from "./renderers";
 import VisibleResultsPage from "./VisibleResultsPage";
@@ -60,47 +60,6 @@ export default function FilterResults({
 
   const draggableSpaceRef = useRef<HTMLDivElement>(null);
   const pagesRef = useRef<HTMLDivElement>(null);
-
-  const [dragStartXY, setDragStartXY] = useState<
-    [number, number] | undefined
-  >();
-  const [dragEndXY, setDragEndXY] = useState<[number, number] | undefined>();
-
-  const showDragBox = useRef(false);
-  const [strokeDashoffset, setStrokeDashoffset] = useState(0);
-  useEffect(() => {
-    const nudgeStrokeTimer = () => {
-      if (!showDragBox.current) return;
-      const now = new Date().getTime();
-      setStrokeDashoffset(Math.floor(now / 100) % 10);
-    };
-
-    const h = setInterval(nudgeStrokeTimer, 100);
-    return () => clearInterval(h);
-  }, []);
-
-  const startDrag = useCallback((pos: [number, number]) => {
-    setDragStartXY(pos);
-    setDragEndXY(pos);
-    showDragBox.current = true;
-  }, []);
-
-  const updateDrag = useCallback((_pos: [number, number]) => {
-    //
-  }, []);
-
-  const endDrag = useCallback(() => {
-    // TODO, do whatever the drag was for
-    setDragStartXY(undefined);
-    setDragEndXY(undefined);
-    showDragBox.current = false;
-  }, []);
-
-  const cancelDrag = useCallback(() => {
-    setDragStartXY(undefined);
-    setDragEndXY(undefined);
-    showDragBox.current = false;
-  }, []);
 
   useEffect(() => {
     const container = pagesRef.current;
@@ -182,106 +141,6 @@ export default function FilterResults({
     if (node instanceof HTMLElement) node.focus();
   };
 
-  // const resultsRef = useRef<HTMLDivElement | null>(null);
-  // useEffect(() => {
-  //   const div = resultsRef.current;
-  //   if (!div) return;
-
-  //   const listener1 = (e: PointerEvent) => {
-  //     const findContentHash = () => {
-  //       let ele = e.target;
-  //       while (ele instanceof Element) {
-  //         if (ele.getAttribute("data-results")) return;
-
-  //         const contentHash = ele.getAttribute("data-content-hash");
-  //         if (contentHash) return contentHash;
-
-  //         ele = ele.parentElement;
-  //       }
-  //     };
-
-  //     const hash = findContentHash();
-  //     if (!hash) return;
-
-  //     if (e.altKey && !e.ctrlKey && !e.metaKey) {
-  //       setSelectedContentHashes((old) => {
-  //         const copy = new Set(old);
-  //         if (copy.has(hash)) copy.delete(hash);
-  //         else copy.add(hash);
-  //         return copy;
-  //       });
-  //     }
-  //   };
-
-  //   div.addEventListener("click", listener1, { capture: false });
-
-  //   return () => {
-  //     div.removeEventListener("click", listener1, { capture: false });
-  //   };
-  // }, []);
-
-  useEffect(() => {
-    const draggableSpace = draggableSpaceRef.current;
-    if (!draggableSpace) return;
-
-    // draggableSpace.draggable = true;
-
-    const mouseListener = (e: MouseEvent) => {
-      // console.debug(e);
-
-      if (e.type === "mousedown") {
-        startDrag([e.offsetX, e.offsetY]);
-        e.preventDefault();
-      }
-
-      if (e.type === "mouseup") {
-        endDrag();
-        e.preventDefault();
-      }
-
-      if (e.type === "mouseleave") {
-        cancelDrag();
-      }
-
-      if (e.type === "mousemove") {
-        if (showDragBox.current) updateDrag([e.offsetX, e.offsetY]);
-      }
-    };
-    const dragListener = (e: DragEvent) => {
-      console.debug(e);
-      // e.preventDefault();
-    };
-    const keyListener = (e: KeyboardEvent) => {
-      // console.debug(e);
-      if (e.key === "Escape") cancelDrag();
-    };
-
-    draggableSpace.addEventListener("mousedown", mouseListener);
-    draggableSpace.addEventListener("mouseup", mouseListener);
-    draggableSpace.addEventListener("mousemove", mouseListener);
-    draggableSpace.addEventListener("mouseenter", mouseListener);
-    draggableSpace.addEventListener("mouseleave", mouseListener);
-    draggableSpace.addEventListener("click", mouseListener);
-    draggableSpace.addEventListener("dblclick", mouseListener);
-    draggableSpace.addEventListener("drag", dragListener);
-    draggableSpace.addEventListener("keydown", keyListener);
-    draggableSpace.addEventListener("keyup", keyListener);
-
-    return () => {
-      // draggableSpace.draggable = false;
-      draggableSpace.removeEventListener("mousedown", mouseListener);
-      draggableSpace.removeEventListener("mouseup", mouseListener);
-      draggableSpace.removeEventListener("mousemove", mouseListener);
-      draggableSpace.removeEventListener("mouseenter", mouseListener);
-      draggableSpace.removeEventListener("mouseleave", mouseListener);
-      draggableSpace.removeEventListener("click", mouseListener);
-      draggableSpace.removeEventListener("dblclick", mouseListener);
-      draggableSpace.removeEventListener("drag", dragListener);
-      draggableSpace.removeEventListener("keydown", keyListener);
-      draggableSpace.removeEventListener("keyup", keyListener);
-    };
-  }, [cancelDrag, endDrag, startDrag, updateDrag]);
-
   useEffect(() => {
     const d = draggableSpaceRef.current;
     if (!d) return;
@@ -353,8 +212,6 @@ export default function FilterResults({
     return () => d.removeEventListener("keydown", keyDownListener);
   });
 
-  const show = showDragBox.current;
-
   return (
     <>
       <p style={{ marginBlock: "1em" }}>{totalCount} matches</p>
@@ -372,49 +229,7 @@ export default function FilterResults({
         // TODO: add an 'onCancel' callback
       />
 
-      <div>
-        <p>
-          Drag start={dragStartXY ? dragStartXY.join(",") : "-"} end=
-          {dragEndXY ? dragEndXY.join(",") : "-"}
-          show={show ? "t" : "f"}
-        </p>
-      </div>
-
-      <div
-        ref={draggableSpaceRef}
-        //  data-results
-      >
-        {dragStartXY && dragEndXY && (
-          <>
-            <svg
-              style={{
-                position: "absolute",
-                pointerEvents: "none",
-                zIndex: 100,
-                border: "1px solid red",
-                width: "100vw",
-                height: "100vh",
-                top: 0,
-                left: 0,
-              }}
-            >
-              <rect
-                x={Math.min(dragStartXY[0], dragEndXY[0])}
-                y={Math.min(dragStartXY[1], dragEndXY[1])}
-                width={Math.abs(dragEndXY[0] - dragStartXY[0])}
-                height={Math.abs(dragEndXY[1] - dragStartXY[1])}
-                stroke={"red"}
-                strokeDasharray={"5 5"}
-                strokeDashoffset={strokeDashoffset}
-                strokeWidth={"3"}
-                // style={{ strokeColor: "red" }}
-                fill="transparent"
-                // fill="blue"
-              />
-            </svg>
-          </>
-        )}
-
+      <div ref={draggableSpaceRef}>
         <VisibleResultsPage
           filterNode={filterNode}
           resultsStyle={resultsStyle}
