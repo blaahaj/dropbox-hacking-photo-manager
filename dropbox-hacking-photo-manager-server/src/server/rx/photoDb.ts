@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 import { isDeepStrictEqual } from "node:util";
 
 import type { PhotoDbEntry } from "dropbox-hacking-photo-manager-shared";
-import { map, ReplaySubject } from "rxjs";
+import { map } from "rxjs";
 import writeFileAtomic from "write-file-atomic";
 
 import { jsonFileObservable } from "./util.js";
@@ -44,19 +44,7 @@ export const buildForPhotoDb = (path: string) => {
   };
 };
 
-export const buildForPhotoDbMap = (path: string) => {
-  const dbObservable = jsonFileObservable<PhotoDb>(
-    `${path}/photos.json`,
-    100,
-  ).pipe(
+export const buildPhotosByContentHash = (path: string) =>
+  jsonFileObservable<PhotoDb>(`${path}/photos.json`, 100).pipe(
     map((record) => new Map<string, PhotoDbEntry>(Object.entries(record))),
   );
-
-  const dbReplaySubject = new ReplaySubject<Map<string, PhotoDbEntry>>(1);
-  const dbReplaySubscription = dbObservable.subscribe(dbReplaySubject);
-
-  return {
-    observable: () => dbReplaySubject,
-    close: () => dbReplaySubscription.unsubscribe(),
-  };
-};

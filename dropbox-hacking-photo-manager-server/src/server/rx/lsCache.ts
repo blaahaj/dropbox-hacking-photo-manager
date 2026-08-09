@@ -1,12 +1,12 @@
 import { State, StateDir } from "@blaahaj/dropbox-hacking-ls-cache";
 import { files } from "dropbox";
 import type { NamedFile } from "dropbox-hacking-photo-manager-shared";
-import { filter, map, ReplaySubject } from "rxjs";
+import { filter, map } from "rxjs";
 
 import { jsonFileObservableViaLoader } from "./util.js";
 
-export const buildForLsCacheMapAllFiles = (dbDir: string) => {
-  const observable = jsonFileObservableViaLoader<State>(
+export const buildAllFilesByRev = (dbDir: string) =>
+  jsonFileObservableViaLoader<State>(
     dbDir,
     async () => {
       const db = new StateDir(dbDir);
@@ -45,13 +45,3 @@ export const buildForLsCacheMapAllFiles = (dbDir: string) => {
         return out;
       }),
     );
-
-  const replaySubject = new ReplaySubject<Map<string, NamedFile>>(1);
-
-  const subscription = observable.subscribe(replaySubject);
-
-  return {
-    observable: () => replaySubject,
-    close: () => subscription.unsubscribe(),
-  };
-};

@@ -44,12 +44,14 @@ export type ContentHashCollectionWithDay = ContentHashCollection & {
 };
 
 export type FullDatabaseFeeds = {
-  exifsByContentHash: Observable<Map<exifDb.ContentHash, exifDb.ExifFromHash>>;
-  mediaInfoByContentHash: Observable<
-    Map<mediaInfoDb.ContentHash, mediaInfoDb.MediainfoFromHash>
+  exifsByContentHash: Observable<
+    ReadonlyMap<exifDb.ContentHash, exifDb.ExifFromHash>
   >;
-  daysByDate: Observable<Map<string, DayMetadata>>;
-  allFilesByRev: Observable<Map<string, NamedFile>>;
-  photosByContentHash: Observable<Map<string, PhotoDbEntry>>;
+  mediaInfoByContentHash: Observable<
+    ReadonlyMap<mediaInfoDb.ContentHash, mediaInfoDb.MediainfoFromHash>
+  >;
+  daysByDate: Observable<ReadonlyMap<string, DayMetadata>>;
+  allFilesByRev: Observable<ReadonlyMap<string, NamedFile>>;
+  photosByContentHash: Observable<ReadonlyMap<string, PhotoDbEntry>>;
   byContentHash: Observable<ReadonlyMap<string, ContentHashCollection>>;
 };
