@@ -1,17 +1,18 @@
 import { ExifFromHash } from "@blaahaj/dropbox-hacking-exif-db";
+import type { ReadonlyDeep } from "type-fest";
 
 import type { NamedFile } from "./ws.js";
 
 export type DayMetadata = {
-  date: string;
-  description: string;
+  readonly date: string;
+  readonly description: string;
 };
 
 export type Photo = {
-  namedFile: NamedFile;
-  exif: ExifFromHash;
+  readonly namedFile: NamedFile;
+  readonly exif: ReadonlyDeep<ExifFromHash>;
 };
 
 export type DayMetadataResponse = {
-  day_metadata: DayMetadata;
+  readonly day_metadata: DayMetadata;
 };

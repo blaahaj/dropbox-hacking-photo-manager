@@ -7,14 +7,14 @@ import writeFileAtomic from "write-file-atomic";
 
 import { jsonFileObservable } from "./util.js";
 
-export type PhotoDb = Record<string, PhotoDbEntry>;
+export type PhotoDb = Readonly<Record<string, PhotoDbEntry>>;
 
 export const buildForPhotoDb = (path: string) => {
   return {
     update: async (args: { contentHash: string; entry: PhotoDbEntry }) => {
       const all = JSON.parse(
         await readFile(`${path}/photos.json`, { encoding: "utf-8" }),
-      ) as PhotoDb;
+      ) as Record<string, PhotoDb[string]>;
 
       if (isDeepStrictEqual(all[args.contentHash], args.entry)) return;
 

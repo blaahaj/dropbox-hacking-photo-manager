@@ -11,14 +11,14 @@ export type Context = {
   readonly dayDb: DayDb;
   readonly close: () => Promise<void>;
 
-  photoRxUpdater: (args: {
-    contentHash: string;
-    entry: PhotoDbEntry;
+  readonly photoRxUpdater: (args: {
+    readonly contentHash: string;
+    readonly entry: PhotoDbEntry;
   }) => Promise<void>;
-  photoRxTransformer: (
+  readonly photoRxTransformer: (
     transform: (old: PhotoDb) => Promise<PhotoDb>,
   ) => Promise<void>;
 
-  fullDatabaseFeeds: FullDatabaseFeeds;
-  thumbnailFetcher: ThumbnailFetcher;
+  readonly fullDatabaseFeeds: FullDatabaseFeeds;
+  readonly thumbnailFetcher: ThumbnailFetcher;
 };

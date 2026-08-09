@@ -3,10 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "react-router build",
+    "build": "react-router build && react-router typegen && tsc",
     "dev": "react-router dev --port 4001",
     "start": "react-router-serve ./build/server/index.js --port 4001",
-    "test": "react-router typegen && tsc",
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
