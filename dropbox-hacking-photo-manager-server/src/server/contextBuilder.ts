@@ -7,9 +7,7 @@ import {
 } from "dropbox-hacking-photo-manager-shared";
 import { isPreviewable } from "dropbox-hacking-photo-manager-shared/fileTypes";
 import type { FullDatabaseFeeds } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
-import type { Observable } from "rxjs";
 import { combineLatest } from "rxjs/internal/observable/combineLatest";
-import { ReplaySubject } from "rxjs/internal/ReplaySubject";
 import { map } from "rxjs/operators";
 
 import { backupToDropbox, backupToLocalTarFile } from "../backup/index.js";
@@ -25,6 +23,7 @@ import { buildForExifDbMap } from "./rx/exifDb.js";
 import { buildForLsCacheMapAllFiles } from "./rx/lsCache.js";
 import { buildForMediaInfoDbMap } from "./rx/mediaInfoDb.js";
 import { buildForPhotoDb, buildForPhotoDbMap } from "./rx/photoDb.js";
+import wrapAsReplay from "./rx/wrapAsReplay.js";
 
 export default (): Context => {
   const exifDbDir = process.env.EXIF_DB_DIR;
@@ -93,15 +92,6 @@ export default (): Context => {
   const daysRxMap = buildForDayDbMap(dayDbDir);
   const allFilesRxMap = buildForLsCacheMapAllFiles(lsCacheDir);
   const photosRxMap = buildForPhotoDbMap(photoDbDir);
-
-  const wrapAsReplay = <T>(obs: Observable<T>) => {
-    const replay = new ReplaySubject<T>(1);
-    const subscription = obs.subscribe(replay);
-    return {
-      observable: () => replay.asObservable(),
-      close: () => subscription.unsubscribe(),
-    };
-  };
 
   const interestingFilesByRev = wrapAsReplay(
     allFilesRxMap
