@@ -6,6 +6,7 @@ import {
   Meta,
   Outlet,
   Scripts,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ScrollRestoration,
 } from "react-router";
 
