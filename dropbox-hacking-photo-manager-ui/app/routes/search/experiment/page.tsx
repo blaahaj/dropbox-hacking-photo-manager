@@ -4,8 +4,8 @@ import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import TextField from "@mui/material/TextField";
 import {
-  v2CompileQueryFromThings,
-  v2Things,
+  compileSearch,
+  searchTerms,
 } from "dropbox-hacking-photo-manager-shared/search";
 import { type ChangeEventHandler, useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router";
@@ -19,10 +19,7 @@ const NGSearch = () => {
     searchParams.get("q") ?? "image",
   );
 
-  const filter = useMemo(
-    () => v2CompileQueryFromThings(filterSource),
-    [filterSource],
-  );
+  const filter = useMemo(() => compileSearch(filterSource), [filterSource]);
 
   const [resultsStyle, setResultsStyle] = useState<ResultsStyle>(
     RESULTS_STYLES.at(-1)!,
@@ -74,7 +71,7 @@ const NGSearch = () => {
             <p>The query is in Reverse Polish.</p>
 
             <ul>
-              {v2Things.map((thing, i) => (
+              {searchTerms.map((thing, i) => (
                 <li key={i}>{thing.examples.join(" ; ")}</li>
               ))}
             </ul>

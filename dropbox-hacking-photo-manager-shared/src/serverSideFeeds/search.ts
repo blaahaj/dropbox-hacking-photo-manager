@@ -1,6 +1,6 @@
 import { combineLatest, map, type Observable } from "rxjs";
 
-import { v2CompileQueryFromThings } from "../search/index.js";
+import { compileSearch } from "../search/index.js";
 import {
   type ContentHashCollectionWithDay,
   type FullDatabaseFeeds,
@@ -27,7 +27,7 @@ export const provideSearch = (
   feeds: FullDatabaseFeeds,
   req: SearchRequest,
 ): Observable<SearchResult> => {
-  const predicate = v2CompileQueryFromThings(req.filter);
+  const predicate = compileSearch(req.filter);
   if (predicate.isError()) throw predicate.error;
 
   const pageFrom0 = req.pageFrom0 ?? 0;

@@ -3,7 +3,7 @@ import Navigate from "@components/Navigation";
 import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFeed";
 import logRender from "@lib/logRender";
 import TextField from "@mui/material/TextField";
-import { v2CompileQueryFromThings } from "dropbox-hacking-photo-manager-shared/search";
+import { compileSearch } from "dropbox-hacking-photo-manager-shared/search";
 import { type ChangeEventHandler, useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router";
 
@@ -11,10 +11,7 @@ const NGSearch = () => {
   const [searchParams, _setSearchParams] = useSearchParams();
   const [filterSource, setFilterSource] = useState(searchParams.get("q") ?? "");
 
-  const filter = useMemo(
-    () => v2CompileQueryFromThings(filterSource),
-    [filterSource],
-  );
+  const filter = useMemo(() => compileSearch(filterSource), [filterSource]);
 
   const latestValue = useLatestValueFromServerFeed({
     type: "rx.ng.search",
