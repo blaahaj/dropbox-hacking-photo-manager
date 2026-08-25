@@ -1,7 +1,9 @@
 {
-  "compilerOptions": { "types": ["node"] },
-  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "types": ["node"]
+  },
   "exclude": ["**/node_modules"],
+  "extends": "./tsconfig.base.json",
   "files": ["graph.ts", "eslint.config.ts", ".prettierrc.ts"],
   "include": []
 }
