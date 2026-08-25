@@ -40,11 +40,11 @@ class Builder<FEEDMAP extends { [K in string]: any }> {
   public addFeed<NAME extends string, REQ extends { readonly type: NAME }, RES>(
     name: NAME,
     provider: Provider<REQ, RES>,
-  ) {
+  ): Builder<FEEDMAP & Record<NAME, SPEC<NAME, REQ, RES>>> {
     return new Builder({
       ...this.feedMap,
       [name]: { name, provider },
-    } as FEEDMAP & Record<NAME, SPEC<NAME, REQ, RES>>);
+    });
   }
 }
 

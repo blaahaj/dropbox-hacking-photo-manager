@@ -99,7 +99,7 @@ export default (): Context => {
 
   const previewableFilesByContentHash = wrapAsReplay(
     allFilesByRev.observable().pipe(
-      map((t) => {
+      map((t): ReadonlyMap<string, readonly NamedFile[]> => {
         const out = new Map<string, NamedFile[]>();
 
         for (const namedFile of t
@@ -114,7 +114,7 @@ export default (): Context => {
           list.sort((a, b) => a.path_lower.localeCompare(b.path_lower));
         }
 
-        return out as ReadonlyMap<string, readonly NamedFile[]>;
+        return out;
       }),
     ),
   );

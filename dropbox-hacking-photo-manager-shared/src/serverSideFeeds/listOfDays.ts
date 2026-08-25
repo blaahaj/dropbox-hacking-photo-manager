@@ -46,7 +46,7 @@ export const provideListOfDaysWithoutSamples = (
           date,
           dayMetadata: null,
           counts: { ...template },
-          photoTags: {} as Record<string, number>,
+          photoTags: {},
         };
         out.set(date, item);
         return item;
