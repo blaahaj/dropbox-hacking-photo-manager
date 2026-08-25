@@ -1,4 +1,4 @@
-import * as v2 from "@blaahaj/dropbox-hacking-util/v2";
+import { thenToResult } from "@blaahaj/gotcha/Result";
 import type { Dropbox } from "dropbox";
 import { Application, type Response } from "express";
 import type { IncomingMessage } from "http";
@@ -78,10 +78,10 @@ const getAndProxyLink = (imageUrl: string, res: Response) =>
 const getAndProxyImage = (dbx: Dropbox, path: string, res: Response) =>
   dbx
     .filesGetTemporaryLink({ path })
-    .then(...v2.processPromise)
+    .then(...thenToResult)
     .then((r) => {
-      if (!r.resolved) {
-        console.error("filesGetTemporaryLink failed:", r);
+      if (r.isError()) {
+        console.error("filesGetTemporaryLink failed:", r.error);
         res.sendStatus(500);
         return;
       }
