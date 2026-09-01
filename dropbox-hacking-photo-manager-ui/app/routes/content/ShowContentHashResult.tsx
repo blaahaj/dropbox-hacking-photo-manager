@@ -33,48 +33,32 @@ export const ShowContentHashResult = ({
 
   return (
     <>
-      <Stack direction={"row"} sx={{ columnGap: "3em" }}>
-        <Stack direction={"column"} sx={{ rowGap: "3em" }}>
-          <ImagePreview
-            namedFile={latestValue.namedFiles[0]}
-            photo={latestValue.photo ?? {}}
-          />
-
-          {latestValue.gps.effective && L && (
-            <GeoMap
-              positions={
-                new Map([
-                  [
-                    contentHash,
-                    {
-                      position: new L.LatLng(
-                        latestValue.gps.effective.lat,
-                        latestValue.gps.effective.long,
-                      ),
-                      highlighted: false,
-                    },
-                  ],
-                ])
-              }
-            />
-          )}
-
-          <ShowData data={latestValue} />
-        </Stack>
-
-        <Stack direction={"column"}>
+      <Stack
+        direction={"row"}
+        sx={{ columnGap: "3em" }}
+      >
+        <Stack direction={"column"} sx={{ rowGap: "0.5em" }}>
           {dayData ? (
             <SummariseFileState dayData={dayData} contentHash={contentHash} />
           ) : (
             "loading..."
           )}
 
+          <ImagePreview
+            namedFile={latestValue.namedFiles[0]}
+            photo={latestValue.photo ?? {}}
+          />
+
+          <ShowData data={latestValue} />
+        </Stack>
+
+        <Stack direction={"column"}>
           <Stack
             sx={{ backgroundColor: "rgba(246,246,246,0.5)", padding: "1em" }}
           >
             <Accordion defaultExpanded>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <h3>Description & Tags</h3>
+                Description & Tags
               </AccordionSummary>
               <AccordionDetails>
                 <EditablePhotoEntry
@@ -84,7 +68,7 @@ export const ShowContentHashResult = ({
               </AccordionDetails>
             </Accordion>
 
-            <Accordion>
+            <Accordion defaultExpanded>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                 <h3>GPS</h3>
               </AccordionSummary>
@@ -94,6 +78,25 @@ export const ShowContentHashResult = ({
                   gps={latestValue.gps}
                   photo={latestValue.photo}
                 />
+
+                {latestValue.gps.effective && L && (
+                  <GeoMap
+                    positions={
+                      new Map([
+                        [
+                          contentHash,
+                          {
+                            position: new L.LatLng(
+                              latestValue.gps.effective.lat,
+                              latestValue.gps.effective.long,
+                            ),
+                            highlighted: false,
+                          },
+                        ],
+                      ])
+                    }
+                  />
+                )}
               </AccordionDetails>
             </Accordion>
 
