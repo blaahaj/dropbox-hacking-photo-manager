@@ -15,10 +15,7 @@ export default [
       route(":date", "routes/days/single.tsx"),
     ]),
     route("video", "routes/video/index.tsx"),
-    ...prefix("tags", [
-      index("routes/tags/index.tsx"),
-      route(":tag", "routes/tags/single.tsx"),
-    ]),
+    route("tags", "routes/tags/index.tsx"),
     route("search", "routes/search/limited/index.tsx"),
     route("search/experiment", "routes/search/experiment/index.tsx"),
     route("stats", "routes/stats/index.tsx"),
