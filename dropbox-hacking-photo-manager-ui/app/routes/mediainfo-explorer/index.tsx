@@ -1,6 +1,6 @@
 export function meta(/*{}: Route.MetaArgs*/) {
   return [
-    { title: "DPM-RR MediaInfo Explorer" },
+    { title: "DPM MediaInfo Explorer" },
     {
       name: "description",
       content: "Yet another implementation of the DPM UI",

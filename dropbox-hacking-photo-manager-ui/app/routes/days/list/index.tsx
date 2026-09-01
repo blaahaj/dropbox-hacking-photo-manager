@@ -1,6 +1,6 @@
 export function meta(/*{}: Route.MetaArgs*/) {
   return [
-    { title: "DPM-RR List of Days" },
+    { title: "DPM List of Days" },
     {
       name: "description",
       content: "Yet another implementation of the DPM UI",

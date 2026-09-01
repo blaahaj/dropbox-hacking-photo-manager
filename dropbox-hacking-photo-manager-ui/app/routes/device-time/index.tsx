@@ -2,7 +2,7 @@
 
 export function meta(/*{}: Route.MetaArgs*/) {
   return [
-    { title: "DPM-RR Device Time" },
+    { title: "DPM Device Time" },
     {
       name: "description",
       content: "Yet another implementation of the DPM UI",

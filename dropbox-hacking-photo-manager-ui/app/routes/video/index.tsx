@@ -1,6 +1,6 @@
 export function meta(/*{}: Route.MetaArgs*/) {
   return [
-    { title: "DPM-RR Video" },
+    { title: "DPM Video" },
     {
       name: "description",
       content: "Yet another implementation of the DPM UI",

@@ -65,7 +65,7 @@ const Navigation = (): React.ReactElement | null => (
           mr: 6,
         }}
       >
-        <Link to="/">DPM-RR</Link>
+        <Link to="/">DPM</Link>
       </Typography>
       <Typography
         variant="overline"
