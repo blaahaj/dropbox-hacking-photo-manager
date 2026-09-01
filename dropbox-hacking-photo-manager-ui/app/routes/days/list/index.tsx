@@ -2,7 +2,7 @@
 
 export function meta(/*{}: Route.MetaArgs*/) {
   return [
-    { title: "DPM-RR Single Day" },
+    { title: "DPM-RR List of Days" },
     {
       name: "description",
       content: "Yet another implementation of the DPM UI",
@@ -10,5 +10,5 @@ export function meta(/*{}: Route.MetaArgs*/) {
   ];
 }
 
-import page from "./single/page";
+import page from "./page";
 export default page;
