@@ -7,6 +7,7 @@ import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFee
 import type { DayMetadata } from "dropbox-hacking-photo-manager-shared";
 import type { ContentHashCollectionWithDay } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
 import { useEffect, useMemo } from "react";
+import { Link } from "react-router";
 
 import type { Route } from "./+types";
 import styles from "./page.module.css";
@@ -75,6 +76,12 @@ const NGDayFiles = ({ params }: Route.ComponentProps) => {
                 value={dayMetadata?.description ?? ""}
                 onSave={onSaveDescription}
               />
+            </p>
+
+            <p>
+              <Link to={`/device-time?start=${date}&end=${date}Z`}>
+                device time correction
+              </Link>
             </p>
 
             <ListOfContent files={files} />

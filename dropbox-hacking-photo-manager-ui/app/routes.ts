@@ -14,6 +14,7 @@ export default [
       index("routes/days/list/index.tsx"),
       route(":date", "routes/days/single/index.tsx"),
     ]),
+    route("device-time", "routes/device-time/index.tsx"),
     route("exif-explorer", "routes/exif-explorer/index.tsx"),
     route("search", "routes/search/limited/index.tsx"),
     route("search/experiment", "routes/search/experiment/index.tsx"),

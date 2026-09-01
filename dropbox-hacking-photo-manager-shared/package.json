@@ -18,7 +18,7 @@
     "@eslint/js": "^9.37.0",
     "@types/eslint__js": "8",
     "@types/geojson": "^7946.0.16",
-    "@types/node": "^25.9.0",
+    "@types/node": "^26.2.0",
     "c8": "^11.0.0",
     "dropbox": "^10.34.0",
     "eslint": "^9.37.0",
