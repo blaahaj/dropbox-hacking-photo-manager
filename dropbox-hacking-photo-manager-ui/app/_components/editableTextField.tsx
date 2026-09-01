@@ -10,7 +10,10 @@ import {
   useState,
 } from "react";
 
+import styles from "./editableTextField.module.css";
+
 const EditableTextField = (props: {
+  label?: string;
   value: string;
   onSave: (newValue: string) => Promise<void>;
   renderInactive?: (props: {
@@ -49,14 +52,20 @@ const EditableTextField = (props: {
 
   const startEditing = useMemo(
     () => (event: MouseEvent | KeyboardEvent) => {
-      console.log("Start editing");
       event.stopPropagation();
       event.preventDefault();
+      maybeStartEditing();
+    },
+    [],
+  );
+
+  const maybeStartEditing = () => {
+    if (!isEditing) {
+      console.log("Start editing");
       setEditingValue(props.value);
       setIsEditing(true);
-    },
-    [props.value],
-  );
+    }
+  };
 
   const onChange = useMemo(
     () => (e: ChangeEvent<HTMLInputElement>) => setEditingValue(e.target.value),
@@ -71,41 +80,40 @@ const EditableTextField = (props: {
     [doSave, doCancel],
   );
 
-  const placeholderText = "(click to edit)";
+  const placeholderText = "(none)";
 
-  if (!isEditing) {
-    return (
-      <span
-        onClick={startEditing}
-        className={
-          props.value ? "editable inactive hasData" : "editable inactive noData"
-        }
-      >
-        {props.renderInactive ? (
-          <div style={{ display: "inline-block" }}>
-            {props.renderInactive({ value: props.value, placeholderText })}
-          </div>
-        ) : (
-          props.value || placeholderText
-        )}
-      </span>
-    );
-  } else {
-    return (
-      <span className="editable active">
-        <input
-          ref={input}
-          type={"text"}
-          value={editingValue}
-          style={{ width: "40em" }}
-          onChange={onChange}
-          onKeyDown={onKeyDown}
-        />
-        <input type={"submit"} value={"Save"} onClick={doSave} />
-        <input type={"reset"} value={"Cancel"} onClick={doCancel} />
-      </span>
-    );
-  }
+  return (
+    <div className={styles.root}>
+      {props.label && (
+        <span className={styles.label} onClick={maybeStartEditing}>
+          {props.label}:
+        </span>
+      )}
+      {!isEditing ? (
+        <span onClick={startEditing} className={styles.inactiveText}>
+          {props.renderInactive ? (
+            <div style={{ display: "inline-block" }}>
+              {props.renderInactive({ value: props.value, placeholderText })}
+            </div>
+          ) : (
+            props.value || placeholderText
+          )}
+        </span>
+      ) : (
+        <span className={styles.activeInputs}>
+          <input
+            ref={input}
+            type={"text"}
+            value={editingValue}
+            onChange={onChange}
+            onKeyDown={onKeyDown}
+          />
+          <input type={"submit"} value={"Save"} onClick={doSave} />
+          <input type={"reset"} value={"Cancel"} onClick={doCancel} />
+        </span>
+      )}
+    </div>
+  );
 };
 
 export default logRender(EditableTextField);

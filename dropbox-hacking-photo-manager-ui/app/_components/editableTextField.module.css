@@ -1,0 +1,42 @@
+.root {
+  display: flex;
+  column-gap: 0.5em;
+}
+
+/* .label {} */
+
+.inactiveText,
+.activeInputs {
+  flex-grow: 1;
+}
+
+.inactiveText:after {
+  margin-inline-start: 0.5em;
+  content: "🖊️";
+}
+
+.activeInputs {
+  display: flex;
+  column-gap: 0.5em;
+}
+
+.activeInputs input[type="text"] {
+  flex-grow: 1;
+}
+
+.activeInputs input[type="submit"],
+.activeInputs input[type="reset"] {
+  border: 1px solid #666;
+  border-radius: 0.2em;
+  padding-inline: 0.3em;
+}
+
+.activeInputs input[type="submit"] {
+  background-color: #44f;
+  color: white;
+}
+
+.activeInputs input[type="reset"] {
+  background-color: #ccc;
+  color: black;
+}

@@ -41,33 +41,29 @@ const EditablePhotoEntry = ({
   );
 
   return (
-    <div>
-      <div>
-        Description:{" "}
-        <EditableTextField
-          key={photoDbEntry.description ?? ""}
-          value={photoDbEntry.description ?? ""}
-          onSave={onSaveDescription}
-        />
-      </div>
+    <div style={{ display: "flex", flexDirection: "column", gap: "1em" }}>
+      <EditableTextField
+        label="Description"
+        key={"desc-" + (photoDbEntry.description ?? "")}
+        value={photoDbEntry.description ?? ""}
+        onSave={onSaveDescription}
+      />
 
-      <div style={{ marginBlock: "1em" }}>
-        Tags:{" "}
-        <EditableTextField
-          key={photoDbEntry.tags?.join(" ") ?? ""}
-          value={photoDbEntry.tags?.join(" ") ?? ""}
-          onSave={onSaveTags}
-          renderInactive={({ value, placeholderText }) =>
-            value === "" ? (
-              placeholderText
-            ) : (
-              <TagList
-                data={(photoDbEntry?.tags ?? []).map((tag) => ({ tag }))}
-              />
-            )
-          }
-        />
-      </div>
+      <EditableTextField
+        label="Tags"
+        key={"tags-" + (photoDbEntry.tags?.join(" ") ?? "")}
+        value={photoDbEntry.tags?.join(" ") ?? ""}
+        onSave={onSaveTags}
+        renderInactive={({ value, placeholderText }) =>
+          value === "" ? (
+            placeholderText
+          ) : (
+            <TagList
+              data={(photoDbEntry?.tags ?? []).map((tag) => ({ tag }))}
+            />
+          )
+        }
+      />
     </div>
   );
 };
