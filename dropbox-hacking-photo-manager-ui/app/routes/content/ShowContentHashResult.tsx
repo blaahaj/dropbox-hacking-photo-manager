@@ -7,31 +7,15 @@ import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import Stack from "@mui/material/Stack";
-import {
-  GPSLatLong,
-  type GPSLatNLongE,
-} from "dropbox-hacking-photo-manager-shared";
 import type { ContentHashCollection } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
-import { Link } from "react-router";
 
-import EditableGPS from "./EditableGPS";
 import EditablePhotoEntry from "./EditablePhotoEntry";
 import ImagePreview from "./imagePreview";
-import styles from "./ShowContentHashResult.module.css";
+import ShowGPSDetails from "./ShowGPSDetails";
 import SummariseExif from "./SummariseExif";
+import SummariseFileState from "./SummariseFileState";
 import SummariseMediaInfo from "./SummariseMediaInfo";
 import SummariseNamedFiles from "./SummariseNamedFiles";
-
-const gpsOrNone = (title: string, pos: GPSLatNLongE | null) => {
-  if (pos === null) return "-";
-
-  const t = GPSLatLong.fromGPSLatNLongE(pos);
-  return (
-    <a className={styles.geohackLink} href={t.geoHackUrl({ title })}>
-      {pos.lat},{pos.long}
-    </a>
-  );
-};
 
 export const ShowContentHashResult = ({
   contentHash,
@@ -80,47 +64,10 @@ export const ShowContentHashResult = ({
 
         <Stack direction={"column"}>
           {dayData ? (
-            <div style={{ marginBlock: "1em" }}>
-              {dayData.files.length === 1 ? (
-                <p>
-                  The only file from{" "}
-                  <Link
-                    className={styles.dayLink}
-                    to={`/days/${encodeURIComponent(latestValue.date)}`}
-                  >
-                    {latestValue.date}
-                  </Link>
-                </p>
-              ) : (
-                <p>
-                  {1 +
-                    (dayData.files
-                      .toSorted((a, b) =>
-                        a.timestamp.localeCompare(b.timestamp),
-                      )
-                      .findIndex(
-                        (c) => c.contentHash === latestValue.contentHash,
-                      ) ?? "-2")}
-                  /{dayData.files.length} from{" "}
-                  <Link
-                    className={styles.dayLink}
-                    to={`/days/${encodeURIComponent(latestValue.date)}`}
-                  >
-                    {latestValue.date}
-                  </Link>
-                  :{" "}
-                  {dayData
-                    ? dayData.dayMetadata?.description || "-"
-                    : "loading..."}
-                </p>
-              )}
-            </div>
+            <SummariseFileState dayData={dayData} contentHash={contentHash} />
           ) : (
             "loading..."
           )}
-
-          {/* TODO, indicate >1 day */}
-          {/* TODO, make editable */}
 
           <Stack
             sx={{ backgroundColor: "rgba(246,246,246,0.5)", padding: "1em" }}
@@ -142,27 +89,10 @@ export const ShowContentHashResult = ({
                 <h3>GPS</h3>
               </AccordionSummary>
               <AccordionDetails>
-                <ol>
-                  <li>
-                    Embedded:{" "}
-                    {gpsOrNone(
-                      `${contentHash} from content`,
-                      latestValue.gps.fromContent,
-                    )}
-                  </li>
-                  <li>
-                    Override:{" "}
-                    {gpsOrNone(
-                      `${contentHash} from override`,
-                      latestValue.gps.fromOverride,
-                    )}{" "}
-                    <button>edit</button>
-                  </li>
-                </ol>
-
-                <EditableGPS
+                <ShowGPSDetails
                   contentHash={contentHash}
-                  photoDbEntry={latestValue.photo ?? {}}
+                  gps={latestValue.gps}
+                  photo={latestValue.photo}
                 />
               </AccordionDetails>
             </Accordion>
