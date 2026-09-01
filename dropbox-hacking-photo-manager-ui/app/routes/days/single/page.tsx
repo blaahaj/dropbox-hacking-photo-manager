@@ -72,6 +72,7 @@ const NGDayFiles = ({ params }: Route.ComponentProps) => {
           <>
             <p>
               <EditableTextField
+                label="Description"
                 key={dayMetadata?.description ?? ""}
                 value={dayMetadata?.description ?? ""}
                 onSave={onSaveDescription}
