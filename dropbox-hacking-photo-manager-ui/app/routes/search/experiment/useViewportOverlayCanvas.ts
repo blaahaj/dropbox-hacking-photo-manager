@@ -12,8 +12,6 @@ export const useViewportOverlayCanvas = () => {
     canvas.style.zIndex = "9999";
     document.body.appendChild(canvas);
 
-    // console.dir(boxDiv);
-
     const setSize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
