@@ -66,7 +66,6 @@ const findImports = async (file: string) => {
         importFrom.push(fromMatch[2]);
       }
 
-      console.dir({ statement });
       text = text.substring(importMatch[0].length);
       continue;
     }
@@ -119,13 +118,7 @@ const main = async () => {
     },
   );
 
-  console.dir({ importPathsPrepared });
-
   const filesResolved = files.map((t) => resolve(t));
-
-  const filesRelative = files.map((t) =>
-    t.replace("dropbox-hacking-photo-manager-next/src", "./src"),
-  );
 
   const G = new Digraph();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -170,35 +163,12 @@ const main = async () => {
         filesResolved.includes(item),
       );
 
-      console.dir({ file: i.file, from, afterPaths, candidates, resolvedTo });
-
       if (resolvedTo) {
         G.createEdge([resolve(i.file), resolvedTo]);
       }
-
-      //   let resolved = from;
-      //   for (const [prefix, to] of Object.entries(importPaths)) {
-      //     if (resolved.startsWith(prefix.replace(/\*$/, ""))) {
-      //       resolved = to.replace(/\*$/, "");
-      //     }
-      //   }
     }
   }
 
-  console.dir(
-    {
-      // files,
-      filesRelative,
-      filesResolved,
-      //       //  pageEntryPoints,
-      //       //  layoutFiles,
-      //       imports,
-      //       importPaths,
-    },
-    { depth: 3 },
-  );
-
-  //   console.log(toDot(G));
   await writeFile("graph.dot", toDot(G), "utf-8");
 };
 

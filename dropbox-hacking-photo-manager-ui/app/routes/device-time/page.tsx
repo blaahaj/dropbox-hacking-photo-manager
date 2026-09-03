@@ -9,7 +9,6 @@ const DeviceTime = () => {
   const [searchParams, _setSearchParams] = useSearchParams();
   const startTime = searchParams.get("start");
   const endTime = searchParams.get("end");
-  console.dir({ startTime, endTime });
 
   const query = `date>${startTime} date<${endTime} &`;
 
