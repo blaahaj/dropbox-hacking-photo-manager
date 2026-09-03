@@ -22,6 +22,10 @@ const props: Readonly<
     c.exif?.exifData.tags?.Model2 ?? "",
   ],
   date: (c: ContentHashCollectionWithDay) => [c.timestamp],
+  rev: (c: ContentHashCollectionWithDay) => c.namedFiles.map((f) => f.rev),
+  hash: (c: ContentHashCollectionWithDay) => [c.contentHash],
+  path: (c: ContentHashCollectionWithDay) =>
+    c.namedFiles.map((f) => f.path_display),
 };
 
 const ops = (arg: string) =>
