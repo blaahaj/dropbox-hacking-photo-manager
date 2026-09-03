@@ -52,7 +52,7 @@ export const DefaultLeafletProvider = ({ children }: PropsWithChildren) => {
   };
   const errorListener = (e: ErrorEvent) => {
     setLeaflet(undefined);
-    console.dir({ errorListener: e });
+    console.error("Error loading Leaflet:", e);
   };
 
   // const [script, setScript] = useState<HTMLScriptElement | null>(null);
