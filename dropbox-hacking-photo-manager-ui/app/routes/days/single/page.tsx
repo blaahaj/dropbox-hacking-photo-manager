@@ -72,14 +72,14 @@ const NGDayFiles = ({ params }: Route.ComponentProps) => {
 
         {latestValue && files ? (
           <>
-            <p>
+            <div>
               <EditableTextField
                 label="Description"
                 key={dayMetadata?.description ?? ""}
                 value={dayMetadata?.description ?? ""}
                 onSave={onSaveDescription}
               />
-            </p>
+            </div>
 
             <ul style={{ listStyle: "disc" }}>
               <li>
