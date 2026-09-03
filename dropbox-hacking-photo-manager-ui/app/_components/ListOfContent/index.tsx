@@ -2,7 +2,7 @@ import GeoMap from "@components/map/GeoMap";
 import { useLeaflet } from "@hooks/useLeaflet";
 import logRender from "@lib/logRender";
 import type { ContentHashCollectionWithDay } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
-import { useDeferredValue, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
 import ListOfTiles from "./ListOfTiles";
 import Tools from "./Tools";
@@ -16,12 +16,7 @@ const ListOfContent = ({
     ReadonlySet<string>
   >(() => new Set());
 
-  const prev = useDeferredValue(selectedContentHashes);
   const L = useLeaflet();
-
-  console.log(
-    `GeoMap curr=${selectedContentHashes.size} prev=${prev.size} is=${Object.is(selectedContentHashes, prev)}`,
-  );
 
   const forMap = useMemo<
     Map<string, { position: L.LatLng; highlighted: boolean }>
@@ -40,9 +35,7 @@ const ListOfContent = ({
                           t.gps.effective.long,
                         ),
 
-                        highlighted: selectedContentHashes.has(
-                          t.namedFiles[0].content_hash,
-                        ),
+                        highlighted: selectedContentHashes.has(t.contentHash),
                       },
                     ],
                   ]
@@ -86,6 +79,8 @@ const ListOfContent = ({
     },
     [files],
   );
+
+  // console.log(JSON.stringify({ forMap: [...forMap.entries()] }, null, 2));
 
   return (
     <div>

@@ -1,6 +1,8 @@
 import { useLeaflet } from "@hooks/useLeaflet";
 import logRender from "@lib/logRender";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef } from "react";
+
+import { useIdentity } from "~/_hooks/useIdentity";
 
 import styles from "./page.module.css";
 
@@ -50,9 +52,11 @@ const GeoMapWrapper = ({
     onClickMarker: (e: L.LeafletMouseEvent, key: string) => void;
   }>;
 }) => {
+  const id = useIdentity();
   const L = useLeaflet();
-
-  console.dir({ positions: [...positions.entries()] });
+  console.log(
+    `${id.id}/${id.renderSeq} GeoMapWrapper L=${!!L} pos#=${positions.size}`,
+  );
 
   if (positions.size === 0 || !L) return null;
 
@@ -70,6 +74,9 @@ const GeoMap = ({
   }>;
   L: typeof import("leaflet");
 }) => {
+  const cid = useIdentity();
+  const logPrefix = `${cid.id}/${cid.renderSeq} `;
+
   const { center, halfDiagonal } = findBoundingBox(
     [...positions.values()].map((p) => p.position),
     L,
@@ -79,31 +86,6 @@ const GeoMap = ({
 
   const eleRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<L.Map>(null);
-
-  useEffect(() => {
-    const theMap = L.map(eleRef.current!);
-
-    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 19,
-      attribution:
-        '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    }).addTo(theMap);
-
-    L.control.scale({ maxWidth: 550 }).addTo(theMap);
-
-    console.log("Setting theMap to", theMap);
-    mapRef.current = theMap;
-
-    return () => {
-      console.log("Unsetting theMap");
-      mapRef.current = null;
-      theMap.remove();
-    };
-  }, [L]);
-
-  useEffect(() => {
-    mapRef.current?.setView({ lat: center.lat, lng: center.lng }, initialZoom);
-  }, [center.lat, center.lng, initialZoom]);
 
   const iconA = useMemo(
     () =>
@@ -121,36 +103,59 @@ const GeoMap = ({
       }),
     [L],
   );
-  console.dir({ iconA, iconB, styles });
   const markersRef = useRef(new Map<string, P & { marker: L.Marker }>());
 
-  const [enableMarkers, setEnableMarkers] = useState(false);
+  console.debug(
+    `${logPrefix}GeoMap ele=${!!eleRef.current} mrk=${!!markersRef.current}`,
+  );
+
+  // Create the map
+  useEffect(() => {
+    console.debug(`${logPrefix}Create the map (setup)`);
+    const theMap = L.map(eleRef.current!);
+
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution:
+        '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    }).addTo(theMap);
+
+    L.control.scale({ maxWidth: 550 }).addTo(theMap);
+
+    mapRef.current = theMap;
+
+    return () => {
+      console.debug(`${logPrefix}Create the map (teardown)`);
+      mapRef.current = null;
+      theMap.remove();
+      markersRef.current = new Map();
+    };
+  }, [L]);
+
+  // If the center moves, zoom to the center
+  useEffect(() => {
+    console.debug(`${logPrefix}Center the map (setup)`);
+    mapRef.current?.setView({ lat: center.lat, lng: center.lng }, initialZoom);
+  }, [center.lat, center.lng, initialZoom]);
 
   useEffect(() => {
+    console.debug(`${logPrefix}Update the markers (setup)`);
     const theMap = mapRef.current;
     const markers = markersRef.current;
-    console.log(
-      `markers updater theMap=${!!theMap} markers=${!!markers} enable=${enableMarkers}`,
-    );
 
-    Object.defineProperty(window, "theMap", {
-      value: theMap,
-      configurable: true,
-    });
-    Object.defineProperty(window, "L", { value: L, configurable: true });
+    // Object.defineProperty(window, "theMap", {
+    //   value: theMap,
+    //   configurable: true,
+    // });
+    // Object.defineProperty(window, "L", { value: L, configurable: true });
 
-    if (!theMap || !markers || !enableMarkers) return;
-
-    console.dir({
-      positions: [...positions.entries()],
-      markers: [...markers.entries()],
-    });
+    if (!theMap || !markers) return;
 
     for (const [id, details] of [...markers.entries()]) {
       if (!positions.has(id)) {
         details.marker.remove();
         markers.delete(id);
-        console.debug("Removed marker", id, details.marker);
+        console.debug(`${logPrefix}Removed marker`, id, details.marker);
       }
     }
 
@@ -161,14 +166,9 @@ const GeoMap = ({
         const marker = L.marker(newDetails.position, {
           riseOnHover: true,
           title: id,
-          icon: new L.Icon.Default({
-            imagePath: "https://unpkg.com/leaflet@1.9.4/dist/images/",
-            className: newDetails.highlighted ? styles.iconB : styles.iconA,
-          }),
+          icon: newDetails.highlighted ? iconB : iconA,
         });
-        console.dir({ addedMarker: marker });
         marker.addTo(theMap);
-        console.dir({ theMap });
 
         marker.addEventListener("click", (e) =>
           listeners?.onClickMarker?.(e, id),
@@ -178,28 +178,22 @@ const GeoMap = ({
           ...newDetails,
           marker,
         });
-        console.debug("Added marker", id, marker);
+        console.debug(`${logPrefix}Added marker`, id, marker);
       } else {
         const marker = oldDetails.marker;
         if (!newDetails.position.equals(oldDetails.position, 5)) {
           marker.setLatLng(newDetails.position);
           oldDetails.position = newDetails.position;
-          console.debug("Updated marker position", id, marker);
+          console.debug(`${logPrefix}Updated marker position`, id, marker);
         }
         if (newDetails.highlighted !== oldDetails.highlighted) {
           marker.setIcon(newDetails.highlighted ? iconB : iconA);
           oldDetails.highlighted = newDetails.highlighted;
-          console.debug("Updated marker highlight (icon)", id, marker);
+          console.debug(`${logPrefix}Updated marker icon`, id, marker);
         }
       }
     }
-  }, [enableMarkers]);
-
-  // For some reason, without this, the markers don't appear
-  useEffect(() => {
-    const t = setTimeout(() => setEnableMarkers(true), 0);
-    return () => clearTimeout(t);
-  }, []);
+  }, [L, positions]);
 
   return (
     <div style={{ position: "relative" }}>
