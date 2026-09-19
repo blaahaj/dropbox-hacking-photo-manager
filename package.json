@@ -5,8 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "node buildAll.mjs",
+    "build": "tsc && node buildAll.mjs",
     "build:watch": "pnpm --recursive run build:watch",
+    "graph": "node --enable-source-maps dist/src/dependencyGraph/main.js",
     "format": "prettier --write --list-different .",
     "test": "concurrently --group pnpm:test:*",
     "test:children": "pnpm --recursive run test",
