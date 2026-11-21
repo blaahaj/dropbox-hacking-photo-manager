@@ -2,24 +2,22 @@ import Navigate from "@components/Navigation";
 import logRender from "@lib/logRender";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
-import TextField from "@mui/material/TextField";
-import {
-  compileSearch,
-  searchTerms,
-} from "dropbox-hacking-photo-manager-shared/search";
-import { type ChangeEventHandler, useEffect, useMemo, useState } from "react";
+import { compileSearch } from "dropbox-hacking-photo-manager-shared/search";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router";
 
-import FilterResults from "./FilterResults";
 import { RESULTS_STYLES, type ResultsStyle } from "./renderers";
+import { SearchInput } from "./SearchInput";
+import ShowFilterResults from "./ShowFilterResults";
 
 const NGSearch = () => {
   const [searchParams, _setSearchParams] = useSearchParams();
-  const [filterSource, setFilterSource] = useState(
-    searchParams.get("q") ?? "image",
-  );
+  const [q] = useState(() => searchParams.get("q") ?? "image");
 
-  const filter = useMemo(() => compileSearch(filterSource), [filterSource]);
+  const [filter, setFilter] = useState<
+    | (ReturnType<typeof compileSearch> & { readonly filterSource: string })
+    | null
+  >(null);
 
   const [resultsStyle, setResultsStyle] = useState<ResultsStyle>(
     RESULTS_STYLES.at(-1)!,
@@ -29,17 +27,6 @@ const NGSearch = () => {
     document.title = "DPMNG - search";
   }, []);
 
-  const onFilterSourceChange = useMemo<ChangeEventHandler<HTMLInputElement>>(
-    () => (e) => setFilterSource(e.target.value),
-    [],
-  );
-
-  const [showHelp, setShowHelp] = useState(false);
-  const onShowHelpChange = useMemo<ChangeEventHandler<HTMLInputElement>>(
-    () => (e) => setShowHelp(e.target.checked),
-    [],
-  );
-
   return (
     <>
       <Navigate />
@@ -47,50 +34,7 @@ const NGSearch = () => {
       <main style={{ margin: "2em" }}>
         <h1>Experimental Search</h1>
 
-        <TextField
-          placeholder="enter query"
-          autoFocus
-          label="Search"
-          variant="standard"
-          value={filterSource}
-          onChange={onFilterSourceChange}
-          sx={{ width: "50em", marginBlockEnd: "1em" }}
-        />
-
-        <p>
-          <input
-            type="checkbox"
-            checked={showHelp}
-            onChange={onShowHelpChange}
-          />{" "}
-          Show help
-        </p>
-
-        {showHelp && (
-          <div>
-            <p>The query is in Reverse Polish.</p>
-
-            <ul>
-              {searchTerms.map((thing, i) => (
-                <li key={i}>{thing.examples.join(" ; ")}</li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {filterSource.trim() !== "" && filter.isError() && (
-          <p
-            style={{
-              background: "red",
-              color: "white",
-              padding: "0.3em",
-              width: "auto",
-            }}
-          >
-            Not a valid filter
-            {filter.isError() && <>: {filter.error.message}</>}
-          </p>
-        )}
+        <SearchInput initalQuery={q} onChange={setFilter} />
 
         <ButtonGroup sx={{ marginBlock: "1em" }}>
           {RESULTS_STYLES.map((s) => (
@@ -104,9 +48,9 @@ const NGSearch = () => {
           ))}
         </ButtonGroup>
 
-        {filter.isOK() && (
-          <FilterResults
-            filterNode={filterSource}
+        {filter?.isOK() && (
+          <ShowFilterResults
+            filterNode={filter.filterSource}
             resultsStyle={resultsStyle}
           />
         )}

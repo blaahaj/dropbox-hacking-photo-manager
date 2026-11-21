@@ -4,9 +4,24 @@ import type { ContentHashCollectionWithDay } from "dropbox-hacking-photo-manager
 import { useEffect, useMemo, useRef, useState } from "react";
 
 import type { ResultsStyle } from "./renderers";
-import VisibleResultsPage from "./VisibleResultsPage";
+import ResultsPage from "./ResultsPage";
 
-export default function FilterResults({
+const TARGET_ITEMS_PER_PAGE = 500;
+
+/**
+ * Given a filterNode (i.e. search spec), and a rendering style,
+ * then take care of all the dynamic fetching / loading / unloading / rendering
+ *
+ * We break the results up into pages of size TARGET_ITEMS_PER_PAGE.
+ * There is always at least 1 page. The last page may be less than full,
+ * including potentially being completely empty.
+ *
+ * Page 0 is dynamically sized, and reports its dimensions back to us.
+ * The last page is dynamically sized.
+ * Any pages in between are statically sized, based on the size reported by page 0.
+ */
+
+export default function ShowFilterResults({
   filterNode,
   resultsStyle,
 }: {
@@ -15,7 +30,8 @@ export default function FilterResults({
 }) {
   const [totalCount, setTotalCount] = useState<number>(0);
   const [itemsPerRow, setItemsPerRow] = useState<number>(5);
-  const resultsPerPage = Math.ceil(100 / itemsPerRow) * itemsPerRow;
+  const resultsPerPage =
+    Math.ceil(TARGET_ITEMS_PER_PAGE / itemsPerRow) * itemsPerRow;
   const totalPages = Math.max(1, Math.ceil(totalCount / resultsPerPage) ?? 1);
   const [pageDimensions, setPageDimensions] = useState<
     [number, number] | undefined
@@ -29,6 +45,7 @@ export default function FilterResults({
   const resultsByPageRef = useRef(
     new Map<number, readonly ContentHashCollectionWithDay[]>(),
   );
+
   const findResultByContentHash = (
     contentHash: string,
   ): Option<{
@@ -58,9 +75,10 @@ export default function FilterResults({
     resultsByPageRef.current.set(pageFrom0, results);
   };
 
-  const draggableSpaceRef = useRef<HTMLDivElement>(null);
   const pagesRef = useRef<HTMLDivElement>(null);
 
+  // Track whether or not each page should be rendered, based on whether
+  // it's overlapping (or near to overlapping) the visible page.
   useEffect(() => {
     const container = pagesRef.current;
 
@@ -141,8 +159,9 @@ export default function FilterResults({
     if (node instanceof HTMLElement) node.focus();
   };
 
+  // Register various keyboard shortcuts
   useEffect(() => {
-    const d = draggableSpaceRef.current;
+    const d = pagesRef.current;
     if (!d) return;
 
     const keyDownListener = (e: KeyboardEvent) => {
@@ -229,50 +248,46 @@ export default function FilterResults({
         // TODO: add an 'onCancel' callback
       />
 
-      <div ref={draggableSpaceRef}>
-        <VisibleResultsPage
-          filterNode={filterNode}
-          resultsStyle={resultsStyle}
-          pageFrom0={0}
-          resultsPerPage={resultsPerPage}
-          reportTotalCount={setTotalCount}
-          reportWidthAndHeight={setPageDimensions}
-          reportItemsPerRow={setItemsPerRow}
-          reportResults={reportResults}
-          selectedContentHashes={selectedContentHashes}
-          focusedContentHash={focusedContentHash}
-          onSelected={onSelected}
-        />
+      <div ref={pagesRef}>
+        {[...Array(totalPages).keys()].map((pageFrom0) => {
+          const doReporting = pageFrom0 === 0;
+          const dynamicPageSize =
+            pageFrom0 === 0 || pageFrom0 === totalPages - 1;
+          const doRender = pageFrom0 === 0 || visiblePages[pageFrom0];
 
-        <div ref={pagesRef}>
-          {totalPages > 1 &&
-            [...Array(totalPages - 1).keys()]
-              .map((i) => i + 1)
-              .map((pageFrom0) => (
-                <div
-                  key={pageFrom0}
-                  data-page={pageFrom0}
-                  style={{
-                    height: pageDimensions
-                      ? `${pageDimensions[1]}px`
-                      : undefined,
-                  }}
-                >
-                  {visiblePages[pageFrom0] && (
-                    <VisibleResultsPage
-                      filterNode={filterNode}
-                      resultsStyle={resultsStyle}
-                      pageFrom0={pageFrom0}
-                      resultsPerPage={resultsPerPage}
-                      reportResults={reportResults}
-                      selectedContentHashes={selectedContentHashes}
-                      focusedContentHash={focusedContentHash}
-                      onSelected={onSelected}
-                    />
-                  )}
-                </div>
-              ))}
-        </div>
+          return (
+            <div
+              key={pageFrom0}
+              data-page={pageFrom0}
+              style={{
+                height:
+                  !dynamicPageSize && pageDimensions
+                    ? `${pageDimensions[1]}px`
+                    : undefined,
+              }}
+            >
+              {doRender && (
+                <ResultsPage
+                  filterNode={filterNode}
+                  resultsStyle={resultsStyle}
+                  pageFrom0={pageFrom0}
+                  resultsPerPage={resultsPerPage}
+                  reportResults={reportResults}
+                  selectedContentHashes={selectedContentHashes}
+                  focusedContentHash={focusedContentHash}
+                  onSelected={onSelected}
+                  {...(doReporting
+                    ? {
+                        reportTotalCount: setTotalCount,
+                        reportWidthAndHeight: setPageDimensions,
+                        reportItemsPerRow: setItemsPerRow,
+                      }
+                    : {})}
+                />
+              )}
+            </div>
+          );
+        })}
       </div>
     </>
   );

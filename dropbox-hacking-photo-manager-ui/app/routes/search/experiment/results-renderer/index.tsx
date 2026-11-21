@@ -10,7 +10,14 @@ const formatters: Record<ResultsStyle, Formatter> = {
   minimal: (await import("./Minimal")).default,
 } as const;
 
-export function Results({
+/**
+ * - selects the chosen formatter
+ * - if there's at least 1 result, then show the date
+ * - for each result,
+ *   - render that result with classes & click handler, using the chosen formatter
+ */
+
+export function ResultsRenderer({
   onSelected,
   ref,
   results,
@@ -25,11 +32,11 @@ export function Results({
   selectedContentHashes: ReadonlySet<string>;
   focusedContentHash: string | undefined;
 }) {
-  const { styles, Result } = formatters[resultsStyle];
+  const formatter = formatters[resultsStyle];
 
   return (
-    <div ref={ref} className={styles.page}>
-      {results[0] && (
+    <div ref={ref} className={formatter.styles.page}>
+      {results.length > 0 && (
         <div
           style={{
             position: "absolute",
@@ -46,14 +53,20 @@ export function Results({
           {results[0].date}
         </div>
       )}
+
       {results.map((result) => {
         const isSelected = selectedContentHashes.has(result.contentHash);
         const isFocused = result.contentHash === focusedContentHash;
+
         return (
           <div
             key={result.contentHash}
             data-content-hash={result.contentHash}
-            className={`${styles.result} ${isSelected ? styles.selected : ""} ${isFocused ? styles.focused : ""}`}
+            className={[
+              formatter.styles.result,
+              isSelected ? formatter.styles.selected : "",
+              isFocused ? formatter.styles.focused : "",
+            ].join(" ")}
             onClick={(e) => {
               if (e.altKey && !e.ctrlKey && !e.metaKey) {
                 onSelected(
@@ -63,7 +76,7 @@ export function Results({
               }
             }}
           >
-            <Result
+            <formatter.Result
               c={result}
               onSelected={(s: boolean) => onSelected(result, s)}
               selected={isSelected}

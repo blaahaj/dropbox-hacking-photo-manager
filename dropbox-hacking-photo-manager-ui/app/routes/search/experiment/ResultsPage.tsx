@@ -3,9 +3,15 @@ import type { ContentHashCollectionWithDay } from "dropbox-hacking-photo-manager
 import { useEffect, useRef, useState } from "react";
 
 import type { ResultsStyle } from "./renderers";
-import { Results } from "./result";
+import { ResultsRenderer } from "./results-renderer";
 
-function VisibleResultsPage({
+/**
+ * - load this page of search results from the server
+ * - if we were asked to report our size, then do so
+ *   - (this only happens for page 0)
+ * - render the loaded results using ResultsRenderer
+ */
+function ResultsPage({
   filterNode,
   resultsStyle,
   pageFrom0,
@@ -75,7 +81,7 @@ function VisibleResultsPage({
   );
 
   return (
-    <Results
+    <ResultsRenderer
       ref={ref}
       results={results?.matches ?? []}
       onSelected={onSelected}
@@ -86,15 +92,21 @@ function VisibleResultsPage({
   );
 }
 
-function WithDelay(props: Parameters<typeof VisibleResultsPage>[0]) {
+/**
+ * For the first 100ms of this component's existence, it'll be empty.
+ * This is to avoid loading too much as we just whizz past using the
+ * scroll bar.
+ */
+
+function WithDelay(props: Parameters<typeof ResultsPage>[0]) {
   const [settled, setSettled] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setSettled(true), 300);
+    const timer = setTimeout(() => setSettled(true), 100);
     return () => clearTimeout(timer);
   }, []);
 
-  return settled ? <VisibleResultsPage {...props} /> : null;
+  return settled ? <ResultsPage {...props} /> : null;
 }
 
 export default WithDelay;
