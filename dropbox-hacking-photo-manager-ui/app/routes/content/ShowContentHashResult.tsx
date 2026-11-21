@@ -33,10 +33,7 @@ export const ShowContentHashResult = ({
 
   return (
     <>
-      <Stack
-        direction={"row"}
-        sx={{ columnGap: "3em" }}
-      >
+      <Stack direction={"row"} sx={{ columnGap: "3em" }}>
         <Stack direction={"column"} sx={{ rowGap: "0.5em" }}>
           {dayData ? (
             <SummariseFileState dayData={dayData} contentHash={contentHash} />
