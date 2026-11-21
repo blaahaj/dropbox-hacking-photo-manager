@@ -15,3 +15,4 @@ tsconfig.tsbuildinfo
 /services/available/**/supervise/
 /services/available/*/log/main/
 *.css.d.ts
+graph.*.png

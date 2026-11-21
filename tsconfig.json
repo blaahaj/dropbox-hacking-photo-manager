@@ -1,11 +1,14 @@
 {
-  "compilerOptions": {
-    "target": "esnext",
-    "types": ["node"],
-    "outDir": "dist"
-  },
-  "exclude": ["**/node_modules"],
   "extends": "./tsconfig.base.json",
-  "files": ["eslint.config.ts", ".prettierrc.ts"],
-  "include": ["src"]
+  "compilerOptions": {
+    "rootDir": ".",
+    "types": ["node"],
+    "noEmit": true,
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": ["eslint.config.ts", ".prettierrc.ts"]
 }

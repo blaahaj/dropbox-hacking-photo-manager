@@ -1,9 +1,10 @@
+import { dirname, resolve } from "node:path";
+
 import std from "@blaahaj/std/eslint";
 import js from "@eslint/js";
-import tsParser from "@typescript-eslint/parser";
+// import tsParser from "@typescript-eslint/parser";
 import { defineConfig } from "eslint/config";
 import globals from "globals";
-import { dirname, resolve } from "path";
 import tseslint from "typescript-eslint";
 
 export default defineConfig(
@@ -19,14 +20,20 @@ export default defineConfig(
       "**/tsconfig.tsbuildinfo",
       ".github/**/*",
       "var/**/*",
-      "*.d.ts",
-      "*.js",
+      // "*.d.ts",
+      // "*.js",
     ],
   },
 
   {
+    rules: {
+      "no-unreachable": "warn",
+    },
+  },
+
+  {
     files: ["**/*"],
-    ignores: ["dropbox-hacking-photo-manager-*/**/*"],
+    ignores: ["dropbox-hacking-photo-manager-*/**/*", "graph/**/*"],
     languageOptions: {
       parserOptions: {
         projectService: true,
@@ -34,6 +41,17 @@ export default defineConfig(
       },
     },
   },
+
+  {
+    files: ["graph/**/*"],
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: resolve(dirname(import.meta.url) + "/graph"),
+      },
+    },
+  },
+
   {
     files: ["dropbox-hacking-photo-manager-server/**/*"],
     languageOptions: {
@@ -77,13 +95,6 @@ export default defineConfig(
   },
 
   {
-    files: ["eslint.config.mts"],
-    languageOptions: {
-      globals: globals.node,
-      sourceType: "module",
-    },
-  },
-  {
     files: ["buildAll.mjs"],
     languageOptions: {
       globals: globals.node,
@@ -91,12 +102,12 @@ export default defineConfig(
     },
   },
 
-  {
-    files: ["**/*.*ts*"],
-    languageOptions: {
-      parser: tsParser,
-      ecmaVersion: "latest",
-      sourceType: "script",
-    },
-  },
+  // {
+  //   files: ["**/*.*ts*"],
+  //   languageOptions: {
+  //     parser: tsParser,
+  //     ecmaVersion: "latest",
+  //     sourceType: "script",
+  //   },
+  // },
 );
