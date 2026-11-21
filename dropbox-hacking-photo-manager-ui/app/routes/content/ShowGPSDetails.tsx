@@ -1,20 +1,20 @@
+import MultiGPSEditor from "@components/ListOfContent/Tools/MultiGPSEditor";
 import {
   type GPSInformation,
   GPSLatLong,
-  type PhotoDbEntry,
 } from "dropbox-hacking-photo-manager-shared";
+import type { ContentHashCollection } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
 
-import EditableGPS from "./EditableGPS";
 import styles from "./ShowGPSDetails.module.css";
 
 export default function ShowGPSDetails({
   contentHash,
+  files,
   gps,
-  photo,
 }: {
   contentHash: string;
+  files: readonly ContentHashCollection[];
   gps: GPSInformation;
-  photo: PhotoDbEntry | null;
 }) {
   return (
     <>
@@ -37,9 +37,11 @@ export default function ShowGPSDetails({
             </a>
           )}
         </div>
-        <div>Override:</div>
-        <div>
-          <EditableGPS contentHash={contentHash} photoDbEntry={photo ?? {}} />
+        <div style={{ gridColumnStart: 1, gridColumnEnd: 3 }}>
+          <MultiGPSEditor
+            contentHashes={new Set([contentHash])}
+            files={files}
+          />
         </div>
         <div>
           {gps.fromOverride && (

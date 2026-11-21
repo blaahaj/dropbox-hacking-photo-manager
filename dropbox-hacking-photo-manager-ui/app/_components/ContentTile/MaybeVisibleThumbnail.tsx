@@ -103,6 +103,7 @@ const MaybeVisibleThumbnail = ({
       </Link>
 
       <button
+        className={styles.rotate}
         style={{
           position: "absolute",
           top: 0,

@@ -1,8 +1,7 @@
 import { tryToResult } from "@blaahaj/gotcha/Result";
+import MaybeVisibleThumbnail from "@components/ContentTile/MaybeVisibleThumbnail";
 import type { ContentHashCollectionWithDay } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
 import { useRef, useState } from "react";
-
-import MaybeVisibleThumbnail from "~/_components/ContentTile/MaybeVisibleThumbnail";
 
 export default function Results(props: {
   results: readonly ContentHashCollectionWithDay[];

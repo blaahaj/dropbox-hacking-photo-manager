@@ -9,10 +9,17 @@ const styles = stylesRaw as typeof stylesRaw &
 const MaybeLinked = ({
   tag,
   linked,
+  hasChildren,
   children,
-}: PropsWithChildren<{ readonly tag: string; readonly linked: boolean }>) =>
+}: PropsWithChildren<{
+  readonly tag: string;
+  readonly linked: boolean;
+  hasChildren: boolean;
+}>) =>
   linked ? (
-    <Link to={`/search/experiment?q=${encodeURI(`tag=${tag}`)}`}>
+    <Link
+      to={`/search/experiment?q=${encodeURI(hasChildren ? `tag=${tag} tag^${tag}: |` : `tag=${tag}`)}`}
+    >
       {children}
     </Link>
   ) : (
@@ -76,7 +83,11 @@ const TagTree = ({
             className={`${styles.tag} ${styles[`tag-${name?.replace(/:.*/, "Star")}`]}`}
             style={{ marginInlineEnd: "0.7em" }}
           >
-            <MaybeLinked tag={name} linked={!!linked}>
+            <MaybeLinked
+              tag={name}
+              linked={!!linked}
+              hasChildren={n.children.size > 0}
+            >
               {name}
             </MaybeLinked>
           </span>

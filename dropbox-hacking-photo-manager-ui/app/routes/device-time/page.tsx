@@ -1,7 +1,6 @@
 import Navigate from "@components/Navigation";
+import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFeed";
 import { useSearchParams } from "react-router";
-
-import { useLatestValueFromServerFeed } from "~/_hooks/useLatestValueFromServerFeed";
 
 import Results from "./results";
 

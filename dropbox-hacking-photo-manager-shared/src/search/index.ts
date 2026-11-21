@@ -5,6 +5,7 @@ import logic from "./logic.js";
 import numericFields from "./numericFields.js";
 import textFields from "./textFields.js";
 import type { SearchTerm } from "./types.js";
+export type { CompiledSearch } from "./types.js";
 
 export const searchTerms: readonly SearchTerm[] = [
   ...logic,

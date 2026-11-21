@@ -1,9 +1,10 @@
-import GeoMap from "@components/map/GeoMap";
+import GeoMap, { type PathSpec } from "@components/map/GeoMap";
 import { useLeaflet } from "@hooks/useLeaflet";
 import logRender from "@lib/logRender";
 import type { ContentHashCollectionWithDay } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
 import { useMemo, useState } from "react";
 
+import { interpolateGPS } from "./interpolate";
 import ListOfTiles from "./ListOfTiles";
 import Tools from "./Tools";
 
@@ -18,33 +19,30 @@ const ListOfContent = ({
 
   const L = useLeaflet();
 
-  const forMap = useMemo<
-    Map<string, { position: L.LatLng; highlighted: boolean }>
-  >(
+  const r = useMemo(
     () =>
-      L
-        ? new Map(
-            files.flatMap((t) =>
-              t.gps.effective
-                ? [
-                    [
-                      t.namedFiles[0].content_hash,
-                      {
-                        position: new L.LatLng(
-                          t.gps.effective.lat,
-                          t.gps.effective.long,
-                        ),
-
-                        highlighted: selectedContentHashes.has(t.contentHash),
-                      },
-                    ],
-                  ]
-                : [],
-            ),
-          )
-        : new Map(),
-    [L, files, selectedContentHashes],
+      interpolateGPS(
+        files.toSorted(
+          (a, b) =>
+            a.timestamp.localeCompare(b.timestamp) ||
+            a.contentHash.localeCompare(b.contentHash),
+        ),
+      ),
+    [files],
   );
+
+  const forMap = useMemo<PathSpec[]>(() => {
+    if (!L) return [];
+
+    const pathSpec = r.items.map((item) => ({
+      contentHash: item.c.contentHash,
+      position: new L.LatLng(item.gps.lat, item.gps.long),
+      highlighted: selectedContentHashes.has(item.c.contentHash),
+      interpolated: item.interpolated,
+    }));
+
+    return [pathSpec];
+  }, [L, r, selectedContentHashes]);
 
   const mapListeners = useMemo<Parameters<typeof GeoMap>[0]["listeners"]>(
     () => ({
@@ -96,10 +94,11 @@ const ListOfContent = ({
         onSelectedContentHashes={(t) => setSelectedContentHashes(t)}
       />
 
-      <GeoMap positions={forMap} listeners={mapListeners} />
+      <GeoMap paths={forMap} listeners={mapListeners} />
 
       <p>
-        With GPS: {forMap.size} {"//"} Without GPS: {files.length - forMap.size}
+        With GPS: {r.counts.with} {"//"} Interpolated: {r.counts.interpolated}{" "}
+        {"//"} Without GPS: {r.counts.without}
       </p>
     </div>
   );

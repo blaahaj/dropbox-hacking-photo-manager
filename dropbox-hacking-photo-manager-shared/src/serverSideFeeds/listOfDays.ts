@@ -12,6 +12,25 @@ import { type FullDatabaseFeeds } from "./index.js";
 export type ListOfDaysRequest = {
   readonly type: "rx.ng.list-of-days";
   readonly withSamples: false;
+  readonly groupBy?: "day" | "week" | "28-days" | "calendar-month";
+};
+
+const dateToGroupMap: Record<
+  NonNullable<ListOfDaysRequest["groupBy"]>,
+  (d: string) => string
+> = {
+  day: (s) => s,
+  week: (s) => {
+    const d = Temporal.PlainDate.from(s);
+    return d.subtract(`P${d.dayOfWeek - 1}D`).toString();
+  },
+  "28-days": (s) => {
+    const d = Temporal.PlainDate.from(s);
+    const z = Temporal.PlainDate.from("1970-01-05"); // Monday
+    const n = d.since(z).days;
+    return d.subtract(`P${n % 28}D`).toString();
+  },
+  "calendar-month": (s) => `${s.substring(0, 7)}-01`,
 };
 
 const template = () => ({
@@ -33,28 +52,30 @@ export type DaySummaryWithoutSamples = {
 
 export const provideListOfDaysWithoutSamples = (
   feeds: FullDatabaseFeeds,
-  _req: ListOfDaysRequest,
+  req: ListOfDaysRequest,
 ): Observable<DaySummaryWithoutSamples[]> =>
   combineLatest([feeds.byContentHash, feeds.daysByDate]).pipe(
     map(([contentMap, days]) => {
       const out = new Map<string, DaySummaryWithoutSamples>();
 
-      const getOrCreate = (date: string) => {
-        let item = out.get(date);
+      const getOrCreate = (groupKey: string) => {
+        let item = out.get(groupKey);
         if (item) return item;
 
         item = {
-          date,
+          date: groupKey,
           dayMetadata: null,
           counts: template(),
           photoTags: {},
         };
-        out.set(date, item);
+        out.set(groupKey, item);
         return item;
       };
 
+      const groupFn = dateToGroupMap[req.groupBy ?? "day"];
+
       for (const file of contentMap.values()) {
-        const item = getOrCreate(file.date);
+        const item = getOrCreate(groupFn(file.date));
 
         ++item.counts.previewableCount;
 
@@ -90,11 +111,13 @@ export const provideListOfDaysWithoutSamples = (
         }
       }
 
-      for (const [date, v] of days) {
-        const entry = out.get(date);
-        if (!entry) continue;
+      if ((req.groupBy ?? "day") === "day") {
+        for (const [date, v] of days) {
+          const entry = out.get(date);
+          if (!entry) continue;
 
-        entry.dayMetadata = v;
+          entry.dayMetadata = v;
+        }
       }
 
       const r = [...out.values()].toSorted((a, b) =>

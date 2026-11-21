@@ -1,10 +1,9 @@
 import Navigate from "@components/Navigation";
 import TagList from "@components/tags/TagList";
+import TagTree from "@components/tags/TagTree";
 import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFeed";
 import logRender from "@lib/logRender";
 import { useEffect, useState } from "react";
-
-import TagTree from "~/_components/tags/TagTree";
 
 const Page = () => {
   const latestValue = useLatestValueFromServerFeed({

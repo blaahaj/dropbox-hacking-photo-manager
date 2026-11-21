@@ -2,16 +2,16 @@ import { useLeaflet } from "@hooks/useLeaflet";
 import logRender from "@lib/logRender";
 import { useEffect, useMemo, useRef } from "react";
 
-import { useIdentity } from "~/_hooks/useIdentity";
-
 import styles from "./page.module.css";
 
-type P = {
+export type MarkerSpec = {
+  contentHash: string;
   position: L.LatLng;
   highlighted: boolean;
+  interpolated: boolean;
 };
 
-export type Positions = ReadonlyMap<string, P>;
+export type PathSpec = readonly MarkerSpec[];
 
 const findBoundingBox = (
   positions: readonly L.LatLng[],
@@ -44,41 +44,36 @@ const findInitialZoom = (halfDiagonal: number) => {
 };
 
 const GeoMapWrapper = ({
-  positions,
+  paths,
   listeners,
 }: {
-  positions: Positions;
+  paths: readonly PathSpec[];
   listeners?: Partial<{
     onClickMarker: (e: L.LeafletMouseEvent, key: string) => void;
   }>;
 }) => {
-  const id = useIdentity();
   const L = useLeaflet();
-  console.log(
-    `${id.id}/${id.renderSeq} GeoMapWrapper L=${!!L} pos#=${positions.size}`,
-  );
 
-  if (positions.size === 0 || !L) return null;
+  if (paths.every((p) => p.length === 0) || !L) return null;
 
-  return <GeoMap positions={positions} listeners={listeners} L={L} />;
+  return <GeoMap paths={paths} listeners={listeners} L={L} />;
 };
 
 const GeoMap = ({
-  positions,
+  paths,
   listeners,
   L,
 }: {
-  positions: Positions;
+  paths: readonly PathSpec[];
   listeners?: Partial<{
     onClickMarker: (e: L.LeafletMouseEvent, key: string) => void;
   }>;
   L: typeof import("leaflet");
 }) => {
-  const cid = useIdentity();
-  const logPrefix = `${cid.id}/${cid.renderSeq} `;
+  const positions = new Map(paths.flat().map((m) => [m.contentHash, m]));
 
   const { center, halfDiagonal } = findBoundingBox(
-    [...positions.values()].map((p) => p.position),
+    paths.flatMap((path) => path.map((p) => p.position)),
     L,
   );
 
@@ -103,15 +98,20 @@ const GeoMap = ({
       }),
     [L],
   );
-  const markersRef = useRef(new Map<string, P & { marker: L.Marker }>());
-
-  console.debug(
-    `${logPrefix}GeoMap ele=${!!eleRef.current} mrk=${!!markersRef.current}`,
+  const iconC = useMemo(
+    () =>
+      new L.Icon.Default({
+        imagePath: "https://unpkg.com/leaflet@1.9.4/dist/images/",
+        className: styles.iconC,
+      }),
+    [L],
+  );
+  const markersRef = useRef(
+    new Map<string, MarkerSpec & { marker: L.Marker }>(),
   );
 
   // Create the map
   useEffect(() => {
-    console.debug(`${logPrefix}Create the map (setup)`);
     const theMap = L.map(eleRef.current!);
 
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -125,7 +125,6 @@ const GeoMap = ({
     mapRef.current = theMap;
 
     return () => {
-      console.debug(`${logPrefix}Create the map (teardown)`);
       mapRef.current = null;
       theMap.remove();
       markersRef.current = new Map();
@@ -134,12 +133,10 @@ const GeoMap = ({
 
   // If the center moves, zoom to the center
   useEffect(() => {
-    console.debug(`${logPrefix}Center the map (setup)`);
     mapRef.current?.setView({ lat: center.lat, lng: center.lng }, initialZoom);
   }, [center.lat, center.lng, initialZoom]);
 
   useEffect(() => {
-    console.debug(`${logPrefix}Update the markers (setup)`);
     const theMap = mapRef.current;
     const markers = markersRef.current;
 
@@ -155,7 +152,6 @@ const GeoMap = ({
       if (!positions.has(id)) {
         details.marker.remove();
         markers.delete(id);
-        console.debug(`${logPrefix}Removed marker`, id, details.marker);
       }
     }
 
@@ -166,7 +162,11 @@ const GeoMap = ({
         const marker = L.marker(newDetails.position, {
           riseOnHover: true,
           title: id,
-          icon: newDetails.highlighted ? iconB : iconA,
+          icon: newDetails.highlighted
+            ? iconB
+            : newDetails.interpolated
+              ? iconC
+              : iconA,
         });
         marker.addTo(theMap);
 
@@ -178,22 +178,42 @@ const GeoMap = ({
           ...newDetails,
           marker,
         });
-        console.debug(`${logPrefix}Added marker`, id, marker);
       } else {
         const marker = oldDetails.marker;
-        if (!newDetails.position.equals(oldDetails.position, 5)) {
+        if (!newDetails.position.equals(oldDetails.position)) {
           marker.setLatLng(newDetails.position);
           oldDetails.position = newDetails.position;
-          console.debug(`${logPrefix}Updated marker position`, id, marker);
         }
-        if (newDetails.highlighted !== oldDetails.highlighted) {
-          marker.setIcon(newDetails.highlighted ? iconB : iconA);
+        if (
+          newDetails.highlighted !== oldDetails.highlighted ||
+          newDetails.interpolated !== oldDetails.interpolated
+        ) {
+          marker.setIcon(
+            newDetails.highlighted
+              ? iconB
+              : newDetails.interpolated
+                ? iconC
+                : iconA,
+          );
           oldDetails.highlighted = newDetails.highlighted;
-          console.debug(`${logPrefix}Updated marker icon`, id, marker);
+          oldDetails.interpolated = newDetails.interpolated;
         }
       }
     }
-  }, [L, positions]);
+  }, [L, paths]);
+
+  useEffect(() => {
+    const theMap = mapRef.current!;
+    const p: L.Path[] = [];
+
+    for (const path of paths) {
+      const leafletPath = new L.Polyline(path.map((m) => m.position));
+      p.push(leafletPath);
+      leafletPath.addTo(theMap);
+    }
+
+    return () => p.forEach((lp) => lp.removeFrom(theMap));
+  }, [L, paths]);
 
   return (
     <div style={{ position: "relative" }}>

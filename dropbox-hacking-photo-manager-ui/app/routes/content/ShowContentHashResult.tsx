@@ -75,26 +75,25 @@ export const ShowContentHashResult = ({
               <AccordionDetails>
                 <ShowGPSDetails
                   contentHash={contentHash}
+                  files={[latestValue]}
                   gps={latestValue.gps}
-                  photo={latestValue.photo}
                 />
 
                 {latestValue.gps.effective && L && (
                   <GeoMap
-                    positions={
-                      new Map([
-                        [
+                    paths={[
+                      [
+                        {
                           contentHash,
-                          {
-                            position: new L.LatLng(
-                              latestValue.gps.effective.lat,
-                              latestValue.gps.effective.long,
-                            ),
-                            highlighted: false,
-                          },
-                        ],
-                      ])
-                    }
+                          position: new L.LatLng(
+                            latestValue.gps.effective.lat,
+                            latestValue.gps.effective.long,
+                          ),
+                          highlighted: false,
+                          interpolated: false,
+                        },
+                      ],
+                    ]}
                   />
                 )}
               </AccordionDetails>

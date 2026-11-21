@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -euo pipefail
+
+main=$( kitty @ launch --type=tab )
+kitty @ set-enabled-layouts --match window_id:$main tall:bias=70
+kitty @ launch --match window_id:$main --cwd $PWD/*-server
+kitty @ launch --match window_id:$main --cwd $PWD/*-shared

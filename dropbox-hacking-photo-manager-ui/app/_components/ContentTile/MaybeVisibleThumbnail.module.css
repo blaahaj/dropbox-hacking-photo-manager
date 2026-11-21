@@ -21,3 +21,11 @@
 .thumbnail:hover button {
   opacity: 0;
 } */
+
+.thumbnail .rotate {
+  display: none;
+}
+
+.thumbnail:hover .rotate {
+  display: block;
+}
