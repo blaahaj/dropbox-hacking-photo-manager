@@ -14,19 +14,20 @@ export type ListOfDaysRequest = {
   readonly withSamples: false;
 };
 
-const template = {
+const template = () => ({
   exifableCount: 0,
   hasExifCount: 0,
   mediaInfoableCount: 0,
   hasMediaInfoCount: 0,
   previewableCount: 0,
   hasGPSCount: 0,
-};
+  byDevice: {} as Record<string, number>,
+});
 
 export type DaySummaryWithoutSamples = {
   date: string;
   dayMetadata: DayMetadata | null;
-  counts: typeof template;
+  counts: ReturnType<typeof template>;
   photoTags: Record<string, number>;
 };
 
@@ -45,7 +46,7 @@ export const provideListOfDaysWithoutSamples = (
         item = {
           date,
           dayMetadata: null,
-          counts: { ...template },
+          counts: template(),
           photoTags: {},
         };
         out.set(date, item);
@@ -74,6 +75,15 @@ export const provideListOfDaysWithoutSamples = (
         }
 
         if (file.gps.effective) ++item.counts.hasGPSCount;
+
+        const exifTags = file.exif?.exifData.tags;
+        if (exifTags) {
+          const device = [exifTags.Make, exifTags.Model, exifTags.Model2]
+            .filter(Boolean)
+            .join(" ");
+          item.counts.byDevice[device] =
+            (item.counts.byDevice[device] ?? 0) + 1;
+        }
 
         for (const tag of file.photo?.tags ?? []) {
           item.photoTags[tag] = (item.photoTags[tag] ?? 0) + 1;
