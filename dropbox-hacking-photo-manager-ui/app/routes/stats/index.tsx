@@ -14,8 +14,6 @@ import {
 } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
 import { useEffect } from "react";
 
-// import type { Route } from "./+types/home";
-
 export function meta(/*{}: Route.MetaArgs*/) {
   return [
     { title: "DPM-RR Stats" },

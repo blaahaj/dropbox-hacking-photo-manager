@@ -8,7 +8,7 @@ import type { DayMetadata } from "dropbox-hacking-photo-manager-shared";
 import type { ContentHashCollectionWithDay } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
 import { useEffect, useMemo } from "react";
 
-import type { Route } from "../+types/single";
+import type { Route } from "./+types";
 import styles from "./page.module.css";
 import PrevNextDayLinks from "./PrevNextDayLinks";
 
