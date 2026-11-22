@@ -10,4 +10,5 @@ allowBuilds:
   sharp: true
   unrs-resolver: true
 minimumReleaseAgeExclude:
-  - "@blaahaj/gotcha@2.0.0"
+  - "@blaahaj/gotcha@2.0.0 || 2.1.0"
+  - "@blaahaj/dropbox-hacking-util@1.4.0"

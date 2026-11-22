@@ -12,7 +12,7 @@
     "@blaahaj/dropbox-hacking-exif-db": "link:../../dropbox-hacking-exif-db",
     "@blaahaj/dropbox-hacking-mediainfo-db": "link:../../dropbox-hacking-mediainfo-db",
     "@blaahaj/geometry": "^1.1.0",
-    "@blaahaj/gotcha": "^2.0.0",
+    "@blaahaj/gotcha": "^2.1.0",
     "@blaahaj/json": "^1.0.1",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
