@@ -8,9 +8,9 @@ import { buildEdges } from "./buildEdges.js";
 import { buildGraph } from "./buildGraph.js";
 
 const main = async () => {
-  process.chdir("dropbox-hacking-photo-manager-ui");
+  process.chdir("../dropbox-hacking-photo-manager-ui");
   const { edges } = await buildEdges(process.cwd(), "app");
-  process.chdir("..");
+  process.chdir("../graph");
 
   const G = buildGraph(edges);
 
