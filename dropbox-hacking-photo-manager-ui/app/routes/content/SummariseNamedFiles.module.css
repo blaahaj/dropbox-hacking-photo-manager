@@ -1,3 +1,11 @@
+.root {
+  font-size: medium;
+}
+
+.root td {
+  padding-inline-end: 1em;
+}
+
 .dayLink,
 .dropboxLink {
   text-decoration: dotted black underline 1px;

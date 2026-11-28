@@ -7,9 +7,7 @@ import {
 } from "dropbox-hacking-photo-manager-shared";
 import { isPreviewable } from "dropbox-hacking-photo-manager-shared/fileTypes";
 import type { FullDatabaseFeeds } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
-import type { Observable } from "rxjs";
 import { combineLatest } from "rxjs/internal/observable/combineLatest";
-import { ReplaySubject } from "rxjs/internal/ReplaySubject";
 import { map } from "rxjs/operators";
 
 import { backupToDropbox, backupToLocalTarFile } from "../backup/index.js";
@@ -20,11 +18,12 @@ import {
 } from "./api/websocket/thumbnailFetcher.js";
 import { Context } from "./context.js";
 import DayDb from "./dayDb.js";
-import { buildForDayDbMap } from "./rx/dayDb.js";
-import { buildForExifDbMap } from "./rx/exifDb.js";
-import { buildForLsCacheMapAllFiles } from "./rx/lsCache.js";
-import { buildForMediaInfoDbMap } from "./rx/mediaInfoDb.js";
-import { buildForPhotoDb, buildForPhotoDbMap } from "./rx/photoDb.js";
+import { buildDaysByDate } from "./rx/dayDb.js";
+import { buildExifByContentHash } from "./rx/exifDb.js";
+import { buildAllFilesByRev } from "./rx/lsCache.js";
+import { buildMediaInfoByContentHash } from "./rx/mediaInfoDb.js";
+import { buildForPhotoDb, buildPhotosByContentHash } from "./rx/photoDb.js";
+import wrapAsReplay from "./rx/wrapAsReplay.js";
 
 export default (): Context => {
   const exifDbDir = process.env.EXIF_DB_DIR;
@@ -88,40 +87,24 @@ export default (): Context => {
 
   // RX
 
-  const exifRxMap = buildForExifDbMap(exifDbDir);
-  const mediaInfoRxMap = buildForMediaInfoDbMap(mediaInfoDbDir);
-  const daysRxMap = buildForDayDbMap(dayDbDir);
-  const allFilesRxMap = buildForLsCacheMapAllFiles(lsCacheDir);
-  const photosRxMap = buildForPhotoDbMap(photoDbDir);
-
-  const wrapAsReplay = <T>(obs: Observable<T>) => {
-    const replay = new ReplaySubject<T>(1);
-    const subscription = obs.subscribe(replay);
-    return {
-      observable: () => replay.asObservable(),
-      close: () => subscription.unsubscribe(),
-    };
-  };
-
-  const interestingFilesByRev = wrapAsReplay(
-    allFilesRxMap
-      .observable()
-      .pipe(
-        map(
-          (t) =>
-            new Map(
-              t.entries().filter(([_, v]) => isPreviewable(v.path_lower)),
-            ) as ReadonlyMap<string, NamedFile>,
-        ),
-      ),
+  const exifByContentHash = wrapAsReplay(buildExifByContentHash(exifDbDir));
+  const mediaInfoByContentHash = wrapAsReplay(
+    buildMediaInfoByContentHash(mediaInfoDbDir),
+  );
+  const daysByDate = wrapAsReplay(buildDaysByDate(dayDbDir));
+  const allFilesByRev = wrapAsReplay(buildAllFilesByRev(lsCacheDir));
+  const photosByContentHash = wrapAsReplay(
+    buildPhotosByContentHash(photoDbDir),
   );
 
-  const interestingFilesByContentHash = wrapAsReplay(
-    interestingFilesByRev.observable().pipe(
-      map((t) => {
+  const previewableFilesByContentHash = wrapAsReplay(
+    allFilesByRev.observable().pipe(
+      map((t): ReadonlyMap<string, readonly NamedFile[]> => {
         const out = new Map<string, NamedFile[]>();
 
-        for (const namedFile of t.values()) {
+        for (const namedFile of t
+          .values()
+          .filter((v) => isPreviewable(v.path_lower))) {
           const list = out.get(namedFile.content_hash);
           if (list) list.push(namedFile);
           else out.set(namedFile.content_hash, [namedFile]);
@@ -131,17 +114,17 @@ export default (): Context => {
           list.sort((a, b) => a.path_lower.localeCompare(b.path_lower));
         }
 
-        return out as ReadonlyMap<string, readonly NamedFile[]>;
+        return out;
       }),
     ),
   );
 
   const byContentHash = wrapAsReplay(
     combineLatest([
-      interestingFilesByContentHash.observable(),
-      exifRxMap.observable(),
-      mediaInfoRxMap.observable(),
-      photosRxMap.observable(),
+      previewableFilesByContentHash.observable(),
+      exifByContentHash.observable(),
+      mediaInfoByContentHash.observable(),
+      photosByContentHash.observable(),
     ]).pipe(
       map(
         ([files, exifs, mediaInfos, photos]) =>
@@ -177,11 +160,11 @@ export default (): Context => {
   );
 
   const fullDatabaseFeeds: FullDatabaseFeeds = {
-    exifsByContentHash: exifRxMap.observable(),
-    mediaInfoByContentHash: mediaInfoRxMap.observable(),
-    daysByDate: daysRxMap.observable(),
-    allFilesByRev: allFilesRxMap.observable(),
-    photosByContentHash: photosRxMap.observable(),
+    exifsByContentHash: exifByContentHash.observable(),
+    mediaInfoByContentHash: mediaInfoByContentHash.observable(),
+    daysByDate: daysByDate.observable(),
+    allFilesByRev: allFilesByRev.observable(),
+    photosByContentHash: photosByContentHash.observable(),
     byContentHash: byContentHash.observable(),
   };
 
@@ -190,13 +173,12 @@ export default (): Context => {
   const dayDb = new DayDb(dayDbDir);
 
   const close = async () => {
-    exifRxMap.close();
-    mediaInfoRxMap.close();
-    daysRxMap.close();
-    allFilesRxMap.close();
-    photosRxMap.close();
-    interestingFilesByRev.close();
-    interestingFilesByContentHash.close();
+    exifByContentHash.close();
+    mediaInfoByContentHash.close();
+    daysByDate.close();
+    allFilesByRev.close();
+    photosByContentHash.close();
+    previewableFilesByContentHash.close();
     byContentHash.close();
   };
 

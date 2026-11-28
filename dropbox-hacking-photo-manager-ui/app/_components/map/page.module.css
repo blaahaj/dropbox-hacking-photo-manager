@@ -5,3 +5,7 @@
 .iconB {
   filter: hue-rotate(140deg);
 }
+
+.iconC {
+  filter: hue-rotate(260deg);
+}

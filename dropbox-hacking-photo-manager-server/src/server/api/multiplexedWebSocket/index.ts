@@ -1,4 +1,3 @@
-import type { JSONValue } from "@blaahaj/json";
 import {
   type Connectable,
   generateId2,
@@ -6,7 +5,8 @@ import {
   multiplexer,
   transportAsJson,
   type WrappedPayload,
-} from "dropbox-hacking-photo-manager-shared";
+} from "@blaahaj/conversation/core";
+import type { JSONValue } from "@blaahaj/json";
 import {
   buildFeedMap,
   type FeedMap,

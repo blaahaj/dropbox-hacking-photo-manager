@@ -1,14 +1,12 @@
-import {
-  ContentHash,
-  ExifDB,
-  ExifFromHash,
-} from "@blaahaj/dropbox-hacking-exif-db";
-import { ReplaySubject } from "rxjs";
+import { ExifDB, ExifFromHash } from "@blaahaj/dropbox-hacking-exif-db";
+import { Observable } from "rxjs";
 
 import { jsonFileObservableViaLoader } from "./util.js";
 
-export const buildForExifDbMap = (dbDir: string) => {
-  const observable = jsonFileObservableViaLoader(
+export const buildExifByContentHash = (
+  dbDir: string,
+): Observable<ReadonlyMap<string, ExifFromHash>> =>
+  jsonFileObservableViaLoader(
     dbDir,
     () =>
       new ExifDB(dbDir)
@@ -21,12 +19,3 @@ export const buildForExifDbMap = (dbDir: string) => {
         ),
     100,
   );
-
-  const subject = new ReplaySubject<Map<ContentHash, ExifFromHash>>(1);
-  const subscription = observable.subscribe(subject);
-
-  return {
-    observable: () => subject,
-    close: () => subscription.unsubscribe(),
-  };
-};

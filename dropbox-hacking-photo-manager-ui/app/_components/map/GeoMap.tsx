@@ -1,15 +1,17 @@
 import { useLeaflet } from "@hooks/useLeaflet";
 import logRender from "@lib/logRender";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef } from "react";
 
 import styles from "./page.module.css";
 
-type P = {
+export type MarkerSpec = {
+  contentHash: string;
   position: L.LatLng;
   highlighted: boolean;
+  interpolated: boolean;
 };
 
-export type Positions = ReadonlyMap<string, P>;
+export type PathSpec = readonly MarkerSpec[];
 
 const findBoundingBox = (
   positions: readonly L.LatLng[],
@@ -42,36 +44,36 @@ const findInitialZoom = (halfDiagonal: number) => {
 };
 
 const GeoMapWrapper = ({
-  positions,
+  paths,
   listeners,
 }: {
-  positions: Positions;
+  paths: readonly PathSpec[];
   listeners?: Partial<{
     onClickMarker: (e: L.LeafletMouseEvent, key: string) => void;
   }>;
 }) => {
   const L = useLeaflet();
 
-  console.dir({ positions: [...positions.entries()] });
+  if (paths.every((p) => p.length === 0) || !L) return null;
 
-  if (positions.size === 0 || !L) return null;
-
-  return <GeoMap positions={positions} listeners={listeners} L={L} />;
+  return <GeoMap paths={paths} listeners={listeners} L={L} />;
 };
 
 const GeoMap = ({
-  positions,
+  paths,
   listeners,
   L,
 }: {
-  positions: Positions;
+  paths: readonly PathSpec[];
   listeners?: Partial<{
     onClickMarker: (e: L.LeafletMouseEvent, key: string) => void;
   }>;
   L: typeof import("leaflet");
 }) => {
+  const positions = new Map(paths.flat().map((m) => [m.contentHash, m]));
+
   const { center, halfDiagonal } = findBoundingBox(
-    [...positions.values()].map((p) => p.position),
+    paths.flatMap((path) => path.map((p) => p.position)),
     L,
   );
 
@@ -79,31 +81,6 @@ const GeoMap = ({
 
   const eleRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<L.Map>(null);
-
-  useEffect(() => {
-    const theMap = L.map(eleRef.current!);
-
-    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 19,
-      attribution:
-        '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    }).addTo(theMap);
-
-    L.control.scale({ maxWidth: 550 }).addTo(theMap);
-
-    console.log("Setting theMap to", theMap);
-    mapRef.current = theMap;
-
-    return () => {
-      console.log("Unsetting theMap");
-      mapRef.current = null;
-      theMap.remove();
-    };
-  }, [L]);
-
-  useEffect(() => {
-    mapRef.current?.setView({ lat: center.lat, lng: center.lng }, initialZoom);
-  }, [center.lat, center.lng, initialZoom]);
 
   const iconA = useMemo(
     () =>
@@ -121,36 +98,60 @@ const GeoMap = ({
       }),
     [L],
   );
-  console.dir({ iconA, iconB, styles });
-  const markersRef = useRef(new Map<string, P & { marker: L.Marker }>());
+  const iconC = useMemo(
+    () =>
+      new L.Icon.Default({
+        imagePath: "https://unpkg.com/leaflet@1.9.4/dist/images/",
+        className: styles.iconC,
+      }),
+    [L],
+  );
+  const markersRef = useRef(
+    new Map<string, MarkerSpec & { marker: L.Marker }>(),
+  );
 
-  const [enableMarkers, setEnableMarkers] = useState(false);
+  // Create the map
+  useEffect(() => {
+    const theMap = L.map(eleRef.current!);
+
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution:
+        '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    }).addTo(theMap);
+
+    L.control.scale({ maxWidth: 550 }).addTo(theMap);
+
+    mapRef.current = theMap;
+
+    return () => {
+      mapRef.current = null;
+      theMap.remove();
+      markersRef.current = new Map();
+    };
+  }, [L]);
+
+  // If the center moves, zoom to the center
+  useEffect(() => {
+    mapRef.current?.setView({ lat: center.lat, lng: center.lng }, initialZoom);
+  }, [center.lat, center.lng, initialZoom]);
 
   useEffect(() => {
     const theMap = mapRef.current;
     const markers = markersRef.current;
-    console.log(
-      `markers updater theMap=${!!theMap} markers=${!!markers} enable=${enableMarkers}`,
-    );
 
-    Object.defineProperty(window, "theMap", {
-      value: theMap,
-      configurable: true,
-    });
-    Object.defineProperty(window, "L", { value: L, configurable: true });
+    // Object.defineProperty(window, "theMap", {
+    //   value: theMap,
+    //   configurable: true,
+    // });
+    // Object.defineProperty(window, "L", { value: L, configurable: true });
 
-    if (!theMap || !markers || !enableMarkers) return;
-
-    console.dir({
-      positions: [...positions.entries()],
-      markers: [...markers.entries()],
-    });
+    if (!theMap || !markers) return;
 
     for (const [id, details] of [...markers.entries()]) {
       if (!positions.has(id)) {
         details.marker.remove();
         markers.delete(id);
-        console.debug("Removed marker", id, details.marker);
       }
     }
 
@@ -161,14 +162,13 @@ const GeoMap = ({
         const marker = L.marker(newDetails.position, {
           riseOnHover: true,
           title: id,
-          icon: new L.Icon.Default({
-            imagePath: "https://unpkg.com/leaflet@1.9.4/dist/images/",
-            className: newDetails.highlighted ? styles.iconB : styles.iconA,
-          }),
+          icon: newDetails.highlighted
+            ? iconB
+            : newDetails.interpolated
+              ? iconC
+              : iconA,
         });
-        console.dir({ addedMarker: marker });
         marker.addTo(theMap);
-        console.dir({ theMap });
 
         marker.addEventListener("click", (e) =>
           listeners?.onClickMarker?.(e, id),
@@ -178,28 +178,42 @@ const GeoMap = ({
           ...newDetails,
           marker,
         });
-        console.debug("Added marker", id, marker);
       } else {
         const marker = oldDetails.marker;
-        if (!newDetails.position.equals(oldDetails.position, 5)) {
+        if (!newDetails.position.equals(oldDetails.position)) {
           marker.setLatLng(newDetails.position);
           oldDetails.position = newDetails.position;
-          console.debug("Updated marker position", id, marker);
         }
-        if (newDetails.highlighted !== oldDetails.highlighted) {
-          marker.setIcon(newDetails.highlighted ? iconB : iconA);
+        if (
+          newDetails.highlighted !== oldDetails.highlighted ||
+          newDetails.interpolated !== oldDetails.interpolated
+        ) {
+          marker.setIcon(
+            newDetails.highlighted
+              ? iconB
+              : newDetails.interpolated
+                ? iconC
+                : iconA,
+          );
           oldDetails.highlighted = newDetails.highlighted;
-          console.debug("Updated marker highlight (icon)", id, marker);
+          oldDetails.interpolated = newDetails.interpolated;
         }
       }
     }
-  }, [enableMarkers]);
+  }, [L, paths]);
 
-  // For some reason, without this, the markers don't appear
   useEffect(() => {
-    const t = setTimeout(() => setEnableMarkers(true), 0);
-    return () => clearTimeout(t);
-  }, []);
+    const theMap = mapRef.current!;
+    const p: L.Path[] = [];
+
+    for (const path of paths) {
+      const leafletPath = new L.Polyline(path.map((m) => m.position));
+      p.push(leafletPath);
+      leafletPath.addTo(theMap);
+    }
+
+    return () => p.forEach((lp) => lp.removeFrom(theMap));
+  }, [L, paths]);
 
   return (
     <div style={{ position: "relative" }}>

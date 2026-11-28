@@ -73,7 +73,7 @@ export class GPSLatLong {
     });
   }
 
-  public static fromTuple(tuple: [number, number]): GPSLatLong {
+  public static fromTuple(tuple: readonly [number, number]): GPSLatLong {
     return new GPSLatLong({
       lat: tuple[0],
       latRef: "N",

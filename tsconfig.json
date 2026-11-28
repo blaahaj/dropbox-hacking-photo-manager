@@ -1,7 +1,14 @@
 {
-  "compilerOptions": { "types": ["node"] },
   "extends": "./tsconfig.base.json",
-  "exclude": ["**/node_modules"],
-  "files": ["build.ts", "graph.ts", "eslint.config.ts", ".prettierrc.ts"],
-  "include": []
+  "compilerOptions": {
+    "rootDir": ".",
+    "types": ["node"],
+    "noEmit": true,
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": ["eslint.config.ts", ".prettierrc.ts"]
 }

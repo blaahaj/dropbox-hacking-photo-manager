@@ -133,7 +133,7 @@ const mangle = ([allFiles, allMediaInfo, allDays, allPhotos]: [
       day: allDays.get(namedFile.client_modified.substring(0, 10)) ?? null,
     }))
     .filter(fieldIsNotNullish("mediaInfo"))
-    .map((item) => {
+    .map((item): Omit<typeof out, "mediaInfo"> | undefined => {
       const mediaInfoSummary = summariseMediaInfo(item.mediaInfo);
       if (!mediaInfoSummary.general?.format) return;
 
@@ -145,7 +145,7 @@ const mangle = ([allFiles, allMediaInfo, allDays, allPhotos]: [
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       delete (out as any).mediaInfo;
 
-      return out as Omit<typeof out, "mediaInfo">;
+      return out;
     })
     .filter((v) => v !== undefined)
     .toArray();

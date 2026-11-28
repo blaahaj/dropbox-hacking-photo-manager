@@ -1,8 +1,9 @@
 import Navigate from "@components/Navigation";
 import TagList from "@components/tags/TagList";
+import TagTree from "@components/tags/TagTree";
 import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFeed";
 import logRender from "@lib/logRender";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const Page = () => {
   const latestValue = useLatestValueFromServerFeed({
@@ -13,6 +14,8 @@ const Page = () => {
     document.title = "DPMNG - tags";
   }, []);
 
+  const [tree, setTree] = useState(false);
+
   return (
     <>
       <Navigate />
@@ -21,13 +24,34 @@ const Page = () => {
         <h1>Tags</h1>
 
         {latestValue ? (
-          <TagList
-            data={latestValue.tags.map(([tag, count]) => ({
-              tag,
-              count,
-            }))}
-            linked={true}
-          />
+          <div>
+            <p>
+              <input
+                type="checkbox"
+                checked={tree}
+                onChange={(e) => setTree(e.target.checked)}
+              />{" "}
+              Show as tree
+            </p>
+
+            {tree ? (
+              <TagTree
+                data={latestValue.tags.map(([tag, count]) => ({
+                  tag,
+                  count,
+                }))}
+                linked={true}
+              />
+            ) : (
+              <TagList
+                data={latestValue.tags.map(([tag, count]) => ({
+                  tag,
+                  count,
+                }))}
+                linked={true}
+              />
+            )}
+          </div>
         ) : (
           "loading..."
         )}

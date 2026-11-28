@@ -1,11 +1,9 @@
 // import type { JSONValue } from "@blaahaj/json";
+import type { Connectable } from "@blaahaj/conversation/core";
 import type { JSONValue } from "@blaahaj/json";
 import useMultiplexer from "@hooks/useMultiplexer";
 import { getRxFeed } from "@lib/rxFeed/getRxFeed";
-import type {
-  Connectable,
-  ObservableUpdate,
-} from "dropbox-hacking-photo-manager-shared";
+import type { ObservableUpdate } from "dropbox-hacking-photo-manager-shared";
 import type {
   FeedMap,
   RequestTypeFor,
@@ -42,7 +40,9 @@ export const useLatestValueFromServerFeed = <
   const stringyRequest = JSON.stringify(request);
   const observer = useMemo(
     () =>
-      typedMx ? getRxFeed(JSON.parse(stringyRequest), typedMx) : undefined,
+      typedMx
+        ? getRxFeed(JSON.parse(stringyRequest) as REQ, typedMx)
+        : undefined,
     [typedMx, stringyRequest],
   );
 

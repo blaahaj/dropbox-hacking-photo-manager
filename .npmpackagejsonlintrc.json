@@ -1,0 +1,3 @@
+{
+  "extends": "@blaahaj/std/npm-package-json-lint"
+}

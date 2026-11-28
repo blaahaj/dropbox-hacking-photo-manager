@@ -1,7 +1,7 @@
 import {
   type Connectable,
   fromBasicWebSocket,
-} from "dropbox-hacking-photo-manager-shared";
+} from "@blaahaj/conversation/core";
 import type { WebsocketRequestHandler } from "express-ws";
 
 type WS = Parameters<WebsocketRequestHandler>[0];

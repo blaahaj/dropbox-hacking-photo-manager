@@ -3,10 +3,10 @@ import type { files } from "dropbox";
 import type { Context } from "../../context.js";
 
 export type ThumbnailFetcher = (args: {
-  rev: string;
-  size: files.ThumbnailSize[".tag"];
-  mode: files.ThumbnailMode[".tag"];
-  format: files.ThumbnailFormat[".tag"];
+  readonly rev: string;
+  readonly size: files.ThumbnailSize[".tag"];
+  readonly mode: files.ThumbnailMode[".tag"];
+  readonly format: files.ThumbnailFormat[".tag"];
 }) => Promise<{ base64JPEG: string } | null>;
 
 export const nullThumbnailFetcher = (): ThumbnailFetcher => () =>

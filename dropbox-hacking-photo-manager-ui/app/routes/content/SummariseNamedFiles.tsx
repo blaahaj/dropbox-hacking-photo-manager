@@ -11,7 +11,7 @@ const SummariseNamedFiles = ({
 }) => {
   return (
     <>
-      <table>
+      <table className={styles.root}>
         <thead>
           <tr>
             <th>mtime</th>

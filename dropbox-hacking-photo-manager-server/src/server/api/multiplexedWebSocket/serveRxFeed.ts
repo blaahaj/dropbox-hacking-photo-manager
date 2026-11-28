@@ -1,6 +1,6 @@
+import { Connectable, generateId2 } from "@blaahaj/conversation/core";
 import type { JSONValue } from "@blaahaj/json";
 import type { ObservableUpdate } from "dropbox-hacking-photo-manager-shared";
-import { Connectable, generateId2 } from "dropbox-hacking-photo-manager-shared";
 import { Observable } from "rxjs";
 
 export const serveRxFeed = <T>(

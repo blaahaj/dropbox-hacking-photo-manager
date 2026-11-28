@@ -1,9 +1,8 @@
 import { Welcome } from "../welcome/welcome";
-// import type { Route } from "./+types/home";
 
 export function meta(/*{}: Route.MetaArgs*/) {
   return [
-    { title: "DPM-RR" },
+    { title: "DPM" },
     {
       name: "description",
       content: "Yet another implementation of the DPM UI",

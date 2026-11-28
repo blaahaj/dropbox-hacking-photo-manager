@@ -12,48 +12,70 @@ import { type FullDatabaseFeeds } from "./index.js";
 export type ListOfDaysRequest = {
   readonly type: "rx.ng.list-of-days";
   readonly withSamples: false;
+  readonly groupBy?: "day" | "week" | "28-days" | "calendar-month";
 };
 
-const template = {
+const dateToGroupMap: Record<
+  NonNullable<ListOfDaysRequest["groupBy"]>,
+  (d: string) => string
+> = {
+  day: (s) => s,
+  week: (s) => {
+    const d = Temporal.PlainDate.from(s);
+    return d.subtract(`P${d.dayOfWeek - 1}D`).toString();
+  },
+  "28-days": (s) => {
+    const d = Temporal.PlainDate.from(s);
+    const z = Temporal.PlainDate.from("1970-01-05"); // Monday
+    const n = d.since(z).days;
+    return d.subtract(`P${n % 28}D`).toString();
+  },
+  "calendar-month": (s) => `${s.substring(0, 7)}-01`,
+};
+
+const template = () => ({
   exifableCount: 0,
   hasExifCount: 0,
   mediaInfoableCount: 0,
   hasMediaInfoCount: 0,
   previewableCount: 0,
   hasGPSCount: 0,
-};
+  byDevice: {} as Record<string, number>,
+});
 
 export type DaySummaryWithoutSamples = {
   date: string;
   dayMetadata: DayMetadata | null;
-  counts: typeof template;
+  counts: ReturnType<typeof template>;
   photoTags: Record<string, number>;
 };
 
 export const provideListOfDaysWithoutSamples = (
   feeds: FullDatabaseFeeds,
-  _req: ListOfDaysRequest,
+  req: ListOfDaysRequest,
 ): Observable<DaySummaryWithoutSamples[]> =>
   combineLatest([feeds.byContentHash, feeds.daysByDate]).pipe(
     map(([contentMap, days]) => {
       const out = new Map<string, DaySummaryWithoutSamples>();
 
-      const getOrCreate = (date: string) => {
-        let item = out.get(date);
+      const getOrCreate = (groupKey: string) => {
+        let item = out.get(groupKey);
         if (item) return item;
 
         item = {
-          date,
+          date: groupKey,
           dayMetadata: null,
-          counts: { ...template },
-          photoTags: {} as Record<string, number>,
+          counts: template(),
+          photoTags: {},
         };
-        out.set(date, item);
+        out.set(groupKey, item);
         return item;
       };
 
+      const groupFn = dateToGroupMap[req.groupBy ?? "day"];
+
       for (const file of contentMap.values()) {
-        const item = getOrCreate(file.date);
+        const item = getOrCreate(groupFn(file.date));
 
         ++item.counts.previewableCount;
 
@@ -75,16 +97,27 @@ export const provideListOfDaysWithoutSamples = (
 
         if (file.gps.effective) ++item.counts.hasGPSCount;
 
+        const exifTags = file.exif?.exifData.tags;
+        if (exifTags) {
+          const device = [exifTags.Make, exifTags.Model, exifTags.Model2]
+            .filter(Boolean)
+            .join(" ");
+          item.counts.byDevice[device] =
+            (item.counts.byDevice[device] ?? 0) + 1;
+        }
+
         for (const tag of file.photo?.tags ?? []) {
           item.photoTags[tag] = (item.photoTags[tag] ?? 0) + 1;
         }
       }
 
-      for (const [date, v] of days) {
-        const entry = out.get(date);
-        if (!entry) continue;
+      if ((req.groupBy ?? "day") === "day") {
+        for (const [date, v] of days) {
+          const entry = out.get(date);
+          if (!entry) continue;
 
-        entry.dayMetadata = v;
+          entry.dayMetadata = v;
+        }
       }
 
       const r = [...out.values()].toSorted((a, b) =>

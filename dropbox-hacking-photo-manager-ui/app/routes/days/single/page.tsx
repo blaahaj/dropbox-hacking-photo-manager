@@ -4,11 +4,13 @@ import Navigate from "@components/Navigation";
 import ShowData from "@components/ShowData";
 // import { useIdentity } from "@hooks/useIdentity";
 import { useLatestValueFromServerFeed } from "@hooks/useLatestValueFromServerFeed";
+import Typography from "@mui/material/Typography";
 import type { DayMetadata } from "dropbox-hacking-photo-manager-shared";
 import type { ContentHashCollectionWithDay } from "dropbox-hacking-photo-manager-shared/serverSideFeeds";
 import { useEffect, useMemo } from "react";
+import { Link } from "react-router";
 
-import type { Route } from "../+types/single";
+import type { Route } from "./+types";
 import styles from "./page.module.css";
 import PrevNextDayLinks from "./PrevNextDayLinks";
 
@@ -58,24 +60,39 @@ const NGDayFiles = ({ params }: Route.ComponentProps) => {
       <main style={{ margin: "2em" }}>
         <PrevNextDayLinks date={date} />
 
-        <h1>
+        <Typography variant="h2" component="h1">
+          {date}{" "}
           <a
             className={styles.calendarLink}
             href={`https://calendar.google.com/calendar/u/0/r/week/${date.substring(0, 4)}/${date.substring(5, 7)}/${date.substring(8, 10)}`}
           >
-            {date}
+            🗓️
           </a>
-        </h1>
+        </Typography>
 
         {latestValue && files ? (
           <>
-            <p>
+            <div>
               <EditableTextField
+                label="Description"
                 key={dayMetadata?.description ?? ""}
                 value={dayMetadata?.description ?? ""}
                 onSave={onSaveDescription}
               />
-            </p>
+            </div>
+
+            <ul style={{ listStyle: "disc" }}>
+              <li>
+                <Link to={`/device-time?start=${date}&end=${date}Z`}>
+                  device time correction
+                </Link>
+              </li>
+              <li>
+                <Link to={`/search/experiment?q=${`date^${date}`}`}>
+                  as search
+                </Link>
+              </li>
+            </ul>
 
             <ListOfContent files={files} />
 

@@ -1,25 +1,16 @@
 import {
-  ContentHash,
   MediainfoDB,
   MediainfoFromHash,
 } from "@blaahaj/dropbox-hacking-mediainfo-db";
-import { ReplaySubject } from "rxjs";
+import { type Observable } from "rxjs";
 
 import { jsonFileObservableViaLoader } from "./util.js";
 
-export const buildForMediaInfoDbMap = (dbDir: string) => {
-  const observable = jsonFileObservableViaLoader(
+export const buildMediaInfoByContentHash = (
+  dbDir: string,
+): Observable<ReadonlyMap<string, MediainfoFromHash>> =>
+  jsonFileObservableViaLoader(
     dbDir,
-    () =>
-      new MediainfoDB(dbDir).readAll().then((all) => new Map(all.entries())),
+    () => new MediainfoDB(dbDir).readAll(),
     100,
   );
-
-  const subject = new ReplaySubject<Map<ContentHash, MediainfoFromHash>>(1);
-  const subscription = observable.subscribe(subject);
-
-  return {
-    observable: () => subject,
-    close: () => subscription.unsubscribe(),
-  };
-};

@@ -1,9 +1,7 @@
+import type { Connectable } from "@blaahaj/conversation/core";
 import type { JSONValue } from "@blaahaj/json";
 import generateId from "@lib/generateId";
-import type {
-  Connectable,
-  ObservableUpdate,
-} from "dropbox-hacking-photo-manager-shared";
+import type { ObservableUpdate } from "dropbox-hacking-photo-manager-shared";
 import type {
   FeedMap,
   RequestTypeFor,

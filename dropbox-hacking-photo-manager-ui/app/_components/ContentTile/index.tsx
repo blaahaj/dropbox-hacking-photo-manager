@@ -25,8 +25,6 @@ const ContentTile = ({
 }) => {
   const [visible, setVisible] = useState(!observableVisibleItems);
 
-  // console.dir({ day });
-
   const gps = file.gps;
 
   const generalTrack = file.mediaInfo?.mediainfoData.media?.track.find(

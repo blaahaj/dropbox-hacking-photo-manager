@@ -3,18 +3,18 @@ import type { files } from "dropbox";
 import type { Photo } from "./types.js";
 
 export type ClosestToResponse = {
-  items: {
-    distanceInMeters: number;
-    photo: Photo;
+  readonly items: readonly {
+    readonly distanceInMeters: number;
+    readonly photo: Photo;
   }[];
-  truncated: boolean;
+  readonly truncated: boolean;
 };
 
 export type PhotoDbEntry = Partial<{
-  description: string;
-  tags: string[];
-  rotate: number;
-  gps: [number, number];
+  readonly description: string;
+  readonly tags: string[];
+  readonly rotate: number;
+  readonly gps: readonly [number, number];
 }>;
 
 export type NamedFile = Readonly<files.FileMetadata> & {
