@@ -9,8 +9,9 @@
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
-    "@blaahaj/dropbox-hacking-exif-db": "link:../../dropbox-hacking-exif-db",
-    "@blaahaj/dropbox-hacking-mediainfo-db": "link:../../dropbox-hacking-mediainfo-db",
+    "@blaahaj/conversation": "link:/Users/rachel/git/github.com/blaahaj/dpm/conversation",
+    "@blaahaj/dropbox-hacking-exif-db": "link:/Users/rachel/git/github.com/blaahaj/dropbox-hacking-exif-db",
+    "@blaahaj/dropbox-hacking-mediainfo-db": "link:/Users/rachel/git/github.com/blaahaj/dropbox-hacking-mediainfo-db",
     "@blaahaj/geometry": "^1.1.0",
     "@blaahaj/gotcha": "^2.1.0",
     "@blaahaj/json": "^1.0.1",
@@ -28,7 +29,7 @@
     "chart.js": "^4.5.1",
     "chartjs-adapter-temporal": "^1.2.3",
     "chartjs-plugin-zoom": "^2.2.0",
-    "dropbox-hacking-photo-manager-shared": "link:../dropbox-hacking-photo-manager-shared",
+    "dropbox-hacking-photo-manager-shared": "link:/Users/rachel/git/github.com/blaahaj/dpm/dropbox-hacking-photo-manager-shared",
     "isbot": "^5.1.36",
     "leaflet": "^1.9.4",
     "react": "^19.2.7",

@@ -28,12 +28,17 @@ export default defineConfig(
   {
     rules: {
       "no-unreachable": "warn",
+      "@typescript-eslint/no-redundant-type-constituents": "off",
     },
   },
 
   {
     files: ["**/*"],
-    ignores: ["dropbox-hacking-photo-manager-*/**/*", "graph/**/*"],
+    ignores: [
+      "conversation/**/*",
+      "dropbox-hacking-photo-manager-*/**/*",
+      "graph/**/*",
+    ],
     languageOptions: {
       parserOptions: {
         projectService: true,
@@ -42,6 +47,15 @@ export default defineConfig(
     },
   },
 
+  {
+    files: ["conversation/**/*"],
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: resolve(dirname(import.meta.url) + "/conversation"),
+      },
+    },
+  },
   {
     files: ["graph/**/*"],
     languageOptions: {

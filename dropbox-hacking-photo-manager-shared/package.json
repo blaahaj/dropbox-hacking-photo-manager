@@ -36,8 +36,9 @@
     "./serverSideFeeds": "./dist/src/serverSideFeeds/index.js"
   },
   "dependencies": {
-    "@blaahaj/dropbox-hacking-exif-db": "^1.1.0",
-    "@blaahaj/dropbox-hacking-mediainfo-db": "^1.3.0",
+    "@blaahaj/conversation": "link:/Users/rachel/git/github.com/blaahaj/dpm/conversation",
+    "@blaahaj/dropbox-hacking-exif-db": "link:/Users/rachel/git/github.com/blaahaj/dropbox-hacking-exif-db",
+    "@blaahaj/dropbox-hacking-mediainfo-db": "link:/Users/rachel/git/github.com/blaahaj/dropbox-hacking-mediainfo-db",
     "@blaahaj/geometry": "1.1.0",
     "@blaahaj/gotcha": "^2.1.0",
     "@blaahaj/json": "^1.0.1",

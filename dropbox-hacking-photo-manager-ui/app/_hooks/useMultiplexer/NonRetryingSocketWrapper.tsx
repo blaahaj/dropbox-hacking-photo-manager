@@ -1,11 +1,11 @@
-import type { JSONValue } from "@blaahaj/json";
-import generateId from "@lib/generateId";
 import {
   type IDHolder,
   multiplexer as buildMultiplexer,
   transportAsJson,
   type WrappedPayload,
-} from "dropbox-hacking-photo-manager-shared";
+} from "@blaahaj/conversation/core";
+import type { JSONValue } from "@blaahaj/json";
+import generateId from "@lib/generateId";
 import { type PropsWithChildren, useEffect, useMemo, useState } from "react";
 
 import { type Multiplexer, Provider } from "./context";

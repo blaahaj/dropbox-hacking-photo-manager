@@ -1,10 +1,12 @@
 ---
 packages:
+  - conversation
   - graph
   - dropbox-hacking-photo-manager-server
   - dropbox-hacking-photo-manager-shared
   - dropbox-hacking-photo-manager-ui
 overrides:
+  "@blaahaj/conversation": link:conversation
   yargs: ">=17.7.3"
 allowBuilds:
   sharp: true

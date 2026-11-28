@@ -36,5 +36,8 @@
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.65.0",
     "yaml": "^2.9.1"
+  },
+  "dependencies": {
+    "@blaahaj/conversation": "link:conversation"
   }
 }

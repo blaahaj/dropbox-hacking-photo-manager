@@ -1,5 +1,5 @@
+import type { Connectable } from "@blaahaj/conversation/core";
 import useMultiplexer from "@hooks/useMultiplexer";
-import type { Connectable } from "dropbox-hacking-photo-manager-shared";
 import * as React from "react";
 import {
   createContext,
@@ -33,7 +33,9 @@ const trustInputFormat = <
 >(
   io: Connectable<ActualIn, ActualOut>,
 ): Connectable<WantIn, WantOut> => {
-  return io as unknown as Connectable<WantIn, WantOut>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const r: Connectable<WantIn, WantOut> = io as any;
+  return r;
 };
 
 export const DefaultThumbnailProvider = (

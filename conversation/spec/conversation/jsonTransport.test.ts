@@ -1,9 +1,11 @@
 import { deepStrictEqual } from "node:assert";
 import { it, suite } from "node:test";
 
+import {
+  type MessageRouter,
+  transportAsJson,
+} from "@blaahaj/conversation/core";
 import type { JSONValue } from "@blaahaj/json";
-
-import { type MessageRouter, transportAsJson } from "../../src/index.js";
 
 const createHarness = () => {
   const stringsSent: (string | undefined)[] = [];
