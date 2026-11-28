@@ -1,0 +1,5057 @@
+{
+  "0016f22748d28e74c36c9f6beae390536cd911218d5a7964c334f1baca2b3ccb": {
+    "centerXRatio": 0.5210087890625,
+    "centerYRatio": 0.5333246459960936,
+    "radiusRatio": 0.47366825180121697,
+    "rotateDegrees": 18,
+    "tags": ["shape:circle"],
+    "text": "221180-600 en 124 sias"
+  },
+  "00489d7ec962830f25c0823c66567ca6ec02793a6c70a4445e2d71ca54b3380b": {
+    "centerXRatio": 0.4750263671874999,
+    "centerYRatio": 0.4582642822265625,
+    "radiusRatio": 0.3887810518685968,
+    "rotateDegrees": 70,
+    "tags": ["picture", "rhinoceros", "shape:circleinsquare"],
+    "text": "aalholm kloak d400 2838 en124 furnes"
+  },
+  "0132ae2f971db8a0d64020585e41fc6d4e12b342cc088915efaa9f96fe553013": {
+    "centerXRatio": 0.5600686759338921,
+    "centerYRatio": 0.47004516601562507,
+    "radiusRatio": 0.35528971902962647,
+    "rotateDegrees": 46,
+    "tags": ["kommune:frederiksberg", "shape:circleinsquare"],
+    "text": "-"
+  },
+  "0152da34e83e442314ec3f9a6b33a337e2a7268166dab0356d1e99eee3a29147": {
+    "centerXRatio": 0.49875002601853907,
+    "centerYRatio": 0.4739611511230469,
+    "radiusRatio": 0.46307324602302163,
+    "rotateDegrees": 0,
+    "tags": ["kommune:aarhus", "shape:circle"],
+    "text": "århus"
+  },
+  "02508c8c8182f3ad1f7813213a246fc7c2b089b1b3cbfe6d0c2cc26b337c5183": {
+    "centerXRatio": 0.5,
+    "centerYRatio": 0.5,
+    "radiusRatio": 0.5,
+    "rotateDegrees": 82.79678696885964,
+    "tags": ["multiple"],
+    "text": "ballerup"
+  },
+  "02542a888de9cee497c113815058d7d37d4439b4da5fa16b0ddcd16e96b7825a": {
+    "centerXRatio": 0.502500040690104,
+    "centerYRatio": 0.5290626220703125,
+    "radiusRatio": 0.4180322800285152,
+    "rotateDegrees": 129.61848732737747,
+    "tags": ["shape:circle"],
+    "text": "nyborg jern"
+  },
+  "02a3861546bd9eca1a10b69091ed04410ab2b708fa6a02c56348feb18b39c318": {
+    "centerXRatio": 0.5151273600260416,
+    "centerYRatio": 0.4912281799316406,
+    "radiusRatio": 0.4327960457486053,
+    "rotateDegrees": 26.399643468127522,
+    "tags": ["shape:circle"],
+    "text": "bb 600 gjs500 en124 d400"
+  },
+  "02c220d01bf9b95bbacaf3fbd9ce338494e7d65df1af3ebeea3bfecfa555f721": {
+    "centerXRatio": 0.5050000043364231,
+    "centerYRatio": 0.48310995483398433,
+    "radiusRatio": 0.38189247754225014,
+    "rotateDegrees": 0,
+    "tags": ["shape:circleinsquare"],
+    "text": "hj"
+  },
+  "02f09bd8afa17778d763a226723c1b65354ff897284d27ac6994919eaa3719fd": {
+    "centerXRatio": 0.5027162272135417,
+    "centerYRatio": 0.5149788818359375,
+    "radiusRatio": 0.41142604823488876,
+    "rotateDegrees": 338,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "038b1733de6a36803b5cff9905b5f1296ffc31d4636d7a5197c2b76087b7d4d1": {
+    "centerXRatio": 0.48749993495365235,
+    "centerYRatio": 0.4662198791503906,
+    "radiusRatio": 0.4373874282207918,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": "randers 40"
+  },
+  "03995f68a4693b84adeaac6b8bd950536ee471abec1bacef04d2b0486e125b13": {
+    "centerXRatio": 0.4987909510122946,
+    "centerYRatio": 0.49927389526367194,
+    "radiusRatio": 0.368204264734798,
+    "rotateDegrees": 268.1523710385218,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "03ea17c91e50ec2fb4719f6c56a50eaf6e4aa1130e60520245555bc3930e982d": {
+    "centerXRatio": 0.511260040283203,
+    "centerYRatio": 0.5,
+    "radiusRatio": 0.4474182325347581,
+    "rotateDegrees": 92.01722062147655,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "04db1a43324b6d3e5224f5a438901305f2770d208869d8e25ece077585ea5131": {
+    "centerXRatio": 0.5,
+    "centerYRatio": 0.5,
+    "radiusRatio": 0.5,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "04dd5c799d429c88670259b5e8ecd64bac96d76ff5728ed6653003d9a1f3dc69": {
+    "rotateDegrees": 0,
+    "text": "den grønne labyrint tuborg"
+  },
+  "04f037b5a095c72a529fd40f9bcd92817e2547e25868a9fb96698d73a0a3d0ed": {
+    "centerXRatio": 0.5,
+    "centerYRatio": 0.5,
+    "radiusRatio": 0.5,
+    "rotateDegrees": 270,
+    "tags": ["shape:triangle"],
+    "text": "-"
+  },
+  "05d341c03f0135d3a2dc4c023bf87ae4f7abb0ed8f9fe3f3352691a958dd7af8": {
+    "centerXRatio": 0.49866243027031537,
+    "centerYRatio": 0.45496771240234374,
+    "radiusRatio": 0.4365245491360366,
+    "rotateDegrees": 359.332048068831,
+    "tags": ["shape:circle", "squares"],
+    "text": "nv 5"
+  },
+  "05e7ba8098dd4bd75b1918be706fe454c62b0bed8f90263b03799c98854876be": {
+    "centerXRatio": 0.5119964599609375,
+    "centerYRatio": 0.5306366271972656,
+    "radiusRatio": 0.47130514847469684,
+    "rotateDegrees": 13,
+    "tags": ["shape:circleinsquare", "star:6"],
+    "text": "bd 25"
+  },
+  "064891506c4e44650d41a9b368ac51293d11d595b8b7b5555734dc4e1e69ec3a": {
+    "centerXRatio": 0.42622576904296877,
+    "centerYRatio": 0.44792226787994005,
+    "radiusRatio": 0.34069964359928423,
+    "rotateDegrees": 118,
+    "tags": ["hole", "shape:circle", "star:6"],
+    "text": "frederiksberg jernstøberi"
+  },
+  "0743d1f5dda4298bf760eb46d16fd2c9bc25950ad7b6550a578c0d31154b61c4": {
+    "centerXRatio": 0.48522119140625003,
+    "centerYRatio": 0.5062499783178841,
+    "radiusRatio": 0.39647593946689913,
+    "rotateDegrees": 0,
+    "tags": ["circles:5", "shape:circle"],
+    "text": "-"
+  },
+  "08098184309600da13e655823b1bb390081f6618e72dae5cdbdc331445c49e52": {
+    "centerXRatio": 0.5118857564976965,
+    "centerYRatio": 0.49480041503906247,
+    "radiusRatio": 0.47120461540089725,
+    "rotateDegrees": 356.2142876060308,
+    "tags": ["shape:circle"],
+    "text": "ulefos 40 fv uf80"
+  },
+  "0832c2a8d496e83644b4307b1e0dcb6db8dac28630b6ecedd6862a95e7156c24": {
+    "centerXRatio": 0.5193965148925781,
+    "centerYRatio": 0.5233169352213543,
+    "radiusRatio": 0.33909875840370457,
+    "rotateDegrees": 68.38820298922553,
+    "tags": ["shape:circleinsquare"],
+    "text": ""
+  },
+  "089028616c364f99daf6d75cde39b39d4d477d73a987dd8e2b78a4e2cd8a1acd": {
+    "centerXRatio": 0.4849999327854408,
+    "centerYRatio": 0.4549598083496094,
+    "radiusRatio": 0.45087663901488667,
+    "rotateDegrees": 0.32406437701394,
+    "tags": ["shape:circleinsquare"],
+    "text": ""
+  },
+  "08b6db4c0177baf709ae6e4f8f895278d9093c9d5d378b07c44646977c444de3": {
+    "rotateDegrees": 0,
+    "tags": ["multiple"],
+    "text": "e"
+  },
+  "08d120050316935191eed6311c6d13ed8d6416df3b7e850114ca7d8dfd44fa2a": {
+    "centerXRatio": 0.5001049414409414,
+    "centerYRatio": 0.49260055541992187,
+    "radiusRatio": 0.4540561859628345,
+    "rotateDegrees": 5,
+    "tags": ["birds", "cut:positive", "shape:circle", "tree"],
+    "text": "hofor bærdygtige byer spildevand"
+  },
+  "09492c1a1e5895288751cf4b97fa773c862719d2e956c15fb42ba2dee45264b8": {
+    "centerXRatio": 0.49874997181324937,
+    "centerYRatio": 0.5239275817871095,
+    "radiusRatio": 0.423613378259908,
+    "rotateDegrees": 2.266468562558714,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "09d05b64c029cbc30e7df5bae872b8fe30952e26615a67abce7bc52f86b7f9d4": {
+    "centerXRatio": 0.4975,
+    "centerYRatio": 0.5562502136230469,
+    "radiusRatio": 0.4331113084196578,
+    "rotateDegrees": 0.5597750744525456,
+    "tags": ["kommune:lyngbytaarbæk", "shape:circle"],
+    "text": "lyngby-taarbæk forsyning"
+  },
+  "09e37cfc467ff24eae0f4540e14fa66f1a03a527c35eaad361c69c2d1070dbc8": {
+    "centerXRatio": 0.49940462239583333,
+    "centerYRatio": 0.5281371459960937,
+    "radiusRatio": 0.4146679801453332,
+    "rotateDegrees": 1,
+    "tags": ["shape:circle"],
+    "text": "kessel"
+  },
+  "0a09ecd8d6e3766e2ed2f4e68fd67421207dced20995fd06b51918d7e0cfd899": {
+    "centerXRatio": 0.5,
+    "centerYRatio": 0.5,
+    "radiusRatio": 0.4165134542764064,
+    "rotateDegrees": 248,
+    "tags": ["shape:circleinsquare"],
+    "text": "ns en124"
+  },
+  "0aadb12ec590616b33e17873658f25b553733ecde4501cc6454f232fb6d83317": {
+    "centerXRatio": 0.5127874755859374,
+    "centerYRatio": 0.51028466796875,
+    "radiusRatio": 0.44016391892256457,
+    "rotateDegrees": 43,
+    "tags": ["shape:circleinsquare"],
+    "text": "d400"
+  },
+  "0de8186134622b60ec135e7120043a5b062251a159838ee7f935e97cfc7c0618": {
+    "centerXRatio": 0.4845354003906249,
+    "centerYRatio": 0.5325699462890627,
+    "radiusRatio": 0.45738274188878897,
+    "rotateDegrees": 21,
+    "tags": ["shape:circle"],
+    "text": "hvidovre forsyning"
+  },
+  "0f1802e76b3adc88e48c66622236c69b24846036ad1d36c41308b584824bc3e8": {
+    "centerXRatio": 0.5186484375,
+    "centerYRatio": 0.4952680257161458,
+    "radiusRatio": 0.39559153770446964,
+    "rotateDegrees": 121,
+    "tags": ["shape:circleinsquare"],
+    "text": "15"
+  },
+  "0f9e3c54ae7444bfc92659c1ed7dde3ae9df856cf494276176715db93cc2fb5f": {
+    "centerXRatio": 0.5300000813802083,
+    "centerYRatio": 0.4859374389648437,
+    "radiusRatio": 0.3340264572387177,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": "e"
+  },
+  "0fa6779586f7cc045503138718a9eec462393ee7fba333db24587a4524d9d584": {
+    "centerXRatio": 0.5050000813802084,
+    "centerYRatio": 0.5187500915527343,
+    "radiusRatio": 0.4503906040243378,
+    "rotateDegrees": 0,
+    "tags": ["shape:circleinsquare"],
+    "text": "aco"
+  },
+  "100b66a5b5908bf649f78ef2d679dc037b246796f91f696a8133bf40d25b2632": {
+    "centerXRatio": 0.48586851834827377,
+    "centerYRatio": 0.45350332641601565,
+    "radiusRatio": 0.43625506704965644,
+    "rotateDegrees": 8,
+    "tags": ["crown", "dots", "keys", "kommune:næstved", "shape:circle"],
+    "text": "en124 d400 f lås rj 2201t"
+  },
+  "102faffe40180967c76ac6b4ed5206df2dd409b604053e0eced7a8d586754cda": {
+    "centerXRatio": 0.5011121419270834,
+    "centerYRatio": 0.5159157104492188,
+    "radiusRatio": 0.3953471382034391,
+    "rotateDegrees": 3,
+    "tags": ["kommune:frederiksberg", "shape:circle"],
+    "text": "frederiksberg"
+  },
+  "10561ba59b27a7505c409f14ec3521ffe49521c525c9b2abe3718a63f9813607": {
+    "centerXRatio": 0.5100000086728463,
+    "centerYRatio": 0.47959112548828126,
+    "radiusRatio": 0.46966466920078165,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "1098eabea96bc5abc7803381680e644c4f13eac6c9c6311feeede5c5426cdf23": {
+    "centerXRatio": 0.5590939636230469,
+    "centerYRatio": 0.4969176704040852,
+    "radiusRatio": 0.45892083598964445,
+    "rotateDegrees": 271,
+    "tags": ["shape:circleinsquare"],
+    "text": "city 15"
+  },
+  "10cd81977223536018e2cf373801d12b67d342b8a0be387e713293b958ffbc87": {
+    "centerXRatio": 0.5148330607168629,
+    "centerYRatio": 0.4479166259765625,
+    "radiusRatio": 0.397120278235496,
+    "rotateDegrees": 4.153424238673836,
+    "tags": ["shape:circleinsquare"],
+    "text": ""
+  },
+  "1256120232ff87ca887db8caf32dc3af9255b42709608231ebf31ca7286469ca": {
+    "centerXRatio": 0.5024933349175732,
+    "centerYRatio": 0.4599045104980469,
+    "radiusRatio": 0.46453033814490746,
+    "rotateDegrees": 359,
+    "tags": ["arrows", "shape:circle"],
+    "text": "furnes"
+  },
+  "1271a71187cc974f890aaadef9cd388b774590b29ff1529c798dae78419aa40a": {
+    "centerXRatio": 0.5420447124257604,
+    "centerYRatio": 0.43425042724609375,
+    "radiusRatio": 0.48618075613147876,
+    "rotateDegrees": 359,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "12e9dbbedfc65649c19a492b949d142323b5d0317a6a464de1c7511e64e84773": {
+    "centerXRatio": 0.5225000737191942,
+    "centerYRatio": 0.48873992919921877,
+    "radiusRatio": 0.41741028749991793,
+    "rotateDegrees": 0,
+    "tags": ["circles:5", "shape:circle"],
+    "text": "-"
+  },
+  "135dac592ceae32259f35de0702b484675eb0d17e6b56dd83b108ef147fdc240": {
+    "centerXRatio": 0.5143020324707032,
+    "centerYRatio": 0.5099427897135416,
+    "radiusRatio": 0.423804573887602,
+    "rotateDegrees": 98,
+    "tags": ["shape:circle"],
+    "text": "e"
+  },
+  "13619d81d07c043b90aa1cb8d681e5a2b0ed05e1ae4977fbbb4013c81c5d08ac": {
+    "centerXRatio": 0.5097352700377442,
+    "centerYRatio": 0.47011459350585943,
+    "radiusRatio": 0.4398079775739309,
+    "rotateDegrees": 3,
+    "tags": ["kommune:aarhus", "shape:circle"],
+    "text": "aarhus"
+  },
+  "1373217bee0858d4d0c1e68df82dff6034ca4efea2332136a51db6ca3961fd4b": {
+    "centerXRatio": 0.49624993896484376,
+    "centerYRatio": 0.50625,
+    "radiusRatio": 0.3522693224662967,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle", "star:7"],
+    "text": "-"
+  },
+  "13a0a37a57d2dbc113619d4c71a5218b3a11a00574822e362ca5a017830d8402": {
+    "centerXRatio": 0.5049835815429687,
+    "centerYRatio": 0.50241845703125,
+    "radiusRatio": 0.22394627452944782,
+    "rotateDegrees": 205,
+    "tags": ["hole", "shape:circle", "star:6"],
+    "text": "ludvigsen & hermann n256"
+  },
+  "13c747808355f6333475de86a9f519a6f9f1d03fc2810617d93df98f371aa29a": {
+    "centerXRatio": 0.5125000650463477,
+    "centerYRatio": 0.49155496215820316,
+    "radiusRatio": 0.3777418057335364,
+    "rotateDegrees": 0,
+    "tags": ["shape:circleinsquare"],
+    "text": "aco"
+  },
+  "142f730dc9dac3e7844f48762da3fc48f0c4ebe83ff547623226f3c5bb60ff77": {
+    "centerXRatio": 0.5237500813802083,
+    "centerYRatio": 0.5,
+    "radiusRatio": 0.2169008977179019,
+    "rotateDegrees": 0,
+    "tags": ["crown", "hole", "shape:circleinsquare"],
+    "text": "-"
+  },
+  "1530ab80cf080507c1720973cb9a92b8ca01f8a1ea2833fade173f157cbca9c5": {
+    "centerXRatio": 0.5042225341796875,
+    "centerYRatio": 0.5025000021682116,
+    "radiusRatio": 0.3885049610446986,
+    "rotateDegrees": 83.08428277404857,
+    "tags": ["shape:circle", "star:6"],
+    "text": "blaagaards lerbrænderi kjøbenhavn"
+  },
+  "15dc2ac379b736711a91511e6afe4c84f571522b2c11f9b964bf469dcdfdc3c3": {
+    "centerXRatio": 0.5014938557942709,
+    "centerYRatio": 0.4811897583007812,
+    "radiusRatio": 0.4035699939851944,
+    "rotateDegrees": 2.3019031668588923,
+    "tags": ["shape:circle"],
+    "text": "15 åatf d400 ufx en124 ulefos 600"
+  },
+  "164a8c35fbce207169ac5f07e4b87c94492113cfd93138a08f4e5eba8727c934": {
+    "centerXRatio": 0.5141770629882811,
+    "centerYRatio": 0.4956121419270834,
+    "radiusRatio": 0.4181154234617769,
+    "rotateDegrees": 118,
+    "tags": ["shape:circleinsquare"],
+    "text": "lønhart"
+  },
+  "16e313237f1d24ffe953bcc71de7bb320d9fb28eeda6f3b1272553807a893bd8": {
+    "centerXRatio": 0.5092902018229166,
+    "centerYRatio": 0.5495438842773436,
+    "radiusRatio": 0.45793718873759165,
+    "rotateDegrees": 21,
+    "tags": ["shape:circle"],
+    "text": "hvidovre forsyning"
+  },
+  "16ebe61f072c66f28723ea3e7b0aa9b574351b0499a6517c644cc3a2c10a7adc": {
+    "centerXRatio": 0.4887499089351132,
+    "centerYRatio": 0.5035187988281249,
+    "radiusRatio": 0.48523527154799617,
+    "rotateDegrees": 343.31036773589017,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "17b2b919ceccbae8c3ed4214b858bb391f52161e51e05c191bece920de8716d8": {
+    "centerXRatio": 0.5129369710286459,
+    "centerYRatio": 0.5063506164550781,
+    "radiusRatio": 0.4251059561641243,
+    "rotateDegrees": 42.75831235574469,
+    "tags": ["compass", "shape:circle"],
+    "text": "n o s w 50kn en 124"
+  },
+  "17d751ca54ddd08cbd7ea814c1016bc1750bd24a6a484e78b4894f2016a7801b": {
+    "centerXRatio": 0.4962500780556172,
+    "centerYRatio": 0.4908511962890625,
+    "radiusRatio": 0.45538500001390253,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": "powercom"
+  },
+  "17e772baeebecb983cea41de16cce1f744b000ede20568096ac15dd522fd6cc2": {
+    "centerXRatio": 0.5070375366210936,
+    "centerYRatio": 0.5075000607099246,
+    "radiusRatio": 0.39351445014903247,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle", "star:6"],
+    "text": "-"
+  },
+  "182627ac6d6ebe336fa5cd26cfd72b6ae8ef916abcf17acb30d1bcb372803245": {
+    "centerXRatio": 0.5137501474383881,
+    "centerYRatio": 0.4852211608886718,
+    "radiusRatio": 0.3582263174042561,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": "bd holbæk vand"
+  },
+  "186d6ab84c9f2a81ea827715bc4f4ee18cb31cc70a47dfb3eae6c380f34893e5": {
+    "centerXRatio": 0.5145324707031249,
+    "centerYRatio": 0.4584534098307292,
+    "radiusRatio": 0.49401035601174764,
+    "rotateDegrees": 76,
+    "tags": ["shape:circle"],
+    "text": "e"
+  },
+  "18eab43ced3820d15223888e15af56503ac43bc3bd670ffe456e2f5ed6499cde": {
+    "centerXRatio": 0.5288423258463542,
+    "centerYRatio": 0.5488726196289061,
+    "radiusRatio": 0.38877046167400553,
+    "rotateDegrees": 346,
+    "tags": ["kommune:højetaastrup", "shape:circleinsquare"],
+    "text": "city n"
+  },
+  "19f2a80df8683dc58344d925e5b232e04bf03e8b4d7395105d3aca167f0e8cf3": {
+    "centerXRatio": 0.4873324279785156,
+    "centerYRatio": 0.4724999219443828,
+    "radiusRatio": 0.4540149859952419,
+    "rotateDegrees": 346.77661192073674,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "1aaad742566da7fbff00c2d296c0a780d9c7939a3806825c1ea844e6d1a3ab78": {
+    "centerXRatio": 0.49296246337890626,
+    "centerYRatio": 0.5050000043364231,
+    "radiusRatio": 0.40907667136462456,
+    "rotateDegrees": 0,
+    "tags": ["shape:circleinsquare"],
+    "text": "ulefos ut30 uk-30"
+  },
+  "1c400271e6e71d7eb8658c248c7f9f0feacd85311510fa7ca013c71f2de410ed": {
+    "centerXRatio": 0.51875,
+    "centerYRatio": 0.5018750305175781,
+    "radiusRatio": 0.439250047000883,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": "40"
+  },
+  "1c7984a0e2ec4ab2daa529723c988f3b94a9aca115f901263817748befa21e53": {
+    "centerXRatio": 0.5200000813802084,
+    "centerYRatio": 0.48687496948242187,
+    "radiusRatio": 0.418879826037314,
+    "rotateDegrees": 2.7892627556458365,
+    "tags": ["kommune:syddjurs", "shape:circle"],
+    "text": "city-n 22 1511 100 rj furnes 2203t"
+  },
+  "1d95d7d9a05209e8aa4b4500c73bf856ea68939f989de8a6102b2d4498a1ddc1": {
+    "centerXRatio": 0.5,
+    "centerYRatio": 0.5,
+    "radiusRatio": 0.5,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": "oka"
+  },
+  "1e7e6e90a31ae24f8bd737c9bdbf5d98f48b62c4659b20853f2f19e3946687a8": {
+    "centerXRatio": 0.5133333333333333,
+    "centerYRatio": 0.5116802368164063,
+    "radiusRatio": 0.24381655118467896,
+    "rotateDegrees": 3,
+    "tags": ["shape:circle", "star:7"],
+    "text": "hj"
+  },
+  "1edbc4fb288e16bee68f90c8b41d86b3b9d0cf5ecf9782aed1ed2c764a21867f": {
+    "centerXRatio": 0.5294003092447916,
+    "centerYRatio": 0.5615819702148438,
+    "radiusRatio": 0.37686936371122076,
+    "rotateDegrees": 47,
+    "tags": ["shape:circleinsquare"],
+    "text": "15 uk10x gjs ulefos ns en124"
+  },
+  "1f0d99b506560f03ade83b037d205e5f728cdce70a67dd7dcfe1153fdd84c40e": {
+    "centerXRatio": 0.5026415710449218,
+    "centerYRatio": 0.4996919759114583,
+    "radiusRatio": 0.415635996237476,
+    "rotateDegrees": 320.8371962884298,
+    "tags": ["shape:circle"],
+    "text": "lønhart"
+  },
+  "1f6d03dd6ad541877d05d705dd44b30b5524d57ed230e2ca5009cb54e62b9819": {
+    "centerXRatio": 0.47816241455078123,
+    "centerYRatio": 0.49817675087422286,
+    "radiusRatio": 0.4411089866123298,
+    "rotateDegrees": 92.4321443982011,
+    "tags": ["shape:circle"],
+    "text": "ballerup"
+  },
+  "1fd4f23b4863d331931dd9b6779e5b78c1fd142cfa6cdd544be4804681108be6": {
+    "centerXRatio": 0.5175000151774811,
+    "centerYRatio": 0.4845174560546875,
+    "radiusRatio": 0.4531877263322943,
+    "rotateDegrees": 356.927890508166,
+    "tags": ["shape:circle"],
+    "text": "city-n bd"
+  },
+  "201cf3f14e57206bb57ea6040cce5c9a9d5d63fba52d36ebc395a91eb646d8db": {
+    "rotateDegrees": 0,
+    "tags": [
+      "birds",
+      "cut:negative",
+      "cut:positive",
+      "multiple",
+      "shape:circle",
+      "tree"
+    ],
+    "text": "hofor"
+  },
+  "206f0afd4f0494d414a2330b2b7b9ccbb85d896c4a870c109d297037ce196f20": {
+    "centerXRatio": 0.44647821044921876,
+    "centerYRatio": 0.4849431256417906,
+    "radiusRatio": 0.4766025005738285,
+    "rotateDegrees": 81,
+    "tags": ["kommune:aarhus", "shape:circle"],
+    "text": "aarhus vand"
+  },
+  "2082320f0f7cdc5885d941a14823a2842643a1394de4ed319dad91962e1f3866": {
+    "centerXRatio": 0.5162742614746093,
+    "centerYRatio": 0.5049469401041666,
+    "radiusRatio": 0.34351326272893257,
+    "rotateDegrees": 129,
+    "tags": ["shape:circleinsquare"],
+    "text": "bd"
+  },
+  "208fb144f4135f42dd3fef4d328bfb00426b317f96454dea68963d9ed5e945cb": {
+    "centerXRatio": 0.5360087280273437,
+    "centerYRatio": 0.511385550083953,
+    "radiusRatio": 0.42987436153767833,
+    "rotateDegrees": 271,
+    "tags": ["shape:circleinsquare"],
+    "text": ""
+  },
+  "209aed5e049dfcf94b383ca30cd7e67ae88ac6f0e56a5f7813bb868a9c4fc058": {
+    "centerXRatio": 0.5431768391927084,
+    "centerYRatio": 0.49786761474609387,
+    "radiusRatio": 0.39148207079286745,
+    "rotateDegrees": 39.586874712732254,
+    "tags": ["shape:circle"],
+    "text": "ludvigsen hermann n287"
+  },
+  "21a9dd3a8beef7cf6f6968dffa685b53ca0f6952bdb0bbf786d99aaec1640c87": {
+    "centerXRatio": 0.49945808919270834,
+    "centerYRatio": 0.5038440246582031,
+    "radiusRatio": 0.3978098716771605,
+    "rotateDegrees": 8,
+    "tags": ["crown", "picture", "shape:circle", "star"],
+    "text": "telia en124 d400 2401"
+  },
+  "2270b8a8ccd9b7c2da845e439c9ccc315ed3e91ad6819a8f9292974b50bd9df3": {
+    "centerXRatio": 0.5140750427246092,
+    "centerYRatio": 0.5100000628781362,
+    "radiusRatio": 0.35112634501744727,
+    "rotateDegrees": 0,
+    "tags": ["shape:circleinsquare"],
+    "text": "42-sl"
+  },
+  "22bff97aa5defba4b0b38a84d36c0787a40401c90b04a9f2e0470e13cd51cb21": {
+    "centerXRatio": 0.4829983215332031,
+    "centerYRatio": 0.4432470074343639,
+    "radiusRatio": 0.45076291069530267,
+    "rotateDegrees": 91.45244724888016,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "230424df3c459135aa4bfdfbc603afba2cef250dd2050f7deb6c2ecc0a50610a": {
+    "centerXRatio": 0.5,
+    "centerYRatio": 0.5131250305175781,
+    "radiusRatio": 0.39950500182700555,
+    "rotateDegrees": 324.3296267669225,
+    "tags": ["border:none", "rim:thin", "shape:circle", "star:6", "wordless"],
+    "text": "-"
+  },
+  "2309ab9d7d762b937a9259b9f300a17a3e283cae792c1a57917f63ae06604368": {
+    "centerXRatio": 0.5169229329427083,
+    "centerYRatio": 0.5057573547363281,
+    "radiusRatio": 0.375431190953411,
+    "rotateDegrees": 135.94641739973338,
+    "tags": ["shape:circle"],
+    "text": "ml 3ton"
+  },
+  "2345b8fe2085c82be380e634fa639ab61776cf63451ed7215616e66c632166c6": {
+    "centerXRatio": 0.5055769112351521,
+    "centerYRatio": 0.505677978515625,
+    "radiusRatio": 0.427663547144923,
+    "rotateDegrees": 16.412768322643217,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "23f907456a733116d220ecce7cefb181bea65e44db6d0126242e2ad28b58cc02": {
+    "centerXRatio": 0.5012500283584675,
+    "centerYRatio": 0.5023674926757813,
+    "radiusRatio": 0.44005404888819116,
+    "rotateDegrees": 2.96190440000521,
+    "tags": ["shape:circle"],
+    "text": "ballerup"
+  },
+  "240b87b1cec7f0641898e9d2e4ea0e54fc287f74e7a8354dc14f74b686f908d7": {
+    "centerXRatio": 0.5075000406901041,
+    "centerYRatio": 0.5534377136230468,
+    "radiusRatio": 0.33576020012506347,
+    "rotateDegrees": 0,
+    "tags": ["hinge", "shape:circle"],
+    "text": "bb k"
+  },
+  "2472720f7e897418e5d10febcfee5c6edc64c37c1a6cbaad78a77cc5c526df5b": {
+    "centerXRatio": 0.488360823365342,
+    "centerYRatio": 0.46412576293945307,
+    "radiusRatio": 0.46484079219343033,
+    "rotateDegrees": 8.952977143382725,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "247a0d7a505826dbad6a1d18663a33b30e025f08ac34123c1fda23530950d67e": {
+    "centerXRatio": 0.5112600402832032,
+    "centerYRatio": 0.4849998785801509,
+    "radiusRatio": 0.36512908491100027,
+    "rotateDegrees": 114.3113522797608,
+    "tags": ["shape:circle", "star:6"],
+    "text": "fr winsløw aarhus"
+  },
+  "25a96ac6e23b9abbf3638e95a1a50cde42643ac9868d159750b7b3ea7c4e382e": {
+    "centerXRatio": 0.5074925944010417,
+    "centerYRatio": 0.5009703369140626,
+    "radiusRatio": 0.41285163194003116,
+    "rotateDegrees": 269.6656213670094,
+    "tags": ["shape:circleinsquare"],
+    "text": "aco"
+  },
+  "25d1ef596b45d9f31f5cfd98cdbfbbe3e3028d2541d6944526de0e9b5703834a": {
+    "centerXRatio": 0.5219481201171875,
+    "centerYRatio": 0.5130717140319715,
+    "radiusRatio": 0.4589106977145586,
+    "rotateDegrees": 271,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "25eb41e76451e62135fdfdf0d74f38c30e9df3b9641623182a44079512efc982": {
+    "centerXRatio": 0.5025,
+    "centerYRatio": 0.5121875610351562,
+    "radiusRatio": 0.4105489775849138,
+    "rotateDegrees": 0,
+    "tags": ["kommune:lyngbytaarbæk", "shape:circle"],
+    "text": "lyngby-taarbæk forsyning"
+  },
+  "2611a70b6f1eafc48dc926900d32ef394b18d6e591a5a48257a74fcd19315c3f": {
+    "centerXRatio": 0.5119638061523437,
+    "centerYRatio": 0.49499999566357683,
+    "radiusRatio": 0.4076002329305662,
+    "rotateDegrees": 96.45377097787917,
+    "tags": ["shape:circle"],
+    "text": "nyborg jern"
+  },
+  "269e97760f0d1ab07d33278ec7d6708200463b4ae1897d6ae273bdae5c0ed918": {
+    "centerXRatio": 0.4870026041666667,
+    "centerYRatio": 0.5408311767578124,
+    "radiusRatio": 0.45876236798716497,
+    "rotateDegrees": 16,
+    "tags": ["shape:circle"],
+    "text": "furnes 1700ht basic"
+  },
+  "26afff713b89e95722773d941156797cf424fe0f8dea37de7a049bcec9a250e1": {
+    "centerXRatio": 0.5137500390278086,
+    "centerYRatio": 0.4570711059570312,
+    "radiusRatio": 0.4578337311291314,
+    "rotateDegrees": 0,
+    "tags": ["shape:circleinsquare"],
+    "text": ""
+  },
+  "273a984a36ae676607cea36dc284c6339c64f11d381ce879227dad1adc7891d2": {
+    "centerXRatio": 0.4987499718132493,
+    "centerYRatio": 0.4894436950683594,
+    "radiusRatio": 0.52532616030124,
+    "rotateDegrees": 1.0908730503536503,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "2754af63d26278a7c208eadebcb567c9199ff56bd368dad6b195ddd79835f83c": {
+    "centerXRatio": 0.49124995930989585,
+    "centerYRatio": 0.5,
+    "radiusRatio": 0.37588420666016115,
+    "rotateDegrees": 4.956533056692592,
+    "tags": ["shape:circle"],
+    "text": "ribe sh"
+  },
+  "275b1800ebabd491064f40dabddd23e779f9740d15c59f3930021f716c528929": {
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": "d400 hdk600"
+  },
+  "27af335a84483448e056b178fcc9fc82a38a3438946bad20fa046394ea6796f5": {
+    "centerXRatio": 0.47325741577148434,
+    "centerYRatio": 0.5075000607099245,
+    "radiusRatio": 0.45312089047143855,
+    "rotateDegrees": 0,
+    "tags": ["shape:circleinsquare", "swirl"],
+    "text": "eco600"
+  },
+  "28c91f7f9d170070e503123ec05241d96ad804791d76bb045a200542ab7f48b4": {
+    "centerXRatio": 0.5109533691406251,
+    "centerYRatio": 0.49831890869140627,
+    "radiusRatio": 0.3099047658529771,
+    "rotateDegrees": 255,
+    "tags": ["picture", "rhinoceros", "shape:circleinsquare"],
+    "text": "aalholm kloak furnes d400 e124 "
+  },
+  "28f4ca1edfa253845319b888e7fe8cc860ecf2da8cc4e2041af7f29d3a9498b6": {
+    "centerXRatio": 0.4937499132715365,
+    "centerYRatio": 0.5112601013183593,
+    "radiusRatio": 0.31544261222537867,
+    "rotateDegrees": 0,
+    "tags": ["crown", "hole", "shape:square"],
+    "text": "-"
+  },
+  "2924b0bae703e8b9af69d874bbc54f90515c838770071f4755e78a47c45f6d54": {
+    "centerXRatio": 0.49926855382021534,
+    "centerYRatio": 0.5051068115234375,
+    "radiusRatio": 0.4512949702831072,
+    "rotateDegrees": 69.44445708948484,
+    "tags": ["shape:circleinsquare"],
+    "text": "e furnes københavns energi furnes d400"
+  },
+  "294d7d232b5122dd91a48bb584e5fb50d4582ca0b292b2b9f4b2230b47fb1e19": {
+    "centerXRatio": 0.5062500867284635,
+    "centerYRatio": 0.48803619384765623,
+    "radiusRatio": 0.4005192465043762,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "296b86af702e86f828959af73175434454bf47d600ee25a3274997885b3f5204": {
+    "centerXRatio": 0.5037499219443827,
+    "centerYRatio": 0.4627011108398438,
+    "radiusRatio": 0.41856603742821424,
+    "rotateDegrees": 0,
+    "tags": ["shape:square", "squares"],
+    "text": "rjr"
+  },
+  "2994c83eafe92b168182454b5c4c060ad94d0e881676f878b0367f3bb925b2e7": {
+    "centerXRatio": 0.5187499999999999,
+    "centerYRatio": 0.48374991861979166,
+    "radiusRatio": 0.28643684228865746,
+    "rotateDegrees": 0,
+    "tags": ["shape:circleinsquare"],
+    "text": "2220 33 440 h en124-d400 mpa hydrotec"
+  },
+  "29c3f3c1e6003780e2c4931f2afdf7ee43254a0dbec08cf97a505839b7be570c": {
+    "centerXRatio": 0.4945786037411191,
+    "centerYRatio": 0.45292642211914064,
+    "radiusRatio": 0.460548488966945,
+    "rotateDegrees": 2,
+    "tags": ["kommune:næstved", "shape:circle"],
+    "text": ""
+  },
+  "29d059b591cbf490cfd3a21fb135c6e061928756493bea318d5565982b8ce045": {
+    "centerXRatio": 0.49706412760416663,
+    "centerYRatio": 0.48128555297851566,
+    "radiusRatio": 0.4194795264774222,
+    "rotateDegrees": 181,
+    "tags": ["shape:circleinsquare"],
+    "text": "aco"
+  },
+  "2ab8e4511e10da1dd9d81fa77b23aac22ace5723e9cfcc914ca2852242ac21c8": {
+    "centerXRatio": 0.522500073719194,
+    "centerYRatio": 0.4943699951171875,
+    "radiusRatio": 0.35462408285703084,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "2ac0fd270fa125ffc53172d5a02feed826e93edac55b5194b63efd0698883a4d": {
+    "centerXRatio": 0.5075000607099245,
+    "centerYRatio": 0.4577748413085937,
+    "radiusRatio": 0.42861483225581154,
+    "rotateDegrees": 41.11031983860721,
+    "tags": ["shape:circleinsquare"],
+    "text": "køge kommune uk-10 ulefos"
+  },
+  "2ae2f0e7c8c7a99d628e5175cfbbeeca1e3e11ce79f14d5137f77786e3a1f980": {
+    "centerXRatio": 0.5061520080566406,
+    "centerYRatio": 0.48147702259449937,
+    "radiusRatio": 0.3442689461971614,
+    "rotateDegrees": 5,
+    "tags": ["hole", "shape:circle"],
+    "text": "frederiksberg jernstøberi & maskinfabrik"
+  },
+  "2b2744a8321e1035b807fa84112f9be1e8ebd76a3046ea9bf6f3ebc3ff4f54c3": {
+    "centerXRatio": 0.48499987858015103,
+    "centerYRatio": 0.44510736083984376,
+    "radiusRatio": 0.46604944365280204,
+    "rotateDegrees": 0,
+    "tags": ["kommune:gentofte", "shape:circle"],
+    "text": "-"
+  },
+  "2b64404da8721b1bbcd300a09fa002e5a7cde7ef65d3e76cc4735ccaf22a4efd": {
+    "centerXRatio": 0.4728461311299678,
+    "centerYRatio": 0.48036907958984376,
+    "radiusRatio": 0.3576624167788003,
+    "rotateDegrees": 172.90981113873318,
+    "tags": ["shape:circle"],
+    "text": "scs"
+  },
+  "2be09f592263825672f1728e0faec69ba8b3630f1c98b53581af312bfe230c1c": {
+    "centerXRatio": 0.5346876627604167,
+    "centerYRatio": 0.5306508178710938,
+    "radiusRatio": 0.3666761082598274,
+    "rotateDegrees": 303,
+    "tags": ["shape:circle"],
+    "text": "nv nv425 d400 nv 60670"
+  },
+  "2be12ce087bf7b3eb9f49428b4559c7563bd223fce43666722222cbe7e92dfa9": {
+    "centerXRatio": 0.47056066894531245,
+    "centerYRatio": 0.5483003540039062,
+    "radiusRatio": 0.2300981862001933,
+    "rotateDegrees": 224.75906261750958,
+    "tags": ["shape:circleinsquare"],
+    "text": "hj"
+  },
+  "2df5c48d60ef30dafd9d673b3565b8720e95c7ecc3e07e6b38fdb808d6afa50c": {
+    "centerXRatio": 0.48028219604492184,
+    "centerYRatio": 0.5099205437180838,
+    "radiusRatio": 0.4162364879748678,
+    "rotateDegrees": 89.86994690353288,
+    "tags": ["shape:circle"],
+    "text": "nyborg jern"
+  },
+  "2e30268ec6b63131eae090f1538cef1e87cf5d3d3413e5f0579bb149353c96fa": {
+    "centerXRatio": 0.4984501342773437,
+    "centerYRatio": 0.5074109472135879,
+    "radiusRatio": 0.35949523690910246,
+    "rotateDegrees": 267.877132491884,
+    "tags": ["shape:circle", "star:6"],
+    "text": "poetzold & jacobsen kjøbenhavn"
+  },
+  "2e7917f3dbf96d07739b3f246a650793d52924e03cd23d0320161c23ed007adb": {
+    "centerXRatio": 0.5075000406901041,
+    "centerYRatio": 0.4578123474121094,
+    "radiusRatio": 0.4339192493757786,
+    "rotateDegrees": 341.5692240751922,
+    "tags": ["shape:circle", "star"],
+    "text": ""
+  },
+  "2f476546ae2ad14e0369b399e9c0a520272b395cc34750ebf7a4c28d5302b23b": {
+    "centerXRatio": 0.49885815429687497,
+    "centerYRatio": 0.48703865559895837,
+    "radiusRatio": 0.4405989318996205,
+    "rotateDegrees": 350,
+    "tags": ["picture", "shape:circleinsquare"],
+    "text": "tivoli"
+  },
+  "2fbc8940bdeb70b985f62455f467872072832be73bfe2b0ce07b8f9f6781b515": {
+    "centerXRatio": 0.4761363118489583,
+    "centerYRatio": 0.4766462097167969,
+    "radiusRatio": 0.41840758449211024,
+    "rotateDegrees": 276.8150407833524,
+    "tags": ["shape:circle", "swirl"],
+    "text": "randers 40 en124 d400 lås r 2716 2203"
+  },
+  "30246c5f3046dad1bb722c8850860fe0a0ba618e2a791bf1821b28b0b72f314d": {
+    "centerXRatio": 0.5150000672145594,
+    "centerYRatio": 0.48803616333007815,
+    "radiusRatio": 0.3490524571661192,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "3050c78f50e06a7081b0b8df33de2f595229002e9a0620166a984fc9c4ecb2e1": {
+    "centerXRatio": 0.5049550139459369,
+    "centerYRatio": 0.44909436035156247,
+    "radiusRatio": 0.4585030911652441,
+    "rotateDegrees": 93.20347345469213,
+    "tags": ["shape:circle"],
+    "text": "super-gørlev 40 sg"
+  },
+  "30b1c6dd6e842e218f3ec3c13eef06b358720965060278127fa4cb09b03e92e8": {
+    "centerXRatio": 0.514891710840364,
+    "centerYRatio": 0.4343467407226563,
+    "radiusRatio": 0.46180738335582017,
+    "rotateDegrees": 91.28350651974893,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "30eb0e19459c4185692c9aace11d149fbdd8d8ba84f0c48d58151e4ad22c259e": {
+    "centerXRatio": 0.4918284505208333,
+    "centerYRatio": 0.5205206909179687,
+    "radiusRatio": 0.43007170065495426,
+    "rotateDegrees": 47.67940419533261,
+    "tags": ["shape:circle"],
+    "text": "harde"
+  },
+  "3125f2889b62335f3d01b734d727e028d70f2bc8b16e6df5f20ca7db16b291a8": {
+    "centerXRatio": 0.4882649536132813,
+    "centerYRatio": 0.521174374947963,
+    "radiusRatio": 0.4351323101694031,
+    "rotateDegrees": 60.07143791964978,
+    "tags": ["shape:circle", "star:6"],
+    "text": "fr winsløw aarhus "
+  },
+  "31b9ea6593d3b8c540b631684cad292562f8efb3f879365ecd966ce5196be11e": {
+    "centerXRatio": 0.5009375,
+    "centerYRatio": 0.48499995930989587,
+    "radiusRatio": 0.44914509594562285,
+    "rotateDegrees": 0,
+    "tags": [
+      "fish",
+      "hcandersen",
+      "mermaid",
+      "picture",
+      "shape:circle",
+      "soldier"
+    ],
+    "text": "københavns energi afløb furnes 2211ps"
+  },
+  "31d4b122b716d5fecc2dca2c32cacb160b93d78522f62d93fb9da0bb50f1705f": {
+    "centerXRatio": 0.5618294263605962,
+    "centerYRatio": 0.5012947387695311,
+    "radiusRatio": 0.3571820953026665,
+    "rotateDegrees": 186,
+    "tags": ["shape:circle", "star:7"],
+    "text": "hj"
+  },
+  "32685ff43a313b5bab54dec4f9795677844beb0025f741adde429f01ac34019c": {
+    "centerXRatio": 0.5060276692708333,
+    "centerYRatio": 0.5092688598632813,
+    "radiusRatio": 0.35995782479890504,
+    "rotateDegrees": 26,
+    "tags": ["shape:circle", "squares"],
+    "text": "hlk m 1155 a 1165 a"
+  },
+  "3285536ac1a1ed4f5b2cf4fe78c53e4cb1a7963526189411caf3d730e81541f1": {
+    "centerXRatio": 0.4741169128417969,
+    "centerYRatio": 0.5014426195812056,
+    "radiusRatio": 0.4304092346019157,
+    "rotateDegrees": 139,
+    "tags": ["mjolnir", "shape:circle"],
+    "text": "hj"
+  },
+  "330d6479ea6990756c378ffef9c2e93da09dc575fdf4b8b7321a7ab0d531d02a": {
+    "centerXRatio": 0.49929623413085933,
+    "centerYRatio": 0.4787499544675566,
+    "radiusRatio": 0.3880421217194555,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle", "star:7"],
+    "text": "-"
+  },
+  "334398d9a28b34de7a7aad8be58506981118ea08cb13ceedabf09c14889edaf1": {
+    "centerXRatio": 0.5,
+    "centerYRatio": 0.5,
+    "radiusRatio": 0.5,
+    "rotateDegrees": 0,
+    "tags": ["inside"],
+    "text": "15 ulefos"
+  },
+  "3454193d8c216e0e371ccaa3766cebe1d057b78bd453b2f9a08da24fc2541bfd": {
+    "centerXRatio": 0.4859150806921626,
+    "centerYRatio": 0.5012258605957032,
+    "radiusRatio": 0.43473040995290857,
+    "rotateDegrees": 46.66278994639595,
+    "tags": ["shape:circle"],
+    "text": "lønhart godt grej"
+  },
+  "3464163412500b6093525f76fc7816ca910c348171875d042bd84b0bc2d9f183": {
+    "centerXRatio": 0.5162500813802082,
+    "centerYRatio": 0.5225000610351562,
+    "radiusRatio": 0.43895878096412877,
+    "rotateDegrees": 0,
+    "tags": ["kommune:frederiksberg", "shape:circle"],
+    "text": "frederiksberg d400 hdk600 ulefos ns nv e124 ufa6-600"
+  },
+  "3496d0733c8677382e20fe49983ea30a2520ab6a0a39cca59bf44ab22569a4b0": {
+    "centerXRatio": 0.49624999999999997,
+    "centerYRatio": 0.4718749084472656,
+    "radiusRatio": 0.21031493588212816,
+    "rotateDegrees": 180,
+    "tags": ["shape:circleinsquare"],
+    "text": "25kn"
+  },
+  "34dab339d1ccea05188c81e5dffdded6b039c92186d6dfd49fc94e0a2d2f176f": {
+    "centerXRatio": 0.4997725016276041,
+    "centerYRatio": 0.4674210205078125,
+    "radiusRatio": 0.3969788195999165,
+    "rotateDegrees": 66.72380127613542,
+    "tags": ["kommune:kolding", "shape:circleinsquare"],
+    "text": "kolding kommune"
+  },
+  "34ea2b0c377f6dd5bf08c52ac1d49b2b5b6dab6150cbdce47e5c4c6bec908bb6": {
+    "centerXRatio": 0.5125875854492188,
+    "centerYRatio": 0.5028165610603075,
+    "radiusRatio": 0.4730903400280225,
+    "rotateDegrees": 356,
+    "tags": ["anchor", "kommune:dragør", "shape:circle"],
+    "text": ""
+  },
+  "35686806daf8c11c5fbf90c3da2d3e49515ec30739abd27feda742c79c0a6190": {
+    "centerXRatio": 0.4982180553050067,
+    "centerYRatio": 0.510602325439453,
+    "radiusRatio": 0.39998060098355825,
+    "rotateDegrees": 347,
+    "tags": ["shape:circle"],
+    "text": "bd"
+  },
+  "3638d3f55814a4b0910e3b0e54f4687d8c0d546123808db49e27c2973884822c": {
+    "centerXRatio": 0.5014066772460938,
+    "centerYRatio": 0.4999127294835147,
+    "radiusRatio": 0.2822008446938209,
+    "rotateDegrees": 92,
+    "tags": ["shape:circle"],
+    "text": "40 ulefos"
+  },
+  "366a281ee0612493997cf5bd8bbe0a8f9649766de16b22b208820885cffa4273": {
+    "centerXRatio": 0.4851319580078125,
+    "centerYRatio": 0.5040807910329708,
+    "radiusRatio": 0.4526390976861605,
+    "rotateDegrees": 88,
+    "tags": ["bird", "kommune:gladsaxe", "shape:circle"],
+    "text": "ulefos gladsaxe kommune"
+  },
+  "377c9bfe6436f7d95587d45099a1920b7a5aa95ef7e2c62335f76bf36cac2963": {
+    "centerXRatio": 0.4931563110351562,
+    "centerYRatio": 0.5068956717292963,
+    "radiusRatio": 0.3259353820812847,
+    "rotateDegrees": 92.60311273455955,
+    "tags": ["shape:circle"],
+    "text": "ut33 uf33 a"
+  },
+  "37828ab02687e2fe2c8f3fe3b5a0f077708db1642169d4a3ac4bf56df8604d5c": {
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "389f8d494ca3d53eb53a5ec30191a58eda67ea1ee93abcb7639fbe064870ad82": {
+    "centerXRatio": 0.508808847430756,
+    "centerYRatio": 0.4870551452636719,
+    "radiusRatio": 0.4662550263727112,
+    "rotateDegrees": 3,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "38ac6c798e78fd23c4a7cf3f9830b10f0889d7add08c477f54ce889b58a25c41": {
+    "centerXRatio": 0.5198810424804687,
+    "centerYRatio": 0.4966740718319827,
+    "radiusRatio": 0.4739382791789156,
+    "rotateDegrees": 79.26165589669432,
+    "tags": ["hcandersen", "shape:circle"],
+    "text": "furnes 2709 2211ps københavns energi afløb"
+  },
+  "38d43b756710c7bab2999a705ca09caa27f80b545147f24ef6a82f8d0fc7f6b2": {
+    "centerXRatio": 0.5235743815104167,
+    "centerYRatio": 0.47926184082031253,
+    "radiusRatio": 0.3976533106540037,
+    "rotateDegrees": 346.1150255595536,
+    "tags": ["shape:circle"],
+    "text": "fors"
+  },
+  "38ea361d5b6442b9b100393b151f399c67444b5a40abc562b70c0211c1436c6b": {
+    "centerXRatio": 0.5203461100260417,
+    "centerYRatio": 0.5147360229492187,
+    "radiusRatio": 0.4367353252104836,
+    "rotateDegrees": 271,
+    "tags": ["shape:square"],
+    "text": "barcelona"
+  },
+  "3911dd060ee755dc8bc4524f456ab0688c109bca2e2923fdd9fe944caa808f9e": {
+    "centerXRatio": 0.512436861678508,
+    "centerYRatio": 0.4608103637695312,
+    "radiusRatio": 0.37735724556638633,
+    "rotateDegrees": 358,
+    "tags": ["shape:square", "starofdavid"],
+    "text": ""
+  },
+  "3991c3d1c5ccb2cebf9ec442411ffd95751942e402fac18c2fa2e2468c6c1f93": {
+    "centerXRatio": 0.4975030110677083,
+    "centerYRatio": 0.5245369873046876,
+    "radiusRatio": 0.43227608184736643,
+    "rotateDegrees": 36,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "39c7bbd79dccd76b011571ece7352439a06e487aa40727d5eb53f515a6656121": {
+    "centerXRatio": 0.5087499186197917,
+    "centerYRatio": 0.49062496948242185,
+    "radiusRatio": 0.45216715808223823,
+    "rotateDegrees": 0,
+    "tags": ["arrows", "shape:circleinsquare"],
+    "text": "fv bb600 en124d400 gjs500"
+  },
+  "3a3539a42c6703e2c56d496685a8795957d3536abd277e12cda9dcf24caa9a0d": {
+    "centerXRatio": 0.49052832031249993,
+    "centerYRatio": 0.5644724731445313,
+    "radiusRatio": 0.43398592582904444,
+    "rotateDegrees": 322.06165487366457,
+    "tags": ["kommune:rudersdal", "shape:circle"],
+    "text": ""
+  },
+  "3a84f432206ac2d093cd25b91ecb21e83f668d27f2580df46dc58f28ff1ff79e": {
+    "centerXRatio": 0.5146162719726564,
+    "centerYRatio": 0.49327587890624996,
+    "radiusRatio": 0.41631366668838554,
+    "rotateDegrees": 5,
+    "tags": ["shape:circle"],
+    "text": "t"
+  },
+  "3ac6246f356ab1b5b94f18acdf20ce575a48344d1b8252e242339c4973c0403e": {
+    "centerXRatio": 0.46621987915039065,
+    "centerYRatio": 0.5062500867284636,
+    "radiusRatio": 0.4030552838089871,
+    "rotateDegrees": 270,
+    "tags": ["shape:circle"],
+    "text": "bd"
+  },
+  "3aeea0e707c33ae052287d370626f050db2908ea2eea85e8119646596ba152c5": {
+    "rotateDegrees": 94,
+    "tags": ["kommune:højetaastrup", "shape:circle"],
+    "text": ""
+  },
+  "3b0ad06481bcf325062e60480cec8aab5d1f2ccef93d5315671d32c71711d933": {
+    "centerXRatio": 0.511353759765625,
+    "centerYRatio": 0.49258837890624996,
+    "radiusRatio": 0.37448858796515516,
+    "rotateDegrees": 269.40244979729016,
+    "tags": ["shape:circleinsquare"],
+    "text": "aco en124 d400"
+  },
+  "3bee4f2176a8900229d69ed39205fa3f1013f035ab1f68e22acfb474482b97e0": {
+    "centerXRatio": 0.48322037760416664,
+    "centerYRatio": 0.5046691894531249,
+    "radiusRatio": 0.40267719507411176,
+    "rotateDegrees": 355.5808527897642,
+    "tags": ["kommune:lyngbytaarbæk", "shape:circle"],
+    "text": "lyngby-taarbæk forsyning"
+  },
+  "3c54f71cb87dc03cc059ec5f28e2f0ec80ab76b0b1deb077915aac454c546418": {
+    "centerXRatio": 0.46054791259765626,
+    "centerYRatio": 0.4638724996183948,
+    "radiusRatio": 0.4319098806856574,
+    "rotateDegrees": 150,
+    "tags": ["shape:circleinsquare"],
+    "text": "ao a&o johansen a/s"
+  },
+  "3cbf41bccd2a423e8940a8e5505a80ce9ed1f5b540c535362d15459b2cc121ba": {
+    "centerXRatio": 0.5,
+    "centerYRatio": 0.5,
+    "radiusRatio": 0.5,
+    "rotateDegrees": 0,
+    "text": "slagelse jernstøberi aps 40 tons 221045"
+  },
+  "3ddb9bed4b6e686978438973361ecc2e833f23d6b587c08c5c48cbb80c520808": {
+    "centerXRatio": 0.5354895019531251,
+    "centerYRatio": 0.5239737243652344,
+    "radiusRatio": 0.2618682819164543,
+    "rotateDegrees": 324,
+    "tags": ["shape:circleinsquare"],
+    "text": "nv scanpipe"
+  },
+  "3e1246a8b1ad437df76723e278a9402929fd62c6c32fb3cd91298e2266e61d0a": {
+    "centerXRatio": 0.5218393554687499,
+    "centerYRatio": 0.5494282836914064,
+    "radiusRatio": 0.3899279437552096,
+    "rotateDegrees": 175,
+    "tags": ["shape:circleinsquare"],
+    "text": "m"
+  },
+  "3e573d3e25ef4b7f022b3a25a1e0b77b57e88ecba86ba5666a5672dbd4639d64": {
+    "centerXRatio": 0.5036933316218917,
+    "centerYRatio": 0.5083348999023437,
+    "radiusRatio": 0.42762569982271825,
+    "rotateDegrees": 49,
+    "tags": ["mjolnir", "shape:circle"],
+    "text": "hj"
+  },
+  "3e8a026e75b48f7cefe3c7f9816b849b84ce5bb2aa1f0a54bd0a16f88ecd61e1": {
+    "centerXRatio": 0.5223461100260416,
+    "centerYRatio": 0.5135993041992188,
+    "radiusRatio": 0.4154323654729463,
+    "rotateDegrees": 16.562608809843823,
+    "tags": ["shape:circle"],
+    "text": "tårnby forsyning"
+  },
+  "3f3f010475d4a6af32f4c67b7408297b4d43f9494e37e419bf42eb654099ef66": {
+    "centerXRatio": 0.5062500406901043,
+    "centerYRatio": 0.5384375915527344,
+    "radiusRatio": 0.4041583150891988,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle", "wordless"],
+    "text": "-"
+  },
+  "3f84111383f4fe3e530e130833b645c4264fc968f6b3c8e11fc741934e48a99b": {
+    "centerXRatio": 0.5,
+    "centerYRatio": 0.5,
+    "radiusRatio": 0.5,
+    "rotateDegrees": 0,
+    "tags": ["kommune:silkeborg", "shape:circleinsquare"],
+    "text": ""
+  },
+  "3f952b03e460dfc284052c4cf567dda8b4a0cf6e6c7f686d55eab9af5d503a10": {
+    "centerXRatio": 0.5050000043364233,
+    "centerYRatio": 0.4922586975097656,
+    "radiusRatio": 0.3694798224956024,
+    "rotateDegrees": 67.45260255072816,
+    "tags": ["shape:circle", "squares"],
+    "text": "-"
+  },
+  "408ef30dacfcd2793d0e59d23d113f8ac72cc20d51dee3b7f62cf8c38bfd3f7b": {
+    "centerXRatio": 0.4926047723204374,
+    "centerYRatio": 0.46282086181640636,
+    "radiusRatio": 0.45002261772289587,
+    "rotateDegrees": 350,
+    "tags": ["shape:circleinsquare"],
+    "text": "københavns vand"
+  },
+  "4097f5b10cc8f85c2758dbb35eb2e9786acd033fd09bfde0c6f930f453876d52": {
+    "centerXRatio": 0.5287501062423678,
+    "centerYRatio": 0.5105562744140625,
+    "radiusRatio": 0.4110895426726198,
+    "rotateDegrees": 345.426039305023,
+    "tags": ["shape:circle", "wordless"],
+    "text": "-"
+  },
+  "40e10fcdbf418384ed5e5687be0fb749810918ab91fb6dd1e66e775150261862": {
+    "centerXRatio": 0.5,
+    "centerYRatio": 0.5,
+    "radiusRatio": 0.5,
+    "rotateDegrees": 0,
+    "text": "slide out"
+  },
+  "41458a95f3945a72530fc7071a1b221d1e53689577a3a95c28444e7fc4a8c013": {
+    "centerXRatio": 0.5130813395182291,
+    "centerYRatio": 0.5111118164062501,
+    "radiusRatio": 0.3809509048245574,
+    "rotateDegrees": 184.9618732057761,
+    "tags": ["shape:circle"],
+    "text": "akv dii 1949"
+  },
+  "417240b3c8920b57f8cdc1668111114f33f054921769bde167c3271adc5407cc": {
+    "centerXRatio": 0.5149323425292969,
+    "centerYRatio": 0.49465169270833337,
+    "radiusRatio": 0.3241216054647209,
+    "rotateDegrees": 91,
+    "tags": ["shape:square"],
+    "text": "esso"
+  },
+  "41c33b7854f02b83d96427672cbbac73895dd8cf59a6c7ba3c9f0ba158e37219": {
+    "centerXRatio": 0.5162500813802083,
+    "centerYRatio": 0.5093750610351562,
+    "radiusRatio": 0.42567004120599294,
+    "rotateDegrees": 79.46608218099652,
+    "tags": ["shape:circle"],
+    "text": "ludvigse hermann n256"
+  },
+  "41c466426d8844cd3d14861f9879e54538164dcb869259c118027f3760ac187e": {
+    "centerXRatio": 0.48374995930989584,
+    "centerYRatio": 0.5037500305175782,
+    "radiusRatio": 0.21576803306332842,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle", "wordless"],
+    "text": "-"
+  },
+  "42516d5c28727d9803de072126d6440ccb031a3516d2b6caba8c8497c129a5d4": {
+    "centerXRatio": 0.5100001170834259,
+    "centerYRatio": 0.5070375366210937,
+    "radiusRatio": 0.2805020216319467,
+    "rotateDegrees": 357.7622947014154,
+    "tags": ["kommune:aarhus", "shape:circle"],
+    "text": ""
+  },
+  "4258a641541729ffeffd7dfe936d9e329f1d71119590b30136ec3d63c41122c0": {
+    "centerXRatio": 0.4912952880859375,
+    "centerYRatio": 0.49142960163882105,
+    "radiusRatio": 0.46342155461948975,
+    "rotateDegrees": 106,
+    "tags": ["kommune:hillerød", "shape:circleinsquare", "tree"],
+    "text": ""
+  },
+  "432474615e6d7ca6450df9be24f9cb674ccb65f9b404e88803d9efa8ec248392": {
+    "centerXRatio": 0.5012490234375001,
+    "centerYRatio": 0.48622064208984384,
+    "radiusRatio": 0.4345582391014612,
+    "rotateDegrees": 2.3072564732213436,
+    "tags": ["kommune:holbæk", "shape:circle"],
+    "text": "holbæk"
+  },
+  "43fc4f049466bc452fa85215be11531568289d2bc78076c3857338119d612d3d": {
+    "centerXRatio": 0.5112499826543073,
+    "centerYRatio": 0.45918234252929685,
+    "radiusRatio": 0.40760839790500675,
+    "rotateDegrees": 348.52263118629,
+    "tags": ["shape:circleinsquare"],
+    "text": "15 fv"
+  },
+  "44b3ff25b96fb875800ca3561dc641f3548255891c08a3224942c4271d031c73": {
+    "rotateDegrees": 6,
+    "tags": ["shape:circleinsquare"],
+    "text": "e"
+  },
+  "45d2656b73ac7dc2615e079168cf1df99fd022e97f2d65a50b175765058a3b85": {
+    "centerXRatio": 0.4927860107421875,
+    "centerYRatio": 0.5022907104492188,
+    "radiusRatio": 0.5118067034711204,
+    "rotateDegrees": 217,
+    "tags": ["elephants", "shape:circle"],
+    "text": "københavns energi afløb e en124 2790 d400 furnes 2211ps f"
+  },
+  "461c3627bc641405cfefede57d5f8570e785f5be5c1ad95132aad3e6c198328c": {
+    "centerXRatio": 0.47877151489257813,
+    "centerYRatio": 0.4746557747280195,
+    "radiusRatio": 0.46358029402288176,
+    "rotateDegrees": 154,
+    "tags": ["kommune:helsingør", "shape:circle"],
+    "text": ""
+  },
+  "463da4d2d9790ba0d96f4b9a1c7172832fb25137ae28c6f36645cf079df9a5cd": {
+    "centerXRatio": 0.49546533203125,
+    "centerYRatio": 0.5034188902399256,
+    "radiusRatio": 0.3983847664971003,
+    "rotateDegrees": 293,
+    "tags": ["kommune:aarhus", "shape:circleinsquare"],
+    "text": "århus"
+  },
+  "472056e36c2d503a212b05bf6c6941064d1bd6673f52a7a663db34bf4996878b": {
+    "centerXRatio": 0.5067965494791666,
+    "centerYRatio": 0.5144751586914063,
+    "radiusRatio": 0.40959499787734854,
+    "rotateDegrees": 352,
+    "tags": ["shape:circle"],
+    "text": "ulefos 40"
+  },
+  "47e6d902c41848172ae694f804f51743b41b44bd62d063c2cfd71772c227882f": {
+    "centerXRatio": 0.5182852783203125,
+    "centerYRatio": 0.49655725097656256,
+    "radiusRatio": 0.30622269360037313,
+    "rotateDegrees": 212,
+    "tags": ["shape:circleinsquare"],
+    "text": "nv scanpipe"
+  },
+  "48fe0bf18e556f537327f4958cc9e95316c447b4f2e4df947a26f2d6e7173339": {
+    "centerXRatio": 0.550330322265625,
+    "centerYRatio": 0.5586153971354167,
+    "radiusRatio": 0.4017368687576513,
+    "rotateDegrees": 353,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "4901f7a190954550174937a6d7143a08935059b46700e5dea4b044dc5eeb5dcd": {
+    "centerXRatio": 0.5049809782797235,
+    "centerYRatio": 0.49975466918945316,
+    "radiusRatio": 0.44266776993112333,
+    "rotateDegrees": 5,
+    "tags": ["shape:circle", "star:6"],
+    "text": "a berntsen københavn"
+  },
+  "4b20d8e6c821216d4fb864fa3ec1c720d1bd373d7403be8a07664321e29d2485": {
+    "centerXRatio": 0.4674998091973801,
+    "centerYRatio": 0.47255368041992185,
+    "radiusRatio": 0.41959910248363225,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": "vand"
+  },
+  "4b9b6ea38801d8d6a329e12e2d207b62573510bfdc4e2d463b0dc64583a8059e": {
+    "centerXRatio": 0.5037499761496724,
+    "centerYRatio": 0.44862606811523437,
+    "radiusRatio": 0.3950334084810963,
+    "rotateDegrees": 4.312299311740958,
+    "tags": ["dots", "shape:circleinsquare"],
+    "text": ""
+  },
+  "4bc7e9de1631bbca5aaa8b6564b1a96b9bee43e145676757772bd7eac10e8285": {
+    "centerXRatio": 0.5312501626158692,
+    "centerYRatio": 0.47888739013671877,
+    "radiusRatio": 0.42670125639899953,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": "ulefos 40 kb "
+  },
+  "4daac45cb05e7a2b80cdf87b2dfc06164baab658d22e48d142d3cb4025194c8a": {
+    "centerXRatio": 0.48499991861979175,
+    "centerYRatio": 0.5234375915527344,
+    "radiusRatio": 0.39428408204612597,
+    "rotateDegrees": 1.141356339445565,
+    "tags": ["shape:circle"],
+    "text": "15 åav ulefos ufx"
+  },
+  "4e1f76996ee4f22f50ed0f660b7affe6637230df6337416d2e6273a708767738": {
+    "centerXRatio": 0.48749988074836254,
+    "centerYRatio": 0.553485107421875,
+    "radiusRatio": 0.44794735774984695,
+    "rotateDegrees": 279,
+    "tags": ["kommune:næstved", "shape:circle"],
+    "text": ""
+  },
+  "4e4a529b0947d22d6f9111d074d1ecf6362f01eca1f6c535956e3b76a38a0442": {
+    "centerXRatio": 0.49488810221354174,
+    "centerYRatio": 0.54797509765625,
+    "radiusRatio": 0.3842892888250832,
+    "rotateDegrees": 286.5039642846517,
+    "tags": ["shape:circle", "wordless"],
+    "text": "-"
+  },
+  "4e64723397894a0d31bfe2751e373e1675ee61abf2e05920993700e5358daaa3": {
+    "centerXRatio": 0.48733245849609375,
+    "centerYRatio": 0.49374996747682615,
+    "radiusRatio": 0.4593541377124987,
+    "rotateDegrees": 89.02509464771913,
+    "tags": ["shape:circle"],
+    "text": "hofor"
+  },
+  "4e7dfd3f013ce1481fd34e7f3d90f79c636cac025dfebbdaedaa10d93724579d": {
+    "centerXRatio": 0.5067697753906251,
+    "centerYRatio": 0.5030622253417969,
+    "radiusRatio": 0.4461904659108389,
+    "rotateDegrees": 220,
+    "tags": ["kommune:rudersdal", "shape:circle"],
+    "text": "gjs d400 ulefos ns en 124-2 utvl 60ax"
+  },
+  "4f0b4243c3c1586458a036916af3c5cfb3e5a3174c7a857fe76cbac406461e30": {
+    "centerXRatio": 0.4964812316894531,
+    "centerYRatio": 0.49499999566357683,
+    "radiusRatio": 0.4313071321056662,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle", "star:7"],
+    "text": "frederiksberg jernstøberi & maskinfabrik falkoneralle no 42"
+  },
+  "5006b3ecc9e549df6bd7c86bb0646042b38c551a3b03d38f48191a57c3658724": {
+    "centerXRatio": 0.4912499653086146,
+    "centerYRatio": 0.5070375061035157,
+    "radiusRatio": 0.3609390713538029,
+    "rotateDegrees": 0,
+    "tags": ["shape:circleinsquare"],
+    "text": "a&o johansen a/s ao 22.2438.272"
+  },
+  "502dd28bd1863eb4abaad7c84d8e51e84319339939ab878d8d6ccd7af4934559": {
+    "centerXRatio": 0.4876046956380209,
+    "centerYRatio": 0.5030857849121094,
+    "radiusRatio": 0.42369084714543226,
+    "rotateDegrees": 180.54806924816648,
+    "tags": ["kommune:skanderborg", "shape:circle"],
+    "text": ""
+  },
+  "50ba4e4b972ee59b91f23f972d793e68ac34049f1625e2e736f4bf49377de195": {
+    "centerXRatio": 0.5,
+    "centerYRatio": 0.5,
+    "radiusRatio": 0.5,
+    "rotateDegrees": 91,
+    "text": "v p"
+  },
+  "50f4f60b033323e9f8a690390f3a1399beab1790cf3e6dad7621723721e9544e": {
+    "centerXRatio": 0.5098753662109374,
+    "centerYRatio": 0.5091036783854167,
+    "radiusRatio": 0.2546358798937755,
+    "rotateDegrees": 4,
+    "tags": ["shape:circle", "star:7"],
+    "text": "-"
+  },
+  "51083b34f5a7a7af8772377ba84b06031d5d03b3da6e34864d379b1deadcb82f": {
+    "centerXRatio": 0.5024999479629219,
+    "centerYRatio": 0.4971849975585937,
+    "radiusRatio": 0.45258594852957396,
+    "rotateDegrees": 21.858309428931477,
+    "tags": ["clover", "dots", "shape:circle", "shield"],
+    "text": ""
+  },
+  "515d19b0c59ea8fe39dd010c30a24b19c612e990e2596b2c0a86c9ea06f45154": {
+    "centerXRatio": 0.5,
+    "centerYRatio": 0.5,
+    "radiusRatio": 0.5,
+    "rotateDegrees": 138,
+    "tags": ["shape:circle"],
+    "text": "t ulefos"
+  },
+  "51d6e059d7e3de29eb021dd6a00a01ab23e416993d1191f082c09e99ccdc2e79": {
+    "rotateDegrees": 358,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "52a00c1e80961b961401db7d810fa4bcb5016a4bb99b15ef768ee395f230cc75": {
+    "centerXRatio": 0.5150000672145592,
+    "centerYRatio": 0.43032846069335934,
+    "radiusRatio": 0.48911443800682913,
+    "rotateDegrees": 2.004293953801664,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "52c5506f7853cfbe8e706f77bc35040020e14fa9b022bfa7da79eca6d387b611": {
+    "centerXRatio": 0.5039871826171874,
+    "centerYRatio": 0.5168444519042968,
+    "radiusRatio": 0.40924751863805886,
+    "rotateDegrees": 270.6044537472534,
+    "tags": ["shape:circle"],
+    "text": "shell"
+  },
+  "52ffea6429ef9ae11e5de3dac90144bc234bb2d5efb41ca0e9e609d285acdb83": {
+    "centerXRatio": 0.49611185709635414,
+    "centerYRatio": 0.4994656066894531,
+    "radiusRatio": 0.4312178215645071,
+    "rotateDegrees": 8.050429548215732,
+    "tags": ["shape:circle"],
+    "text": "furnes premium en124 d400 ns lås 2641hsv"
+  },
+  "530da4d5895f286c050b5855b006c754cb335f8acf829c582f45dc305a7e1263": {
+    "centerXRatio": 0.46076126098632814,
+    "centerYRatio": 0.509938431463699,
+    "radiusRatio": 0.48090256059495023,
+    "rotateDegrees": 92,
+    "tags": ["lion", "picture", "shape:circle"],
+    "text": "asa"
+  },
+  "536347d0cc0b362cb99a09ad667b59ca94d15e394d5c0b5ef035148be49fcf8e": {
+    "centerXRatio": 0.5113360188802083,
+    "centerYRatio": 0.5048493652343751,
+    "radiusRatio": 0.38129500871815664,
+    "rotateDegrees": 347,
+    "tags": ["shape:circleinsquare"],
+    "text": "bb"
+  },
+  "53af33985d6383cf0086d74906190453303c6f7310975ee08c94c7a63068b4d1": {
+    "centerXRatio": 0.4759641418457031,
+    "centerYRatio": 0.49523698119033077,
+    "radiusRatio": 0.4527496443619967,
+    "rotateDegrees": 272,
+    "tags": ["shape:circle", "star:6"],
+    "text": "kjøbenhavn poetzold & jacobsen"
+  },
+  "543d1080a4c182163fe1e857ed20b891b105d50b75991d95cd02ed04e64492c1": {
+    "centerXRatio": 0.5146925048828125,
+    "centerYRatio": 0.5222955029557059,
+    "radiusRatio": 0.44642006786211197,
+    "rotateDegrees": 129,
+    "tags": ["shape:circle"],
+    "text": "t"
+  },
+  "544ac2ebc17977459708596d36f5cc4c402ff7687f1652409289c80c41862324": {
+    "centerXRatio": 0.5012500406901041,
+    "centerYRatio": 0.5159375305175782,
+    "radiusRatio": 0.36957449293530265,
+    "rotateDegrees": 44.203316575908616,
+    "tags": ["shape:circleinsquare"],
+    "text": "randers 25"
+  },
+  "54706b8244aaaf9c594900b50909027dd4e73e6a900457eb113eb03bf501f376": {
+    "centerXRatio": 0.49874995930989585,
+    "centerYRatio": 0.47656240844726566,
+    "radiusRatio": 0.40031061879014396,
+    "rotateDegrees": 77,
+    "tags": ["shape:circle", "swirl"],
+    "text": "randers 40 r 2716 en124 d400 lås 2209"
+  },
+  "548e493527e235c03c7cd294e4f411b8e61764be51b49e5fbb5781144109418b": {
+    "centerXRatio": 0.5243750610351563,
+    "centerYRatio": 0.5287501220703125,
+    "radiusRatio": 0.37490831532772095,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "54f6f039a2cc8942b88d412a2879b5a61723f697ca798ad00417bc87164b7dd9": {
+    "centerXRatio": 0.5134719658914298,
+    "centerYRatio": 0.462935302734375,
+    "radiusRatio": 0.43936285765595406,
+    "rotateDegrees": 330,
+    "tags": ["hexagons", "shape:circle"],
+    "text": "-"
+  },
+  "5591a3fbcd195abf85553e8727775985b4baf004be1ddb76bda7cf72fe7ec36e": {
+    "centerXRatio": 0.4899999371218639,
+    "centerYRatio": 0.5204088439941406,
+    "radiusRatio": 0.41028430920382153,
+    "rotateDegrees": 3.7710919853027463,
+    "tags": ["shape:circle", "star:6"],
+    "text": "anker heegaard blaagaards fabrik"
+  },
+  "55ccdba8c7fd8809c57921651096bd4e5f08d209a8f608d1136b81581f278fce": {
+    "centerXRatio": 0.5450002558489676,
+    "centerYRatio": 0.497888671875,
+    "radiusRatio": 0.41859706617219483,
+    "rotateDegrees": 203.99534684603418,
+    "tags": ["arrows", "shape:circle"],
+    "text": "furnes en124 d400 ns 2641hs lås 2116ht premium"
+  },
+  "55ebe05f6748c4e70a82a9c583608f2b9dae949f0bfd28cbf1cd94db428c2a49": {
+    "centerXRatio": 0.5054949544270834,
+    "centerYRatio": 0.5449677124023438,
+    "radiusRatio": 0.38538975463405206,
+    "rotateDegrees": 10,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "58304636e273035bc3e91ec28681a886ae878d69a663a5c5e843da4cb78ae7ec": {
+    "centerXRatio": 0.48823821099994447,
+    "centerYRatio": 0.47505432128906255,
+    "radiusRatio": 0.45412246499476205,
+    "rotateDegrees": 349,
+    "tags": ["birds", "shape:circle"],
+    "text": "ulefos nv en124 ufa6-600 gjs ns hdk600 d400"
+  },
+  "590496fbf69a485371052810ae1134bc58901c62d999a6b3a97e201657aa5ffb": {
+    "centerXRatio": 0.45624979944042793,
+    "centerYRatio": 0.4563673706054687,
+    "radiusRatio": 0.5387633759254401,
+    "rotateDegrees": 0,
+    "tags": ["kommune:gentofte", "shape:circle"],
+    "text": "lås"
+  },
+  "594d46dab444b971dd31642372c4e2d69adc8fad9bc4d93c555aba17d1b70eb6": {
+    "centerXRatio": 0.5275307040443218,
+    "centerYRatio": 0.43502215576171877,
+    "radiusRatio": 0.44031994385664136,
+    "rotateDegrees": 35.45828150610504,
+    "tags": ["shape:circleinsquare"],
+    "text": ""
+  },
+  "59edaf945100152923ab31e17991f00e0a21bd7f01b9a841d2c4fd3203c30919": {
+    "centerXRatio": 0.50375,
+    "centerYRatio": 0.5175000406901041,
+    "radiusRatio": 0.2993354532992188,
+    "rotateDegrees": 0,
+    "tags": ["shape:circleinsquare"],
+    "text": ""
+  },
+  "5a448279eb6f67d9907cb22dac24f1cf7b8b20c6da79fe454def0604e1002ce8": {
+    "centerXRatio": 0.5125000406901041,
+    "centerYRatio": 0.5290625915527344,
+    "radiusRatio": 0.38222442593507927,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle", "wordless"],
+    "text": "-"
+  },
+  "5a7224481c87fd6024428c1615efe9e48624f4b4e30b243d6249b175a13a30fa": {
+    "centerXRatio": 0.47597781372070314,
+    "centerYRatio": 0.4938957797062334,
+    "radiusRatio": 0.4671106866283939,
+    "rotateDegrees": 155,
+    "tags": ["kommune:helsingør", "shape:circle"],
+    "text": ""
+  },
+  "5a744dc8dc6a077c65b8ee97bd1fdddf68bf2eba8afe8f6828ae59b1537b6210": {
+    "centerXRatio": 0.4859249572753907,
+    "centerYRatio": 0.45874991001921905,
+    "radiusRatio": 0.3300321491300707,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": "city bd 22-2455 spl-5"
+  },
+  "5ab3c34846909a55101d7f4fedfdf4f14e90921a6cb080ce90e4f8707e4a34d8": {
+    "centerXRatio": 0.4926678873697917,
+    "centerYRatio": 0.5194313964843751,
+    "radiusRatio": 0.37693633061100323,
+    "rotateDegrees": 6,
+    "tags": ["shape:circleinsquare"],
+    "text": "vaf"
+  },
+  "5b520603581a7651348d9c0e1c519fe92a7670b0c6de9eedf22c7f2a94d03545": {
+    "centerXRatio": 0.49249993929007546,
+    "centerYRatio": 0.5168900146484374,
+    "radiusRatio": 0.46894546848602586,
+    "rotateDegrees": 176.37540177004382,
+    "tags": ["kommune:aarhus", "shape:circle"],
+    "text": "aarhus vand"
+  },
+  "5bcbba1cffe22707fc1f7e587bbcc4807f2b7ad9b1a8b4c11235106a88b9adeb": {
+    "centerXRatio": 0.489316162109375,
+    "centerYRatio": 0.4889490966796875,
+    "radiusRatio": 0.37156503835095356,
+    "rotateDegrees": 200,
+    "tags": ["shape:circle"],
+    "text": "bb en124 d400 600 gjs"
+  },
+  "5c68efd37e572ed68783be6f934e7efccd6c147dde8189292f22c9695b89aa17": {
+    "centerXRatio": 0.5237500813802084,
+    "centerYRatio": 0.4962499694824219,
+    "radiusRatio": 0.3531345088764849,
+    "rotateDegrees": 1.6606693773188113,
+    "tags": ["arrows", "shape:circle", "tree"],
+    "text": "ulefos lås"
+  },
+  "5d0d4e6f53885ee96aafea89798443116202e528235f99ebe2125aa86163c62c": {
+    "centerXRatio": 0.4574998547298235,
+    "centerYRatio": 0.49577749633789064,
+    "radiusRatio": 0.39908811744353495,
+    "rotateDegrees": 0.7848668524786717,
+    "tags": ["shape:circle", "squares"],
+    "text": "bd"
+  },
+  "5d336c57c971f2cab783a9b638925a2c23ca632793d8657b5ba4ea8955e7b986": {
+    "centerXRatio": 0.4831099548339844,
+    "centerYRatio": 0.512500010841058,
+    "radiusRatio": 0.4311773868212635,
+    "rotateDegrees": 66.62148213274031,
+    "tags": ["shape:circleinsquare"],
+    "text": ""
+  },
+  "5d8a37a0cee7fe05de14444577716f75c00eb99c991166adbc1ec4322227ffeb": {
+    "centerXRatio": 0.5317209472656249,
+    "centerYRatio": 0.5230790710449218,
+    "radiusRatio": 0.4207199203307025,
+    "rotateDegrees": 54,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "5da29dee188571e8dfd090983e0f3eaaa7159700489e73ed320aef9b4a3e8499": {
+    "centerXRatio": 0.5134522705078125,
+    "centerYRatio": 0.5042601021314388,
+    "radiusRatio": 0.3978881756290628,
+    "rotateDegrees": 294.3993299872675,
+    "tags": ["shape:circleinsquare"],
+    "text": ""
+  },
+  "5e1a7f47e220d70904e8a863d3e1a4bce1d5d9c34086ff1a6270a4083ebb10d9": {
+    "centerXRatio": 0.5076938476562499,
+    "centerYRatio": 0.49803213116119016,
+    "radiusRatio": 0.44379017523787506,
+    "rotateDegrees": 93.00788829899761,
+    "tags": ["shape:circle", "squares"],
+    "text": "oka"
+  },
+  "5e778cf593c2159e524260e1076c021729fde390dd3e2d2436d25d7570c4411f": {
+    "centerXRatio": 0.495,
+    "centerYRatio": 0.5178125610351563,
+    "radiusRatio": 0.3900875828979596,
+    "rotateDegrees": 0,
+    "tags": ["kommune:frederiksberg", "shape:circle"],
+    "text": "frederiksberg"
+  },
+  "5f5bf57930a1670ae67c1fce60e8be96ff6cdb5d5af6ab0df393b8d3ec92a036": {
+    "centerXRatio": 0.48124995663576825,
+    "centerYRatio": 0.48240615844726564,
+    "radiusRatio": 0.33299021005181734,
+    "rotateDegrees": 356.8234709924907,
+    "tags": ["kommune:aarhus", "shape:circle"],
+    "text": ""
+  },
+  "5fda31bc5e52583308d62c3f4a44d9ff0fa0d01b40bf6d1578e1f7b120e188b8": {
+    "rotateDegrees": 0,
+    "tags": ["multiple"],
+    "text": ""
+  },
+  "5fea06fd6c7b38673e5f87c982c0c6ef7bb39f676dd78e8175f3ec8a570891c2": {
+    "centerXRatio": 0.5025,
+    "centerYRatio": 0.46531234741210936,
+    "radiusRatio": 0.4213318714871166,
+    "rotateDegrees": 0,
+    "tags": ["interference", "shape:circle"],
+    "text": ""
+  },
+  "61775946517691df03311c45d8c31fa5f3c8caf068297c4687010b214254a011": {
+    "centerXRatio": 0.5,
+    "centerYRatio": 0.5,
+    "radiusRatio": 0.5,
+    "rotateDegrees": 0,
+    "tags": ["multiple"],
+    "text": "mv v"
+  },
+  "61893f2333b4eaff0bf74289f0a995a6c8d961efab0652f5c3938e343357f1f6": {
+    "centerXRatio": 0.4762301025390625,
+    "centerYRatio": 0.5065220336914062,
+    "radiusRatio": 0.21185988265411937,
+    "rotateDegrees": 323,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "619aa997d8a9d0260f99fd3b8221578b8181bf7033ab4749ccabd0ea7eda20c5": {
+    "centerXRatio": 0.4831099243164062,
+    "centerYRatio": 0.5025000563735014,
+    "radiusRatio": 0.39858895571863845,
+    "rotateDegrees": 180,
+    "tags": ["hole", "shape:circle", "squares"],
+    "text": "ribe s h"
+  },
+  "62725995c7a2da90082182a2db25c52407c59b5d8f1ad2826a6ae0bf64b250a4": {
+    "centerXRatio": 0.4864757486979167,
+    "centerYRatio": 0.5323260498046876,
+    "radiusRatio": 0.3734103208550556,
+    "rotateDegrees": 267,
+    "tags": ["shape:circle"],
+    "text": "2030-21a dana sh2040a"
+  },
+  "62b3f6395ae3bcb68e7e855078973c21ec7205a8fb35175e36440a3557b4b0f9": {
+    "centerXRatio": 0.4915549926757813,
+    "centerYRatio": 0.4899999913271537,
+    "radiusRatio": 0.407808243570848,
+    "rotateDegrees": 0,
+    "tags": ["shape:circleinsquare"],
+    "text": "ao"
+  },
+  "62dc4e662c53cd403a68837e355e9f02b5fedd4e4d851103e72acc4b74fb80ab": {
+    "centerXRatio": 0.4887499186197917,
+    "centerYRatio": 0.5328125915527344,
+    "radiusRatio": 0.4197003327942335,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": "slagelse jernstøberi aps"
+  },
+  "63f975d81e195a3bf3c5fda9a279fe8490ea98a011534c94af0505c36d996e8e": {
+    "centerXRatio": 0.5063863118489583,
+    "centerYRatio": 0.5479035034179688,
+    "radiusRatio": 0.4104376374716335,
+    "rotateDegrees": 359,
+    "tags": ["kommune:gentofte", "shape:circle"],
+    "text": ""
+  },
+  "640b2579ffc2c9317e3ccf5fa226d101abcedae8efbbd427d489910beb0762fb": {
+    "centerXRatio": 0.5100000086728464,
+    "centerYRatio": 0.5077413024902343,
+    "radiusRatio": 0.3739155259090747,
+    "rotateDegrees": 179.71534126028428,
+    "tags": ["shape:circleinsquare"],
+    "text": "222433-425 40 2244"
+  },
+  "6495da3a0f1f7979ce280388fd7b47045c9e68b8ae1cb8b64ac45a99a069e35c": {
+    "centerXRatio": 0.5073588867187501,
+    "centerYRatio": 0.4978331909179687,
+    "radiusRatio": 0.3706746438004822,
+    "rotateDegrees": 3,
+    "tags": ["shape:circle", "squares"],
+    "text": "k b"
+  },
+  "65491aa96e8d24b384c999f923224bf354400ee7ff32dc421e2f2658cfd24735": {
+    "centerXRatio": 0.5042187372843424,
+    "centerYRatio": 0.4849999644768932,
+    "radiusRatio": 0.39879510760656356,
+    "rotateDegrees": 0,
+    "tags": ["shape:circleinsquare", "star:5"],
+    "text": "slagelse jernstøberi"
+  },
+  "65a812ca9eaffedbd572e7b1a65632b0b54757e3e3ef84613eda83d30ddb0b4a": {
+    "centerXRatio": 0.5125000406901041,
+    "centerYRatio": 0.5328126220703124,
+    "radiusRatio": 0.40268547151538486,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": "ribe sh"
+  },
+  "6716d1c285baa9d83587647b1f110c673c49f9123ec324988ab64a9d1357d9df": {
+    "centerXRatio": 0.5071618652343749,
+    "centerYRatio": 0.5070887451171876,
+    "radiusRatio": 0.4197215038374731,
+    "rotateDegrees": 325.58741877486807,
+    "tags": ["shape:circle"],
+    "text": "kr noe harboe sofievej 24"
+  },
+  "679a01ac4a1df9fa7e2468d4ba77eb200e0088d55020daa9c54394bf11445645": {
+    "centerXRatio": 0.5087288614908854,
+    "centerYRatio": 0.47256716918945313,
+    "radiusRatio": 0.5,
+    "rotateDegrees": 2,
+    "tags": ["shape:oval"],
+    "text": ""
+  },
+  "67d03f894a1e24d1f5fe270b8b06b8b9bd57af7aea61d4e148a41a4734f0c406": {
+    "centerXRatio": 0.5,
+    "centerYRatio": 0.5,
+    "radiusRatio": 0.5,
+    "rotateDegrees": 91.50076173207316,
+    "tags": ["shape:oval"],
+    "text": "hassel & teudt københavn vph"
+  },
+  "68a7b3661d8950f23a7223703de014e6a730cbcdfa1092f346543ac5097af2fa": {
+    "centerXRatio": 0.49875,
+    "centerYRatio": 0.5131250610351562,
+    "radiusRatio": 0.4189877192261845,
+    "rotateDegrees": 355.76425413372385,
+    "tags": ["kolding", "shape:circle"],
+    "text": "bluekolding"
+  },
+  "68a9a5262892639d0ce6eb07033406ce15bee11d3de79467cb9453655b189b6b": {
+    "centerXRatio": 0.5037499186197917,
+    "centerYRatio": 0.5225000915527342,
+    "radiusRatio": 0.4173147627748168,
+    "rotateDegrees": 25.935884247428874,
+    "tags": ["shape:circleinsquare"],
+    "text": ""
+  },
+  "6930ec2cfd1516662ea3bf7df9f4159359fd04cac5c67390ee560016f166af24": {
+    "centerXRatio": 0.5233448079427083,
+    "centerYRatio": 0.5267840270996094,
+    "radiusRatio": 0.42367396359437715,
+    "rotateDegrees": 65,
+    "tags": ["fish", "hcandersen", "rat", "shape:circleinsquare"],
+    "text": "københavns energi"
+  },
+  "69378bf455f0c27b34df67729c6da022fc0f01ff09bf6e820d938aafed4e462d": {
+    "centerXRatio": 0.5046404418945313,
+    "centerYRatio": 0.5026516520182291,
+    "radiusRatio": 0.22875559084793193,
+    "rotateDegrees": 225,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "6a38cb58cff4187afa2198cbaf437a0ac7e59a25d646b49d9e0facb0a7786b43": {
+    "centerXRatio": 0.5117795683350911,
+    "centerYRatio": 0.4703488159179688,
+    "radiusRatio": 0.45369294629736,
+    "rotateDegrees": 334,
+    "tags": ["picture", "shape:circleinsquare"],
+    "text": "niemisen valimo 1928 2018 19.5.1928 nv nv-10"
+  },
+  "6a59e1bb3152423ba5bb96ed766acf7c4c24533fccdc867900b89b9477d3ac40": {
+    "centerXRatio": 0.5305935363769532,
+    "centerYRatio": 0.4895280800746559,
+    "radiusRatio": 0.46957441659639954,
+    "rotateDegrees": 82.47283323841413,
+    "tags": ["shape:circle", "trees"],
+    "text": "ulefos 600 d400 ufx en124 lås"
+  },
+  "6bcdf7ab393748a77abf15f02d5161b95e207ebcd16155b437c7ed8ecc06deac": {
+    "centerXRatio": 0.5187500975695215,
+    "centerYRatio": 0.5098525085449218,
+    "radiusRatio": 0.45322612392765643,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": "en124 d400"
+  },
+  "6be9d0f0178985cfbcaf21ee15f75c894401f1083f9ebae82267c53a33aca987": {
+    "centerXRatio": 0.5053232727050782,
+    "centerYRatio": 0.48986352539062505,
+    "radiusRatio": 0.3142236937034142,
+    "rotateDegrees": 280,
+    "tags": ["shape:circle"],
+    "text": "rj-randers"
+  },
+  "6beb56f22947d37c70b42408253ad23e62f36ba86c2bddf592932f03980542fb": {
+    "centerXRatio": 0.47536871337890624,
+    "centerYRatio": 0.4799999284490175,
+    "radiusRatio": 0.3170539524855178,
+    "rotateDegrees": 90,
+    "tags": ["dots", "shape:square"],
+    "text": "rj d400 en124 22-2043-290 bd city-rist randers 4195"
+  },
+  "6dc6152661ff85ca78fdf6d54b45a7fb7de17b8242fd858a5928c0cd47c9246b": {
+    "centerXRatio": 0.5328252868652344,
+    "centerYRatio": 0.49972224934895826,
+    "radiusRatio": 0.3341061385030512,
+    "rotateDegrees": 2,
+    "tags": ["shape:circle"],
+    "text": "en124-c250mpa-hb 2220.30.625 hydtrotec"
+  },
+  "6df95c368525266c2543c6aa14c64fdbcbde003e3d14bf72c7456d5a9b1a84df": {
+    "centerXRatio": 0.5124763773347303,
+    "centerYRatio": 0.49917352294921874,
+    "radiusRatio": 0.41547260315693546,
+    "rotateDegrees": 1,
+    "tags": ["kommune:hvidovre", "shape:circle"],
+    "text": ""
+  },
+  "6e3309f6212f40faa2b0fc6652d67c4147508b906b0b6d6ddfcaf0a3232b1a09": {
+    "centerXRatio": 0.5046875,
+    "centerYRatio": 0.5087500406901042,
+    "radiusRatio": 0.2628748770083265,
+    "rotateDegrees": 0,
+    "tags": ["shape:circleinsquare"],
+    "text": "ns"
+  },
+  "6e38104deecad05b7b851c6f89db060e79b2700ea1fb7fec0ea3e6dc16dd2b62": {
+    "centerXRatio": 0.5271795654296876,
+    "centerYRatio": 0.484973876953125,
+    "radiusRatio": 0.412054443411704,
+    "rotateDegrees": 45,
+    "tags": ["birds", "shape:circleinsquare", "tree"],
+    "text": "hofor bærdygtige byer spildevand"
+  },
+  "6efeb8886af295f3d7cc7d5e81a4ba7e33fe69f34361aca5b98c83c68d19a4ca": {
+    "centerXRatio": 0.5078171386718751,
+    "centerYRatio": 0.5170535888671874,
+    "radiusRatio": 0.3421968813883436,
+    "rotateDegrees": 10,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "6f411aab7c4732bda8c9e65a8a740c10b5a19f036868a5b85ceb6e0f0504fe11": {
+    "centerXRatio": 0.48765859383672855,
+    "centerYRatio": 0.4749942932128906,
+    "radiusRatio": 0.4458117774266899,
+    "rotateDegrees": 3.658949670016682,
+    "tags": ["bird", "clover", "kommune:gladsaxe", "shape:circle"],
+    "text": "ulefos 600 en124 d400 ufx gladsaxe kommune"
+  },
+  "6f4a592fffaa49db7b32ad512bfac88b10be8fce42ddff8fcaa09e2fc8bb1109": {
+    "centerXRatio": 0.5138772588428341,
+    "centerYRatio": 0.4342310791015625,
+    "radiusRatio": 0.4456527949982197,
+    "rotateDegrees": 278,
+    "tags": ["shape:circle"],
+    "text": "hvidovre forsyning"
+  },
+  "6fe2ca1baa3392e8cb5fbf0bdf295509b572f76b11164f6494533774931b91ed": {
+    "centerXRatio": 0.5312500813802083,
+    "centerYRatio": 0.5121875610351563,
+    "radiusRatio": 0.3775690227455434,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": "bp"
+  },
+  "70447746e2f36f75f21e5eeb4471ecd4aa4013ffd953f18208a76a9c23486009": {
+    "centerXRatio": 0.4979100341796875,
+    "centerYRatio": 0.5035333251953126,
+    "radiusRatio": 0.39773296426981525,
+    "rotateDegrees": 52.04082153976657,
+    "tags": ["shape:circle"],
+    "text": "ulefos"
+  },
+  "70f53b02e91373ddaed3ef83c2296422c4dcb1e93ff2a3b4ed6ff38d940af0f3": {
+    "centerXRatio": 0.5106636962890625,
+    "centerYRatio": 0.46932018544280085,
+    "radiusRatio": 0.42533702279519237,
+    "rotateDegrees": 92,
+    "tags": ["hole", "shape:circle"],
+    "text": "40 lås en124 randers 2206"
+  },
+  "71093a8058152146b451b3f79ed0f1799b3607af4d3ed7a5f1b1948185a92711": {
+    "centerXRatio": 0.5162499869907304,
+    "centerYRatio": 0.46058984375,
+    "radiusRatio": 0.4325565834141795,
+    "rotateDegrees": 348.9246050376104,
+    "tags": ["shape:circleinsquare"],
+    "text": ""
+  },
+  "71a27b54af3b9a142553b7b5e39d0727443fb790f4c6959a039e77dbac993ecd": {
+    "centerXRatio": 0.4982871907552084,
+    "centerYRatio": 0.5150621643066405,
+    "radiusRatio": 0.3353800783806161,
+    "rotateDegrees": 78,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "72ee774e3768569794361722670e7c35e243c796daf86e1c1484ab87a6635050": {
+    "centerXRatio": 0.5300001220703124,
+    "centerYRatio": 0.4681248779296875,
+    "radiusRatio": 0.4046409333536849,
+    "rotateDegrees": 1.8954909543008966,
+    "tags": ["shape:circle"],
+    "text": "slagelse jernstøberi aps 1030a 2040a"
+  },
+  "72fbc0b25a75b89a3f145f78cfe5db84dca67109bdb6e6898201d8cfbc093cbc": {
+    "centerXRatio": 0.5237501019059446,
+    "centerYRatio": 0.46833114624023436,
+    "radiusRatio": 0.4696846364778065,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": "scandic hydrotec"
+  },
+  "73604b19e4ebefa1a81a1632bcd647d0f5c70f30ec6240d0254c52444709826b": {
+    "centerXRatio": 0.5060703938802084,
+    "centerYRatio": 0.5090125122070313,
+    "radiusRatio": 0.3459247123628479,
+    "rotateDegrees": 5,
+    "tags": ["shape:circle"],
+    "text": "ao 22.1330.104 a&o johansen a/s"
+  },
+  "744013260b2681aaa776eb875bcc8dc7c0bd99edcd02d94f4e43c8ac2e131ef6": {
+    "centerXRatio": 0.4565515747070312,
+    "centerYRatio": 0.4973787405986346,
+    "radiusRatio": 0.4611173440661895,
+    "rotateDegrees": 59,
+    "tags": ["kommune:aarhus", "shape:circle"],
+    "text": "aarhus furnes 2802 2403t"
+  },
+  "74570e7ea059c49cc94e74036eed48f92108e14a0358492eef97d2253d8b44e2": {
+    "centerXRatio": 0.5168750610351562,
+    "centerYRatio": 0.49874999999999997,
+    "radiusRatio": 0.22939986326639417,
+    "rotateDegrees": 0,
+    "tags": ["shape:circleinsquare"],
+    "text": ""
+  },
+  "74e8ff2ec0f3344e961284424ac67f2c5e4777624f302b48e62fcf2173ff7956": {
+    "centerXRatio": 0.4667320556640625,
+    "centerYRatio": 0.4810283112060113,
+    "radiusRatio": 0.4229815986532437,
+    "rotateDegrees": 91,
+    "tags": ["kommune:aarhus", "shape:circleinsquare"],
+    "text": "aarhus vand"
+  },
+  "752cf5256fa74d6de6366cbcc2b4851a37fd9a6f5070dcbcc7b77b6a1cfcc361": {
+    "centerXRatio": 0.528750106242368,
+    "centerYRatio": 0.46481234741210936,
+    "radiusRatio": 0.34688792223827175,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle", "squares"],
+    "text": "-"
+  },
+  "7579d0437676e21840361a25acba7b7c4575d09147b8df73c3fa3dafd498e2fb": {
+    "centerXRatio": 0.508667209008659,
+    "centerYRatio": 0.51242919921875,
+    "radiusRatio": 0.4679368007231688,
+    "rotateDegrees": 3,
+    "tags": ["kommune:frederiksberg", "shape:circle"],
+    "text": ""
+  },
+  "76266cd7ffd16a2926a1fe4104daebc4282d73752a48b9493e0328c8152a644a": {
+    "centerXRatio": 0.5000001084105794,
+    "centerYRatio": 0.45144113159179683,
+    "radiusRatio": 0.4479429165372922,
+    "rotateDegrees": 45.6464311539188,
+    "tags": ["cut:negative", "shape:circleinsquare"],
+    "text": "hofor"
+  },
+  "7685ddeed714a07e261b54e873392201d3da7d062c43c4152b2c9743fd3a89c7": {
+    "centerXRatio": 0.5040815124511719,
+    "centerYRatio": 0.5285144758478574,
+    "radiusRatio": 0.40154663259679735,
+    "rotateDegrees": 272,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "76ce4420ded0b44a0de21b8f4e0ec96f0e58fd40038cd04afd44b1b12301bf17": {
+    "centerXRatio": 0.47874979185168737,
+    "centerYRatio": 0.4535523376464844,
+    "radiusRatio": 0.44236230921164793,
+    "rotateDegrees": 23.578473126578047,
+    "tags": ["shape:circleinsquare"],
+    "text": ""
+  },
+  "7760a2f85ab0469c43b285a121e1ee9e17ef12091de54c82b0993d28faca35be": {
+    "centerXRatio": 0.5087500346913855,
+    "centerYRatio": 0.48803619384765634,
+    "radiusRatio": 0.45302239603214717,
+    "rotateDegrees": 1.8101413913659599,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "78ee62ad71aaceca55fc7a6b282958167178a88ac7d0196150109e8d8592532f": {
+    "centerXRatio": 0.49275074716571376,
+    "centerYRatio": 0.4995736694335937,
+    "radiusRatio": 0.2985726128770347,
+    "rotateDegrees": 25,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "792ee2b9adcb8ea42de4f24fad133e9dca3a45b028247860bd738c841d08632b": {
+    "centerXRatio": 0.48621512858072913,
+    "centerYRatio": 0.511496826171875,
+    "radiusRatio": 0.3566445232890768,
+    "rotateDegrees": 304,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "793e773c9f7ed7cf635d3eb9d4062b1a694e75feae656c1e55392b09fda7303e": {
+    "centerXRatio": 0.48749993495365235,
+    "centerYRatio": 0.5077413024902344,
+    "radiusRatio": 0.4246768670692886,
+    "rotateDegrees": 80.53476490782776,
+    "tags": ["hole", "shape:circle", "star:6"],
+    "text": "-"
+  },
+  "79dcce86b3c2853477cd1c833c39ec201c4dd33f7d9563ec4911f8b81dd53fea": {
+    "centerXRatio": 0.49478710937500003,
+    "centerYRatio": 0.4960208980905861,
+    "radiusRatio": 0.4395137096420444,
+    "rotateDegrees": 307,
+    "tags": ["shape:circle", "star:6"],
+    "text": "slagelse jernstøberi 15 tons"
+  },
+  "7a553af32c481f85186b3d58625d9ab7546cbb9f64426841b6c63eb83e1b5836": {
+    "centerXRatio": 0.4840649820963542,
+    "centerYRatio": 0.5145687255859374,
+    "radiusRatio": 0.4219446458384625,
+    "rotateDegrees": 56.34734952102235,
+    "tags": ["kommune:holbæk", "shape:circle"],
+    "text": "holbæk"
+  },
+  "7a795f241d2748831fefb760b818b8eeb4e2669c1f1f3a7e65a4407e7449e9e1": {
+    "centerXRatio": 0.5097028808593751,
+    "centerYRatio": 0.5328092041015624,
+    "radiusRatio": 0.43696697248890193,
+    "rotateDegrees": 252.3644761454135,
+    "tags": ["shape:circle"],
+    "text": "tårnby forsyning"
+  },
+  "7aeec4ba38cf18ec47a60c0990a119d35b691a1f5875ecbe83f2f94ec7a501f0": {
+    "centerXRatio": 0.5062500867284635,
+    "centerYRatio": 0.44581103515625004,
+    "radiusRatio": 0.465114269939456,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle", "star:6"],
+    "text": "slagelse jernstøberi 40 tons"
+  },
+  "7afc767aea9643caf05cc916c538dd452418b0e800fec76c165a8fde9d65ee4d": {
+    "centerXRatio": 0.4920365382680673,
+    "centerYRatio": 0.5477278442382812,
+    "radiusRatio": 0.5132130960442761,
+    "rotateDegrees": 268,
+    "tags": ["crown", "heart", "kommune:hillerød", "shape:circle"],
+    "text": ""
+  },
+  "7b50a77b14d9bae8898e89206e32e0f4762edb2c0c355f0ad8f464c27a3eb720": {
+    "centerXRatio": 0.5115116373697917,
+    "centerYRatio": 0.5041068115234375,
+    "radiusRatio": 0.5,
+    "rotateDegrees": 324.38171651404866,
+    "text": ""
+  },
+  "7b539bb4b76443d66c62174cfb1c7d2ea72dc6e1227a046b7ff0b6bccbfa3cbf": {
+    "centerXRatio": 0.49499994145828713,
+    "centerYRatio": 0.5028150024414062,
+    "radiusRatio": 0.38071989901164976,
+    "rotateDegrees": 41.73833397136326,
+    "tags": ["shape:circle", "star:7"],
+    "text": "jernstøberi & maskinfabrik falkoneralle no 42 frederiksberg"
+  },
+  "7bb124111adbb176262710b073c5dda45022537a12afcd0affe1cd786060597e": {
+    "centerXRatio": 0.48364333699905643,
+    "centerYRatio": 0.5033585510253906,
+    "radiusRatio": 0.3858226487878507,
+    "rotateDegrees": 359,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "7c2c91d31a55009e6adb1d6983b895355dd2b3efd7c7a7df35b6b5ec7dd1dd5b": {
+    "centerXRatio": 0.47633654785156254,
+    "centerYRatio": 0.4935798712776143,
+    "radiusRatio": 0.43420831805784527,
+    "rotateDegrees": 83.38569837100374,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "7c52160782a78826c25eed51c584eb230656982a76effd6a910c56ca42ca38d2": {
+    "centerXRatio": 0.47984307861328124,
+    "centerYRatio": 0.4856039965343307,
+    "radiusRatio": 0.47890371038484597,
+    "rotateDegrees": 93,
+    "tags": ["shape:circle"],
+    "text": "fors"
+  },
+  "7c57dfa299a36cf8acfb7781bbcc43c506c329153e30d1d24aa3161e88a7c027": {
+    "centerXRatio": 0.48499983723958334,
+    "centerYRatio": 0.5243751220703126,
+    "radiusRatio": 0.3098499925774184,
+    "rotateDegrees": 0,
+    "tags": ["shape:circleinsquare"],
+    "text": ""
+  },
+  "7c600f601715a6d218d52ea3bc50e33d6c027617edaaacb746c1442637b1a5c9": {
+    "centerXRatio": 0.4945363236151199,
+    "centerYRatio": 0.5059255371093749,
+    "radiusRatio": 0.4569646463058957,
+    "rotateDegrees": 351,
+    "tags": ["birds", "shape:circle"],
+    "text": "ulefos nv en124 ufa6-600 gjs ns hdk600 d400"
+  },
+  "7d1058e9b53a9886bbc5d519e4c2c8def87b2dcc358cbe57f073abef5800fb67": {
+    "centerXRatio": 0.47780661981016875,
+    "centerYRatio": 0.4392932434082031,
+    "radiusRatio": 0.4169149590580561,
+    "rotateDegrees": 3.6324489124864954,
+    "tags": ["shape:circle"],
+    "text": "hlk"
+  },
+  "7d4ecf2cd2178d65553b0a915fe17fb27ea3258a432893e2baef4ac28f992882": {
+    "centerXRatio": 0.5341119995117188,
+    "centerYRatio": 0.5035494791666667,
+    "radiusRatio": 0.26230537245981167,
+    "rotateDegrees": 95,
+    "tags": ["shape:circle"],
+    "text": "ns ulefos d400 gjs en124 jtl-40"
+  },
+  "7f283b5c1e2366afa3892d5569c0fd70b156132804893a4e056051bd334bdb18": {
+    "centerXRatio": 0.5034859963886267,
+    "centerYRatio": 0.5042936096191406,
+    "radiusRatio": 0.38943427280974496,
+    "rotateDegrees": 358,
+    "tags": ["shape:circle", "squares"],
+    "text": "-"
+  },
+  "801f2576193f056d5f9d1e08d1f443bafaa2e8cca548b9bb5a42165467c054d3": {
+    "centerXRatio": 0.5024998395523423,
+    "centerYRatio": 0.45425604248046875,
+    "radiusRatio": 0.4349178953135705,
+    "rotateDegrees": 0,
+    "tags": ["hole", "shape:circle"],
+    "text": "ulefos 2,5"
+  },
+  "804dbb7a14c4f469453b2e60290bc92522e70bb10e91342fac7dcc2d66e74829": {
+    "centerXRatio": 0.47677615356445313,
+    "centerYRatio": 0.47624989809405527,
+    "radiusRatio": 0.42415332165598923,
+    "rotateDegrees": 0,
+    "tags": ["covered", "shape:circle"],
+    "text": ""
+  },
+  "80e005797c346b0efc0a69560bb0c3aeef8a5a68cf389010106fb48afb44592c": {
+    "centerXRatio": 0.4934476645759325,
+    "centerYRatio": 0.48738095092773437,
+    "radiusRatio": 0.4535482071093906,
+    "rotateDegrees": 180.77131955938535,
+    "tags": ["shape:circle"],
+    "text": "gas"
+  },
+  "81d44d1fa4531583bb429ac6790b3f4e52afb76f7452e9e6392ea29111dadc77": {
+    "centerXRatio": 0.5084671372842194,
+    "centerYRatio": 0.47518716430664065,
+    "radiusRatio": 0.4644417626422995,
+    "rotateDegrees": 2,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "826f43b75018c71c121486ab09b81c930c3c3143796fe4ed09f2c62f3940444d": {
+    "centerXRatio": 0.45012576293945306,
+    "centerYRatio": 0.45871990739134655,
+    "radiusRatio": 0.5278626184448256,
+    "rotateDegrees": 266,
+    "tags": ["crown", "heart", "kommune:hillerød", "shape:circle"],
+    "text": ""
+  },
+  "83110ff7b58bffe4475c01a910d68926127a80ba9f3ffb39d4b189a2eef4e1bf": {
+    "centerXRatio": 0.5075000065046348,
+    "centerYRatio": 0.5028150024414063,
+    "radiusRatio": 0.4067242973046123,
+    "rotateDegrees": 147.65750493468414,
+    "tags": ["shape:circleinsquare", "star:6"],
+    "text": "slagelse jernstøberi 15 tons"
+  },
+  "836f0fa3d51f5b8109a5f5c2c42307f5679e2444b26d6e8ff98067c2d19ca936": {
+    "centerXRatio": 0.49494665765847023,
+    "centerYRatio": 0.48605474853515623,
+    "radiusRatio": 0.31349359106265967,
+    "rotateDegrees": 3,
+    "tags": ["crown", "hole", "shape:square"],
+    "text": "-"
+  },
+  "83fb4c706fa723c4aab8922b6ff142b90339ce949ebe93734020255b5db27c11": {
+    "centerXRatio": 0.49124996530861453,
+    "centerYRatio": 0.5028150329589843,
+    "radiusRatio": 0.40395758708521134,
+    "rotateDegrees": 175,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "8473d2c1521b8357008973fbca8d88bfda181c98785eead725fffd92fa20a3d5": {
+    "centerXRatio": 0.4608097839355469,
+    "centerYRatio": 0.5092310384114583,
+    "radiusRatio": 0.40442568653009536,
+    "rotateDegrees": 85,
+    "tags": ["shape:circle"],
+    "text": "nv 2017 d400 nv 2000 nv 800 en 124"
+  },
+  "84b95a4ad4135c8f02e71f8da07e3a0a9134ca90fdfbf6547cb792109e85c562": {
+    "centerXRatio": 0.5133713073730468,
+    "centerYRatio": 0.5025000021682116,
+    "radiusRatio": 0.4721478033492439,
+    "rotateDegrees": 79.08829850643696,
+    "tags": ["hcandersen", "shape:circle"],
+    "text": "furnes 2709 2211ps københavns energi afløb"
+  },
+  "84d9cc6f8e75090f742ecd3f030facbc95978ae8582f8b1157cd330fd9c45d22": {
+    "centerXRatio": 0.5129504801432291,
+    "centerYRatio": 0.5258224487304688,
+    "radiusRatio": 0.25504148805897586,
+    "rotateDegrees": 300.395675311761,
+    "tags": ["hinge", "shape:circle"],
+    "text": "hj"
+  },
+  "8549e84fd3a660cf382e430a7ac644c42bfd6a6bb1d6367a34145d4b96dae0fb": {
+    "centerXRatio": 0.5,
+    "centerYRatio": 0.5,
+    "radiusRatio": 0.5,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "855cbdd36658b950612cb4fda3ab422f734f156ea7747b3212bdfbf1596f4402": {
+    "centerXRatio": 0.5100001170834259,
+    "centerYRatio": 0.511260009765625,
+    "radiusRatio": 0.46022249536739984,
+    "rotateDegrees": 0,
+    "tags": ["hatching", "shape:circle"],
+    "text": "hydrotec en124 d400"
+  },
+  "8584b315ce1e0f0f53f4800190a64d1b307c79c3e3c66664cdd6a8468aa63ccd": {
+    "centerXRatio": 0.5175938415527346,
+    "centerYRatio": 0.49375002168211596,
+    "radiusRatio": 0.45725458291174403,
+    "rotateDegrees": 271.40049726446705,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "859846121a15488dd13a476a583d6cc64092bd94cebb5f59efb53c56055a8449": {
+    "centerXRatio": 0.4979443359375,
+    "centerYRatio": 0.5141961364746095,
+    "radiusRatio": 0.3064603252498607,
+    "rotateDegrees": 17,
+    "tags": ["shape:circle", "swirl"],
+    "text": "rj-randers"
+  },
+  "861726a3c854b04dec744c101ff931b8e1ff8d276d6570c1e69c302ee4d6449d": {
+    "centerXRatio": 0.47051253255208336,
+    "centerYRatio": 0.5314939880371095,
+    "radiusRatio": 0.359240790345444,
+    "rotateDegrees": 359,
+    "tags": ["shape:circleinsquare"],
+    "text": "ao a&o johansen a/s"
+  },
+  "8629d695a6d9afa6c14574e529b63f6b328db41fb658144425915ef96c45c7bf": {
+    "centerXRatio": 0.4609693908691406,
+    "centerYRatio": 0.5097714791712923,
+    "radiusRatio": 0.4466768088895779,
+    "rotateDegrees": 97,
+    "tags": ["shape:circleinsquare"],
+    "text": ""
+  },
+  "870a75241a24809e659e4b732fef7b9386bf0f676a6d376f55b3ecf1509f0d74": {
+    "centerXRatio": 0.4676273803710938,
+    "centerYRatio": 0.49625002385032735,
+    "radiusRatio": 0.47196533342824887,
+    "rotateDegrees": 115.75109224463279,
+    "tags": ["shape:circle", "slots"],
+    "text": "221270 106 rj d400 standard b125 22106012"
+  },
+  "8785bc3b8d2c3ea18c9f3b03f76da5900e054ff3e83b1c551816078aea074ced": {
+    "centerXRatio": 0.5027654724121092,
+    "centerYRatio": 0.4949134298158581,
+    "radiusRatio": 0.35713870614094934,
+    "rotateDegrees": 90.98262350388262,
+    "tags": ["shape:circleinsquare", "squares"],
+    "text": "duco en124 b125 2220 30312 "
+  },
+  "87995dc391547fcd5755e17cfa18a6c3963b6257cf2965a9dfc32159a96e5a7a": {
+    "centerXRatio": 0.4891217447916667,
+    "centerYRatio": 0.5349937438964844,
+    "radiusRatio": 0.466036633620529,
+    "rotateDegrees": 2,
+    "tags": ["kommune:højetaastrup", "shape:circle"],
+    "text": "d400 rj en124 2718f lås en124 d400 furnes 2401t"
+  },
+  "87e64a1866b8a95c16af124424b6ef4f197d395e2732b787981c99238061f62d": {
+    "centerXRatio": 0.5207331542968751,
+    "centerYRatio": 0.5134846496582032,
+    "radiusRatio": 0.44771851222768816,
+    "rotateDegrees": 19,
+    "tags": ["shape:circle"],
+    "text": "221180-600 en 124 sias"
+  },
+  "8947de9a82dca781915e71a0283f71ecaf19c00698f6dd25629930cea04e220e": {
+    "centerXRatio": 0.5112759094238282,
+    "centerYRatio": 0.49927425130208336,
+    "radiusRatio": 0.3988989009042693,
+    "rotateDegrees": 268,
+    "tags": ["shape:circle"],
+    "text": "ulefos t"
+  },
+  "89709f265f5e3d411ab2dbfd40ffda1b35b514486b5b4fd254a8ce035d2011b9": {
+    "centerXRatio": 0.5046336307830538,
+    "centerYRatio": 0.42081539916992183,
+    "radiusRatio": 0.4437667306051987,
+    "rotateDegrees": 340,
+    "tags": ["kommune:frederiksberg", "shape:circleinsquare"],
+    "text": ""
+  },
+  "89baa2523b57f98ccc41e176b1a766be60e4d11ca74ece8dccb900aa5cfe0d01": {
+    "centerXRatio": 0.4943699951171875,
+    "centerYRatio": 0.5512502341668516,
+    "radiusRatio": 0.20535362460614406,
+    "rotateDegrees": 128.31646229087653,
+    "tags": ["shape:circle"],
+    "text": "b"
+  },
+  "89c499a5a505478bfe0b974ac82d09d0c9b0d155300398d745db9dd77326dc70": {
+    "centerXRatio": 0.5225001220703125,
+    "centerYRatio": 0.5150000813802084,
+    "radiusRatio": 0.3785132022275141,
+    "rotateDegrees": 0,
+    "tags": ["shape:circleinsquare"],
+    "text": ""
+  },
+  "89e662de6fb2d91185ec8f3020dcddfd8097eacfc7b994fe831f4154d716a9c9": {
+    "centerXRatio": 0.5100000086728464,
+    "centerYRatio": 0.48873992919921877,
+    "radiusRatio": 0.3383786128327564,
+    "rotateDegrees": 7.898177741500433,
+    "tags": ["holes", "shape:circle", "squares"],
+    "text": "-"
+  },
+  "8a5d6755430e234ded49e21a168da1d4c5bd2dd23ff8bf57241ce11bc75f082a": {
+    "rotateDegrees": 0,
+    "tags": ["shape:circleinsquare"],
+    "text": "d400"
+  },
+  "8a93432821b87732087fb3706a9187cbb24c0069e59148e6e6f376fad08d09b6": {
+    "centerXRatio": 0.4987499718132493,
+    "centerYRatio": 0.50492626953125,
+    "radiusRatio": 0.42293030750227767,
+    "rotateDegrees": 1.37837755995713,
+    "tags": ["shape:circle"],
+    "text": "ulefos 40 kb"
+  },
+  "8ab819a2fd9949915cb2379fde8375120f3735cca4b3b7149da45b8535c2c47c": {
+    "centerXRatio": 0.5162501496065997,
+    "centerYRatio": 0.5063338012695313,
+    "radiusRatio": 0.3735356842579651,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": "-"
+  },
+  "8b89758900ab88a4e28b6548ff4ca4217256476c6f97bb6cda5c165c446f34f1": {
+    "centerXRatio": 0.5309845377604167,
+    "centerYRatio": 0.5374068603515625,
+    "radiusRatio": 0.4497640785071574,
+    "rotateDegrees": 217,
+    "tags": ["elephants", "shape:circle"],
+    "text": "københavns energi afløb e en124 2790 d400 furnes 2211ps f"
+  },
+  "8c15b4c0954f53f5a50efbc0b7efcecbc64aa735ca3d955ba6114091c7fe1eba": {
+    "centerXRatio": 0.48624556477864583,
+    "centerYRatio": 0.5177337646484376,
+    "radiusRatio": 0.416100672988121,
+    "rotateDegrees": 4.8230484677350205,
+    "tags": ["shape:circle", "tree"],
+    "text": "en124 ulefos d400 ufx lås"
+  },
+  "8d0a4e6e251631ba717585598387bb31b6f5f6347f2b6940472b61824f28a3d2": {
+    "centerXRatio": 0.4957927480260602,
+    "centerYRatio": 0.5156997070312499,
+    "radiusRatio": 0.45252997586586363,
+    "rotateDegrees": 4.224360115168281,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "8d7dd80a1a129e5d40ae760dff535f1e4c2957998894743cf95f12c3f6600d1f": {
+    "centerXRatio": 0.5237501220703126,
+    "centerYRatio": 0.4784374389648438,
+    "radiusRatio": 0.2865788647727905,
+    "rotateDegrees": 358.79575786857345,
+    "tags": ["shape:circle", "star:6", "wordless"],
+    "text": "-"
+  },
+  "8e26f53ca8ac36ea688b671773915f62fc4c5a300d65e8bf674d8c7df108bdd6": {
+    "centerXRatio": 0.48999988291657415,
+    "centerYRatio": 0.48592492675781246,
+    "radiusRatio": 0.451215305153325,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "8e6898256f7a83f0f95750e70bff86c0168e519aa137d9f4a712a20f8a9142e1": {
+    "centerXRatio": 0.5087500406901041,
+    "centerYRatio": 0.5206251525878905,
+    "radiusRatio": 0.3924989966447304,
+    "rotateDegrees": 0,
+    "tags": ["shape:circleinsquare"],
+    "text": "e"
+  },
+  "8e6c90a4bc1cc67364f6be91274f2a9a88abbcbf2ea4d4668a47d0530a84334a": {
+    "centerXRatio": 0.5212500813802083,
+    "centerYRatio": 0.45312484741210934,
+    "radiusRatio": 0.3365088517133407,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "8e6f9dfdf1eb0371bc292f17924bb0d875b9f997dd5bcbef36a8ecca2d5e512b": {
+    "centerXRatio": 0.5148927612304686,
+    "centerYRatio": 0.4955541992187501,
+    "radiusRatio": 0.4111162584852761,
+    "rotateDegrees": 92,
+    "tags": ["shape:circle", "squares"],
+    "text": "hlk"
+  },
+  "8e73c790ad53ae46c1b596f96ef9bb34842eab9f834c61620673cd39975025f1": {
+    "centerXRatio": 0.5125000650463476,
+    "centerYRatio": 0.49577749633789064,
+    "radiusRatio": 0.3984505242295668,
+    "rotateDegrees": 0,
+    "tags": ["kommune:aarhus", "shape:circle"],
+    "text": "ulefos ufl 30"
+  },
+  "8f5e41c847e3853a412b981b0f194625d6ee0bbf2350204694c26eb379fc3c7e": {
+    "centerXRatio": 0.5135840657552083,
+    "centerYRatio": 0.5304060974121093,
+    "radiusRatio": 0.35239690153711023,
+    "rotateDegrees": 56.39922572061204,
+    "tags": ["shape:circleinsquare", "tree"],
+    "text": "d400 gjs ulefos uk10x lås"
+  },
+  "8f7c7b0c1e254e6d399dc570df3ce8a7f63368ad71c77b7b863f45e65af7f507": {
+    "centerXRatio": 0.49312225341796867,
+    "centerYRatio": 0.5249431559244792,
+    "radiusRatio": 0.37945278620306133,
+    "rotateDegrees": 201,
+    "tags": ["shape:circleinsquare"],
+    "text": "bb"
+  },
+  "8feff695a08ae1dcab7d564ac5ec423d03433e096dd1eb9611d4fa4398e1354a": {
+    "centerXRatio": 0.5155185953776042,
+    "centerYRatio": 0.4872185363769531,
+    "radiusRatio": 0.4330891069370873,
+    "rotateDegrees": 358.2798903020972,
+    "tags": ["shape:circle"],
+    "text": "40 åa gjs ulefos d400 lås ns ufx en124"
+  },
+  "8ff145a619b5b75766fdd30b8911f12458b3cae983c7ba599b1b29fd9fa3c55a": {
+    "centerXRatio": 0.48256640625,
+    "centerYRatio": 0.5660755615234375,
+    "radiusRatio": 0.41668932045105767,
+    "rotateDegrees": 250,
+    "tags": ["shape:circleinsquare"],
+    "text": "lønhart"
+  },
+  "8ff23880914e9216d601bf28074fa487554110481316af9450b4967c5ca5fb2c": {
+    "centerXRatio": 0.504926393552953,
+    "centerYRatio": 0.4555494079589844,
+    "radiusRatio": 0.39621003958612777,
+    "rotateDegrees": 55,
+    "tags": ["shape:circle"],
+    "text": "bd"
+  },
+  "910ac24d2c51df40b3ee8a3ea7a43e9a1800eb4cf614adf190529a024cbf5f7e": {
+    "centerXRatio": 0.4859249572753906,
+    "centerYRatio": 0.5062500325231738,
+    "radiusRatio": 0.38307357213175514,
+    "rotateDegrees": 98.68770937782665,
+    "tags": ["shape:circleinsquare"],
+    "text": "22 24 49 slagelse 400 jernstøberi"
+  },
+  "912f6bf76278ac93016651fbe9ed5313dca30f3d74d902a6bd33e5d74a607e89": {
+    "centerXRatio": 0.5225001279244837,
+    "centerYRatio": 0.4788874206542969,
+    "radiusRatio": 0.4517908124663618,
+    "rotateDegrees": 359.9999932570786,
+    "tags": ["kommune:aarhus", "shape:circle"],
+    "text": "ulefos"
+  },
+  "912f7b84c3d773b1520cc3f8b97504972bc6925c8ee9f801922f4d6159bdc48d": {
+    "centerXRatio": 0.5125000406901042,
+    "centerYRatio": 0.5450001831054687,
+    "radiusRatio": 0.4474891686761164,
+    "rotateDegrees": 40.11658605299897,
+    "tags": ["shape:circle", "wordless"],
+    "text": "-"
+  },
+  "915063ab7f825e74d38232bdb4eaf1418a4c95af4b75db259bc3d56ca62f8a5b": {
+    "centerXRatio": 0.48197042846679683,
+    "centerYRatio": 0.5256069583113621,
+    "radiusRatio": 0.2563397947238222,
+    "rotateDegrees": 91.07775709089947,
+    "tags": ["crown", "shape:square"],
+    "text": "mv"
+  },
+  "91a09c46fcb3715ad5c0c6895b1085246671059414d55ec7421f06cee6253ff8": {
+    "centerXRatio": 0.4723240966796875,
+    "centerYRatio": 0.49629317126096245,
+    "radiusRatio": 0.4212107933653002,
+    "rotateDegrees": 102.09028952089994,
+    "tags": ["shape:circle", "star:6"],
+    "text": "plan city universal 15 bd221181"
+  },
+  "92ccd6a30e1f677c07229ee3bc1f25dc78acb7383b31858bf8cd1e7cf4ba7317": {
+    "centerXRatio": 0.48124995663576825,
+    "centerYRatio": 0.5049263000488281,
+    "radiusRatio": 0.38368674367126365,
+    "rotateDegrees": 6.460589235638338,
+    "tags": ["shape:circleinsquare"],
+    "text": ""
+  },
+  "92f5f2f329ebcc8eb0401c7b1651deded475450a460a4a1d311e0eb89d8d2081": {
+    "centerXRatio": 0.5014075317382813,
+    "centerYRatio": 0.5175000151774811,
+    "radiusRatio": 0.3981708223249681,
+    "rotateDegrees": 318.15774383017583,
+    "tags": ["kommune:frederiksberg", "shape:circleinsquare"],
+    "text": "frederiksberg"
+  },
+  "946895cee6f09ea33833dd76f22e086e577aff2dbe40d22b71109167d9a1d753": {
+    "rotateDegrees": 1,
+    "tags": ["shape:octagon", "squares"],
+    "text": ""
+  },
+  "94cad8ccd0ae93084e2ec8f41f81d7bb2ae06b30dc3a6817021a72126051817c": {
+    "centerXRatio": 0.47750268554687497,
+    "centerYRatio": 0.5075000305175781,
+    "radiusRatio": 0.36884292030638033,
+    "rotateDegrees": 36.89511369868154,
+    "tags": ["shape:circle"],
+    "text": "holbæk vand"
+  },
+  "94edc21c987d0752350d36859177d8b2c00051b03502df6ccf973b15dbf1c26a": {
+    "centerXRatio": 0.5292611083984375,
+    "centerYRatio": 0.4916885403079207,
+    "radiusRatio": 0.4595013643178471,
+    "rotateDegrees": 95.72719697023797,
+    "tags": ["shape:circle"],
+    "text": "t"
+  },
+  "955d7f4f2dd3f0d54b5efd801371c6a8d201119a7b671590234c75428ba92340": {
+    "centerXRatio": 0.5,
+    "centerYRatio": 0.5,
+    "radiusRatio": 0.5,
+    "rotateDegrees": 0,
+    "tags": ["kommune:aarhus", "multiple"],
+    "text": ""
+  },
+  "95d5fd0d0af3557a51fac345646079efc36c2d690182ed82d45433d7035fc29a": {
+    "centerXRatio": 0.5276770019531251,
+    "centerYRatio": 0.49916210937499994,
+    "radiusRatio": 0.3694403043875484,
+    "rotateDegrees": 153,
+    "tags": ["dots", "shape:circleinsquare"],
+    "text": "hofor spildevand en124 d400 lås furnes 2705 en124"
+  },
+  "95e9a717b2d8c994124f632d7329ab738c03ed1959afa6d09c6c7eae638092bf": {
+    "centerXRatio": 0.4880361938476563,
+    "centerYRatio": 0.498750026018539,
+    "radiusRatio": 0.45157466249268874,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "95fdca60dcebc53e23cf58cb5c014cf0ca45f685ebf901d66b6ecd9e3a69efec": {
+    "centerXRatio": 0.5310668945312499,
+    "centerYRatio": 0.5264386901855469,
+    "radiusRatio": 0.4032960126045179,
+    "rotateDegrees": 70,
+    "tags": ["shape:circleinsquare"],
+    "text": ""
+  },
+  "961aa6824c12cf1436e72df38008bb2c27269e2e9002dc9d2b6f59a7d29b0b9d": {
+    "centerXRatio": 0.5051435399436612,
+    "centerYRatio": 0.524409912109375,
+    "radiusRatio": 0.4746328273296252,
+    "rotateDegrees": 110.0061232093625,
+    "tags": ["shape:circle"],
+    "text": "hofor fjernvarme en124 d400 furnes 2709c 2211tps"
+  },
+  "96d9b678f9538722369af2fb04f296d4cc06b18ff65bb80f1639b3d49574d854": {
+    "centerXRatio": 0.5076298014322917,
+    "centerYRatio": 0.5055260314941407,
+    "radiusRatio": 0.4203732144848023,
+    "rotateDegrees": 1,
+    "tags": ["hole", "munich", "shape:circle"],
+    "text": ""
+  },
+  "972bbb3b3679a96fe6d32dec00698fade9a0aadfc44768d31066bc3e7637ab51": {
+    "centerXRatio": 0.5037500303549622,
+    "centerYRatio": 0.4683311157226563,
+    "radiusRatio": 0.43568330252986404,
+    "rotateDegrees": 0.11618808286431204,
+    "tags": ["shape:circle", "squares"],
+    "text": "nv 5"
+  },
+  "97673d3e2716148a66a1ab7a978a86bcb9f0ccaebe9a3d731d0a335dcc44afbb": {
+    "centerXRatio": 0.5,
+    "centerYRatio": 0.5037499999999999,
+    "radiusRatio": 0.4172474102811407,
+    "rotateDegrees": 317.0105694197116,
+    "tags": ["kommune:birkerød", "shape:circleinsquare"],
+    "text": "birkerød kommune ulefos uk-10 en124 d400 randers 2203"
+  },
+  "97c1c043b46c079daa1ea4ba6ebd8210d5b4a778f58fd6ecb658f1743c422ce9": {
+    "centerXRatio": 0.516677490234375,
+    "centerYRatio": 0.472249267578125,
+    "radiusRatio": 0.4294861562273231,
+    "rotateDegrees": 102,
+    "tags": ["birds", "cut:positive", "shape:circle", "tree"],
+    "text": "hofor bærdygtige byer spildevand en124 d400 furnes 2806c"
+  },
+  "97faa65f7aa4891e85aaf61eb3a2ee65292905e22b987bd3ed121f98001837e7": {
+    "centerXRatio": 0.503589599609375,
+    "centerYRatio": 0.5424240112304688,
+    "radiusRatio": 0.3961159912125268,
+    "rotateDegrees": 135.05472917500907,
+    "tags": ["shape:circle"],
+    "text": "fors ulefos ns d400 gjs en124-2 utvl scax ufx-xls"
+  },
+  "990df509d233447d885ccff611550f0725cbd859361c166dd659ac5fb5580f46": {
+    "centerXRatio": 0.47243229166666667,
+    "centerYRatio": 0.5509937744140625,
+    "radiusRatio": 0.33877035676477957,
+    "rotateDegrees": 1,
+    "tags": ["shape:circle"],
+    "text": "pont a mousson gs rexel nf d400 en124"
+  },
+  "994c8699a5570faed77b61897e2715ae96c232ab6af0dc35ed96f30a810098d1": {
+    "centerXRatio": 0.541879386292046,
+    "centerYRatio": 0.4902606506347656,
+    "radiusRatio": 0.2558081940219193,
+    "rotateDegrees": 178,
+    "tags": ["multilingual", "shape:circleinsquare"],
+    "text": "isiflo vatten vann vand"
+  },
+  "996da030d5610be382820838f1c868a4b3fd101f34406bf3a12ea1db08800cbb": {
+    "centerXRatio": 0.517587890625,
+    "centerYRatio": 0.5175468343098958,
+    "radiusRatio": 0.32173680377698644,
+    "rotateDegrees": 93.00540305243214,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "99d38953d6d241de1da66259cd14d9828b3ed48647d6688ddbdd698adddb6118": {
+    "centerXRatio": 0.47348828125,
+    "centerYRatio": 0.4678617248535155,
+    "radiusRatio": 0.35517508510517753,
+    "rotateDegrees": 182,
+    "tags": ["shape:square"],
+    "text": ""
+  },
+  "9a388f12597f56f770bbe74daabeea04b4b614eac207bd3b84546f2a1ff7fb02": {
+    "centerXRatio": 0.5,
+    "centerYRatio": 0.5,
+    "radiusRatio": 0.5,
+    "rotateDegrees": 0,
+    "tags": ["shape:circleinsquare"],
+    "text": "bb"
+  },
+  "9af8805d4470e4a99e49080587b7c4506667a00adea4d37204c314ae7c791541": {
+    "centerXRatio": 0.5563002014160157,
+    "centerYRatio": 0.501249973981461,
+    "radiusRatio": 0.4225196052288789,
+    "rotateDegrees": 0,
+    "tags": ["shape:circleinsquare"],
+    "text": ""
+  },
+  "9b3f25c9f3bac6cbe6300e28cd04113f1b6e9b85aee17d9d076db4e2b1e82aaf": {
+    "centerXRatio": 0.5025000000000001,
+    "centerYRatio": 0.4849999389648438,
+    "radiusRatio": 0.4136677631213147,
+    "rotateDegrees": 356.76709049175247,
+    "tags": ["kommune:horsens", "shape:circle"],
+    "text": "ulefos ufx"
+  },
+  "9b44d1180c28486908aece7dba118a4734a434a8977b8861bb0336bdcedc9979": {
+    "centerXRatio": 0.5,
+    "centerYRatio": 0.5,
+    "radiusRatio": 0.5,
+    "rotateDegrees": 0,
+    "text": "slide out"
+  },
+  "9cb99f3c5b35bab4aeb2102ee7e14d64f29f877f51c0a8d433f87c8b2b4e2299": {
+    "centerXRatio": 0.4949999956635768,
+    "centerYRatio": 0.4817024841308593,
+    "radiusRatio": 0.4237222397412653,
+    "rotateDegrees": 318.10460419843275,
+    "tags": ["shape:circleinsquare"],
+    "text": ""
+  },
+  "9da4ec76cb9ebdce06c1d5e13c01d1ae3b410136fc8a46c8c9832df695acf86a": {
+    "centerXRatio": 0.49625002385032746,
+    "centerYRatio": 0.5007037353515625,
+    "radiusRatio": 0.4515076670436683,
+    "rotateDegrees": 0,
+    "tags": ["mjolnir", "shape:circle"],
+    "text": "h j "
+  },
+  "9dc2faa6ea0aba9b936c5645d3f840067dc4ceaab64c474e054fea595b44a31f": {
+    "centerXRatio": 0.5,
+    "centerYRatio": 0.5225000195139043,
+    "radiusRatio": 0.37205699961224536,
+    "rotateDegrees": 180,
+    "tags": ["shape:square", "squares"],
+    "text": "sopsug ulefos"
+  },
+  "9e58dc85579d8e89dc202fb5588c9c55cca8f1ae8284f780c2f146083f5a86f2": {
+    "centerXRatio": 0.5037499999999999,
+    "centerYRatio": 0.4990625,
+    "radiusRatio": 0.4063361669097815,
+    "rotateDegrees": 343.7608756264808,
+    "tags": ["shape:circleinsquare"],
+    "text": "aco en124 d400 mpa kl"
+  },
+  "9ea7b3d03c6f8ce6172f91b80111bd9a552bf89c7ce7c3c8a88f3d0efe48ec9b": {
+    "centerXRatio": 0.5020133056640625,
+    "centerYRatio": 0.44885947733958703,
+    "radiusRatio": 0.4555666475843237,
+    "rotateDegrees": 131,
+    "tags": ["shape:circle"],
+    "text": "t"
+  },
+  "9efd8b405b27536ea434905e9a4ca63500812791234bd0fe17b0dad3c85e2e3a": {
+    "centerXRatio": 0.5247793579101563,
+    "centerYRatio": 0.5290538726860846,
+    "radiusRatio": 0.4843510515748095,
+    "rotateDegrees": 358,
+    "tags": ["shape:circle", "shape:odd"],
+    "text": "aco"
+  },
+  "9f21a735acb9e70359e503966e48eeeb7d825ae981a411d62c878179f3829ad8": {
+    "centerXRatio": 0.4988137817382813,
+    "centerYRatio": 0.522540294044183,
+    "radiusRatio": 0.3738423634555437,
+    "rotateDegrees": 271,
+    "tags": ["shape:circle"],
+    "text": "bd"
+  },
+  "9f239fe2d08c30bd92ba66dee6a4555859daed1de6ae1199770ea82f4deb40d9": {
+    "centerXRatio": 0.47875000867284634,
+    "centerYRatio": 0.4859249572753906,
+    "radiusRatio": 0.3044091156621664,
+    "rotateDegrees": 0,
+    "tags": ["dots", "shape:circleinsquare"],
+    "text": "furnes 6423 6421"
+  },
+  "9f6c333251c5ce0ac29587510cb33ec5bad37448a995a79b8ead737ac62b3f50": {
+    "centerXRatio": 0.49616394585021645,
+    "centerYRatio": 0.42919125366210936,
+    "radiusRatio": 0.4341570761586739,
+    "rotateDegrees": 300.54502582606847,
+    "tags": ["shape:circleinsquare"],
+    "text": "køge kommune uk-10 ulefos"
+  },
+  "9f87ce517501456271210467ce58370ea8dfeaa65b538198c08889f786025618": {
+    "centerXRatio": 0.4900255940755208,
+    "centerYRatio": 0.49891967773437496,
+    "radiusRatio": 0.42843721369823207,
+    "rotateDegrees": 358.9076993239713,
+    "tags": ["kommune:silkeborg", "shape:circle"],
+    "text": "22151-100 en124 d400 2716f f rj lås 2201"
+  },
+  "9f901fcda23310f88dc75faa22f837e18c8ef185639ac6b4d47c4c7690ad07cc": {
+    "centerXRatio": 0.5037501387655418,
+    "centerYRatio": 0.47536868286132816,
+    "radiusRatio": 0.47236108016243356,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "a02376c0a8b740fcc7a945167ef80c1402fef7ca2fa2dcb8fb2a2d82117c0d07": {
+    "centerXRatio": 0.4690349121093751,
+    "centerYRatio": 0.47875000867284634,
+    "radiusRatio": 0.4331270064407326,
+    "rotateDegrees": 24.670659859279,
+    "tags": ["covered", "kommune:næstved", "shape:circle"],
+    "text": ""
+  },
+  "a0efcc5e4ec485f99f8047c63b12bab3f95bb0b2ee6688b72bb02619e3557b59": {
+    "centerXRatio": 0.5125000650463477,
+    "centerYRatio": 0.4936662292480469,
+    "radiusRatio": 0.3792797614530932,
+    "rotateDegrees": 0,
+    "tags": ["shape:circleinsquare"],
+    "text": "e københavns energi afløb"
+  },
+  "a1283129d2baa79663bdc0294a16b467433461652bf888662e06e7b0ec4f299a": {
+    "centerXRatio": 0.5022673950195312,
+    "centerYRatio": 0.5299519042968749,
+    "radiusRatio": 0.26376938642729025,
+    "rotateDegrees": 91,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "a1fc62172b40b71a923dd342b644421e0b52081be5136a3712aecd9a023838e5": {
+    "centerXRatio": 0.5312501626158693,
+    "centerYRatio": 0.48592495727539053,
+    "radiusRatio": 0.4542807887988456,
+    "rotateDegrees": 359.05648884542495,
+    "tags": ["shape:circle", "squares"],
+    "text": "a"
+  },
+  "a215160c0a2fd0b821b0848926302be3329d9be4e77f0aca0ab10c3485ff27f2": {
+    "centerXRatio": 0.5097497151692709,
+    "centerYRatio": 0.5055751953125001,
+    "radiusRatio": 0.4311971006878096,
+    "rotateDegrees": 7.607411416737364,
+    "tags": ["shape:circle"],
+    "text": "roskilde forsyning"
+  },
+  "a221e88e8d45c00ec54e17acd62cd8a089c6717424d885b3978cb728cca9443f": {
+    "centerXRatio": 0.50125,
+    "centerYRatio": 0.5356251525878907,
+    "radiusRatio": 0.4158544844531586,
+    "rotateDegrees": 149.76424151609626,
+    "tags": ["birds", "shape:circle"],
+    "text": ""
+  },
+  "a23d97b6552efd3e6227280eed6a4643bf88c0979a1424ea0747df58e35bff26": {
+    "centerXRatio": 0.5128771972656251,
+    "centerYRatio": 0.5125828450520834,
+    "radiusRatio": 0.4457433417928473,
+    "rotateDegrees": 94,
+    "tags": ["shape:circle"],
+    "text": "københavns vand"
+  },
+  "a393e4e2ff85dc6fc43bb7fc581bbf3c0b012cdc1fa4a0c460478b3cd3e53c98": {
+    "centerXRatio": 0.5135945240515375,
+    "centerYRatio": 0.5216993408203126,
+    "radiusRatio": 0.4486148045994213,
+    "rotateDegrees": 355.4878907167225,
+    "tags": ["kommune:helsingør", "shape:circle"],
+    "text": ""
+  },
+  "a3bc364d30baa90fefbbfd4c08398bb316748cb3b1619d90bf59563ff0157171": {
+    "centerXRatio": 0.5146273516422902,
+    "centerYRatio": 0.4971790466308594,
+    "radiusRatio": 0.43164083130814346,
+    "rotateDegrees": 122.94494087009247,
+    "tags": ["shape:circle"],
+    "text": "telia"
+  },
+  "a411b81ff5690839b74eccb5bfaf6c87afb615723fae90fef3bffbf1912addf1": {
+    "centerXRatio": 0.50152978515625,
+    "centerYRatio": 0.4802566528320313,
+    "radiusRatio": 0.4012492444549524,
+    "rotateDegrees": 270.37122785171607,
+    "tags": ["kommune:rudersdal", "shape:circleinsquare"],
+    "text": "ulefos uk-10 furnes 2203t en124 d400"
+  },
+  "a43ed7f4a77acc80e985cb985430ad2a2d96c403fdaa2f76c2ad2ae14de49478": {
+    "centerXRatio": 0.4941571858723959,
+    "centerYRatio": 0.5052325134277343,
+    "radiusRatio": 0.3945650231856124,
+    "rotateDegrees": 246,
+    "tags": ["shape:circleinsquare"],
+    "text": ""
+  },
+  "a4dfe228480f8d1e421643e3e84cb1e740db94d3ea843a76694f9ac6c3a083c0": {
+    "centerXRatio": 0.5249264322916667,
+    "centerYRatio": 0.5074617919921875,
+    "radiusRatio": 0.31501149266733214,
+    "rotateDegrees": 6,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "a5b8dfa6ef3641476281f69680e68829d814775fce216df4f65048b542b83e62": {
+    "centerXRatio": 0.49750000000000005,
+    "centerYRatio": 0.5168750610351562,
+    "radiusRatio": 0.4128791698080951,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "a64f4482eee6998e1d703d76dbada22c13b3db89193367e00c327bef844f2401": {
+    "rotateDegrees": 0,
+    "text": "den grønne labyrint tuborg"
+  },
+  "a738760c93570cf0bb911c011e0524b1880fc508e1fd423e4f6ecd427e68647c": {
+    "centerXRatio": 0.5065446924782139,
+    "centerYRatio": 0.4587323303222656,
+    "radiusRatio": 0.4578422273580958,
+    "rotateDegrees": 334,
+    "tags": ["picture", "shape:circleinsquare"],
+    "text": "niemisen valimo 1928 2018 19.5.1928 nv nv-10"
+  },
+  "a74f5c09e95f49d8896cce23287c4672c0286b45b221081b49c74ecd7e21314c": {
+    "centerXRatio": 0.4774998991781611,
+    "centerYRatio": 0.4648123779296876,
+    "radiusRatio": 0.45376011976237335,
+    "rotateDegrees": 2.2555347577682596,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "a78225dc85ef41fac5709d42df00126df189f21189c3c5d59de11786bc2d6f75": {
+    "centerXRatio": 0.5237651167712034,
+    "centerYRatio": 0.4486568908691407,
+    "radiusRatio": 0.40592374976487144,
+    "rotateDegrees": 0.22824300930221852,
+    "tags": ["shape:circle"],
+    "text": "hlk"
+  },
+  "a7de97eb0819f4fc8efaa3a3572fc1dc3c73f0e335b44dbc42e61410a5116103": {
+    "centerXRatio": 0.48246126302083336,
+    "centerYRatio": 0.522889892578125,
+    "radiusRatio": 0.41173341187592627,
+    "rotateDegrees": 144,
+    "tags": ["shape:circleinsquare"],
+    "text": "nv scanpipe"
+  },
+  "a7e5c1aa0ddd248f7054aa0d573d2adcf1e9b9c787b4bc1106ded5db56a9209a": {
+    "centerXRatio": 0.496249915439748,
+    "centerYRatio": 0.42610595703125,
+    "radiusRatio": 0.4090726036814094,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "a80322bd55f851f1e1bd5b2f4836eca4053c572dda887afddb80b437e7535956": {
+    "centerXRatio": 0.5158026123046875,
+    "centerYRatio": 0.48521655273437503,
+    "radiusRatio": 0.437781363361381,
+    "rotateDegrees": 96,
+    "tags": ["bull", "kommune:rødovre", "shape:circle"],
+    "text": ""
+  },
+  "a87065ed9ca9cfafeba030672d8b28c72f45907ab1a9b282cc6748c27cfc2221": {
+    "centerXRatio": 0.5148386438617062,
+    "centerYRatio": 0.4618732299804688,
+    "radiusRatio": 0.44776654343297134,
+    "rotateDegrees": 52,
+    "tags": ["shape:circle"],
+    "text": "ballerup"
+  },
+  "a8a1179f2b1b52c966b39edcb0da7c871b685fc1a408e9491c0535a64afe5a5e": {
+    "centerXRatio": 0.5112500406901042,
+    "centerYRatio": 0.4915624694824219,
+    "radiusRatio": 0.40897246404529136,
+    "rotateDegrees": 2.5125340523861723,
+    "tags": ["kommune:syddjurs", "shape:circle"],
+    "text": "city-n 22 1511 100 furnes rj 2203t"
+  },
+  "a8cbf029fbd87aa9c1a57d1414361b55687f49432126562864dc6e99e6ad41d2": {
+    "centerXRatio": 0.5058724670410155,
+    "centerYRatio": 0.4878403441732349,
+    "radiusRatio": 0.4550189570722666,
+    "rotateDegrees": 268.37230896068036,
+    "tags": ["kalundborg", "shape:circle", "shape:circle"],
+    "text": "-"
+  },
+  "a8d1b7f5c868c6f690b5a0f843e895f6d7aa3cf3b921dc7cfa1f84effcc8cb59": {
+    "centerXRatio": 0.5350000303549621,
+    "centerYRatio": 0.4746648559570313,
+    "radiusRatio": 0.4024256532888897,
+    "rotateDegrees": 0,
+    "tags": ["hole", "shape:circle", "squares"],
+    "text": "-"
+  },
+  "a927875a307ee45a135d04ef3ffc0d5ec1c35316e24772d59dcbf63f02901336": {
+    "centerXRatio": 0.5086846313476562,
+    "centerYRatio": 0.5123562042073712,
+    "radiusRatio": 0.4646617666773267,
+    "rotateDegrees": 356,
+    "tags": ["anchor", "kommune:dragør", "shape:circle"],
+    "text": ""
+  },
+  "a954d32260eefc82b18171ff1058ecb5a761e43cb14c64cb89fe095e9fa9b474": {
+    "centerXRatio": 0.48897982788085936,
+    "centerYRatio": 0.5315187498265431,
+    "radiusRatio": 0.4510957036203624,
+    "rotateDegrees": 90.77776999910071,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "a9a44fc52cb8510684209818b948c257962786df9aebbebc4d26e59499b2614e": {
+    "centerXRatio": 0.4694883626302083,
+    "centerYRatio": 0.49139794921874996,
+    "radiusRatio": 0.3145496753998585,
+    "rotateDegrees": 245,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "a9c2343fe996a5059b65fa0422afc96e1afa505c09755e976063ed8755d85c3a": {
+    "centerXRatio": 0.5119637756347656,
+    "centerYRatio": 0.4962499696450377,
+    "radiusRatio": 0.45542288901151806,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle", "star:6"],
+    "text": "-"
+  },
+  "aa08fe6de872e76512644a6705969d55bd85e7f82923a1f6da56db1cf7bbab3b": {
+    "centerXRatio": 0.5202230631510416,
+    "centerYRatio": 0.46927258300781255,
+    "radiusRatio": 0.4390528625901474,
+    "rotateDegrees": 3.284034705224144,
+    "tags": ["kolding", "shape:circle"],
+    "text": "bluekolding"
+  },
+  "aa94eaf7ea58afa51e5ca013a9b544b0f382b47ff0eba9033c8f312bb3e77358": {
+    "centerXRatio": 0.5062500325231738,
+    "centerYRatio": 0.50492626953125,
+    "radiusRatio": 0.42995995897848893,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle", "squares"],
+    "text": "city bd 22-2455 spl-5"
+  },
+  "aaa4e3d03da37b72cd5399e4970ac428d393f473e2cfc70cdc885dc7e64cd8aa": {
+    "centerXRatio": 0.4887499186197917,
+    "centerYRatio": 0.48687493896484374,
+    "radiusRatio": 0.41655375380735454,
+    "rotateDegrees": 180,
+    "tags": ["shape:circleinsquare"],
+    "text": "nv 2014 nv-10"
+  },
+  "aac4948f5e9cbdf8c367638e925fcd05b0bde21652d82481f926cacaa49a01c1": {
+    "centerXRatio": 0.47384329223632815,
+    "centerYRatio": 0.49393014585992995,
+    "radiusRatio": 0.4654438699760892,
+    "rotateDegrees": 91.76756038604447,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "abcddf55abd31f5b279f0f25f0480e37460e6ab3702546178205d8ecb237cb4a": {
+    "centerXRatio": 0.4444035339355468,
+    "centerYRatio": 0.4974999978317885,
+    "radiusRatio": 0.4596989581298278,
+    "rotateDegrees": 180,
+    "tags": ["shape:circle"],
+    "text": "nid"
+  },
+  "ac6450270fc10a0d781af5048ed33368096b690b9227d41270037706a458a0da": {
+    "centerXRatio": 0.48054246919404975,
+    "centerYRatio": 0.4583968811035156,
+    "radiusRatio": 0.4589783511577168,
+    "rotateDegrees": 11,
+    "tags": ["kommune:aarhus", "shape:circle"],
+    "text": ""
+  },
+  "ad7086dc0ce9a77785d11f8e489fcffe1c8fc2d8b00d85838baf6ea83e90054c": {
+    "centerXRatio": 0.5146092936197916,
+    "centerYRatio": 0.5177226867675782,
+    "radiusRatio": 0.42424300521723574,
+    "rotateDegrees": 3.9359205387493716,
+    "tags": ["kommune:søllerød", "shape:circle"],
+    "text": "600 d400 ufx en124 ulefos søllerød kommune"
+  },
+  "ad946a8fb3736d016b8958b3ffede2514258391f623124f36c1f31b81a5b5314": {
+    "centerXRatio": 0.5175000813802083,
+    "centerYRatio": 0.5281251220703125,
+    "radiusRatio": 0.4481607577202104,
+    "rotateDegrees": 4.076571933413277,
+    "tags": ["shape:circle"],
+    "text": "ballerup"
+  },
+  "ae1eed4b13f192ea60a4066e0cfafd454629522232d312a173a3b75fc747ab24": {
+    "centerXRatio": 0.5175050964355469,
+    "centerYRatio": 0.49070596102075925,
+    "radiusRatio": 0.41713216896214467,
+    "rotateDegrees": 91,
+    "tags": ["crown", "shape:circle", "star:5"],
+    "text": "telia"
+  },
+  "ae3ef3926f91e762cd10b4be643efe356d21cbde620aea52fe23678c28896d47": {
+    "centerXRatio": 0.4971849670410156,
+    "centerYRatio": 0.5100000086728463,
+    "radiusRatio": 0.42930970435600796,
+    "rotateDegrees": 257.1246838151807,
+    "tags": ["shape:circle", "star:5"],
+    "text": ""
+  },
+  "aeb9652ffd6a91d7d267b410d4f7ae7d666f4dd22761e85d2d624e6f0e6610d6": {
+    "centerXRatio": 0.5126463109180729,
+    "centerYRatio": 0.4795350952148438,
+    "radiusRatio": 0.4504359448040151,
+    "rotateDegrees": 2.71483107296757,
+    "tags": ["hexagons", "hole", "shape:circle", "teeth"],
+    "text": "-"
+  },
+  "aff274f916e0ed27c79bc7ebeba2d4e355d0cea56b4c74d89b2aa06c566d14aa": {
+    "centerXRatio": 0.546250203450521,
+    "centerYRatio": 0.45124984741210933,
+    "radiusRatio": 0.3920647127579121,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle", "wordless"],
+    "text": "-"
+  },
+  "b03d4675d0a269a79ea087a9e2cc36bb4a4483e6aa68003de9ab918146a9b9c9": {
+    "centerXRatio": 0.4860894049039743,
+    "centerYRatio": 0.4594431457519531,
+    "radiusRatio": 0.41086670234647515,
+    "rotateDegrees": 34,
+    "tags": ["shape:circleinsquare"],
+    "text": ""
+  },
+  "b0d1ff4943e1d84f9412a26fef7352dd04eee546cf6f4ec041fb3435961eae24": {
+    "centerXRatio": 0.5071781819661458,
+    "centerYRatio": 0.5242308654785157,
+    "radiusRatio": 0.33024592916310425,
+    "rotateDegrees": 113.4120648772444,
+    "tags": ["shape:circleinsquare"],
+    "text": "e"
+  },
+  "b1cf1dc16625deb4df17f365f0abcbbe5bcd62fc1b02f8df54e2420449a843df": {
+    "centerXRatio": 0.48847036743164063,
+    "centerYRatio": 0.5143394131431783,
+    "radiusRatio": 0.3489976495175894,
+    "rotateDegrees": 35,
+    "tags": ["kommune:aarhus", "shape:circleinsquare"],
+    "text": "aarhus vand"
+  },
+  "b272625f75f0541db670da073744c793c705f230f792416513cdcf35a18ae80b": {
+    "centerXRatio": 0.47301220703124996,
+    "centerYRatio": 0.4529060919373751,
+    "radiusRatio": 0.4579274537916973,
+    "rotateDegrees": 269,
+    "tags": ["kommune:kalundborg", "shape:circle"],
+    "text": ""
+  },
+  "b27f30c61455907438a08b827efd6423381a557af41f7a88316135b2c214d0db": {
+    "centerXRatio": 0.5,
+    "centerYRatio": 0.5,
+    "radiusRatio": 0.5,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": "jrc 40"
+  },
+  "b2b450bfba6611db7fecdb844c796f80adff9fa6bbc2bb3ee660b230c1fdb937": {
+    "centerXRatio": 0.47577371215820313,
+    "centerYRatio": 0.49098967150727135,
+    "radiusRatio": 0.4589637439059382,
+    "rotateDegrees": 273,
+    "tags": ["shape:circle", "star:6"],
+    "text": "kjøbenhavn poetzold & jacobsen"
+  },
+  "b315f5097b13f86539133c153033e8bc7d01ed5b5174ffeacfa260932990f5d4": {
+    "centerXRatio": 0.4999998915894204,
+    "centerYRatio": 0.5246313476562501,
+    "radiusRatio": 0.43399143413041213,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "b34b5b7824ef85b1765cfef1ba7cb4dc5e89dd0204ead2692f9cd57580131f3b": {
+    "centerXRatio": 0.5046225729039464,
+    "centerYRatio": 0.47832806396484373,
+    "radiusRatio": 0.46008667632121353,
+    "rotateDegrees": 85,
+    "tags": ["bird", "clover", "kommune:gladsaxe", "shape:circle"],
+    "text": "en124 ulefos gjs d400 ns ufx gladsaxe kommune"
+  },
+  "b356ea4b0846e03109b4bf0c031d732b1399009bc8100ea75bf8703a6b56d1d7": {
+    "centerXRatio": 0.5275049743652344,
+    "centerYRatio": 0.48166056315104167,
+    "radiusRatio": 0.42272948640251956,
+    "rotateDegrees": 345.7944200556301,
+    "tags": ["shape:circle"],
+    "text": "bd dana standard 221205-010"
+  },
+  "b3f5b36d033b8af5cb1bc7261679d2257f3f36f91da4dc2b460f61bd91fab74e": {
+    "centerXRatio": 0.508750143101965,
+    "centerYRatio": 0.5098525390624999,
+    "radiusRatio": 0.2604434327388545,
+    "rotateDegrees": 0,
+    "tags": ["shape:circleinsquare"],
+    "text": "ut22 uk8"
+  },
+  "b505b7c1ce3809285e9df986b7f1a179f588aee838df12cb25ea1eaa461f5916": {
+    "centerXRatio": 0.4924999593098959,
+    "centerYRatio": 0.5140625305175781,
+    "radiusRatio": 0.4048992644117779,
+    "rotateDegrees": 3.2590668315288553,
+    "tags": ["kommune:søllerød", "shape:circleinsquare"],
+    "text": "ulefos uk-10 søllerød kommune"
+  },
+  "b51bf0196b2dc42f68900c7d1739aa0488de4a05b4f01dec46f9410a7517ac2d": {
+    "centerXRatio": 0.5179397826931615,
+    "centerYRatio": 0.4610320434570313,
+    "radiusRatio": 0.4476625675417533,
+    "rotateDegrees": 39,
+    "tags": ["shape:circle", "star:6"],
+    "text": "blaagaards lerbrænderi kjøbenhavn"
+  },
+  "b53dc33a9f6aeb6f1ad355b5619b8fa694e02d9245fb53724be183dda408e2a0": {
+    "centerXRatio": 0.4859134928385416,
+    "centerYRatio": 0.49602197265625003,
+    "radiusRatio": 0.3918975495454019,
+    "rotateDegrees": 111,
+    "tags": ["dots", "shape:circle"],
+    "text": "e københavns energi en124 d400 f furnes 2403"
+  },
+  "b596405558f972d172cb89d9865092e8a9b9e86e63f95cb4b28e1bfb1d867b23": {
+    "centerXRatio": 0.5103309326171875,
+    "centerYRatio": 0.5131482543945313,
+    "radiusRatio": 0.39619883963929103,
+    "rotateDegrees": 348,
+    "tags": ["shape:circle", "star:6"],
+    "text": "-"
+  },
+  "b61f716f4575cfa35c4962643961eaee71d8977e3010d58d41c6d4d1d926120a": {
+    "centerXRatio": 0.5012499739814609,
+    "centerYRatio": 0.5091488037109375,
+    "radiusRatio": 0.4098264001015029,
+    "rotateDegrees": 0,
+    "tags": ["shape:circleinsquare", "swirl"],
+    "text": ""
+  },
+  "b6235dc43a201ff9ae8da0def3210adeedf590379839f3d7efe1c778d05e1336": {
+    "centerXRatio": 0.49155249023437503,
+    "centerYRatio": 0.4887558173116952,
+    "radiusRatio": 0.44258954145482304,
+    "rotateDegrees": 270.0222750640868,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "b624c6d2f6ac092cdd0ef8e148d044c8714b6d383d094e1ee1edf2e168b4bc4c": {
+    "centerXRatio": 0.50996558831386,
+    "centerYRatio": 0.4657362670898438,
+    "radiusRatio": 0.43606499670330684,
+    "rotateDegrees": 333,
+    "tags": ["hexagons", "shape:circle"],
+    "text": "-"
+  },
+  "b6a52ed504046851aec981b148f93023c5bb0b2d547cd16123bb39b1e9557ba4": {
+    "centerXRatio": 0.45764294433593755,
+    "centerYRatio": 0.498034461988649,
+    "radiusRatio": 0.46251593761069987,
+    "rotateDegrees": 100,
+    "tags": ["shape:circle"],
+    "text": "brønderslev spildevand"
+  },
+  "b7027c5a9989bd8d3199683b9b000c5d4f256d63ae2eea91ae74ff5b8a3cab37": {
+    "centerXRatio": 0.4739611511230469,
+    "centerYRatio": 0.49374996747682615,
+    "radiusRatio": 0.4710473956213912,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": "40"
+  },
+  "b7ca31e5a3c6d641323d35c031c5c52eb8a65b83e2242f80cc25e99dce6d67dd": {
+    "centerXRatio": 0.5175000693827708,
+    "centerYRatio": 0.4859249572753906,
+    "radiusRatio": 0.2799060935931569,
+    "rotateDegrees": 359.6974903880317,
+    "tags": ["shape:square"],
+    "text": ""
+  },
+  "b8a12bbf05e038d388f14c0d2758e9dec356c7ab57745bfe256d4980501e521d": {
+    "centerXRatio": 0.49960793313929286,
+    "centerYRatio": 0.44639962768554686,
+    "radiusRatio": 0.47022749358415217,
+    "rotateDegrees": 4,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "b8d23dd3f47119b2d5d7f8d608495bdfe32eed1c2556abedcd73ef9b232ed901": {
+    "centerXRatio": 0.5350001929708316,
+    "centerYRatio": 0.49577749633789064,
+    "radiusRatio": 0.3643361896616951,
+    "rotateDegrees": 2.2012546511378446,
+    "tags": ["shape:circle", "squares"],
+    "text": "bd"
+  },
+  "b8ea815b22780c19ffbdea2beed045b77328b4bd77d1859280ba36657b59c816": {
+    "centerXRatio": 0.5340230305989584,
+    "centerYRatio": 0.5591456909179687,
+    "radiusRatio": 0.3995803965301438,
+    "rotateDegrees": 2,
+    "tags": ["shape:circle"],
+    "text": "bb"
+  },
+  "b90ff3af7a9c38de9d408e91eb19ce424a8245b55de742395eaecf735d28d52e": {
+    "centerXRatio": 0.5022758483886718,
+    "centerYRatio": 0.49368589682435055,
+    "radiusRatio": 0.40760518551215835,
+    "rotateDegrees": 114.74539054820582,
+    "tags": ["hole", "shape:circle", "star:7"],
+    "text": "jernstøberi & maskinfabrik falkoneralle no 42 frederiksberg"
+  },
+  "b9aed63cf876b0e1b66f18658cf9cc037fc857d70885c3dba2bea2a25c487a13": {
+    "centerXRatio": 0.4534487915039062,
+    "centerYRatio": 0.48715735752247996,
+    "radiusRatio": 0.4447180305437495,
+    "rotateDegrees": 95,
+    "tags": ["kommune:næstved", "shape:circle"],
+    "text": ""
+  },
+  "b9fa2694fd3387c8ad9e036dd7e09bdabcfa7ffc6fe4532c9db8d5b24415e405": {
+    "centerXRatio": 0.4824999186197917,
+    "centerYRatio": 0.5515626831054687,
+    "radiusRatio": 0.3995530814418162,
+    "rotateDegrees": 0,
+    "tags": ["shape:circleinsquare"],
+    "text": "d400"
+  },
+  "ba21314cebb8da7f0d77dcbc35d512fafaff87d04e0c1d0ad8b96fd5353b0b72": {
+    "centerXRatio": 0.5124999566357682,
+    "centerYRatio": 0.5218163146972655,
+    "radiusRatio": 0.3322809127782609,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "ba397b243b3e85be0030c06ae8456eaf3c51de8e66e78d07c5331e2feeb58a4e": {
+    "centerXRatio": 0.5151834979150477,
+    "centerYRatio": 0.4729951477050781,
+    "radiusRatio": 0.4461447391577004,
+    "rotateDegrees": 9,
+    "tags": ["kommune:kalundborg", "shape:circle"],
+    "text": ""
+  },
+  "bae878c01a3b8e1a28cc9c515cdd55c11fa5b9a43d8947dedffd56a4d8b033ca": {
+    "centerXRatio": 0.43806976318359375,
+    "centerYRatio": 0.49499999566357683,
+    "radiusRatio": 0.3548359627814139,
+    "rotateDegrees": 90,
+    "tags": ["shape:square", "star:6", "starofdavid"],
+    "text": "ludvigsen & hermann kjøbenhavn "
+  },
+  "bb7171f61df267220c231e43392d983db36a473d9a0a6d16ef43d7fffe955386": {
+    "centerXRatio": 0.5,
+    "centerYRatio": 0.5,
+    "radiusRatio": 0.5,
+    "rotateDegrees": 0,
+    "text": "ludvigsen & hermann"
+  },
+  "bc070bf0f9bdddb170418f0eb761c5c1691bee07c6667d14cd2f6675de420fdb": {
+    "centerXRatio": 0.5125000406901042,
+    "centerYRatio": 0.5159375305175782,
+    "radiusRatio": 0.4303613163196059,
+    "rotateDegrees": 0,
+    "tags": ["kommune:helsinge", "shape:circle"],
+    "text": "ufx d400 en124 ulefos 600 helsinge kommune"
+  },
+  "bc53d3b6ef9ed44485db1989651e482edbc36000d5aebcf80d28f1adc9aaf5b7": {
+    "centerXRatio": 0.5222339477539062,
+    "centerYRatio": 0.459177490234375,
+    "radiusRatio": 0.3397405857835189,
+    "rotateDegrees": 186,
+    "tags": ["shape:circle", "star:5"],
+    "text": "rj standard "
+  },
+  "bc7dbf0061161007accb6b7eef7a948525a236543168c579e5dd2c8b109ddd7a": {
+    "centerXRatio": 0.4762499186197917,
+    "centerYRatio": 0.5290626220703126,
+    "radiusRatio": 0.42087405680792755,
+    "rotateDegrees": 0,
+    "tags": ["hole", "shape:circle", "star:6"],
+    "text": "ludvigsen & hermann n256"
+  },
+  "bca5d00c520dc014514566caeae0be2b7426adc7f0ad19a031e3da1dc529e4b3": {
+    "centerXRatio": 0.5575002124847358,
+    "centerYRatio": 0.4429960327148438,
+    "radiusRatio": 0.3873272318646468,
+    "rotateDegrees": 1.3126920384387972,
+    "tags": ["shape:circleinsquare"],
+    "text": "hydrotec klasse a 15 en 124"
+  },
+  "bd058c2fab7e5be8d0ec05f5da2b5b005a714f00082d2901aa1d2a286330ed5d": {
+    "centerXRatio": 0.45791445922851565,
+    "centerYRatio": 0.48904679130703266,
+    "radiusRatio": 0.44034324081522425,
+    "rotateDegrees": 98,
+    "tags": ["kommune:dragør", "shape:circleinsquare"],
+    "text": ""
+  },
+  "bd7729356190a4472555cef21d69f6ad80754888b4b40dec5dce773b17856a83": {
+    "centerXRatio": 0.49466064453124997,
+    "centerYRatio": 0.5295241088867187,
+    "radiusRatio": 0.35216720073621394,
+    "rotateDegrees": 95,
+    "tags": ["shape:circle", "squares"],
+    "text": "11"
+  },
+  "be11ef57959b200039c2781f5110d5d54386964c7a3f030c3405a158507479f3": {
+    "centerXRatio": 0.4949999414582871,
+    "centerYRatio": 0.5028150024414062,
+    "radiusRatio": 0.38323969376411404,
+    "rotateDegrees": 358.79989511621307,
+    "tags": ["shape:circle", "squares"],
+    "text": "dana s h"
+  },
+  "bec1c7fba33b9e4c730c75d4cedbe4579c393a916ea941590bcdf46149dd564a": {
+    "centerXRatio": 0.4598808898925781,
+    "centerYRatio": 0.5004790663507438,
+    "radiusRatio": 0.4242054578968483,
+    "rotateDegrees": 112,
+    "tags": ["kommune:næstved", "shape:circleinsquare"],
+    "text": ""
+  },
+  "bf29efead513ca697429b1c868a4527090eb194825f790671507bc13faf10e03": {
+    "centerXRatio": 0.48074371337890626,
+    "centerYRatio": 0.5022039388020834,
+    "radiusRatio": 0.2976271288430177,
+    "rotateDegrees": 44,
+    "tags": ["shape:circleinsquare"],
+    "text": "scan pipe"
+  },
+  "bf5f44c636ea2a75700ea088ece0ad87a8657cec5b929b40f64b3a622ab8a951": {
+    "centerXRatio": 0.5012500823920404,
+    "centerYRatio": 0.45003353881835945,
+    "radiusRatio": 0.4282548099687783,
+    "rotateDegrees": 358.85102617215125,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "bfd5e195de40bd28fa2d3ade8e5b2d12b821f4dcc3088604d850a3d4036ab415": {
+    "centerXRatio": 0.4890748291015625,
+    "centerYRatio": 0.5000233082745893,
+    "radiusRatio": 0.4586369745111297,
+    "rotateDegrees": 105,
+    "tags": ["kommune:hillerød", "shape:circleinsquare", "tree"],
+    "text": ""
+  },
+  "bfef28437de6fbb33c3aa84f35f80be54329ba82e812d27b2a36710158b31a27": {
+    "centerXRatio": 0.4824999848225189,
+    "centerYRatio": 0.47747991943359375,
+    "radiusRatio": 0.49021360675414194,
+    "rotateDegrees": 270,
+    "tags": ["shape:circle"],
+    "text": "roskilde"
+  },
+  "c01f1aaca2581f8a27cbb72a4a801bd987d7fd520ce767bfb0811ca004ddf60f": {
+    "centerXRatio": 0.4980642206927176,
+    "centerYRatio": 0.5068810424804688,
+    "radiusRatio": 0.41323678480576814,
+    "rotateDegrees": 36,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "c024dd3cc2634c9af1b333cf3ea39f908a38eb3638c5aab7c433ab635c84b13d": {
+    "centerXRatio": 0.48537308200002777,
+    "centerYRatio": 0.512109375,
+    "radiusRatio": 0.1885906482936066,
+    "rotateDegrees": 2.062813320733028,
+    "tags": ["crown", "shape:square"],
+    "text": ""
+  },
+  "c0289c846d2fa12f5d1ed164d8aeba76efd408bf0ed524adaf9635aa47366c81": {
+    "centerXRatio": 0.4605898132324219,
+    "centerYRatio": 0.498750026018539,
+    "radiusRatio": 0.38405671546023595,
+    "rotateDegrees": 90.03414603965285,
+    "tags": ["shape:square"],
+    "text": ""
+  },
+  "c07b9317ad666672c39f64427f560623f7d0db242813d77031c9b5320be0eb52": {
+    "centerXRatio": 0.4888994071242229,
+    "centerYRatio": 0.44962811279296877,
+    "radiusRatio": 0.44375383174311134,
+    "rotateDegrees": 24,
+    "tags": ["shape:circleinsquare"],
+    "text": ""
+  },
+  "c07d7c1d5b286295650f57c83dc71f6ec9f6cd8e738ba9271156f918c09c0fcd": {
+    "centerXRatio": 0.4772860514322917,
+    "centerYRatio": 0.5482591552734374,
+    "radiusRatio": 0.3645594362197442,
+    "rotateDegrees": 9,
+    "tags": ["kommune:rødovre", "shape:circle"],
+    "text": ""
+  },
+  "c0be008a1f5c6c5bc3eb8a1e40bc0b59c24feece0d7c785b90a0dcf4c841a665": {
+    "centerXRatio": 0.5237501220703126,
+    "centerYRatio": 0.5028125,
+    "radiusRatio": 0.388279885300883,
+    "rotateDegrees": 311.02943600783647,
+    "tags": ["kommune:rudersdal", "shape:circleinsquare"],
+    "text": "uk-10 ulefos en124 d400 furnes 2203t"
+  },
+  "c0ebc6e6bdd3941526d8e05acd0ab6a6f7e1756c1aa0d0239e0217a5a88c7cb5": {
+    "centerXRatio": 0.5212500813802083,
+    "centerYRatio": 0.49906249999999996,
+    "radiusRatio": 0.3965996491003545,
+    "rotateDegrees": 0,
+    "tags": ["horsens", "shape:circle"],
+    "text": "horsensvand skaber liv en124 d400 ufx-xls ulefos nv gjs utvl 60ax ns lås"
+  },
+  "c16821c57af9218102fdc502296d9355617aa6048c74a4ddb294f04a955f6926": {
+    "centerXRatio": 0.5119637756347655,
+    "centerYRatio": 0.487499989158942,
+    "radiusRatio": 0.459510640600086,
+    "rotateDegrees": 271.0375595917343,
+    "tags": ["kalundborg", "shape:circle"],
+    "text": "-"
+  },
+  "c1a25939bd557accde3bf06dd55518e896bce92897ae37cc93b34a1d06e51942": {
+    "centerXRatio": 0.5050000813802082,
+    "centerYRatio": 0.5346876220703124,
+    "radiusRatio": 0.38289864162995796,
+    "rotateDegrees": 0,
+    "tags": ["dots", "shape:circle"],
+    "text": "global crossing"
+  },
+  "c1e66cfb1cf85df1deeff266c4d11beea6dfd1dbe0518c38cd01890e49bbc6e0": {
+    "centerXRatio": 0.46396229068085315,
+    "centerYRatio": 0.4760534973144531,
+    "radiusRatio": 0.3140521681003629,
+    "rotateDegrees": 358,
+    "tags": ["shape:circleinsquare"],
+    "text": "en124-2 b125 eco315 eco315c"
+  },
+  "c232b55b45632fa509bf30a75828dd2c7b0eeac320d4adb4d4a0b201a7ca5692": {
+    "centerXRatio": 0.536351806640625,
+    "centerYRatio": 0.4864883558364787,
+    "radiusRatio": 0.4214901304139583,
+    "rotateDegrees": 92,
+    "tags": ["crown", "shape:circle"],
+    "text": "telia"
+  },
+  "c29c8dcdb721e2bcdf3bdb1bf2b4f0d3b3d7f2f80981994fbefea29f448bf04f": {
+    "centerXRatio": 0.5,
+    "centerYRatio": 0.5,
+    "radiusRatio": 0.36032503763335005,
+    "rotateDegrees": 0,
+    "tags": ["dots", "shape:circleinsquare"],
+    "text": "-"
+  },
+  "c32e9cc37d03dbb990c089fe3594f26caf7187284b47c806a32321c085316afb": {
+    "centerXRatio": 0.47645465087890626,
+    "centerYRatio": 0.4831996124972247,
+    "radiusRatio": 0.4593485479008298,
+    "rotateDegrees": 101.80379619239739,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "c3886c4eb18d1a50cf3ef60b1385562a8bf02b1eaa41f7aa3692d64629016a00": {
+    "centerXRatio": 0.48999999132715366,
+    "centerYRatio": 0.5042225036621093,
+    "radiusRatio": 0.4674394791000493,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": "en124 d400"
+  },
+  "c3ed324c9902296a52e13c06b23df9374de67f2495c416035f0e37414247b511": {
+    "centerXRatio": 0.5,
+    "centerYRatio": 0.4878124694824219,
+    "radiusRatio": 0.3981768851850758,
+    "rotateDegrees": 18.475514639274195,
+    "tags": ["kommune:kolding", "shape:circleinsquare"],
+    "text": "kolding kommune"
+  },
+  "c51121279e27793befe0e45aaa724ffa9aa1bcf2072242476a8069eb33d7080b": {
+    "centerXRatio": 0.4937500216821159,
+    "centerYRatio": 0.434551025390625,
+    "radiusRatio": 0.431336990900185,
+    "rotateDegrees": 0,
+    "tags": ["shape:circleinsquare", "star:5"],
+    "text": "standard"
+  },
+  "c52cc35cb11913d22337e2ce8ad729c6366f9532593a902c56aaf252d0bb7156": {
+    "centerXRatio": 0.5161103922526041,
+    "centerYRatio": 0.547609130859375,
+    "radiusRatio": 0.43596079528087966,
+    "rotateDegrees": 271,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "c59a53970c2380b8453855eac7d313196e8050298115ae888562be875076cf93": {
+    "centerXRatio": 0.47808691406250003,
+    "centerYRatio": 0.49757626342773437,
+    "radiusRatio": 0.4470852608999746,
+    "rotateDegrees": 278,
+    "tags": ["crown", "shape:circleinsquare"],
+    "text": "telia"
+  },
+  "c5c146a237635fb1959b0de944e32b904a4ac79ab5014df2c8ca5baf95d7fe08": {
+    "centerXRatio": 0.4599998372395834,
+    "centerYRatio": 0.5403126525878906,
+    "radiusRatio": 0.25077870043590483,
+    "rotateDegrees": 355.01540859124,
+    "tags": ["kommune:silkeborg", "shape:circleinsquare"],
+    "text": "ulefos ukl30 utl-30"
+  },
+  "c663bfdcd6dfed7f813349e8dd0db11539f49d9e88eadcf62fb6fcf8df903747": {
+    "centerXRatio": 0.4662198181152344,
+    "centerYRatio": 0.4624998319636018,
+    "radiusRatio": 0.4180760449320358,
+    "rotateDegrees": 0,
+    "tags": ["covered", "shape:circle"],
+    "text": ""
+  },
+  "c6821c7d7cad3897315ff798cefac81ed31d148d43a8abc677f1d2ff97c635a8": {
+    "centerXRatio": 0.4887399291992187,
+    "centerYRatio": 0.5562502385032749,
+    "radiusRatio": 0.4089249914487302,
+    "rotateDegrees": 0,
+    "tags": ["birds", "shape:circle"],
+    "text": "ulefos"
+  },
+  "c6acfafb38e8a7e49e3ef8e344890781cccfe4bb90e1073d17da9cd97adedecb": {
+    "centerXRatio": 0.5204087524414063,
+    "centerYRatio": 0.4874999891589421,
+    "radiusRatio": 0.33020733560761234,
+    "rotateDegrees": 270,
+    "tags": ["shape:circle"],
+    "text": "furnes m en124"
+  },
+  "c6c47533c3eec3174ab69ff00da163baeffd5a8e6d2711495b02f5c8f6a5a9ac": {
+    "centerXRatio": 0.47186079915364576,
+    "centerYRatio": 0.5283002319335938,
+    "radiusRatio": 0.3779443210256424,
+    "rotateDegrees": 334,
+    "tags": ["bull", "kommune:rødovre", "shape:circleinsquare"],
+    "text": ""
+  },
+  "c6e49bd66ecc5ccc9cce4d9b275d067d1789c1f73657a3746be86f8731fd49e6": {
+    "centerXRatio": 0.5546334838867187,
+    "centerYRatio": 0.4855316975911459,
+    "radiusRatio": 0.2735232134863637,
+    "rotateDegrees": 198,
+    "tags": ["shape:circleinsquare"],
+    "text": "bb"
+  },
+  "c78778fe49b7a8f11cb93656eb90b3f7295c4c4673b46b846ed086c692b932f3": {
+    "centerXRatio": 0.5062500325231739,
+    "centerYRatio": 0.5077412719726563,
+    "radiusRatio": 0.4328117950214076,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle", "trees"],
+    "text": "ulefos 600 d400 ufx en124 lås"
+  },
+  "c7b2cadc9ad0e1dc315ca3af42c3d5db72a9fd41870b5dab5e2a94a8ccf8574f": {
+    "centerXRatio": 0.49516918945312505,
+    "centerYRatio": 0.5055514526367187,
+    "radiusRatio": 0.3904343778636755,
+    "rotateDegrees": 245,
+    "tags": ["shape:circleinsquare"],
+    "text": "lønhart"
+  },
+  "c7d7dd6ce6df40ea8f6e15e5e4650ac9a20cd94bd79e2d04cd762d7c6e130eff": {
+    "centerXRatio": 0.4887499593098958,
+    "centerYRatio": 0.5018750000000001,
+    "radiusRatio": 0.42741536693371884,
+    "rotateDegrees": 359.81402474814854,
+    "tags": ["kommune:vejle", "shape:circle"],
+    "text": ""
+  },
+  "c7e1b2a80ce8e50c47cbde00547e73e6bdbfecd18dd94961485b1896daa174f3": {
+    "centerXRatio": 0.44839957682291676,
+    "centerYRatio": 0.46140399169921875,
+    "radiusRatio": 0.3165016466626524,
+    "rotateDegrees": 95.20056039077667,
+    "tags": ["kommune:silkeborg", "shape:circle"],
+    "text": "ulefos utl40 d400 ufl 42 5ls"
+  },
+  "c8304db0a4a906d6e05d311dfe51138c2002ee3eeac6ad32e5fd6bcd965423c1": {
+    "centerXRatio": 0.519097412109375,
+    "centerYRatio": 0.539292510986328,
+    "radiusRatio": 0.40712771314147334,
+    "rotateDegrees": 166.07180944480388,
+    "tags": ["shape:circle"],
+    "text": "shell"
+  },
+  "c8bd3db4d62a7dea21a9dd0427726213ba8bffc67e56fed9c4bbea54b4877245": {
+    "centerXRatio": 0.500748779296875,
+    "centerYRatio": 0.5240052490234374,
+    "radiusRatio": 0.41480275433278363,
+    "rotateDegrees": 40,
+    "tags": ["fish", "hcandersen", "rat", "shape:circleinsquare"],
+    "text": "københavns energi furnes"
+  },
+  "c96228e813aa9036f3f823fe163dc3e0924c69f5e70ae7d393baeec4b397a6d0": {
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": "scandic hydrotec"
+  },
+  "c96888977878b2fa22bbfd3ddb9abaa792a43317dd3d293a8b263754d0dd067b": {
+    "centerXRatio": 0.5287501220703125,
+    "centerYRatio": 0.5300001220703124,
+    "radiusRatio": 0.3975573964300341,
+    "rotateDegrees": 88.06879933976404,
+    "tags": ["shape:circle"],
+    "text": "harde d400 en124 hrc-80 hrs-80"
+  },
+  "c9a86bd12e8c309d1126e7947d8bc9a49c5e5ca0730d16bf7adf5e1098af84c4": {
+    "centerXRatio": 0.4849999593098958,
+    "centerYRatio": 0.49249996948242186,
+    "radiusRatio": 0.37693406526049905,
+    "rotateDegrees": 306.48949874295863,
+    "tags": ["kommune:horsens", "shape:circleinsquare"],
+    "text": "d400 gjs en124 ns ulefos uk10ls utvl60ax lås"
+  },
+  "ca86e433b4b76f437191c932fc7233e3898421820ba0fb7a1a1f5bfa4a2db7d7": {
+    "centerXRatio": 0.4974999436264987,
+    "centerYRatio": 0.4718499145507812,
+    "radiusRatio": 0.39329520888760827,
+    "rotateDegrees": 0.07282631027561592,
+    "tags": ["hole", "shape:circle", "squares"],
+    "text": "bd "
+  },
+  "ca9731e66699382bd8e68d949145688ea3d84c1d08c6df0d6a8a886c6bae4555": {
+    "centerXRatio": 0.4919969142012655,
+    "centerYRatio": 0.5121284484863281,
+    "radiusRatio": 0.40413015313855744,
+    "rotateDegrees": 92,
+    "tags": ["kommune:aarhus", "shape:circle"],
+    "text": "ulefos"
+  },
+  "caa077cf40fd884fdc30fc5ea48fb23eb2f131a4e908b046cd4a946e5cf94dd2": {
+    "centerXRatio": 0.5,
+    "centerYRatio": 0.5,
+    "radiusRatio": 0.5,
+    "rotateDegrees": 0,
+    "tags": ["hinge", "shape:hexagon"],
+    "text": "ej"
+  },
+  "cb3a109b85c01fb0ee51e33ec051df46541d8e42242716ae379a14ddeb083e68": {
+    "centerXRatio": 0.5095744429430784,
+    "centerYRatio": 0.48344561767578126,
+    "radiusRatio": 0.45253069852641065,
+    "rotateDegrees": 356,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "cb552a44ea6c24e029bfae02a8df2f956a8508bc7863b680c167373a0316acaa": {
+    "centerXRatio": 0.5135343019746336,
+    "centerYRatio": 0.4980386047363281,
+    "radiusRatio": 0.39569210045040576,
+    "rotateDegrees": 41,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "cb83046313eed27210a41f357d56592fb98db1d25ea6bbe24acecba55537d752": {
+    "centerXRatio": 0.4912499111033248,
+    "centerYRatio": 0.5035187988281251,
+    "radiusRatio": 0.3471858828916008,
+    "rotateDegrees": 1.3060117278361645,
+    "tags": ["shape:circleinsquare"],
+    "text": ""
+  },
+  "cbe912993a725e8d12827f86b3246a66d3d30ff3259fc2c96e4cc5f27f9502e7": {
+    "centerXRatio": 0.510396240234375,
+    "centerYRatio": 0.5287406616210937,
+    "radiusRatio": 0.434926474627233,
+    "rotateDegrees": 257,
+    "tags": ["shape:circle", "star:5"],
+    "text": "lønhart 55 godt grej 221214 010"
+  },
+  "cd1683d4758bcd13d29140c5a965ce587b78dbb8b669afaac51b5221fc150168": {
+    "centerXRatio": 0.5295899963378907,
+    "centerYRatio": 0.49716674371045183,
+    "radiusRatio": 0.4540828403873068,
+    "rotateDegrees": 269,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "cd57825eaa3b646daf71a6dc26595e4ebd34bf403ac0c6cb56fa6a1bd2a3522c": {
+    "centerXRatio": 0.5275001322609071,
+    "centerYRatio": 0.49999996948242187,
+    "radiusRatio": 0.33171134100830224,
+    "rotateDegrees": 90,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "cdb7e447f6265a0b6a67b8e8f45edf3c577591e3bb030d018d0f778f7a2b0417": {
+    "centerXRatio": 0.5337500563735013,
+    "centerYRatio": 0.48873999023437503,
+    "radiusRatio": 0.3913424697198773,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": "bd dana standard 22 1204002"
+  },
+  "ce234f904920585eb44f3d0845fe587ec8593e250b8d8201eee80b205bdc3cc2": {
+    "centerXRatio": 0.503029541015625,
+    "centerYRatio": 0.5309820861816407,
+    "radiusRatio": 0.3326664252521287,
+    "rotateDegrees": 359,
+    "tags": ["mjolnir", "shape:square"],
+    "text": "thor"
+  },
+  "cef36bfc151b13c94f334cfc9a71cf1bac0e121c050dacc4e24706774d98fcaa": {
+    "centerXRatio": 0.4699999739814609,
+    "centerYRatio": 0.5119637756347656,
+    "radiusRatio": 0.4541595400564805,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": "powercom"
+  },
+  "ceff5a812f6e12ff761bae4747c03ea4b4e5679e385a96c6559716b2a1923d81": {
+    "centerXRatio": 0.4655161437988281,
+    "centerYRatio": 0.4874999349536523,
+    "radiusRatio": 0.38127520039190826,
+    "rotateDegrees": 78.20621409001365,
+    "tags": ["shape:circleinsquare"],
+    "text": ""
+  },
+  "cf22ca8449c3b57f72c23a0e431448f15465c96d12360e86d577a3575793b2d3": {
+    "centerXRatio": 0.5025,
+    "centerYRatio": 0.5403126220703125,
+    "radiusRatio": 0.36498633820334236,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "d09369025c85aff1da4fed7482559b28296b4df441a7833ebe825c17a87697ad": {
+    "centerXRatio": 0.49875,
+    "centerYRatio": 0.5300001220703124,
+    "radiusRatio": 0.40638210026016514,
+    "rotateDegrees": 6.682918225872186,
+    "tags": ["kommune:middelfart", "shape:circleinsquare"],
+    "text": ""
+  },
+  "d1307ca6fcc5fa6871fe0fc342122a58be332f44d3751d46b58505a03a41709b": {
+    "centerXRatio": 0.4648123779296875,
+    "centerYRatio": 0.4662498894212089,
+    "radiusRatio": 0.4467708204377743,
+    "rotateDegrees": 90,
+    "tags": ["lion", "picture", "shape:circle"],
+    "text": "asa"
+  },
+  "d1a9323580276a33c55475de9115a810a36b6a37e87e46dfd5b527c67d2270ff": {
+    "centerXRatio": 0.4831099548339844,
+    "centerYRatio": 0.5050000585417129,
+    "radiusRatio": 0.4572876737819201,
+    "rotateDegrees": 95.23676437216506,
+    "tags": ["shape:circle"],
+    "text": "221177000 plan city universal bd 40"
+  },
+  "d1d69934df85db4352a67c18ab40d0596d086485583746819dde5e8c909275fd": {
+    "centerXRatio": 0.5,
+    "centerYRatio": 0.5,
+    "radiusRatio": 0.41515235419995977,
+    "rotateDegrees": 285,
+    "tags": ["kommune:rudersdal", "shape:circle"],
+    "text": "gjs d400 ns ufx en 124-2 ulefos utvl 60ax"
+  },
+  "d22cd51a79fb9cc732a09a1cfc1c54d999598eec174d8106324ffe274a07a6d7": {
+    "centerXRatio": 0.4999999593098959,
+    "centerYRatio": 0.5185615844726563,
+    "radiusRatio": 0.3825125190074752,
+    "rotateDegrees": 135,
+    "tags": ["birds", "cut:positive", "shape:circleinsquare", "tree"],
+    "text": "hofor bærdygtige byer spildevand"
+  },
+  "d233363310edf04f0077068f387d2ae4d3b0a1f2dec9926dc19192eb030345cc": {
+    "centerXRatio": 0.45975769042968745,
+    "centerYRatio": 0.4981666686903308,
+    "radiusRatio": 0.4409177459622138,
+    "rotateDegrees": 35,
+    "tags": ["anchor", "kommune:dragør", "shape:circleinsquare"],
+    "text": ""
+  },
+  "d2727e9c505fb505c7b63a15ec1229dfe9cd22c3d15559a2a0abe2c5d9e36d95": {
+    "centerXRatio": 0.5097232666015625,
+    "centerYRatio": 0.5200560709635418,
+    "radiusRatio": 0.45996189196556037,
+    "rotateDegrees": 80,
+    "tags": ["picture", "shape:circle"],
+    "text": "udbrud"
+  },
+  "d543d9d046629c6a3531af0e73159b4836464faf82e95ef0d772cc8d0cf7eab1": {
+    "centerXRatio": 0.48374990459869005,
+    "centerYRatio": 0.48662866210937505,
+    "radiusRatio": 0.47098294746817015,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": "hlk"
+  },
+  "d5cafe24f07d0ee1b424fa44a7ecce0a8b59d1ee12be5c73df60471177ca85a7": {
+    "centerXRatio": 0.5233197835286458,
+    "centerYRatio": 0.511170166015625,
+    "radiusRatio": 0.2854184368780234,
+    "rotateDegrees": 309,
+    "tags": ["hole", "shape:circle"],
+    "text": ""
+  },
+  "d6125193199bb838952b97e9515ca64dd8c100356557de6748f6779479b21e03": {
+    "centerXRatio": 0.46481234741210936,
+    "centerYRatio": 0.448749820038438,
+    "radiusRatio": 0.39120203918525204,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle", "squares"],
+    "text": "-"
+  },
+  "d646e524339be9865086a034fcb131f0b6cc8eb2e824a481ce9a40e975347b96": {
+    "centerXRatio": 0.5196025390625,
+    "centerYRatio": 0.49521282958984375,
+    "radiusRatio": 0.3785995731395383,
+    "rotateDegrees": 4,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "d6e5e76d3a24d189d6da1a854a3ef886ecd08cd6d9587af349545a4bd7a0f57b": {
+    "centerXRatio": 0.5300001344291185,
+    "centerYRatio": 0.5274463500976563,
+    "radiusRatio": 0.3334004067576022,
+    "rotateDegrees": 35.706280329658284,
+    "tags": ["shape:circle"],
+    "text": "korsør jern vand 203"
+  },
+  "d7a48f2dfd36c056345bddcad5b88702585c922c5be0a3b24f8c304e7a47968b": {
+    "centerXRatio": 0.5138454284667969,
+    "centerYRatio": 0.4878842504579263,
+    "radiusRatio": 0.256342874178677,
+    "rotateDegrees": 182,
+    "tags": ["hole", "shape:circle", "squares"],
+    "text": "bd"
+  },
+  "d7e77a0ad67b4b15927c55f292ae1e227274a9008aa43758ee408aa2dadb47ca": {
+    "centerXRatio": 0.5361437377929688,
+    "centerYRatio": 0.48739685058593746,
+    "radiusRatio": 0.38078075480558604,
+    "rotateDegrees": 87.13025570980744,
+    "tags": ["shape:circle"],
+    "text": "ballerup"
+  },
+  "d85b020b0b05ffb9b198c26e5f4062ccdf02938af62443ed7becda1b95ace572": {
+    "centerXRatio": 0.4987499999999999,
+    "centerYRatio": 0.4446873168945312,
+    "radiusRatio": 0.43441463498065663,
+    "rotateDegrees": 1.1063226909695913,
+    "tags": ["shape:circle"],
+    "text": "abscheider kessel klasse a15-b125 en124"
+  },
+  "d8d449f6530cc3872052b4a729edeb7bcf033542ad0a2f7a1dabdb2288f7e1c0": {
+    "centerXRatio": 0.5479068196614584,
+    "centerYRatio": 0.5492181701660156,
+    "radiusRatio": 0.41847878911056086,
+    "rotateDegrees": 253,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "d93ac1a38402cd699a716c17a21f223beb0ee0c84f30f033e5d465264cdfa928": {
+    "centerXRatio": 0.4774798583984375,
+    "centerYRatio": 0.4787499002622668,
+    "radiusRatio": 0.4638392205935747,
+    "rotateDegrees": 90,
+    "tags": ["compass", "kommune:frederikshavn", "shape:circle"],
+    "text": "ulefos ns en124 d400 ufx-xls"
+  },
+  "d9d4ef359acf23ae568607aa8e8b2d6be63969d1fc54d08d0a1c91c3548d96d5": {
+    "centerXRatio": 0.5,
+    "centerYRatio": 0.5,
+    "radiusRatio": 0.5,
+    "rotateDegrees": 0,
+    "text": "ballerup"
+  },
+  "d9df5395a40b8a4c9c4d1cef40472680ab8b8152f653b2f3e3e9deb1d7f098b0": {
+    "centerXRatio": 0.5137502016436779,
+    "centerYRatio": 0.496481201171875,
+    "radiusRatio": 0.43131638302196745,
+    "rotateDegrees": 0,
+    "tags": ["mjolnir", "shape:circle"],
+    "text": "hj"
+  },
+  "da13c5ea52ba70551f4e014f78e70fba1fa7fb01d57930a4dec417d87f3163e4": {
+    "centerXRatio": 0.4850997314453125,
+    "centerYRatio": 0.5057722473144531,
+    "radiusRatio": 0.4204171062996086,
+    "rotateDegrees": 180.69880762054265,
+    "tags": ["kommune:middelfart", "shape:circle"],
+    "text": ""
+  },
+  "daa16abb67b0e75183bf624dac054c6b5bfd8b8d7722c8b8d01b40fa0275dbb1": {
+    "centerXRatio": 0.36962094116210936,
+    "centerYRatio": 0.3717388916015625,
+    "radiusRatio": 0.7127390775062935,
+    "rotateDegrees": 186,
+    "tags": ["shape:circle"],
+    "text": "ulefos 40"
+  },
+  "dabd1cce158cd997cd0373e3815752b58b221500d8f985daa409a62a0c58cd78": {
+    "centerXRatio": 0.50875,
+    "centerYRatio": 0.5253125610351562,
+    "radiusRatio": 0.3643776037615948,
+    "rotateDegrees": 99.33404100282661,
+    "tags": ["shape:circleinsquare"],
+    "text": "furnes en124 d400 f rj 6720 6876"
+  },
+  "dac95d5979c22d29f812beead78933f2b05504371ebe063599af98699d4ca78a": {
+    "centerXRatio": 0.4415885009765625,
+    "centerYRatio": 0.4474999002622669,
+    "radiusRatio": 0.40776673080022796,
+    "rotateDegrees": 0,
+    "tags": ["shape:square"],
+    "text": ""
+  },
+  "dafb00b7bec6a2c6aa28e7c94366fff307e4cdb6b1ceb66293b841e4cde7ff69": {
+    "centerXRatio": 0.5249813232421875,
+    "centerYRatio": 0.5017487386067708,
+    "radiusRatio": 0.3835793893529778,
+    "rotateDegrees": 253.12302960675834,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "daff9f65b12f8891e5bda781dedf53393c34854cb0abde691c831e1cd09a29d9": {
+    "centerXRatio": 0.4901761067708334,
+    "centerYRatio": 0.5076298217773437,
+    "radiusRatio": 0.4172769600491323,
+    "rotateDegrees": 1,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "db39cae4e0d51d227505fe437a7c8141513bfe04ff6aaf28da73583309fca8d5": {
+    "centerXRatio": 0.5012500823920405,
+    "centerYRatio": 0.5168900146484375,
+    "radiusRatio": 0.4140678313759001,
+    "rotateDegrees": 0,
+    "tags": ["dots", "shape:circle"],
+    "text": ""
+  },
+  "db3d099a586d7f0ac826058fbe4e0ac4b988d20f9b2dc63a1240dea0652b7e30": {
+    "centerXRatio": 0.5170329281957705,
+    "centerYRatio": 0.4748284912109375,
+    "radiusRatio": 0.46047185534260127,
+    "rotateDegrees": 359,
+    "tags": ["kommune:aarhus", "shape:circle"],
+    "text": "aarhus vand"
+  },
+  "db6411e93c30482287c2e5535d067bc754c9b8136295e4a09543b028da8121c7": {
+    "centerXRatio": 0.47056884765624996,
+    "centerYRatio": 0.4537294921875,
+    "radiusRatio": 0.4275975392905127,
+    "rotateDegrees": 276.04829930507685,
+    "tags": ["kommune:taarbæk", "shape:circle"],
+    "text": "en124 rj d400 2716f 2403t"
+  },
+  "dc4b03926977e3515abed9ea49e38db60ecf7d032c0361a804e792ac7f2690c1": {
+    "centerXRatio": 0.5147564086914063,
+    "centerYRatio": 0.5038190336888044,
+    "radiusRatio": 0.4633982468314395,
+    "rotateDegrees": 11,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "dca32540d0501d523b64e672b911d6ebfc83b1eaa8d15400717ed862d2dedfb1": {
+    "centerXRatio": 0.5548941650390625,
+    "centerYRatio": 0.5263891406423457,
+    "radiusRatio": 0.5,
+    "rotateDegrees": 357,
+    "tags": ["shape:circle"],
+    "text": "en124 ns d400 gjs ulefos utvl80 t"
+  },
+  "dd8889234b4f6d50931cf7cce3e8a90e3857004a89f0011e150fd7c0ae0622b4": {
+    "centerXRatio": 0.4486260681152343,
+    "centerYRatio": 0.466249889421209,
+    "radiusRatio": 0.46247096103730156,
+    "rotateDegrees": 180,
+    "tags": ["shape:circle"],
+    "text": "nid"
+  },
+  "ddc5e5c5c93298463dc72ec6f716864715ac6f99716a90104d78ca3d928c6dae": {
+    "centerXRatio": 0.5050000043364232,
+    "centerYRatio": 0.4655161437988281,
+    "radiusRatio": 0.44702163780748116,
+    "rotateDegrees": 0.9957564334610538,
+    "tags": ["kommune:næstved", "shape:circle"],
+    "text": ""
+  },
+  "de094734a743bffbe82f8ad66ed46c9ef3a9013e2f115a5e5293431b858b11e9": {
+    "centerXRatio": 0.5062499783178842,
+    "centerYRatio": 0.5014075012207032,
+    "radiusRatio": 0.4442229544636992,
+    "rotateDegrees": 0,
+    "tags": ["shape:circleinsquare"],
+    "text": ""
+  },
+  "de6425420749af183ec5d5236b5578d98d4114beeda403beccc8d6f0d608a802": {
+    "centerXRatio": 0.5024999186197917,
+    "centerYRatio": 0.5093750305175782,
+    "radiusRatio": 0.3576879090769147,
+    "rotateDegrees": 0,
+    "tags": ["shape:circleinsquare"],
+    "text": ""
+  },
+  "de7e92448399de2726f4759f07d1f13eb5dbbfc122e53963a35c1b0808c06ed5": {
+    "centerXRatio": 0.5278363342285156,
+    "centerYRatio": 0.496380126953125,
+    "radiusRatio": 0.37862142349194616,
+    "rotateDegrees": 82,
+    "tags": ["shape:circle"],
+    "text": "bd"
+  },
+  "df199db5b4a5b36d1f6ad71cd4e4a56236ce369a31021a3ac8bf0d61c43bcdf8": {
+    "centerXRatio": 0.49512362670898435,
+    "centerYRatio": 0.49484800403113904,
+    "radiusRatio": 0.4562069774663131,
+    "rotateDegrees": 269,
+    "tags": ["shape:circle", "star:6"],
+    "text": "kr noe har boe sofievej 24"
+  },
+  "df76d16c33edc3f1282027ed52bc6ae0f35f8c2e99a2673b5955e4d5ce28e2e2": {
+    "centerXRatio": 0.5236698811848959,
+    "centerYRatio": 0.5395302734375,
+    "radiusRatio": 0.4517976102511335,
+    "rotateDegrees": 357,
+    "tags": ["birds", "cut:positive", "shape:circle", "tree"],
+    "text": "hofor bærdygtige byer fjernvarme"
+  },
+  "dfe433123e4d81dabe9a3690969f6c88ad5752bd5278d042a7e689914637f03a": {
+    "centerXRatio": 0.457071044921875,
+    "centerYRatio": 0.4699998655708814,
+    "radiusRatio": 0.4295413431860068,
+    "rotateDegrees": 0,
+    "tags": ["birds", "shape:circle"],
+    "text": "ulefos"
+  },
+  "e0cb117d56522c09b86b9c0bb3a8ec054ff8a9767d777a8f4c301642495ded6b": {
+    "centerXRatio": 0.5500452880859374,
+    "centerYRatio": 0.49965167680811506,
+    "radiusRatio": 0.5,
+    "rotateDegrees": 357,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "e10d38cc1051eee3eb21e8e639cc387993d7ba635f788565c4fe2cc7c9f47af9": {
+    "centerXRatio": 0.511250040690104,
+    "centerYRatio": 0.5121875305175781,
+    "radiusRatio": 0.37529506743620156,
+    "rotateDegrees": 0,
+    "tags": ["kommune:silkeborg", "shape:circle"],
+    "text": ""
+  },
+  "e12200cd2ced8a156d21ea0d81e424dbaebaf39a81533d68bee3d27681a797f2": {
+    "centerXRatio": 0.49874999999999997,
+    "centerYRatio": 0.4953125,
+    "radiusRatio": 0.3904267459750048,
+    "rotateDegrees": 0,
+    "tags": ["kommune:silkeborg", "shape:circle", "wordless"],
+    "text": "-"
+  },
+  "e13c59f486663222de5376cb6bc5894880e5bc8e059349c1677fe7ab1f18e041": {
+    "centerXRatio": 0.4875910034179688,
+    "centerYRatio": 0.49189007557518316,
+    "radiusRatio": 0.40759052109879496,
+    "rotateDegrees": 5,
+    "tags": ["hole", "shape:circle"],
+    "text": "frederiksberg jernstøberi & maskinfabrik"
+  },
+  "e26801c6b6a0a099c1b704c9217f43ea07945ed6eceff081d646d15cec88f29e": {
+    "centerXRatio": 0.49657731119791665,
+    "centerYRatio": 0.49885076904296877,
+    "radiusRatio": 0.39324536425654033,
+    "rotateDegrees": 245.8827271516917,
+    "tags": ["kommune:holbæk", "shape:circleinsquare"],
+    "text": "holbæk"
+  },
+  "e2ce4b424bc64949aa02e9758babb53aeebea3a1072a7eb150a28f5fad4e2234": {
+    "centerXRatio": 0.5,
+    "centerYRatio": 0.5,
+    "radiusRatio": 0.5,
+    "rotateDegrees": 271.3909537995223,
+    "tags": ["multiple"],
+    "text": "ballerup"
+  },
+  "e42a143d1752036ac6413b5b82ef138697ef1e479dd50eea3d2dba1d34ba4376": {
+    "centerXRatio": 0.5134012145996094,
+    "centerYRatio": 0.5209414876302084,
+    "radiusRatio": 0.4283871495081302,
+    "rotateDegrees": 91,
+    "tags": ["kommune:frederiksberg", "shape:circle"],
+    "text": "frederiksberg"
+  },
+  "e489ddb8084d61dc568b18329841419a3bc1ed834994b96133bd4fe8079a156e": {
+    "centerXRatio": 0.4925,
+    "centerYRatio": 0.5243751525878906,
+    "radiusRatio": 0.3527757101914406,
+    "rotateDegrees": 0,
+    "tags": ["shape:circleinsquare", "star:5"],
+    "text": ""
+  },
+  "e49acc610745ecffd0910d079cef8ace4b9feba232711c1de8787a8c745b6e03": {
+    "centerXRatio": 0.48451739501953117,
+    "centerYRatio": 0.5037499761496727,
+    "radiusRatio": 0.47292220693171305,
+    "rotateDegrees": 90,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "e49ada2ef4a2622052a651eb5f8db1f767cd071ba47f78746644d5b8d4723780": {
+    "centerXRatio": 0.5409690755208334,
+    "centerYRatio": 0.5252742919921876,
+    "radiusRatio": 0.34724590163976043,
+    "rotateDegrees": 355,
+    "tags": ["shape:circle"],
+    "text": "ao"
+  },
+  "e4aaa75cd13f399ea2dffb203242a105b26d95e353fd8c9fec6405b0ced79b48": {
+    "centerXRatio": 0.5487501777933503,
+    "centerYRatio": 0.47325738525390626,
+    "radiusRatio": 0.28840519898095396,
+    "rotateDegrees": 0,
+    "tags": ["hole", "shape:circle", "x"],
+    "text": "-"
+  },
+  "e4f6924a0c2c48b984d3bc366391081bdc6175c2b1491c61c005a678d9b727c0": {
+    "centerXRatio": 0.5583724772135418,
+    "centerYRatio": 0.4739462585449218,
+    "radiusRatio": 0.37528100451739543,
+    "rotateDegrees": 198,
+    "tags": ["shape:circle"],
+    "text": "bb en124 d400 600 gjs"
+  },
+  "e556d677b1ab6e8699b65f247b69bb2f677a88525db4a2017735e0bac10a5683": {
+    "centerXRatio": 0.4652763671875,
+    "centerYRatio": 0.5103192138671875,
+    "radiusRatio": 0.4296354985125425,
+    "rotateDegrees": 31,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "e685484f96981a9723c0c147144f9a38709fb7665d61faf3e4d69f31e42a8d7a": {
+    "centerXRatio": 0.4997183024088542,
+    "centerYRatio": 0.5243741455078125,
+    "radiusRatio": 0.39738463174578215,
+    "rotateDegrees": 269.5033875227891,
+    "tags": ["kommune:vejle", "shape:circleinsquare"],
+    "text": ""
+  },
+  "e6bfbe2be034b2cb6a4c05e72a088c712c1bacf4d2ee7db141d176cd9970df10": {
+    "centerXRatio": 0.4778776550292969,
+    "centerYRatio": 0.4851121919404973,
+    "radiusRatio": 0.43205732063725616,
+    "rotateDegrees": 85.85423717542153,
+    "tags": ["hole", "shape:circle"],
+    "text": "40"
+  },
+  "e7050123b85a3030cdf34f18d19d27379992e649e970daf2f069242167f0ef16": {
+    "centerXRatio": 0.5063603944930894,
+    "centerYRatio": 0.5022376098632813,
+    "radiusRatio": 0.35999446495313936,
+    "rotateDegrees": 328,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "e814d471cc9198514ae33886532df9ab56bd14f03ade18526ea0af29ddbfb3c3": {
+    "centerXRatio": 0.5137500406901042,
+    "centerYRatio": 0.5037500305175782,
+    "radiusRatio": 0.3977321015072197,
+    "rotateDegrees": 2.2978506421146108,
+    "tags": ["shape:circle"],
+    "text": "randers 40"
+  },
+  "e8e584367c8825ae5b4aa6ba5f717c6ca9583be22a444ee79e6ac3f0d6decb2b": {
+    "centerXRatio": 0.51372119140625,
+    "centerYRatio": 0.5197559000651042,
+    "radiusRatio": 0.2785202212118991,
+    "rotateDegrees": 201,
+    "tags": ["hole", "shape:circle", "star:6"],
+    "text": "ludvigsen & hermann n256"
+  },
+  "e91dc0b26a721a515899e7f9c9c1b0bbe0935be870fd99f1905e97e4724f0187": {
+    "centerXRatio": 0.49625002385032746,
+    "centerYRatio": 0.5668565063476563,
+    "radiusRatio": 0.47439724804535677,
+    "rotateDegrees": 187.13951083756933,
+    "tags": ["shape:circle", "shape:odd"],
+    "text": ""
+  },
+  "e987b1727dfc15814522b01060940fe7dc23c683e0bd689589eb0692694444b4": {
+    "centerXRatio": 0.5226026611328126,
+    "centerYRatio": 0.5080506238378386,
+    "radiusRatio": 0.47015763618625467,
+    "rotateDegrees": 90.74814405648016,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "e9a8e7740f3fbffbe4cbefaa1669476a495e9927073a1ddb9433236b62f5bdb8": {
+    "centerXRatio": 0.4725578002929687,
+    "centerYRatio": 0.4991492479774922,
+    "radiusRatio": 0.4581715922025881,
+    "rotateDegrees": 268.20610648004595,
+    "tags": ["shape:circle"],
+    "text": "40 super-gørlev s g bd"
+  },
+  "e9b482ea2909c76072ac9f2b2ef770ea068702151af319a9520f02556028b8e6": {
+    "centerXRatio": 0.5075000607099245,
+    "centerYRatio": 0.48381372070312506,
+    "radiusRatio": 0.48269613464490924,
+    "rotateDegrees": 181.47655635360866,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "e9cd95cff99a3a28654cceed05fed1290623202f1a72bb9fcd82e0f7accef896": {
+    "centerXRatio": 0.5031087951660156,
+    "centerYRatio": 0.5140583045105739,
+    "radiusRatio": 0.4107807148063994,
+    "rotateDegrees": 87,
+    "tags": ["shape:circle"],
+    "text": "aco"
+  },
+  "ea090df99298c462de68e67bb72f233e4b569d9089dec2300309029cc84d61b5": {
+    "centerXRatio": 0.5035593361456483,
+    "centerYRatio": 0.45462628173828135,
+    "radiusRatio": 0.44821647484557847,
+    "rotateDegrees": 10,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "ea0cf0bfe5abde310bc7c4f9eb11b28f82465eb99da7543cbbc9e0a01d009dd6": {
+    "centerXRatio": 0.49624996964503776,
+    "centerYRatio": 0.4760723876953125,
+    "radiusRatio": 0.42617877509529545,
+    "rotateDegrees": 4.27353507823301,
+    "tags": ["shape:circleinsquare"],
+    "text": "hydrotec klasse a 15 en 124"
+  },
+  "eab7a49ba63c9fc3853a4a0533407f65b9d22d0637f857311b70f4eb08d62285": {
+    "centerXRatio": 0.5212500813802083,
+    "centerYRatio": 0.5281250610351562,
+    "radiusRatio": 0.3542644266703888,
+    "rotateDegrees": 0,
+    "tags": ["hinge", "shape:circle", "wordless"],
+    "text": "-"
+  },
+  "eaf8750520129d1847142d54d5164538988f3793c682c8b82514814adb9f7b97": {
+    "centerXRatio": 0.4887399597167969,
+    "centerYRatio": 0.5087500346913855,
+    "radiusRatio": 0.3431176344056213,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle", "squares"],
+    "text": "-"
+  },
+  "eb0d097886c7caf99669327e45df77633c7bcabaf60ad8a96a423c8000e25ce6": {
+    "centerXRatio": 0.42004137056123725,
+    "centerYRatio": 0.4527705078125,
+    "radiusRatio": 0.4670478217321726,
+    "rotateDegrees": 3.6973372203732424,
+    "tags": ["birds", "cut:positive", "shape:circle", "tree"],
+    "text": "hofor bærdygtige byer spildevand"
+  },
+  "eb316dbe43e54e8ac2f5ac4ecb0621c7bac54c27c1947cc95f3f3f75cf59625b": {
+    "centerXRatio": 0.4913969158491064,
+    "centerYRatio": 0.4406121215820313,
+    "radiusRatio": 0.4622803186287641,
+    "rotateDegrees": 157.52920869545824,
+    "tags": ["shape:circle"],
+    "text": "energiforsyningen køge kommune"
+  },
+  "eb4ecbdeffafe88f64d6fb5ae5a7aeddfaebc976c75a0555e19e757e91b19f6b": {
+    "centerXRatio": 0.49788873291015623,
+    "centerYRatio": 0.5037500303549622,
+    "radiusRatio": 0.4135749626419796,
+    "rotateDegrees": 0,
+    "tags": ["hinge", "shape:circle"],
+    "text": ""
+  },
+  "ebcfa1a3dfb388cdc9a818c222c71ff7a75d3540ca8507633838ac517998d82c": {
+    "centerXRatio": 0.5187500433642317,
+    "centerYRatio": 0.4704423828125,
+    "radiusRatio": 0.4467827214201861,
+    "rotateDegrees": 0,
+    "tags": ["arrows", "shape:circle"],
+    "text": "een124 d400 bb 600 gjs"
+  },
+  "ebf106adf27664552e2ef6585bdde7b94a14c2f6500338abb1b3fd14f679dded": {
+    "centerXRatio": 0.47035229492187497,
+    "centerYRatio": 0.5174660284608125,
+    "radiusRatio": 0.32531253597662213,
+    "rotateDegrees": 94,
+    "tags": ["shape:circle"],
+    "text": "h v"
+  },
+  "ecd46780ff477835a4fb0fb0904c049fd6915f6555afe77524a299586483bcee": {
+    "centerXRatio": 0.5167150268554688,
+    "centerYRatio": 0.5189109246641875,
+    "radiusRatio": 0.45408799215109347,
+    "rotateDegrees": 131,
+    "tags": ["shape:circle"],
+    "text": "t"
+  },
+  "ed13c0acdd9a41cc13f776f7ff43036a63077fdca5de82a13cd6a256306e5df3": {
+    "centerXRatio": 0.5,
+    "centerYRatio": 0.5,
+    "radiusRatio": 0.5,
+    "rotateDegrees": 0,
+    "text": ""
+  },
+  "ed330d61d7d05390e3b71d7746da220d3a1656185765bad9e7b567286925a512": {
+    "centerXRatio": 0.48873995971679685,
+    "centerYRatio": 0.49499999566357683,
+    "radiusRatio": 0.3745341938473774,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": "-"
+  },
+  "ed500179875cf66e6888d61bbf43c44285ab0af693a6b76402c7953dac3f6564": {
+    "centerXRatio": 0.501249973981461,
+    "centerYRatio": 0.48522119140625003,
+    "radiusRatio": 0.3406879584766159,
+    "rotateDegrees": 4.570212665660961,
+    "tags": ["diamonds", "shape:circle"],
+    "text": "asa"
+  },
+  "eec48900b6e50f7ad7b91fef0d839f07c75ecc0acd9fbcc02d4c8043c42d0f71": {
+    "centerXRatio": 0.5188537922887988,
+    "centerYRatio": 0.4513366088867187,
+    "radiusRatio": 0.4561239977650046,
+    "rotateDegrees": 11,
+    "tags": ["kommune:aarhus", "shape:circle"],
+    "text": "en124 ulefos gjs d400 ns ufx"
+  },
+  "eedcf35ccd27fc8c2763ee3c6886cc693f4cca91ec296384a53bcbf756c796f7": {
+    "centerXRatio": 0.47745444804271203,
+    "centerYRatio": 0.48336566162109373,
+    "radiusRatio": 0.4582978672541425,
+    "rotateDegrees": 56.12285034326317,
+    "tags": ["kommune:næstved", "shape:circleinsquare"],
+    "text": ""
+  },
+  "ef79713d2ca35fa943fef9f60d0a70a2a9a38f0d951b2815cf3c7942800c00b8": {
+    "centerXRatio": 0.5188311767578124,
+    "centerYRatio": 0.4975108642578125,
+    "radiusRatio": 0.437989645462861,
+    "rotateDegrees": 178.68535890822943,
+    "tags": ["kommune:skanderborg", "shape:circle"],
+    "text": "skanderborg forsyningvirksomhed a/s ulefos ns en124 d400 ufx-xls utvl 60ax lås gjs"
+  },
+  "ef8a53720973d5bffd111cf8c78f3f33f44de650862a698fe981a5ccf6a25ce0": {
+    "centerXRatio": 0.5129262084960937,
+    "centerYRatio": 0.49032625325520834,
+    "radiusRatio": 0.34316104207268067,
+    "rotateDegrees": 334,
+    "tags": ["hole", "shape:circle", "star:6"],
+    "text": "-"
+  },
+  "ef90c1fc89fcc7353aeafeb8b7cbbf5c8d09a2ca6dcf9735820a59835f880383": {
+    "centerXRatio": 0.4830697428385417,
+    "centerYRatio": 0.5246004333496094,
+    "radiusRatio": 0.5,
+    "rotateDegrees": 1,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "efdb8c060e10947016361243e3875dd5c5a81b9894104634ba8369b125b44104": {
+    "centerXRatio": 0.5975004639972802,
+    "centerYRatio": 0.49577746582031246,
+    "radiusRatio": 0.45900961582434613,
+    "rotateDegrees": 125.09891782098225,
+    "tags": ["shape:circle", "worn"],
+    "text": "ulefos 40 kb"
+  },
+  "f036e7e390bd2965ac92295d78a3e4d2af20ab9636c55719963fab95cb286a1c": {
+    "centerXRatio": 0.4799224446614584,
+    "centerYRatio": 0.5059499206542969,
+    "radiusRatio": 0.43215038799111816,
+    "rotateDegrees": 358.4984944681173,
+    "tags": ["kommune:silkeborg", "shape:circle"],
+    "text": ""
+  },
+  "f03ff35ec297a7ea4f3985998e5c8d957524defc0351ea1ea3c701d9894f5ccc": {
+    "centerXRatio": 0.5061295979817708,
+    "centerYRatio": 0.52139794921875,
+    "radiusRatio": 0.40514806374739376,
+    "rotateDegrees": 182.25942950853835,
+    "tags": ["kommune:søllerød", "shape:circle"],
+    "text": "ufx d400 en124 ulefos 600 lås søllerød kommune"
+  },
+  "f0a62eb9c786e8245a6e9e55bb1e7b737366f92962f3438f2dfe98f9bdc3c58a": {
+    "centerXRatio": 0.5262500813802082,
+    "centerYRatio": 0.5056250610351561,
+    "radiusRatio": 0.3612156355314578,
+    "rotateDegrees": 90,
+    "tags": ["shape:circle", "squares"],
+    "text": "k b"
+  },
+  "f0a9eaf71b9a5af72c82a81f89ea36fe2a7573638403cd0280b00b2b089570e2": {
+    "centerXRatio": 0.5133713073730468,
+    "centerYRatio": 0.5187500975695215,
+    "radiusRatio": 0.44258978656133985,
+    "rotateDegrees": 87.71106580639662,
+    "tags": ["shape:circle", "towers", "water"],
+    "text": "københavns vand"
+  },
+  "f0be585318ad1c77e58a69e0b42f47628d522b976a05cdbf014145edf59fd559": {
+    "centerXRatio": 0.5050000043364232,
+    "centerYRatio": 0.5021112365722656,
+    "radiusRatio": 0.45682423102167874,
+    "rotateDegrees": 0,
+    "tags": ["kommune:næstved", "shape:circle"],
+    "text": ""
+  },
+  "f14992aed6410816bb78838a5e99466cdb85088e1597e441593341a2896eb8a5": {
+    "centerXRatio": 0.5037499219443828,
+    "centerYRatio": 0.4985924682617187,
+    "radiusRatio": 0.4032266529446773,
+    "rotateDegrees": 0,
+    "tags": ["shape:circleinsquare", "swirl"],
+    "text": "eco 425 nv en124-2 b125"
+  },
+  "f1df29e02ee89c3219d2da67014e08ccbfb205a321fae5e15feae164cf5416b2": {
+    "centerXRatio": 0.49014746093750006,
+    "centerYRatio": 0.4974999978317884,
+    "radiusRatio": 0.4382153790545721,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": "ulefos gjs ufl600 en124 utl600v ns"
+  },
+  "f1e1dd85088f753300318414c1e8763659ef3a9fbf9c2e5c5e6c66bae2b28bad": {
+    "centerXRatio": 0.4637499685609319,
+    "centerYRatio": 0.4563672790527344,
+    "radiusRatio": 0.40338767139365417,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": "nid"
+  },
+  "f1e818c7b989317907b0f8744c58c7c91907bdf5eb8edf69dffcea3460f39c7d": {
+    "centerXRatio": 0.4659932273742784,
+    "centerYRatio": 0.4918878784179687,
+    "radiusRatio": 0.2800144255628485,
+    "rotateDegrees": 1,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "f22c18e0ca4803307afbf131fd2d6f08498c782d19e667ab466c8deead341c16": {
+    "centerXRatio": 0.527360168457031,
+    "centerYRatio": 0.4802363688151042,
+    "radiusRatio": 0.4264598252493341,
+    "rotateDegrees": 87,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "f22d8143c0ed8e639b40ec65a5297bb89a5871606e10d817336d1426a1dc797d": {
+    "rotateDegrees": 133,
+    "tags": ["shape:circleinsquare"],
+    "text": ""
+  },
+  "f360f1bd6f7eeafdd253d83ad9ad37124187a09892681b7e3fd69da8c24d6af0": {
+    "centerXRatio": 0.5053501586914061,
+    "centerYRatio": 0.48344360351562493,
+    "radiusRatio": 0.3801149085544927,
+    "rotateDegrees": 33,
+    "tags": ["shape:circleinsquare"],
+    "text": ""
+  },
+  "f38b80b4dd58ab788dbc479f08770a132b42846a51ee871572d8fb595305bbfa": {
+    "centerXRatio": 0.5350001220703126,
+    "centerYRatio": 0.5534377136230468,
+    "radiusRatio": 0.36601449412212633,
+    "rotateDegrees": 310.9274348725594,
+    "tags": ["shape:circle"],
+    "text": "ludvigsen no. 57 hermann"
+  },
+  "f3c0b5245bc42c0b60440205956d920be7ac954ecccaa3bb216c25c4e21aca9d": {
+    "centerXRatio": 0.5057072347005209,
+    "centerYRatio": 0.46666714477539056,
+    "radiusRatio": 0.34421631856209367,
+    "rotateDegrees": 22.823824341705688,
+    "tags": ["kommune:søllerød", "shape:circleinsquare"],
+    "text": "søllerød kommune"
+  },
+  "f3c4d3debd158564cb0de19d4b4bd4f26cbce02b0f4d1900f8930c68b238e8aa": {
+    "centerXRatio": 0.50125,
+    "centerYRatio": 0.5225000305175781,
+    "radiusRatio": 0.4485730245690795,
+    "rotateDegrees": 6.648585407425628,
+    "tags": ["kommune:birkerød", "shape:circle"],
+    "text": "2716f en124 rj d400 birkerød kommune 2203"
+  },
+  "f51266865707824784a7a13e3bc2d98416a816b01617bb0773670787d199c1ae": {
+    "centerXRatio": 0.4915785577750333,
+    "centerYRatio": 0.4893593139648437,
+    "radiusRatio": 0.3943579510391819,
+    "rotateDegrees": 359,
+    "tags": ["shape:circle", "squares"],
+    "text": "-"
+  },
+  "f513545b4b92881c2987e5a1b6c7647dfa1dc6938310e4503951b1119945873d": {
+    "centerXRatio": 0.4957582397460938,
+    "centerYRatio": 0.5356124417184724,
+    "radiusRatio": 0.48139980859239073,
+    "rotateDegrees": 94,
+    "tags": ["kommune:højetaastrup", "shape:circle"],
+    "text": ""
+  },
+  "f518cee33d565990a466f5497d64c850a8f2360943eaa1c3028697c45374e545": {
+    "centerXRatio": 0.49500004986886664,
+    "centerYRatio": 0.4859249572753906,
+    "radiusRatio": 0.4709892181132428,
+    "rotateDegrees": 0,
+    "tags": ["kommune:aarhus", "shape:circle"],
+    "text": "aarhus "
+  },
+  "f5797a8f40f88b6f47dbd15a3ccfda74aa65c1fd06be9c3999ac806706cb8352": {
+    "centerXRatio": 0.46833117675781244,
+    "centerYRatio": 0.522500073719194,
+    "radiusRatio": 0.458129430237516,
+    "rotateDegrees": 90,
+    "tags": ["kommune:helsingør", "shape:circle"],
+    "text": ""
+  },
+  "f5927e1d2981acd13c7e125afdc734891bb4dd089b29b8b1adcf05dac90e7932": {
+    "centerXRatio": 0.5062500325231738,
+    "centerYRatio": 0.48029489135742187,
+    "radiusRatio": 0.45381423146436956,
+    "rotateDegrees": 180,
+    "tags": ["shape:circle"],
+    "text": "brand"
+  },
+  "f5b6c60dc09f52b06af128d38c4113543706f9b4a5ff32dbe7ae501357788b27": {
+    "centerXRatio": 0.5062500406901042,
+    "centerYRatio": 0.47937493896484373,
+    "radiusRatio": 0.4356125264969051,
+    "rotateDegrees": 357.71602226479365,
+    "tags": ["kommune:horsens", "shape:circle"],
+    "text": "furnes 2641hsv en124 d400 lås horsens vand skaber liv ns"
+  },
+  "f5dc636db24a4b5e827b54f7ce399c145c2307b7f8f7497433f47d07ba268898": {
+    "centerXRatio": 0.5025000563735013,
+    "centerYRatio": 0.4964812622070312,
+    "radiusRatio": 0.44171931963933136,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": "defor"
+  },
+  "f6889c2e94562212b7e76b31bfa233fd3e465d79c4f25f2a6addb71b6e5bfe0d": {
+    "centerXRatio": 0.5307247314453123,
+    "centerYRatio": 0.49826049804687506,
+    "radiusRatio": 0.43508052868746494,
+    "rotateDegrees": 130,
+    "tags": ["fish", "picture", "shape:circleinsquare", "towers", "water"],
+    "text": "ke afløb 1857-2007 københavn furnes 2211ps"
+  },
+  "f733bddddabe13be7af5bf7f22b0a03cdc8953b66686807d509ea8e76705a3b7": {
+    "centerXRatio": 0.5,
+    "centerYRatio": 0.48170242309570316,
+    "radiusRatio": 0.4498544407470072,
+    "rotateDegrees": 0,
+    "tags": ["kommune:aarhus", "shape:circle"],
+    "text": ""
+  },
+  "f743d3636ba9fbc9eee505040763e2712b022b4b48ae2652ac93ee2d114f6a96": {
+    "centerXRatio": 0.4714787484909247,
+    "centerYRatio": 0.4671988525390625,
+    "radiusRatio": 0.49387513587522214,
+    "rotateDegrees": 270.9890766430252,
+    "tags": ["shape:circle"],
+    "text": "roskilde"
+  },
+  "f75d68c222258ada6934e70a67adacaba9f6a09b14283df43cd2a4e8db54595d": {
+    "centerXRatio": 0.4929916178385417,
+    "centerYRatio": 0.5027438049316406,
+    "radiusRatio": 0.3781051019046121,
+    "rotateDegrees": 46,
+    "tags": ["birds", "cut:negative", "shape:circleinsquare", "tree"],
+    "text": "hofor bærdygtige byer spildevand"
+  },
+  "f774ddb0a34ef8df9ab5acd61cb22b50110c958622e77ad9c7ef2bb040eb602b": {
+    "rotateDegrees": 93,
+    "tags": ["shape:circle"],
+    "text": "global crossing"
+  },
+  "f782bc7f3e7ec8df417cf86a96753a48ecd79245cac2cc0bcafba627c6972bde": {
+    "centerXRatio": 0.5088830973307292,
+    "centerYRatio": 0.5034443664550782,
+    "radiusRatio": 0.36050489126646024,
+    "rotateDegrees": 242.66150348582607,
+    "tags": ["kommune:roskilde", "shape:circleinsquare"],
+    "text": "en124 221155060 d400 furnes 2785 22116304"
+  },
+  "f7a48eed6c880d63b11692986f781fbc62743c21b51d7f8c75e4e549fa367ccd": {
+    "centerXRatio": 0.51625009540131,
+    "centerYRatio": 0.47607238769531257,
+    "radiusRatio": 0.4057432956546794,
+    "rotateDegrees": 68.40843890872225,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "f7aef9126c93e9a4eb5689426cf49d2cc087072c98b80b8d80c41a81dc70f102": {
+    "centerXRatio": 0.5,
+    "centerYRatio": 0.5056300354003906,
+    "radiusRatio": 0.45343909803914073,
+    "rotateDegrees": 269.42262657726417,
+    "tags": ["shape:circle", "star:6"],
+    "text": "fr winsløw aarhus"
+  },
+  "f7fb4c367d465777b5c18b18db6255857d5bedec65e56b6d3f1ac05b5f39601d": {
+    "centerXRatio": 0.5140477701822916,
+    "centerYRatio": 0.47392285156249997,
+    "radiusRatio": 0.354330391428188,
+    "rotateDegrees": 338,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "f8026a50a107ad8f74f3d78a0f9b070d88d1ced517e1ad7ab32116e9ceb96452": {
+    "centerXRatio": 0.4944315989953375,
+    "centerYRatio": 0.5308782348632813,
+    "radiusRatio": 0.5039016914626901,
+    "rotateDegrees": 178.1032242637067,
+    "tags": ["shape:circle"],
+    "text": "en124 ule d400"
+  },
+  "f8502e2551103912617324efee870d16651777817b929191c2908a712b0d22c4": {
+    "centerXRatio": 0.5125000650463477,
+    "centerYRatio": 0.4915549621582031,
+    "radiusRatio": 0.4343857061124555,
+    "rotateDegrees": 1.113382557882801,
+    "tags": ["shape:circle"],
+    "text": "hofor"
+  },
+  "f905c56b91541567847487963dc18d9779c2a2757e264291fec2ebf705e5280f": {
+    "centerXRatio": 0.5004025284816276,
+    "centerYRatio": 0.5149271545410156,
+    "radiusRatio": 0.37902009012199384,
+    "rotateDegrees": 99,
+    "tags": ["shape:circle"],
+    "text": "akv dii 1956"
+  },
+  "f9596abbc5e1cbbe083f409d3d2a822eb205f3c82a834d0309cd5b8e313f7bd0": {
+    "centerXRatio": 0.5012500000000001,
+    "centerYRatio": 0.5328126220703124,
+    "radiusRatio": 0.317276040871751,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": "uponal al-65-a"
+  },
+  "f9cb716f9c2015328fbc8676a365e53c4542ce566b44b422a1e8054f3fa902de": {
+    "centerXRatio": 0.5062499783178841,
+    "centerYRatio": 0.41766094970703127,
+    "radiusRatio": 0.42517250552761265,
+    "rotateDegrees": 0,
+    "tags": ["shape:circleinsquare"],
+    "text": ""
+  },
+  "fa283c1a50d7bb9077020c6eda86e5a78858315990ec7e131e71f83d2b949a8a": {
+    "centerXRatio": 0.48374990459869005,
+    "centerYRatio": 0.44229223632812503,
+    "radiusRatio": 0.4219158616443999,
+    "rotateDegrees": 2.6717206713326505,
+    "tags": ["shape:circle"],
+    "text": "kessel"
+  },
+  "fab19456c531ca3f158d1cd54268fe3d7ee35f77304b40e053d99ae72508033b": {
+    "centerXRatio": 0.5062500000000001,
+    "centerYRatio": 0.431562255859375,
+    "radiusRatio": 0.3804462968540283,
+    "rotateDegrees": 45.476341415612694,
+    "tags": ["shape:circleinsquare"],
+    "text": "harde en124 d400 hrs-80 hrc-80"
+  },
+  "fac45b85ce0eea703971de3113989f6a44a9e6fc13b43f9879b5e03e8ce602bc": {
+    "centerXRatio": 0.5125000406901041,
+    "centerYRatio": 0.44468728637695315,
+    "radiusRatio": 0.33860042053310035,
+    "rotateDegrees": 349.9616205326139,
+    "tags": ["shape:circleinsquare"],
+    "text": "city fv"
+  },
+  "facf81b27dd462374318ecc31fddf0154da174ef01f0effb0861cae5125455f5": {
+    "centerXRatio": 0.5062480061848957,
+    "centerYRatio": 0.518631134033203,
+    "radiusRatio": 0.39830308230113465,
+    "rotateDegrees": 1.4542085390278316,
+    "tags": ["kommune:silkeborg", "shape:circle"],
+    "text": ""
+  },
+  "faf304aa1e57e365982606a7e190cdb15a67f71dbf06db23fd8c414b93600803": {
+    "centerXRatio": 0.43601681518554686,
+    "centerYRatio": 0.5134085457024311,
+    "radiusRatio": 0.45610725781573286,
+    "rotateDegrees": 102.2340763758466,
+    "tags": ["kommune:hillerød", "picture", "shape:circleinsquare", "tree"],
+    "text": ""
+  },
+  "fb1b36f6b47b98457d89d7e5d22058b4a8595da34a320409d8be64af90fd4807": {
+    "centerXRatio": 0.492500047700655,
+    "centerYRatio": 0.4549598388671875,
+    "radiusRatio": 0.4474970942237403,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle", "star:6"],
+    "text": "kjøbenhavn poetzold & jacobsen"
+  },
+  "fb68d79b35fb1eabcb23736407f3c215e67d0eb02ed83767c4ae79f6262ae737": {
+    "centerXRatio": 0.5170248209635417,
+    "centerYRatio": 0.5480190124511719,
+    "radiusRatio": 0.4222409980482005,
+    "rotateDegrees": 253,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "fb7ffc854363f336f3cf1b472b8e99c98a5e42d413e7320d9f16b4fc8f8f1dc4": {
+    "centerXRatio": 0.4887399291992187,
+    "centerYRatio": 0.5050000043364232,
+    "radiusRatio": 0.4649234948490198,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "fc102cc81791c0a7294ec25d0bcb29b0d220441b7ce3c93be75bd456d2fba44c": {
+    "centerXRatio": 0.5137500932330984,
+    "centerYRatio": 0.4507373046875,
+    "radiusRatio": 0.4248498623516666,
+    "rotateDegrees": 359.82014410857585,
+    "tags": ["shape:circleinsquare"],
+    "text": ""
+  },
+  "fc18a52970e277a7f5dbaea8f422566394feadc6efb453a7de41444b4481629f": {
+    "centerXRatio": 0.50903564453125,
+    "centerYRatio": 0.5070623474121094,
+    "radiusRatio": 0.46858636318160585,
+    "rotateDegrees": 207.11839344553277,
+    "tags": ["kommune:skanderborg", "shape:circle"],
+    "text": "skanderborg forsyning a/s ulefos ns en124-2 d400 utvl 60ax gjs"
+  },
+  "fc359e94654ad770074348b9832a50fce354a987a5d764a96829e3edcb07775f": {
+    "centerXRatio": 0.5130755208333334,
+    "centerYRatio": 0.5390567626953124,
+    "radiusRatio": 0.520989091909078,
+    "rotateDegrees": 2,
+    "tags": ["shape:circle"],
+    "text": "e"
+  },
+  "fccc48fcee816b953e953dfe1d4bec35a06e4e1a2e23d3e15b1135351f2e5df9": {
+    "centerXRatio": 0.5227103881835938,
+    "centerYRatio": 0.50601806640625,
+    "radiusRatio": 0.412780302487405,
+    "rotateDegrees": 137,
+    "tags": ["shape:circleinsquare"],
+    "text": "ao"
+  },
+  "fd3ad31f6930cb9ba034cfee2f74a6da3ef402b2f5663eb1e179b0d0471bf8ac": {
+    "centerXRatio": 0.5155473632812501,
+    "centerYRatio": 0.52456005859375,
+    "radiusRatio": 0.44828028921680335,
+    "rotateDegrees": 249,
+    "tags": ["factory", "rattle", "shape:circle"],
+    "text": "city-n d400 en124 22 164-041 f"
+  },
+  "fdc9008f17c8e2c16503f3846f41adfdbe26ae8fca66fb639c44357d2a930bcd": {
+    "centerXRatio": 0.47749991861979163,
+    "centerYRatio": 0.49531246948242186,
+    "radiusRatio": 0.34780540427263656,
+    "rotateDegrees": 358.3674697308637,
+    "tags": ["kommune:silkeborg", "shape:circle"],
+    "text": "ulefos d400 en124 utl-40 gjs ufl 42 5ls"
+  },
+  "fdeacdbbc433594cd10b1b536489bc55f2affd4ff6a1b3f9c4cd39a472678545": {
+    "centerXRatio": 0.4975,
+    "centerYRatio": 0.5178125610351563,
+    "radiusRatio": 0.44806576381688257,
+    "rotateDegrees": 0,
+    "tags": ["fish", "hcandersen", "rat", "shape:circle"],
+    "text": ""
+  },
+  "fe5793759584e20d7df4cee13c529644edaa705e9fa0b66518542d932a82efa3": {
+    "centerXRatio": 0.5070375366210937,
+    "centerYRatio": 0.48999999132715366,
+    "radiusRatio": 0.44738833113391097,
+    "rotateDegrees": 83.70844414087782,
+    "tags": ["shape:circle", "star:6"],
+    "text": "københavn k herntßen"
+  },
+  "ffab76139e41f1b05ca513f26ac7fafc580f4537c1c9c8e161c591cbbca92530": {
+    "centerXRatio": 0.5200001257562723,
+    "centerYRatio": 0.46058990478515627,
+    "radiusRatio": 0.4069217567646933,
+    "rotateDegrees": 0,
+    "tags": ["shape:circle"],
+    "text": ""
+  },
+  "ffe185303846dc95286ef21a41c3c347d333c9944f2146aa1781d47046b7bf12": {
+    "centerXRatio": 0.5086005045572917,
+    "centerYRatio": 0.48272421264648435,
+    "radiusRatio": 0.42633276670031234,
+    "rotateDegrees": 1.2313445781611563,
+    "tags": ["kommune:middelfart", "shape:circle"],
+    "text": ""
+  },
+  "ffeac563a50a4b6fe95ce81f6e840df2b3b4187d2616e4f222e2268050922b87": {
+    "centerXRatio": 0.4950034790039062,
+    "centerYRatio": 0.5044361979166667,
+    "radiusRatio": 0.4633460860128851,
+    "rotateDegrees": 265,
+    "tags": ["shape:circle"],
+    "text": "ulefos t"
+  },
+  "fff8936df7a8940f47d4703ea85b2475218bcab556ba4bfdf32671825d842176": {
+    "centerXRatio": 0.5177091933905973,
+    "centerYRatio": 0.45301544189453125,
+    "radiusRatio": 0.36606664546735357,
+    "rotateDegrees": 359,
+    "tags": ["shape:circle"],
+    "text": "københavns vandværk"
+  }
+}

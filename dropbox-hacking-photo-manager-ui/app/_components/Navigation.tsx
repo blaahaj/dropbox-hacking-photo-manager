@@ -147,6 +147,16 @@ const Navigation = (): React.ReactElement | null => (
       >
         <Link to="/mediainfo-explorer/null">MediaInfo Explorer</Link>
       </Typography>
+      <Typography
+        variant="overline"
+        component="div"
+        sx={{
+          color: "inherit",
+          mr: 4,
+        }}
+      >
+        <Link to="/kloakdæksler">Kloakdæksler</Link>
+      </Typography>
       {/* <Search sx={{ mr: 2 }}>
         <SearchIconWrapper>
           <SearchIcon />

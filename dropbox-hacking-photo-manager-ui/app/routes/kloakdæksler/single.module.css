@@ -1,0 +1,7 @@
+.item {
+  /* border: 1px solid red; */
+  background: #000;
+  color: white;
+  padding: 0.2em;
+  max-width: 300px;
+}

@@ -25,5 +25,6 @@ export default [
       "mediainfo-explorer/:streamKind",
       "routes/mediainfo-explorer/index.tsx",
     ),
+    route("kloakdæksler", "routes/kloakdæksler/page.tsx"),
   ]),
 ] satisfies RouteConfig;

@@ -1,0 +1,10 @@
+h1 {
+  font-size: 200%;
+  font-weight: bold;
+}
+
+.imageList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
