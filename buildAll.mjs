@@ -1,10 +1,11 @@
 import * as child_process from "node:child_process";
 import * as fs from "node:fs";
+import { readFile } from "node:fs/promises";
+import yaml from "yaml";
 
 const main = async () => {
-  const dirs = (await fs.promises.readdir("."))
-    .filter((name) => name.startsWith("dropbox-hacking-"))
-    .filter((name) => fs.statSync(name).isDirectory());
+  const workspace = yaml.parse(await readFile("pnpm-workspace.yaml", "utf-8"));
+  const dirs = workspace.packages;
 
   const namesWithLinks = await Promise.all(
     dirs.map((dir) =>
